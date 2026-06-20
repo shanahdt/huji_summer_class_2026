@@ -1,0 +1,69 @@
+!!!OTL: NINA S FAHRET A BIERELE D RHIN NA
+!!!ARE: Europa, Mitteleuropa, Deutschland; France, Elsass
+!!!ARD1: Europa%Mitteleuropa%Deutschland@
+!!!ARL1: 51.5/10.5@
+!!!ARD2: Europa%Mitteleuropa%France@Elsass#
+!!!ARL2: 48.50/7.50#
+!!!SCT: K0083
+!!!YEM: Copyright 1995, estate of Helmut Schaffrath.
+**kern
+*ICvox
+*Ivox
+*M6/8
+*k[b-]
+*F:
+=1
+{4.cc
+4.g
+=2
+8.f
+16f
+8f
+8.g
+16g
+8g
+=3
+4.a
+4.g}
+=4
+{8cc
+8cc
+8cc
+4g
+8g
+=5
+8.a
+16g
+8a
+4.f}
+=6
+{8cc
+8cc
+8cc
+4g
+8g
+=7
+8.a
+16g
+8a
+4.f}
+=8
+{4f
+8g
+8.a
+16a
+8a
+=9
+8g
+8g
+8cc
+4f
+8r}
+==
+!!!AGN: Kinder -, Wiegen - Lied
+!!!ONB: ESAC (Essen Associative Code) Database: KINDER
+!!!AMT: compound duple
+!!!AIN: vox
+!!!EED: Helmut Schaffrath
+!!!EEV: 1.0
+*-

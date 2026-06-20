@@ -1,0 +1,122 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	O Herre Gott, dein g&ouml;ttlich Wort
+!!!SCT:	BWV 185/5
+!!!PC#:	14
+!!!AGN:	chorale
+**kern
+*ICvox
+*Isoprn
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefG2
+*k[f#]
+*G:
+*M4/4
+*met(C)
+*MM100
+4g
+=1
+4g
+4f#
+.
+4e
+4d
+=2
+4g
+4a
+4b;
+4a
+=3
+8bL
+16ccL
+16ddJJ
+4cc
+.
+4b
+.
+8aL
+8bJ
+=4
+4cc
+.
+4b
+.
+2a
+.
+.
+=5
+2.g;
+=:|!
+*>B
+4g
+=6
+4a
+4b
+4g;
+4g
+=7
+4a
+.
+4b
+4g;
+4e
+.
+=8
+4.a
+.
+.
+8g
+4f#
+.
+8gL
+8f#J
+=9
+2e
+.
+.
+4d;
+4d
+=10
+4g
+.
+4f#
+.
+4e
+.
+4d
+=11
+4g
+4a
+4b;
+4a
+.
+=12
+4.dd
+.
+8cc
+4b
+.
+8aL
+8bJ
+=13
+4cc
+.
+4b
+.
+2a
+.
+.
+=14
+2.g;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

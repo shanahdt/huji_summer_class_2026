@@ -1,0 +1,91 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Valet will ich dir geben
+!!!SCT:	BWV 245/26
+!!!PC#:	108
+!!!AGN:	chorale
+**kern
+*ICvox
+*Isoprn
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefG2
+*k[b-e-a-]
+*E-:
+*M4/4
+*met(C)
+*MM100
+4e-
+=1
+4b-
+4b-
+4cc
+4dd
+=2
+2ee-
+4ee-;
+4gg
+=3
+4ff
+4ee-
+4ee-
+4dd
+=4
+2.ee-;
+=:|!
+*>B
+8ee-L
+8ffJ
+=5
+4gg
+.
+4gg
+.
+4ff
+4ee-
+=6
+8ddL
+8ccJ
+4dd
+4b-;
+4dd
+=7
+4ee-
+4dd
+4cc
+4cc
+.
+=8
+2.b-;
+4b-
+=9
+8gL
+8a-J
+4b-
+4cc
+.
+4b-
+=10
+4b-
+4a-
+4g;
+4b-
+=11
+4a-
+4g
+4f
+4f
+.
+=12
+2.e-;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

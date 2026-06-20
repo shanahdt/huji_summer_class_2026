@@ -1,0 +1,61 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Mein Seele erhebet den Herrn
+!!!SCT:	BWV 324
+!!!PC#:	130
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ibass
+*clefF4
+*k[f#]
+*e:
+*M4/4
+*met(C)
+*MM100
+=1-
+2E
+2F#
+=2
+4G
+4F#
+4E
+4D#
+=3
+4E
+4F#
+4G
+4E
+=4
+4C
+4AA
+2D
+=5
+1GG;
+=6
+2G
+2BB
+=7
+!! 8 beats in this measure
+0D
+0D
+=8
+!! 2 beats in this measure
+2C
+=9
+4BB
+4AA
+2BB
+.
+=10
+1EE;
+==
+*-
+!!!hum2abc: -Q '' -p '%%squarebreve' 
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

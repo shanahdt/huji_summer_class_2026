@@ -1,0 +1,157 @@
+!!!RWG: WARNING: The embellishment tones have been removed from this file.
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Nun freut euch, lieben Christen, g'mein
+!!!ONM: No. 183
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*G:	*G:	*G:	*G:	*G:	*G:	*G:	*G:	*G:
+I	ct	ct	ct	ct	4GG	4B	4d	4g
+.	upt	upt	.	.	.	.	.	.
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+Ib	ct	ct	ct	ct	4BB	4G	4d	4g
+.	upt	.	.	.	.	.	.	.
+V	ct	ct	ct	ct	4D	4F#	4a	4d
+.	upt7	.	.	.	.	.	.	.
+Ib	ct	ct	ct	ct	4BB	4G	4d	4g
+viib	ct	[sus]	ct	ct	4AA	4F#	4a	4cc
+.	.	ct	.	.	.	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+I	ct	ct	ct	ct	4GG	4G	4d	4b
+.	arp	.	.	.	.	.	.	.
+V	ct	[sus]	ct	ct	4D	4F#	4d	4a
+.	.	ct	.	.	.	.	.	.
+.	.	.	upt7	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	4GG;	4D;	4B;	4g;
+vi	ct	ct	ct	ct	4E	4G	4B	4g
+.	.	.	cupt	.	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+V	ct	ct	ct	ct	4D	8F#	8d	8a
+viioD7c/ii	.	ct	ct	ct	.	8G#	8fn	8b
+ii	ct	ct	ct	ct	4AA	4A	4e	4cc
+.	.	.	cupt	.	.	.	.	.
+Ib	ct	ct	ct	ct	4BB	4D	4g	4b
+.	upt	upt	.	.	.	.	.	.
+V	ct	ct	ct	ct	4D	4F#	4d	4a
+.	.	.	arp	.	.	.	.	.
+.	.	.	upt	.	.	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+IV	ct	ct	ct	ct	4C	4G	2c	4e
+.	upt7	.	.	.	.	.	.	.
+viib	ct	ct	.	ct	4AA	4A	.	4f#
+I;	ct;	ct;	ct;	ct;	4GG;	4D;	4B;	4g;
+!! Repeat from the beginning.
+I	ct	ct	ct	ct	4GG	4B	4d	4g
+.	upt	upt	.	.	.	.	.	.
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+Ib	ct	ct	ct	ct	4BB	4G	4d	4g
+.	upt	.	.	.	.	.	.	.
+V	ct	ct	ct	ct	4D	4F#	4a	4d
+.	upt7	.	.	.	.	.	.	.
+Ib	ct	ct	ct	ct	4BB	4G	4d	4g
+viib	ct	[sus]	ct	ct	4AA	4F#	4a	4cc
+.	.	ct	.	.	.	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+I	ct	ct	ct	ct	4GG	4G	4d	4b
+.	arp	.	.	.	.	.	.	.
+V	ct	[sus]	ct	ct	4D	4F#	4d	4a
+.	.	ct	.	.	.	.	.	.
+.	.	.	upt7	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	4GG;	4D;	4B;	4g;
+vi	ct	ct	ct	ct	4E	4G	4B	4g
+.	.	.	cupt	.	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+V	ct	ct	ct	ct	4D	8F#	8d	8a
+viioD7c/ii	.	ct	ct	ct	.	8G#	8fn	8b
+ii	ct	ct	ct	ct	4AA	4A	4e	4cc
+.	.	.	cupt	.	.	.	.	.
+Ib	ct	ct	ct	ct	4BB	4D	4g	4b
+.	upt	upt	.	.	.	.	.	.
+V	ct	ct	ct	ct	4D	4F#	4d	4a
+.	.	.	arp	.	.	.	.	.
+.	.	.	upt	.	.	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+IV	ct	ct	ct	ct	4C	4G	2c	4e
+.	upt7	.	.	.	.	.	.	.
+viib	ct	ct	.	ct	4AA	4A	.	4f#
+I;	ct;	ct;	ct;	ct;	4GG;	4D;	4B;	4g;
+!! Continuing.
+I	ct	ct	ct	ct	4G	4B	4d	4g
+.	upt7	.	.	.	.	.	.	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+IVb	ct	ct	ct	ct	8E	8e	8g	4cc
+V7b	ct	ct	ct	.	8F#	8d	8a	.
+I	ct	ct	[sus]	ct	[4G	4d	4g	4b
+.	.	.	ct	.	.	.	.	.
+.	.	.	upt7	.	.	.	.	.
+V7d/V	ct	ct	ct	ct	8G]	4c#	4e	4a
+.	ct	.	.	.	8A	.	.	.
+.	upt7	.	.	.	.	.	.	.
+Vb	ct	ct	ct	ct	8F#	4d	8a	4dd
+iii	ct	.	ct	.	8B	.	8f#	.
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+vi7b	ct	ct	ct	ct	4G	4B	4e	4dd
+.	.	arp	arp	.	.	.	.	.
+V7/V	ct	ct	[ct]	ct	4A	4A	4e	4cc#
+.	arp	.	upt	.	.	.	.	.
+.	.	.	ct	.	.	.	.	.
+V;	ct;	ct;	ct;	ct;	4D;	4A;	4f#;	4dd;
+Ib	ct	ct	ct	ct	4BB	[4d	4g	4dd
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+IV	ct	[sus]	ct	ct	4C	4c	4g	4ee
+.	upt	ct	.	.	.	.	.	.
+.	.	upt	.	.	.	.	.	.
+IVb	ct	ct	ct	ct	4E	4c	4g	4cc
+.	.	arp	.	.	.	.	.	.
+Vb	ct	ct	ct	ct	8F#	8d	8a	4.dd
+V7	ct	ct	ct	.	8D	8c	8f#	.
+vi7	ct	ct	ct	.	8E	8B	8g	.
+vii	ct	ct	ct	ct	8F#	8A	8a	8cc
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+I	ct	ct	[sus]	ct	4G	8B	8g	4b
+.	.	upt	.	.	.	.	.	.
+.	.	ct	ct	.	.	4.d	8g	.
+V	ct	.	[sus]	ct	4D	.	8f#	4a
+.	.	upt7	ct	.	.	.	8f#	.
+vi;	ct;	ct;	ct;	ct;	4E;	4B;	4e;	4g;
+vi	ct	ct	ct	ct	4E	4G	4e	4b
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+Vb	ct	ct	[sus]	ct	4F#	4A	4c	4a
+.	.	.	ct	.	.	.	.	.
+.	.	.	upt7	.	.	.	.	.
+I	ct	ct	ct	ct	4G	4G	4B	4d
+.	upt7	upt	.	.	.	.	.	.
+vi	ct	ct	ct	ct	4E	4B	4e	4g
+.	.	.	lnt	.	.	.	.	.
+ii	ct	ct	ct	ct	4AA	4A	4e	4cc
+.	.	.	upt	.	.	.	.	.
+=10	=10	=10	=10	=10	=10	=10	=10	=10
+Ib	ct	ct	ct	ct	4BB	[4d	[4g	4b
+.	upt	.	.	.	.	.	.	.
+V	ct	[ct]	[sus]	ct	4D	4d]	4f#	4a
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	4GG;	4B;	4d;	4g;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

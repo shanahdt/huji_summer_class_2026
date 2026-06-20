@@ -1,0 +1,102 @@
+!!!COM: Gioseffo Zarlino
+!!!OPR: Le istitutioni harmoniche
+!!!OTL: Canon at the unison after a minim with the cantus firmus as lowest voice.
+!!!PPR: Francesco Senese
+!!!PDT: 1573
+!!!PPP: Venice
+!!!ONB: Reprint ed., New York: Broude Bros., 1965.
+!!!ONB: Transcribed from Gioseffo Zarlino, Le Istitutioni Harmoniche, 1558,
+!!!ONB: translated as "The Art of Counterpoint" by Guy Marco and
+!!!ONB: Claude Palisca; New York: W.W. Norton, 1968, p. 216.
+**kern	**kern	**kern
+*conseq	*guida	*CF
+*k[]	*k[]	*k[]
+*M4/2	*M4/2	*M4/2
+=1-	=1-	=1-
+2r	2.C	1G
+2.C	.	.
+.	4D	.
+.	2E	1G
+4D	.	.
+2E	4C	.
+.	4BB	.
+=2	=2	=2
+4C	4AA	1c
+4BB	4GG	.
+4AA	2FF	.
+4GG	.	.
+2FF	2.C	1A
+[2C	.	.
+.	4D	.
+=3	=3	=3
+4C]	2E	1G
+4D	.	.
+2E	2C	.
+2C	4AA	1c
+.	4BB	.
+4AA	4C	.
+4BB	4D	.
+=4	=4	=4
+4C	2E	1G
+4D	.	.
+2E	2C	.
+2C	2AA	1A
+2AA	2FF	.
+=5	=5	=5
+2FF	4C	1A
+.	4BB	.
+4C	4AA	.
+4BB	4GG	.
+4AA	2FF	1c
+4GG	.	.
+2FF	4AA	.
+.	4BB	.
+=6	=6	=6
+4AA	4C	1c
+4BB	4D	.
+4C	4E	.
+4D	4F	.
+4E	2G	1B
+4F	.	.
+2G	2E	.
+=7	=7	=7
+2E	4G	1B
+.	4F	.
+4G	4E	.
+4F	4D	.
+4E	2C	1c
+4D	.	.
+2C	[2E	.
+=8	=8	=8
+2.E	4E]	1G
+.	4D	.
+.	2C	.
+4D	.	.
+2C	4AA	1A
+.	4BB	.
+4AA	4C	.
+4BB	4D	.
+=9	=9	=9
+4C	2.E	[0G
+4D	.	.
+2.E	.	.
+.	4F	.
+.	2G	.
+4F	.	.
+2G	2E	.
+=10	=10	=10
+0E	0C	0G]
+==	==	==
+*-	*-	*-
+!!!CDT: 1517/3/22-1590/2/14
+!!!CNT: Italia
+!!!ODT: <1573//
+!!!YEP: David Huron and Denis Collins
+!!!YEN: Canada
+!!!AIN: vox; ?
+!!!AST: polyphony
+!!!RDT: 1995 July 3
+!!!YED: 1995 August 31
+!!!AFR: cantus firmus canon
+!!!AMT: simple quadruple
+!!!EEV: 1.0

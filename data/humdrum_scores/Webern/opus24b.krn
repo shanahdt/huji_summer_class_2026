@@ -1,0 +1,300 @@
+!!!COM: Webern, Anton : von
+!!!OPS: Opus 24
+!!!OMV: Mov. 2
+!!!OTL: Konzert
+!!!XEN: Concerto
+!!!YEC: Copyright 1995, David Huron & Brian Alegant
+!!!YEM: This data is the property of David Huron and Brian Alegant, and is
+!!!YEM: available by license only.  Refer to accompanying license agreement.
+!!!YEM: This data may not be copied or translated to another format except in
+!!!YEM: accordance with the license agreement.
+!!!RDF1: U=mute
+!! "Sehr langsam"
+**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern
+*ICklav	*ICklav	*ICstr	*ICstr	*ICbras	*ICbras	*ICbras	*ICww	*ICww	*ICww
+*Ipiano	*Ipiano	*Iviola	*Ivioln	*Itromb	*Itromp	*Icor	*Iclars	*Ioboe	*Iflt
+*M2/4	*M2/4	*M2/4	*M2/4	*M2/4	*M2/4	*M2/4	*M2/4	*M2/4	*M2/4
+*MM80	*MM80	*MM80	*MM80	*MM80	*MM80	*MM80	*MM80	*MM80	*MM80
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*X:	*X:	*X:	*X:	*X:	*X:	*X:	*X:	*X:	*X:
+=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-
+4r	4r	2r	2r	2r	2gn~U	2r	2r	2r	2r
+(4BBn	(4B-	.	.	.	.	.	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2	=2
+4Dn)	4F#)	(4dd#U	2r	2r	2r	2r	2r	2r	2r
+4r	4r	4enU)	.	.	.	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3	=3
+4r	4r	2r	2r	2r	2r	2r	2r	2r	2r
+(4d-	(4fn	.	.	.	.	.	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4	=4
+4An)	4a-)	2r	(4ccnU	2r	2r	2r	2r	2r	2r
+4r	4r	.	4bbnU)	.	.	.	.	.	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5	=5
+(4A-	(4gn	2r	2r	2r	2r	2r	2ee-~	2r	2r
+4cn)	4en)	.	.	.	.	.	.	.	.
+=6	=6	=6	=6	=6	=6	=6	=6	=6	=6
+4r	4r	2r	2r	2r	2r	2r	2r	2r	4dddn~
+(4d-	(4fn	.	.	.	.	.	.	.	4ff#~
+=7	=7	=7	=7	=7	=7	=7	=7	=7	=7
+4B-)	4an)	2r	2r	2r	2r	2r	2r	4r	2r
+4r	4r	.	.	.	.	.	.	(4ee-	.
+=8	=8	=8	=8	=8	=8	=8	=8	=8	=8
+(4Gn	(4f#	2r	2r	2r	2r	2r	2r	2bbn)	2r
+4B-_	4dn)	.	.	.	.	.	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9	=9	=9
+4r	4r	2r	(2ccnU	2r	2r	2r	2r	2r	2r
+(4An	(4c#	.	.	.	.	.	.	.	.
+!! calando - - -
+=10	=10	=10	=10	=10	=10	=10	=10	=10	=10
+4Fn)	4en)	2r	4gg#U)	2r	2r	2r	2r	2r	2r
+(4d-	(4ccn	.	4r	.	.	.	.	.	.
+=11	=11	=11	=11	=11	=11	=11	=11	=11	=11
+4an)	4a-)	2r	2r	4r	2r	2r	2r	2r	2r
+4r	4r	4r	4r	4GGn~U	.	.	.	.	.
+!! tempo
+=12	=12	=12	=12	=12	=12	=12	=12	=12	=12
+(4Bn	(4b-	2r	2r	2E-~U	2r	2r	2r	2r	2r
+4dn_	4f#)	.	.	.	.	.	.	.	.
+=13	=13	=13	=13	=13	=13	=13	=13	=13	=13
+4r	4r	4en~U	2r	2r	2r	2r	2r	2r	2r
+(4A-	(4gn	4cn~U	.	.	.	.	.	.	.
+=14	=14	=14	=14	=14	=14	=14	=14	=14	=14
+4Bn)	4e-)	4C#~U	2r	2r	2r	2r	2r	2r	2r
+(4B-	(4dn	4r	.	.	.	.	.	.	.
+=15	=15	=15	=15	=15	=15	=15	=15	=15	=15
+4F#)	4fn)	2r	2r	4AAn~U	2r	2r	2r	2r	2r
+4r	4r	.	.	4G#~U	.	.	.	.	.
+=16	=16	=16	=16	=16	=16	=16	=16	=16	=16
+(4Cn	(4Bn	2r	2r	2r	2r	2r	2en~	2r	2r
+4E-)	4Gn)	.	.	.	.	.	.	.	.
+=17	=17	=17	=17	=17	=17	=17	=17	=17	=17
+4r	4r	2r	2r	2r	2r	2r	2r	4ffn~	2r
+(4dn	(4f#	.	.	.	.	.	.	4cc#~	.
+=18	=18	=18	=18	=18	=18	=18	=18	=18	=18
+4B-)	4an)	2r	2r	2r	2r	2r	2r	2r	4r
+4r	4r	.	.	.	.	.	.	.	(4ddn
+=19	=19	=19	=19	=19	=19	=19	=19	=19	=19
+(4F#	(4fn	2r	2r	2r	2r	2r	2r	2r	2bb-)
+4An)	4c#)	.	.	.	.	.	.	.	.
+=20	=20	=20	=20	=20	=20	=20	=20	=20	=20
+4r	4r	2r	(4bnU	2r	2r	2r	2r	2r	2r
+(4A-	(4cn	.	4ggnU)	.	.	.	.	.	.
+=21	=21	=21	=21	=21	=21	=21	=21	=21	=21
+4En)	4e-)	2r	2r	2r	2r	2r	2r	2r	2r
+(4cn	(4bn	.	.	.	.	.	.	.	.
+!! calando - - -
+=22	=22	=22	=22	=22	=22	=22	=22	=22	=22
+4a-)	4ggn)	2r	2r	(4FF#U	2r	2r	2r	2r	2r
+(4B-	(4an	.	.	4DnU)	.	.	.	.	.
+=23	=23	=23	=23	=23	=23	=23	=23	=23	=23
+4d-)	4fn)	2r	2r	2r	4r	2r	2r	2r	2r
+4r	4r	.	.	.	(4ee-U	.	.	.	.
+!! tempo
+=24	=24	=24	=24	=24	=24	=24	=24	=24	=24
+(4cn	(4en	2r	2r	2r	2bnU)	2r	2r	2r	2r
+4A-)	4gn)	.	.	.	.	.	.	.	.
+=25	=25	=25	=25	=25	=25	=25	=25	=25	=25
+4r	4r	2r	2r	2r	2r	2r	2r	2cccn~	2r
+(4En	(4e-	.	.	.	.	.	.	.	.
+=26	=26	=26	=26	=26	=26	=26	=26	=26	=26
+4Gn)	4Bn)	2r	(4a-U	2r	2r	2r	2r	2r	2r
+4r	4r	.	4aanU)	.	.	.	.	.	.
+!! calando
+=27	=27	=27	=27	=27	=27	=27	=27	=27	=27
+(4G-	(4B-	2r	2r	2r	2r	2r	4r	2r	2r
+4Dn)	4d-)	.	.	.	.	.	4ffn~	.	.
+=28	=28	=28	=28	=28	=28	=28	=28	=28	=28
+(4b-	(4aan	2r	2r	2r	2r	2r	2r	2r	2r
+4f#)	4ffn)	.	.	.	.	.	.	.	.
+!! sehr getragen
+=29	=29	=29	=29	=29	=29	=29	=29	=29	=29
+2r	2r	2r	2r	2r	2r	4r	2r	2r	2r
+.	.	.	.	.	.	(4en~U	.	.	.
+=30	=30	=30	=30	=30	=30	=30	=30	=30	=30
+2AA-~	2Gn~	2r	2r	2r	2r	4r	2r	2r	2r
+.	.	.	.	.	.	4cn~U)	.	.	.
+!! tempo
+=31	=31	=31	=31	=31	=31	=31	=31	=31	=31
+2r	2r	2r	2r	2r	2r	2r	4r	2r	2r
+.	.	.	.	.	.	.	(4Bn	.	.
+=32	=32	=32	=32	=32	=32	=32	=32	=32	=32
+4r	4r	2r	2r	2r	2r	2r	4e-	2r	2r
+(4GGn	(4F#	.	.	.	.	.	4ddn)	.	.
+!! calando
+=33	=33	=33	=33	=33	=33	=33	=33	=33	=33
+4Cn)	4Bn)	2r	2r	2r	4b-~U	2r	2r	2r	2r
+4r	4r	.	.	.	4a-~U	.	.	.	.
+!! wieder sehr getragen
+=34	=34	=34	=34	=34	=34	=34	=34	=34	=34
+4r	4r	2r	2r	(4AAnU	2r	2r	2r	2r	2r
+4Fn~	4en~	.	.	4r	.	.	.	.	.
+=35	=35	=35	=35	=35	=35	=35	=35	=35	=35
+4r	4r	2r	2r	4C#~U)	2r	2r	2r	2r	2r
+!! tempo
+(4B-	(4an	.	.	4r	.	.	.	.	.
+=36	=36	=36	=36	=36	=36	=36	=36	=36	=36
+4F#)	4fn)	2r	2r	2r	2r	4r	2r	2r	2r
+4r	4r	.	.	.	.	(4dn	.	.	.
+=37	=37	=37	=37	=37	=37	=37	=37	=37	=37
+2EEn~	2E-~	2r	2r	2r	2r	4gn	2r	2r	2r
+.	.	.	.	.	.	4A-)	.	.	.
+!! calando - -
+=38	=38	=38	=38	=38	=38	=38	=38	=38	=38
+4r	4r	2r	2r	2r	2r	2r	2r	4ccn~	2r
+(4EE-	(4Dn	.	.	.	.	.	.	4bn~	.
+=39	=39	=39	=39	=39	=39	=39	=39	=39	=39
+4GGn)	4F#)	2r	4r	2r	2r	2r	2r	2r	2r
+!! tempo
+4r	4r	.	4bb-~U	.	.	.	.	.	.
+=40	=40	=40	=40	=40	=40	=40	=40	=40	=40
+2AAn~	2G#~	2r	4r	2r	2r	2r	2r	2r	2r
+.	.	.	(4ffnU	.	.	.	.	.	.
+=41	=41	=41	=41	=41	=41	=41	=41	=41	=41
+(4C#	(4cn	2r	2enU)	2r	2r	2r	2r	2r	2r
+4AAn)	4G#)	.	.	.	.	.	.	.	.
+!! calando
+=42	=42	=42	=42	=42	=42	=42	=42	=42	=42
+4r	4r	2r	2r	2r	2r	2r	2r	2r	4ffn~
+(4GGn	(4F#	.	.	.	.	.	.	.	4ee-~
+!! sehr getragen
+=43	=43	=43	=43	=43	=43	=43	=43	=43	=43
+4BBn)	4B-)	2r	2r	2r	2r	4r	2r	2r	2r
+4r	4r	.	.	.	.	(4dn~U	.	.	.
+=44	=44	=44	=44	=44	=44	=44	=44	=44	=44
+2FF#~	2Fn~	2r	2r	2r	2r	4r	2r	2r	2r
+.	.	.	.	.	.	4B-~U)	.	.	.
+=45	=45	=45	=45	=45	=45	=45	=45	=45	=45
+!! tempo
+4r	4r	2r	2r	2r	2r	2r	2r	(4an	2r
+4Cn~	4Bn~	.	.	.	.	.	.	4cc#)	.
+=46	=46	=46	=46	=46	=46	=46	=46	=46	=46
+4r	4r	2r	2r	2r	4a-~U	2r	2r	2r	2r
+(4BBn	(4B-	.	.	.	4gn~U	.	.	.	.
+=47	=47	=47	=47	=47	=47	=47	=47	=47	=47
+4Dn)	4F#)	(4dd#	2r	2r	2r	2r	2r	2r	2r
+4r	4r	4en)	.	.	.	.	.	.	.
+=48	=48	=48	=48	=48	=48	=48	=48	=48	=48
+4r	4r	2r	2r	2r	2r	2r	2r	2r	2r
+(4dd-	(4ffn	.	.	.	.	.	.	.	.
+=49	=49	=49	=49	=49	=49	=49	=49	=49	=49
+4A-)	4cn)	2r	2r	2r	4r	2r	2r	2r	2r
+4r	4r	.	.	.	4an~U	.	.	.	.
+=50	=50	=50	=50	=50	=50	=50	=50	=50	=50
+(4Gn	(4Bn	2r	2r	2r	4g#~U	2r	4r	2r	2r
+4ccn)	4een)	.	.	.	4r	.	(4e-	.	.
+=51	=51	=51	=51	=51	=51	=51	=51	=51	=51
+4r	4r	2r	2r	2r	2r	2r	4ddn)	2r	2r
+(4dd-	(4ffn	.	.	.	.	.	4f#~	.	.
+=52	=52	=52	=52	=52	=52	=52	=52	=52	=52
+4B-)	4an)	2r	2r	2r	2r	2r	2r	2r	4r
+4r	4r	.	.	.	.	.	.	.	4e-~
+=53	=53	=53	=53	=53	=53	=53	=53	=53	=53
+4r	4r	2r	4r	2r	2r	2r	2r	2r	4ggn~
+(4BBn	(4B-	.	(4f#	.	.	.	.	.	4r
+=54	=54	=54	=54	=54	=54	=54	=54	=54	=54
+4C#)	4cn)	2r	4ddn)	2r	2r	2r	2r	2r	2r
+4AAn~	4G#~	.	4r	.	.	.	.	.	.
+!! calando - - -
+=55	=55	=55	=55	=55	=55	=55	=55	=55	=55
+4r	4r	2r	2r	2r	2r	2r	2r	4en~	2r
+(4C#	(4cn	.	.	.	.	.	.	4ffn~	.
+=56	=56	=56	=56	=56	=56	=56	=56	=56	=56
+4AAn)	4G#)	2r	2r	2r	2r	2r	2r	2r	2r
+4r	4r	.	.	.	.	.	.	.	.
+=57	=57	=57	=57	=57	=57	=57	=57	=57	=57
+!! sehr getragen
+4r	4r	2r	2r	2GGn~U	2r	2r	2r	2r	2r
+(4BBn~	(4B-~	.	.	.	.	.	.	.	.
+=58	=58	=58	=58	=58	=58	=58	=58	=58	=58
+4r	4r	2r	2r	2r	2r	2r	2e-~	2r	2r
+4Dn~)	4F#~)	.	.	.	.	.	.	.	.
+=59	=59	=59	=59	=59	=59	=59	=59	=59	=59
+!! tempo
+4r	4r	2r	2r	2r	(4enU	2r	2r	2r	2r
+4GG#~	4Gn~	.	.	.	4ccnU)	.	.	.	.
+=60	=60	=60	=60	=60	=60	=60	=60	=60	=60
+(4BBn	(4D#	2r	2r	2r	2r	2r	2r	2r	4r
+4B-)	4dn)	.	.	.	.	.	.	.	4ccc#~
+=61	=61	=61	=61	=61	=61	=61	=61	=61	=61
+4r	4r	2r	2r	2r	2r	2r	2r	2r	(2an
+(4FF#	(4Fn	.	.	.	.	.	.	.	.
+=62	=62	=62	=62	=62	=62	=62	=62	=62	=62
+!! calando - - - - -
+4Cn)	4Bn)	4r	2r	2r	2r	2r	2r	2r	4gg#)
+(4ee-	(4ggn	4en~U	.	.	.	.	.	.	4r
+=63	=63	=63	=63	=63	=63	=63	=63	=63	=63
+4dn)	4f#)	(4ffnU	2r	2r	2r	2r	2r	2r	2r
+4r	4r	4cc#U)	.	.	.	.	.	.	.
+=64	=64	=64	=64	=64	=64	=64	=64	=64	=64
+!! sehr getragen
+(2BB-	(2An	2r	2r	2r	2r	4r	2r	2r	2r
+.	.	.	.	.	.	(4dn~U	.	.	.
+=65	=65	=65	=65	=65	=65	=65	=65	=65	=65
+2FF#)	2Fn)	2r	2r	2r	2r	4r	2r	2r	2r
+.	.	.	.	.	.	4B-~U)	.	.	.
+=66	=66	=66	=66	=66	=66	=66	=66	=66	=66
+!! tempo
+(4an	(4cc#	2r	2r	2r	2r	2r	2r	4r	2r
+4A-)	4cn)	.	.	.	.	.	.	(4bbn~	.
+=67	=67	=67	=67	=67	=67	=67	=67	=67	=67
+4r	4r	2r	2r	2r	2r	2r	2r	4r	2r
+4En~	4e-~	.	.	.	.	.	.	4ggn~)	.
+!! calando
+=68	=68	=68	=68	=68	=68	=68	=68	=68	=68
+(4ccn	(4bbn	2r	2r	2r	2r	2r	2r	2r	2r
+4a-)	4ggn)	.	.	.	.	.	.	.	.
+=69	=69	=69	=69	=69	=69	=69	=69	=69	=69
+!! sehr getragen
+2r	2r	2r	2r	2r	2r	2r	4r	2r	2r
+.	.	.	.	.	.	.	(4F#~	.	.
+=70	=70	=70	=70	=70	=70	=70	=70	=70	=70
+2BBB-~	2AAn~	2r	2r	2r	2r	2r	4r	2r	2r
+.	.	.	.	.	.	.	4Dn~	.	.
+!! tempo
+=71	=71	=71	=71	=71	=71	=71	=71	=71	=71
+4r	4r	2r	2r	2r	2r	2r	2r	2r	2r
+(4dd-	(4ffn	.	.	.	.	.	.	.	.
+=72	=72	=72	=72	=72	=72	=72	=72	=72	=72
+2cn)	2en)	2r	2r	(4E-U	2r	2r	2r	2r	2r
+.	.	.	.	4BBnU)	.	.	.	.	.
+=73	=73	=73	=73	=73	=73	=73	=73	=73	=73
+4A-~	4gn~	2r	2r	2r	2r	2r	2r	2r	2r
+4r	4r	.	.	.	.	.	.	.	.
+!! sehr getragen
+=74	=74	=74	=74	=74	=74	=74	=74	=74	=74
+2r	2r	2r	2r	2r	4r	2r	2r	2r	2r
+.	.	.	.	.	(4gn~U	.	.	.	.
+=75	=75	=75	=75	=75	=75	=75	=75	=75	=75
+(2BBBn	(2BB-	2r	2r	2r	4r	2r	2r	2r	2r
+.	.	.	.	.	4e-~U)	.	.	.	.
+=76	=76	=76	=76	=76	=76	=76	=76	=76	=76
+2DDn)	2FF#)	2r	4r	2r	2r	2r	2r	2r	2r
+!! morendo
+.	.	.	(4eenU	.	.	.	.	.	.
+=77	=77	=77	=77	=77	=77	=77	=77	=77	=77
+4r	4r	2r	4fnU)	2r	2r	2r	2r	2r	2r
+(4B-~	(4an~	.	4r	.	.	.	.	.	.
+=78	=78	=78	=78	=78	=78	=78	=78	=78	=78
+4r	4r	2r	2r	2r	2r	2r	2r	2r	2r
+4AAAn~)	4AA-)	.	.	.	.	.	.	.	.
+==	==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!ODE: Arnold Schoenberg (60th birthday)
+!!!CDT: 1993/12/3-1945/9/15
+!!!CNT: Oesterreicher
+!!!AFR: serial; 12-tone
+!!!AST: serial
+!!!AGN: chamber
+!!!AMT: simple duple
+!!!AIN: clars cor flt oboe piano tromb tromp viola violn
+!!!AGN: chamber
+!!!ODT: 1931/-1934/
+!!!EED: Brian Alegant
+!!!ENC: David Huron
+!!!EEV: 1.0
+!!!RDT: 1995 June 1
+!!!YED: 1995 September 15
+!!!EFL: 2/3
+!!!YEN: Canada
+!!!EST: Missing stem directions and beaming.
+!!!VTS: 161877531

@@ -1,0 +1,29 @@
+# READY
+#
+# This script prepares the cantus firmus canons in this directory
+# for processing.  This preparation entails ensuring that there is
+# no more than one cantus firmus note per measure.  This may mean
+# adding barlines and changing the meter signature.  The following
+# files are affected by this process:
+#
+# In the case of bull3.krn, we use an unembellished version of the CF:
+extract -i '*CFbackground,*guida,*conseq' bull3.krn > project/bull3.ready
+extract -i '*CFbackground,*guida,*conseq' bull4.krn > project/bull4.ready
+extract -i '*CFbackground,*guida,*conseq' bull5.krn > project/bull5.ready
+extract -i '*CFbackground,*guida,*conseq' bull6.krn > project/bull6.ready
+extract -i '*CFbackground,*guida,*conseq' bull7.krn > project/bull7.ready
+extract -i '*CFbackground,*guida,*conseq' caldara1.krn > project/caldara1.ready
+extract -i '*CFbackground,*guida,*conseq' caldara2.krn > project/caldara2.ready
+#
+# For the Praetorius, avoid non-canonic passages (between m.32-73) and
+# also transform "free" notes to rests in the consequente (notes designated ?).
+# Avoid non-canonic passages:
+yank -o = -r 1-31 praetor.krn | sed '/^\*-/d' > temp1
+yank -o = -r 74-91 praetor.krn | sed '/^\*\*kern/d' | sed '/^\*CF/d' > temp2
+cat temp1 rest4.4.5voice temp2 | humsed 's/[a-gA-G][a-gA-g]*[#n-]*?/r?/g' > project/praetor.ready
+rm temp1 temp2
+
+# Also change 
+#    bull3.krn    change from 4/4 to 2/4 adding extra barlines
+
+

@@ -1,0 +1,87 @@
+#############################################################################
+#                              SEGALL
+# Programmed by: David Huron        Date: 1996 March11
+#
+# Modifications:
+#   Date:      Programmer:       Description:
+# 						
+# This script carries out a comprehensive tone-row search in a specified
+# score, given a presumed prime set.  The script breaks-up multi-part
+# scores into different instrumental combinations in order to facilitate
+# searching for concurrent row-statements that happen in different
+# instruments or instrument groups.
+#
+# Invoke:
+#
+#       segall -n N primerow scorefile > outputfile
+#
+# The -n option is used to specify tone-row lengths less than 12.
+
+if [ "x$1" != "x-n" ]
+then
+	echo "-n option must be specified."
+	echo "USAGE:   segall -n number primerow scorefile"
+	exit
+fi
+
+if [ $2 -gt 12 -o $2 -lt 1 ]
+then
+	echo "segall: ERROR: -n option must be followed by a number between 1 and 12."
+	echo "USAGE:   segall -n number primerow scorefile"
+	exit
+fi
+
+if [ ! -f $3 ]
+then
+	echo "segall: ERROR: Input prime-row file $3 not found."
+	echo "USAGE:   segall -n number primerow scorefile"
+	exit
+fi
+
+# Check that the specified input file exists:
+if [ ! -f $4 ]
+then
+	echo "segall: ERROR: Input score file $4 not found."
+	echo "USAGE:   segall -n number primerow scorefile"
+	exit
+fi
+
+# Also check to ensure that the temporary directory shell variable is defined.
+if [ ! -d $TMPDIR ]
+then
+	echo "Shell temporary directory (\$TMPDIR) undefined."
+	exit
+fi
+
+# Identify the number of spines in the input score.
+
+extract -i '*ICww'   $4 > $TMPDIR/$$.ww
+extract -i '*ICstr'  $4 > $TMPDIR/$$.str
+extract -i '*ICbras' $4 > $TMPDIR/$$.bra
+extract -i '*ICidio' $4 > $TMPDIR/$$.idi
+extract -i '*ICvox'  $4 > $TMPDIR/$$.vox
+extract -i '*ICklav' $4 > $TMPDIR/$$.klav
+
+SIZE=`rid -GL $TMPDIR/$$.ww | wc | sed 's/^ *//; s/ .*//'`
+echo "ICww: $SIZE"
+if [ $SIZE = 0 ]
+then
+	echo "Don't process."
+fi
+
+SIZE=`rid -GL $TMPDIR/$$.vox | wc | sed 's/^ *//; s/ .*//'`
+echo "ICvox: $SIZE"
+if [ $SIZE = 0 ]
+then
+	echo "Don't process."
+fi
+
+assemble
+cleave -d ' ' -i '**patt' -o '**rows' $TMPDIR/$$.pat
+
+rm $TMPDIR/$$.ww
+rm $TMPDIR/$$.str
+rm $TMPDIR/$$.bra
+rm $TMPDIR/$$.idi
+rm $TMPDIR/$$.vox
+rm $TMPDIR/$$.klav

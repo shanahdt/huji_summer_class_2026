@@ -1,0 +1,55 @@
+!! Example 1: "Come, My Dear Friends, and Mourn"
+!! from William H. Tallmadge, "Folk Organum: A Study of Origins" in
+!! "American Music" Vol. 2, No. 3 (1984) p.51
+!! Irregular meter
+**kern	**kern
+=1	=1
+2e	2e
+4g#	4g#
+8cc	8cc
+8a	8a
+=2	=2
+2.b	2.b
+4a	4a
+=3	=3
+{16g	4ee
+8.e}	.
+4d#	4dd#
+2e	{4.ee
+.	8b}
+=4	=4
+2e	2b
+4g#	4dd#
+4a	4ee
+=5	=5
+4a	4a
+8dd	8dd
+8b	8b
+4ee;	4ee;
+{4..g	{4..g
+16ee}	16ee}
+=6	=6
+{4.ee	{4.ee
+8dd}	8dd}
+8ee	8ee
+8b	8b
+4b	4b
+4a	4ee
+=7	=7
+4g	4dd
+{8b	4ee
+8cc}	.
+4dd;	4dd;
+4b	4ee
+!! Irregular meter
+=8	=8
+2a	2dd
+4g	4dd
+4e	4b
+4d#	4.a#
+16f#	.
+16d#	.
+=9	=9
+2e	2b
+==	==
+*-	*-

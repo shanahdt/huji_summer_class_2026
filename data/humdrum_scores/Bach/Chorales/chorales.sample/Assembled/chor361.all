@@ -1,0 +1,162 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Du Lebensfuerst, Herr Jesu Christ
+!!!ONM: No. 361
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*G:	*G:	*G:	*G:	*G:	*G:	*G:	*G:	*G:
+I	ct	ct	ct	ct	8G	4B	4d	4g
+.	upt7	.	.	.	8F#	.	.	.
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+vi	ct	ct	ct	ct	4E	8B	4e	4g
+.	.	ant	.	.	.	[8c	.	.
+V7	ct	[ct]	ct	ct	4D	8c]	4f#	4a
+.	.	ct	.	.	.	8d	.	.
+I	ct	ct	ct	ct	4G	8B	8d	8b
+V7d/V	.	ct	ct	ct	.	8A	8e	8cc#
+Vb	ct	ct	ct	ct	8F#	4A	4f#	4dd
+.	upt	.	.	.	8G	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+V/V	ct	ct	ct	sus	4A	4A	8e	4dd
+.	.	.	upt	.	.	.	8f#	.
+V7/V	ct	ct	ct	ct	4AA	4A	4g	4cc#
+V;	ct;	ct;	ct;	ct;	4D;	4A;	4f#;	4dd;
+V/vi	ct	ct	ct	ct	4D#	8B	4f#	4b
+.	.	upt7	.	.	.	8A	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+IV	ct	ct	ct	ct	8E	8G	4e	4ccn
+.	upt	upt	.	.	8F#	8A	.	.
+I	ct	ct	ct	ct	8G	8B	8d	4b
+IV7	ct	ct	ct	.	8C	8c	8e	.
+V7d	ct	ct	ct	ct	8c	4d	4f#	4a
+.	upt	.	.	.	8B	.	.	.
+I	apt	ct	ct	ct	8A	4d	4g	4b
+.	ct	.	.	.	8G	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+V	ct	ct	sus	ct	4d	4.d	4g	2a
+.	arp	.	ct	.	4D	.	4f#	.
+.	.	upt7	.	.	.	8c	.	.
+I;	ct;	ct;	ct;	ct;	4G;	4B;	4d;	4g;
+!! Repeat from the beginning.
+I	ct	ct	ct	ct	8G	4B	4d	4g
+.	upt7	.	.	.	8F#	.	.	.
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+vi	ct	ct	ct	ct	4E	8B	4e	4g
+.	.	ant	.	.	.	[8c	.	.
+V7	ct	[ct]	ct	ct	4D	8c]	4f#	4a
+.	.	ct	.	.	.	8d	.	.
+I	ct	ct	ct	ct	4G	8B	8d	8b
+V7d/V	.	ct	ct	ct	.	8A	8e	8cc#
+Vb	ct	ct	ct	ct	8F#	4A	4f#	4dd
+.	upt	.	.	.	8G	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+V/V	ct	ct	ct	sus	4A	4A	8e	4dd
+.	.	.	upt	.	.	.	8f#	.
+V7/V	ct	ct	ct	ct	4AA	4A	4g	4cc#
+V;	ct;	ct;	ct;	ct;	4D;	4A;	4f#;	4dd;
+V/vi	ct	ct	ct	ct	4D#	8B	4f#	4b
+.	.	upt7	.	.	.	8A	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+IV	ct	ct	ct	ct	8E	8G	4e	4ccn
+.	upt	upt	.	.	8F#	8A	.	.
+I	ct	ct	ct	ct	8G	8B	8d	4b
+IV7	ct	ct	ct	.	8C	8c	8e	.
+V7d	ct	ct	ct	ct	8c	4d	4f#	4a
+.	upt	.	.	.	8B	.	.	.
+I	apt	ct	ct	ct	8A	4d	4g	4b
+.	ct	.	.	.	8G	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+V	ct	ct	sus	ct	4d	4.d	4g	2a
+.	arp	.	ct	.	4D	.	4f#	.
+.	.	upt7	.	.	.	8c	.	.
+I;	ct;	ct;	ct;	ct;	4G;	4B;	4d;	4g;
+!! Continuing.
+V	ct	ct	ct	ct	4D	8d	8f#	4a
+.	.	upt	upt	.	.	8e	8g	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+V	ct	ct	ct	ct	8d	8f#	[4a	4a
+.	upt	upt	.	.	8c#	8e	.	.
+viio/ii	ct	ct	[sus]	ct	4B	4d	8a]	4b
+.	.	.	ct	.	.	.	8g#	.
+ii	ct	ct	ct	ct	4A	4e	8a	4cc
+.	.	.	clnt	.	.	.	8g#	.
+viioD7/vi	ct	ct	ct	ct	4D#	4f#	4a	4cc
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+vi	ct	ct	sus	ct	4E	4B	4a	8b
+.	.	.	.	lnt	.	.	.	8a
+V/ii	ct	ct	ct	ct	4E	8e	4g#	4b
+.	.	upt7	.	.	.	8d	.	.
+ii;	ct;	ct;	ct;	ct;	4AA;	4c;	4e;	4a;
+vi	ct	ct	ct	ct	8E	8Gn	8e	4b
+V7c/vi	ct	ct	ct	.	8F#	8A	8d#	.
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+vib	ct	ct	ct	ct	4G	8B	4e	4b
+.	.	upt	.	.	.	8c	.	.
+V7b/ii	ct	ct	ct	ct	4G#	8d	4e	4b
+.	.	ct	.	.	.	8e	.	.
+ii	ct	ct	ct	ct	4A	4c	8e	8cc
+.	.	.	upt	upt	.	.	8f#	8dd
+V7b/V/vi	ct	ct	apt	ct	4A#	4c#	8g	4ee
+.	.	.	ct	.	.	.	8f#	.
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+V/vi	ct	ct	ct	sus	4B	4B	8f#	4ee
+.	.	.	upt	.	.	.	8g	.
+V7/vi	ct	ct	ct	ct	4BB	4B	4a	4dd#
+vi;	ct;	ct;	ct;	ct;	4E;	4B;	4g;	4ee;
+V	ct	ct	ct	ct	8d	4d	4a	4ff#
+.	upt7	.	.	.	8c	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+Ib	ct	ct	ct	ct	8B	4d	8g	4gg
+.	upt	.	upt	.	8A	.	8a	.
+I	ct	ct	ct	ct	8G	4g	4b	4b
+.	upt7	.	.	.	8F#	.	.	.
+IV7b	ct	ct	ct	ct	8E	8G	8b	4cc
+vii	ct	ct	ct	.	8F#	8A	8a	.
+I	ct	ct	sus	ct	8G	4B	8a	4b
+vi	ct	.	ct	.	8E	.	8g	.
+=10	=10	=10	=10	=10	=10	=10	=10	=10
+V7b/V	ct	ct	ct	ct	8C#	8e	2g	2a
+.	lnt	lnt	.	.	8BB	8d	.	.
+.	ct	ct	.	.	8C#	8e	.	.
+.	arp	arp	.	.	8AA	8c#	.	.
+V;	ct;	ct;	ct;	ct;	4D;	4d;	4f#;	4a;
+Ib	ct	ct	ct	ct	4BB	4d	8g	4dd
+.	.	.	upt7	.	.	.	8f#	.
+=11	=11	=11	=11	=11	=11	=11	=11	=11
+IV	ct	sus	ct	ct	4C	8d	4e	4ee
+.	.	ct	.	.	.	8c	.	.
+V7	ct	ct	ct	ct	4D	8c	4f#	4d
+.	.	ant	.	.	.	8B	.	.
+vi	ct	ct	ct	sus	8E	8B	8g	4cc
+vii	ct	ct	ct	.	8F#	8A	8a	.
+I	ct	ct	ct	ct	4G	4G	4d	8b
+.	.	.	.	et	.	.	.	8cc
+=12	=12	=12	=12	=12	=12	=12	=12	=12
+ii7b	ct	ct	ct	ct	4C	8G	4e	2a
+.	.	upt	.	.	.	16F#	.	.
+.	.	lnt	.	.	.	16E	.	.
+V	ct	ct	ct	.	4D	4F#	4d	.
+I;	ct;	ct;	ct;	ct;	4GG;	4B;	4d;	4g;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

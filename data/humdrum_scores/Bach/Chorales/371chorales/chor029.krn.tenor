@@ -1,0 +1,118 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Freu dich sehr, o meine Seele
+!!!SCT:	BWV 32/6
+!!!PC#:	29
+!!!AGN:	chorale
+**kern
+*ICvox
+*Itenor
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefGv2
+*k[f#]
+*G:
+*M4/4
+*met(C)
+*MM100
+=1-
+4B
+4A
+[4G
+8GL]
+8F#J
+=2
+4G
+.
+4A
+.
+8AL
+8GJ
+4F#;
+=3
+4B
+4A
+8GL
+8F#J
+8EL
+8F#J
+=4
+4.G
+.
+.
+8F#
+2B;
+=5:|!
+*>B
+4d
+.
+4e
+4A
+4e
+.
+=6
+4d
+4d
+.
+2d;
+=7
+4B
+.
+4B
+.
+8cL
+8BJ
+4A
+.
+=8
+8GL
+8AJ
+8BL
+8c#J
+2d;
+=9
+8dL
+8cnXJ
+4B
+.
+4c
+.
+4d
+.
+=10
+8eL
+8dJ
+4c
+2d
+.
+.
+.
+=11
+2c;
+4d
+.
+4d
+=12
+8GL
+8AJ
+8BL
+8cJ
+4d
+4d
+.
+=13
+4.d
+.
+8c
+2B;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

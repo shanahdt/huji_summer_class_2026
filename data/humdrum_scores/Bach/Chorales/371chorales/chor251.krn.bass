@@ -1,0 +1,113 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Ich bin ja, Herr, in deiner Macht
+!!!SCT:	BWV 345
+!!!PC#:	251
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ibass
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefF4
+*k[b-e-]
+*g:
+*M4/4
+*met(C)
+*MM100
+4G
+=1
+4G
+.
+4F#
+.
+.
+4.G
+.
+.
+8F
+=2
+8E-L
+8DJ
+.
+8E-L
+8CJ
+4D;
+4D
+=3
+4G
+4A
+.
+.
+4.B-
+.
+.
+8A
+=4
+8GL
+8FJ
+.
+8EL
+8CJ
+4F;
+4B-
+=5
+4E
+4F
+4C#
+.
+.
+4D
+.
+=6
+4A
+.
+.
+4AA
+4D;
+=:|!
+*>B
+4F#
+=7
+4G
+.
+4FnX
+.
+4.E-
+.
+.
+8A-
+=8
+8FL
+8DJ
+4G
+.
+4C
+4c;
+=9
+8B-XL
+8AJ
+8B-L
+8cJ
+8AL
+8GJ
+.
+4F#
+.
+=10
+4G
+.
+4D
+.
+4GG;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

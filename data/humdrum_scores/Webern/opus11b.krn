@@ -1,0 +1,125 @@
+!!!COM: Webern, Anton : von
+!!!OPS: Opus 11 (Violoncell und Klavier)
+!!!OMV: Stuck II
+!!!OTL: Drei Kleine StÅcke
+!!!YEC: Copyright 1995 McGill???
+!!!CDT: 1993/12/3-1945/9/15 
+!!!YOR: Universal Edition
+!!!YOO: Copyright 1924 by Universal Edition, renewed 1952 by Anton Webern's Erben
+!!!ENC:Norma Welch
+**kern	**kern	**kern
+*staff3	*staff2	*staff1
+*ClefF4	*ClefG2	*ClefF4
+*ICklav	*ICklav	*ICstr
+*Ipiano	*Ipiano	*Icello
+*M3/4	*M3/4	*M3/4
+*MM160	*MM160	*MM160
+*k[]	*k[]	*k[]
+*X:	*X:	*X:
+!! Sehr bewegt (Quarter = ca 160)
+!	!f	!f
+!	!	!ohne DÑmpfer
+=1-	=1-	=1-
+2.r	(2.B- (2.en (2.g#	8r
+.	.	{4Fn
+.	.	8E-
+.	.	[4GGn
+=2	=2	=2
+!	!p	!
+2.r	4.Bn) 4.dn) 4.b-)	12GGn]
+.	.	6F#}
+.	8r	4r
+!	!f	!
+.	([4cc#	4r
+=3	=3	=3
+!mf	!	!
+{8CCn	6cc#]	2.r
+8FFn	.	.
+4En~}	12G#)	.
+4r	4r	.
+=4	=4	=4
+*	*	*ClefC4
+!	!	!f cresc
+4r	4r	8bn~
+.	.	8b-~
+4r	12r	8An~
+.	12r	.
+.	.	8r
+!	!sf	!
+.	[12c#'^ [12gn'^ [12ddn'^	.
+!p cresc	!	!
+{[4E-^	4c#] 4gn] 4ddn]	4r
+*M2/4	*M2/4	*M2/4
+=5	=5	=5
+6E-]	2r	2r
+6GG-~	.	.
+!f	!	!
+6fn~}	.	.
+=6	=6	=6
+*M3/4	*M3/4	*M3/4
+*	*	*CleF4
+!f	!f	!f cresc
+2.r	4r	8r
+.	.	[4.cn
+.	4.cc#^ 4.een^	.
+.	.	4cn]
+.	8BBn	.
+=7	=7	=7
+!	!	!ff
+2.r	2.r	2a-~
+.	.	[4f#
+=8	=8	=8
+*	*ClefF4	*
+!f	!f	!f
+4r	(2.Fn (2.B-	2.f#]
+[2AAAn~	.	.
+=9	=9	=9
+4.AAAn]	2E-) 2dn)	2.Gn
+4.CC#~	.	.
+*	*^	*
+.	4En	(8E-	.
+.	.	8cn)	.
+*	*v	*v	*
+=10	=10	=10
+*MM2/4	*M2/4	*M2/4
+4r	8r	12r
+.	.	12r
+!	!ff	!
+*	*ClefG2	*
+.	8Bn	.
+!	!	!sfp
+.	.	[12BBn
+8BB-' 8An'	8f#' 8ffn	4BBn_
+8r	8r	.
+=11	=11	=11
+2.r	4r	8BBn]
+*	*	*ClefC4
+!	!	!ff cresc
+.	.	{8ccn
+.	4r	8a-
+.	.	8d-}
+.	8r	4r
+!	!sff	!
+.	[8gn^	.
+=12	=12	=12
+*M2/4	*M2/4	*M2/4
+!sfff	!	!
+8FFn': 8Cn': 8F#':	8gn']	8r
+!	!	!fff
+8r	8r	4.b-~
+4r	4r	.
+=13	=13	=13
+*M3/4	*M3/4	*M3/4
+*	*ClefF4	*
+!	!fff	!
+12r	16r	2.r
+.	(8dn	.
+12GGG#^	.	.
+12AAn^	.	.
+.	16C#')	.
+!ClefG2	!	!
+8bn^	4r	.
+8r	.	.
+4r	4r	.
+==|!	==|!	==|!
+*-	*-	*-

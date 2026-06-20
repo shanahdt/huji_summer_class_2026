@@ -1,0 +1,805 @@
+!! Aram Khachaturain, Sonatina (1959) for piano.
+!! First movement.
+!! Allegro giocoso
+!! Tempo: quarter-note equals 152-160 beats per minute.
+**kern	**kern
+*M4/4	*M4/4
+*C:	*C:
+=1	=1
+8CC	{16ee
+.	16dd
+8C	16cc
+.	16dd
+8DD	16ee
+.	16dd
+8D	16cc
+.	16dd
+8EE	16ee
+.	16dd
+8E	16cc
+.	16dd
+8FF	16ee
+.	16dd
+8F	16cc
+.	16dd
+=2	=2
+8FF#	8ee'}
+8F#	8cc'
+8GG	8dd'
+8G	8ee'
+8AA-	2ff
+8A-	.
+8AAn	.
+8An	.
+=3	=3
+8BB-	{16ff
+.	16ee
+8B-	16dd
+.	16ee
+8BBn	16ff
+.	16ee
+8Bn	16dd
+.	16ee
+8C	16ff
+.	16ee
+8c	16dd
+.	16ee
+8BB	16ff
+.	16ee
+8B	16dd
+.	16ee
+=4	=4
+8AA	8ff'}
+8A	8dd'
+8GG	8ee'
+8G	8ff'
+8FF	4.gg
+8F	.
+8EE	.
+8E	8gg'
+=5	=5
+8DD	{8ccc
+8D	16bb
+.	16aa
+8EE	8gg'}
+8E	8gg'
+8FF	{8bb-
+8F	16aa
+.	16gg
+8GG	8ff'}
+8G	8ff'
+=6	=6
+8AA	{8bb-
+8A	16aa
+.	16gg
+8BB-	8ff'}
+8B-	8ff'
+8BBn	{8aa
+8Bn	16gg
+.	16ff
+8C	8ee'}
+8c	8ee'
+=7	=7
+8D	{16gg
+.	16ff
+8d	16ee
+.	16dd
+8E	16cc#
+.	16dd
+8e	16ee
+.	16ff
+8F	16gg
+.	16ff
+8f	16ee
+.	16dd
+8G	16cc#
+.	16dd
+8g	16ee
+.	16ff
+=8	=8
+8A-	8gg'
+8a-	8ff'
+8An	8ee'
+8an	8dd'
+8B-	8cc#'
+8b-	8dd'
+8Bn	8ee'
+8bn	8ff'
+=9	=9
+8B-	{16gg
+.	16aa
+8b-	8gg'}
+8A	{16gg
+.	16aa
+8a	8gg'}
+8A-	{16gg
+.	16aa
+8g	8gg'}
+=10	=10
+4r	{16dd
+.	16ee
+.	8dd'}
+{16g	4r
+16a	.
+8g'}	.
+4r	{16dd
+.	16ee
+.	8dd'}
+{16g	4r
+16a	.
+8g'}	.
+!! page 3
+=11	=11
+1r	8d
+.	8e
+.	8f
+.	8g
+.	8a
+.	8b
+.	8cc
+.	8dd
+=12	=12
+8CC	{16ee
+.	16dd
+8C	16cc
+.	16dd
+8DD	16ee
+.	16dd
+8D	16cc
+.	16dd
+8EE	16ee
+.	16dd
+8E	16cc
+.	16dd
+8FF	16ee
+.	16dd
+8F	16cc
+.	16dd
+=13	=13
+8FF#	8ee'}
+8F#	8cc'
+8GG	8dd'
+8G	8ee'
+8AA-	2ff
+8A-	.
+8AAn	.
+8An	.
+=14	=14
+8BB	{16ff
+.	16ee
+8B	16dd
+.	16ee
+8C	16ff
+.	16ee
+8c	16dd
+.	16ee
+8BB	16ff
+.	16ee
+8B	16dd
+.	16ee
+8AA	16ff
+.	16ee
+8A	16dd
+.	16ee
+=15	=15
+8GG	8ff'}
+8G	8dd'
+8FF	8ee'
+8F	8ff'
+8EE	4.gg
+8E	.
+8DD	.
+8D	8gg'
+=16	=16
+8CC 8C	{16ccc
+.	16gg
+8DD 8D	16ccc
+.	16eee
+8EE 8E	8ccc'}
+8FF 8F	8gg'
+8GG 8G	8ccc'
+8AA 8A	8gg'
+8BB 8B	8ccc'
+8C 8c	8gg'
+=17	=17
+8D 8d	{16bb
+.	16ff
+8C 8c	16bb
+.	16ddd
+8BB 8B	8bb'}
+8AA 8A	8ff'
+8GG 8G	8bb'
+8FF 8F	8ff'
+8EE 8E	8bb'
+8DD 8D	8ff'
+=18	=18
+8EE 8E	{16aa
+.	16ee
+8FF 8F	16aa
+.	16ccc
+8GG 8G	8aa'}
+8AA 8A	8ee'
+8BB 8B	8aa'
+8C 8c	8ee'
+8D 8d	8aa'
+8E 8e	8ee'
+=19	=19
+8c-	{16aa-
+.	16ee-
+8f	16aa-
+.	16ccc-
+8e-	8aa-'}
+8f	8ee-'
+8c	8aa-'
+8f	8ee-'
+8e-	8aa-'
+8f	8ee-'
+=20	=20
+8c-	8ccc-
+8f	8aa-
+8e-	8ee-
+8f	8aa-
+8c-	8ee-
+8f	8cc-
+8e-	8aa-
+8f	8ee-
+=21	=21
+8c-	8aa-
+8f	8ee-
+8e-	8cc-
+8f	8ee-
+8c-	8cc-
+8f	8a-
+8e-	8cc-
+8f	8a-
+=22	=22
+8d 8f	8g
+8r	8a-
+8r	8b-
+8d 8f	8g 8bn
+4r	8an 8cc
+.	8b 8dd
+8d 8f	8cc 8ee
+8r	8dd 8ff
+=23	=23
+8d 8f	8bn 8dd
+8r	8cc 8ee
+8r	8dd 8ff
+8d 8f	8ee 8gg
+4r	8ff 8aa
+.	8gg 8bb
+8d 8f	8aa 8ccc
+8r	8bb 8ddd
+=24	=24
+8CC 8C	{16ccc
+.	16gg
+8DD 8D	16ccc
+.	16eee
+8EE 8E	8ccc'}
+8FF 8F	8gg'
+8GG 8G	8ccc'
+8AA 8A	8gg'
+8BB 8B	8ccc'
+8C 8c	8gg'
+=25	=25
+8D 8d	{16bb
+.	16ff
+8C 8c	16bb
+.	16ddd
+8BB 8B	8bb'}
+8AA 8A	8ff'
+8GG 8G	8bb'
+8FF 8F	8ff'
+8EE 8E	8bb'
+8DD 8D	8ff'
+!! page 4
+=26	=26
+8EE 8E	{16aa
+.	16ee
+8FF 8F	16aa
+.	16ccc
+8GG 8G	8aa'}
+8AA 8A	8ee'
+8BB 8B	8aa'
+8C 8c	8ee'
+8D 8d	8aa'
+8E 8e	8ee'
+=27	=27
+8c-	{16aa-
+.	16ee-
+8f	16aa-
+.	16ccc-
+8e-	8aa-'}
+8f	8ee-'
+8c-	8aa-'
+8f	8ee-'
+8e-	8aa-'
+8f	8ee-'
+=28	=28
+8c-	8ccc-
+8f	8aa-
+8e-	8ee-
+8f	8aa-
+8c-	8ee-
+8f	8cc-
+8e-	8aa-
+8f	8ee-
+=29	=29
+8c-	8aa-
+8f	8ee-
+8e-	8cc-
+8f	8ee-
+8c-	8cc-
+8f	8a-
+8e-	8cc-
+8f	8a-
+=30	=30
+[2d 2f	{8g
+.	8a-
+.	8b-
+.	8a-
+8d 8f]	8b-
+8r	8bn
+!! rit.
+4r	8cc#
+.	8ddn}
+!! a tempo (poco tranquillo)
+=31	=31
+8r	{4.dd#
+{8g#	.
+8b}	.
+8r	8ee
+8r	4.cc#
+{8f#	.
+8a}	.
+8r	8dd}
+=32	=32
+8r	{4.b
+{8e#	.
+8g#}	.
+8r	8cc#
+8r	4.a#
+{8en	.
+8gn}	.
+8r	8b}
+=33	=33
+8r	{4.g#
+{8d#	.
+8e#	.
+8c#	8a#
+8en	2gn}
+8d#	.
+8c#	.
+8B}	.
+=34	=34
+8r	{4.f#
+{8a#	.
+8c#}	.
+8r	8g#
+8r	4.e
+{8An	.
+8cn}	.
+8r	8f#}
+=35	=35
+8r	{4.d#
+{8g#	.
+8Bn}	.
+8r	8e
+8r	4.dn
+{8Gn	.
+8B-}	.
+8r	8d#}
+=36	=36
+2r	8dn
+.	8d#
+.	8f#
+.	8g
+.	8a
+.	8b-
+.	8cc#
+.	8dd
+=37	=37
+8r	{4.dd#
+{8G#	.
+8A#	.
+8B	8ee
+8A#	4.cc#
+8c#	.
+8e	.
+8g#}	8dd}
+=38	=38
+{8gn	{4.b
+8f#	.
+8fn	.
+8e	8cc#
+8dn	4.a#
+8f	.
+8d	.
+8c#}	8b}
+=39	=39
+8r	8g#
+8e 8gn	8g#
+8r	8g#
+8d# 8f#	8g#
+8r	8g#
+8dn 8fn	8g#
+8r	8g#
+8c# 8e	8g#
+!! poco animato
+=40	=40
+8r	8g#
+8B	8e#
+8d#	8g#
+8e#	8b
+8d#	8g#
+8e#	8b
+8g#	8dd#
+8b	8ee#
+!! page 5
+!! a tempo
+=41	=41
+8r	8dd#
+8b 8ddn	8dd#
+8r	8dd#
+8a# 8cc#	8dd#
+8r	8dd#
+8an 8ccn	8dd#
+8r	8dd#
+8g# 8b	8dd#
+!! poco animato
+=42	=42
+[2g 2b-	8dd#
+.	8bn
+.	8ddn
+.	8dd#
+8g 8b-]	8een
+8r	8ggn
+4r	8gg#
+.	8aa#
+!! a tempo
+=43	=43
+8r	{4.gg#
+{8bn	.
+8ddn}	.
+8r	8aan
+8r	4.ff#
+{8a#	.
+8cc#}	.
+8r	8gg#}
+=44	=44
+8r	{4.ee
+{8an	.
+8ccn}	.
+8r	8ff#
+8r	4.dd#
+{8g#	.
+8b}	.
+8r	8ee}
+=45	=45
+8r	{4.cc#
+{8f#	.
+8a}	.
+8r	8dd#
+8r	4.b
+{8e#	.
+8g#}	.
+8r	8cc#}
+=46	=46
+8r	{4.a#
+{8en	.
+8gn}	.
+8r	8b
+8r	4.g#
+{8d#	.
+8e#	.
+8c#	8a#
+=47	=47
+8en	2gn}
+8d#	.
+8c#	.
+8B}	.
+8A#	4r
+8B	.
+8dn	.
+8gn	.
+=48	=48
+8d#	4r
+8e	.
+4r	8gn
+.	8ccn
+8d#	4r
+8e	.
+4r	8g
+.	8cc
+=49	=49
+8g#	4r
+8an	.
+4r	8cc
+.	8ffn
+8c#	4r
+8dn	.
+4r	8f
+.	8b-
+=50	=50
+1r	8d
+.	8e
+.	8f
+.	8g
+.	8a
+.	8bn
+.	8cc
+.	8dd
+=51	=51
+8CC	{16ee
+.	16dd
+8C	16cc
+.	16dd
+8DD	16ee
+.	16dd
+8D	16cc
+.	16dd
+8EE	16ee
+.	16dd
+8E	16cc
+.	16dd
+8FF	16ee
+.	16dd
+8F	16cc
+.	16dd
+=52	=52
+8FF#	8ee'}
+8F#	8cc'
+8GG	8dd'
+8G	8ee'
+8AA-	2ff
+8A-	.
+8AAn	.
+8An	.
+=53	=53
+8BB-	{16ff
+.	16ee
+8B-	16dd
+.	16ee
+8BBn	16ff
+.	16ee
+8Bn	16dd
+.	16ee
+8C	16ff
+.	16ee
+8c	16dd
+.	16ee
+8BB	16ff
+.	16ee
+8B	16dd
+.	16ee
+!! page 6
+=54	=54
+8AA	8ff'}
+8A	8dd'
+8GG	8ee'
+8G	8ff'
+8FF	4.gg
+8F	.
+8EE	.
+8E	8gg'
+=55	=55
+8DD	{8ccc
+8D	16bb
+.	16aa
+8EE	8gg'}
+8E	8gg'
+8FF	{8bb-
+8F	16aa
+.	16gg
+8GG	8ff'}
+8G	8ff'
+=56	=56
+8AA	{8bb-
+8A	16aa
+.	16gg
+8BB-	8ff'}
+8B-	8ff'
+8BBn	{8aa
+8Bn	16gg
+.	16ff
+8C	8ee'}
+8c	8ee'
+=57	=57
+8D	{16gg
+.	16ff
+8d	16ee
+.	16dd
+8E	16cc#
+.	16dd
+8e	16ee
+.	16ff
+8F	16gg
+.	16ff
+8f	16ee
+.	16dd
+8G	16cc#
+.	16dd
+8g	16ee
+.	16ff
+=58	=58
+8A-	8gg'
+8a-	8ff'
+8An	8ee'
+8an	8dd'
+8B-	8cc#'
+8b-	8dd'
+8Bn	8ee'
+8bn	8ff'
+=59	=59
+8B-	{16gg
+.	16aa
+8b-	8gg'}
+8A	{16gg
+.	16aa
+8a	8gg'}
+8A-	{16gg
+.	16aa
+8g	8gg'}
+=60	=60
+4r	{16dd
+.	16ee
+.	8dd'}
+{16g	4r
+16a	.
+8g'}	.
+4r	{16dd
+.	16ee
+.	8dd'}
+{16g	4r
+16a	.
+8g'}	.
+=61	=61
+1r	8d
+.	8e
+.	8f
+.	8g
+.	8a
+.	8b
+.	8cc
+.	8dd
+=62	=62
+8CC	{16ee
+.	16dd
+8C	16cc
+.	16dd
+8DD	16ee
+.	16dd
+8D	16cc
+.	16dd
+8EE	16ee
+.	16dd
+8E	16cc
+.	16dd
+8FF	16ee
+.	16dd
+8F	16cc
+.	16dd
+=63	=63
+8FF#	8ee'}
+8F#	8cc'
+8GG	8dd'
+8G	8ee'
+8AA-	2ff
+8A-	.
+8AAn	.
+8An	.
+=64	=64
+8BB	{16ff
+.	16ee
+8B	16dd
+.	16ee
+8C	16ff
+.	16ee
+8c	16dd
+.	16ee
+8BB	16ff
+.	16ee
+8B	16dd
+.	16ee
+8AA	16ff
+.	16ee
+8A	16dd
+.	16ee
+=65	=65
+8GG	8ff'}
+8G	8dd'
+8FF	8ee'
+8F	8ff'
+8EE	4.gg
+8E	.
+8DD	.
+8D	8gg'
+=66	=66
+8CC 8C	{16ccc
+.	16gg
+8DD 8D	16ccc
+.	16eee
+8EE 8E	8ccc'}
+8FF 8F	8gg'
+8GG 8G	8ccc'
+8AA 8A	8gg'
+8BB 8B	8ccc'
+8C 8c	8gg'
+=67	=67
+8D 8d	{16bb
+.	16ff
+8C 8c	16bb
+.	16ddd
+8BB 8B	8bb'}
+8AA 8A	8ff'
+8GG 8G	8bb'
+8FF 8F	8ff'
+8EE 8E	8bb'
+8DD 8D	8ff'
+=68	=68
+8EE 8E	{16aa
+.	16ee
+8FF 8F	16aa
+.	16ccc
+8GG 8G	8aa'}
+8AA 8A	8ee'
+8BB 8B	8aa'
+8C 8c	8ee'
+8D 8d	8aa'
+8E 8e	8ee'
+=69	=69
+8c-	{16aa-
+.	16ee-
+8f	16aa-
+.	16ccc-
+8e-	8aa-'}
+8f	8ee-'
+8c	8aa-'
+8f	8ee-'
+8e-	8aa-'
+8f	8ee-'
+=70	=70
+8c-	8ccc-
+8f	8aa-
+8e-	8ee-
+8f	8aa-
+8c-	8ee-
+8f	8cc-
+8e-	8aa-
+8f	8ee-
+=71	=71
+8c-	8aa-
+8f	8ee-
+8e-	8cc-
+8f	8ee-
+8c-	8cc-
+8f	8a-
+8e-	8cc-
+8f	8a-
+=72	=72
+8d 8f	8g
+8r	8a-
+8r	8b-
+8d 8f	8g 8bn
+4r	8an 8cc
+.	8b 8dd
+8d 8f	8cc 8ee
+8r	8dd 8ff
+=73	=73
+8d 8f	8bn 8dd
+8r	8cc 8ee
+8r	8dd 8ff
+8d 8f	8ee 8gg
+4r	8ff 8aa
+.	8gg 8bb
+8d 8f	8aa 8ccc
+8r	8bb 8ddd
+=74	=74
+2.c 2.e 2.g	2.gg 2.bb 2.ccc 2.eee
+4C 4G	4e 4g 4b 4cc
+=75	=75
+2C 2G	2e 2g 2b 2cc
+4C 4G	4e 4g 4b 4cc
+4r	4r
+====	====
+*-	*-

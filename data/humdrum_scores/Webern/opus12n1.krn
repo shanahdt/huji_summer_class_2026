@@ -1,0 +1,181 @@
+!!!COM: Webern, Anton : von
+!!!OPS: Opus 12 (Gesang und Klavier)
+!!!OMV: Number 1
+!!!OPR: Vier Lieder
+!!!OTL: De Tag ist Vergangen (Volkslied)
+!!!YEC: Copyright 1995 McGill???
+!!!CDT: 1993/12/3-1945/9/15 
+!!!YOR: Universal Edition
+!!!YOO: Copyright 1925 by Universal Edition, renewed 1953 by Anton Webern's Erben
+!!!ENC:Norma Welch
+**kern	**kern	**kern	**text
+*staff3	*staff2	*staff1	*
+*ClefF4	*ClefG2	*ClefG2	*
+*ICklav	*ICklav	*Ivox	*
+*Ipiano	*Ipiano	*Ivox	*
+*M2/4	*M2/4	*M2/4	*
+*MM60	*MM60	*MM60	*
+*k[]	*k[]	*k[]	*
+*X:	*X:	*X:	*
+!!Sehr ruhig (Quarter = ca 60)
+!pp	!pp	!	!
+=1-	=1-	=1-	=1-
+[2BB- [2Fn [2An	{8g#	2r	%
+.	8ccn	.	.
+.	[4g	.	.
+=2	=2	=2	=2
+2BB-] 2Fn] 2An]	8g]}	.	%
+!!rit to end of measure
+!	!ppp	!	!
+.	(4bn	.	.
+.	8g#)	.	.
+=3	=3	=3	=3
+!!tempo
+*M3/4	*M3/4	*M3/4	*
+8r	4r	4r	%
+!pp	!	!	!
+{8EEn	.	.	%
+!	!ppp	!	!
+8C#	4gn~ 4ee-~ 4gg-~	4r	%
+8DDn}	.	.	%
+4r;	4r;	8r;	%
+!	!	!p	!
+.	.	8fn~	Der
+*M2/4	*M2/4	*M2/4	*
+*	*ClefF4	*	*
+=4	=4	=4	=4
+6r	6r	(8fn	Tag
+.	.	8gn)	||
+6r	6E- 6A-	.	||
+.	.	{8fn	{ist
+!!Note spines 1 and 2 should be slurred together here
+6BBn 6En	6r	.	|
+.	.	8cc#	ver~
+=5	=5	=5	=5
+12r	12r	8an	~gan~
+[6FFn [6Dn	[6G- [6B-	.	||
+.	.	8gn	||
+2FFn] 2Dn]	2G-] 2B-]	8en}	~gen} ,
+.	.	{8f#	{die
+=6	=6	=6	=6
+2AAAn 2CC# 2FF#	4cn 4e-	8.g#	Nacht
+.	.	16ddn	||
+.	4Fn 4Bn	8.g#	ist
+.	.	16ccn	schon
+=7	=7	=7	=7
+8r	8r	4gn}	hier} ,
+8EEE-' 8AAAn'	8G#' 8dn'	.	|
+8GGn' 8BBn'	8F#' 8An'	12r	%
+.	.	{12een	gu~
+8r	8r	.	||
+.	.	12dd#	~te
+=8	=8	=8	=8
+*	*ClefG2	*	*
+6r	6r	2ff#}	Nacht} ,
+6EEn~ 6C#~	6An~ 6cn~ 6gn~	.	|
+.	.	{8een	{o
+6GG#~ 6En~	6Gn~ 6c#~ 6f#~	.	|
+.	.	8b-	Ma~
+=9	=9	=9	=9
+4CCn~ 4GG-~ 4BB-~	4A-~ 4e-~ 4an~	3fn	~ri~
+.	.	6en}	~a}
+8r	4r	12r	%
+!!pp begin phrase in piano and voice
+!	!	!pp	!pp
+.	.	{6ccn	{bleib
+8CCC#	.	.	|
+=10	=10	=10	=10
+(4AAn (4F#	{6fn {6b-	8ee-	e~
+.	.	8dd-	||
+.	[3e- [3a-	.	||
+[4FFn [4En	.	8c-	~wig
+.	.	8B-	bei
+=11	=11	=11	=11
+*M3/4	*M3/4	*M3/4	*
+!!pp 
+!!rit. to end of measure 12
+4FFn] 4En]	6e-] 6a-]	4cn}	mir} *
+.	12f#'} 12ddn'}	.	%
+4r	4r	4r	%
+!ppp	!ppp	!	!
+([4DDDn	([4ccc# ([4fff# ([4bbbn	4r	%
+=12	=12	=12	=12
+*M2/4	*M2/4	*M2/4	*
+4.DDDn]	4.ccc#] 4.fff#] 4.bbbn]	2r;	%
+8.EE-';)	8.aa-';) 8.eeen';) 8.gggn';)	.	%
+!!Pause over barline
+=13	=13	=13	=13
+*M3/4	*M3/4	*M3/4	*M3/4
+!!tempo
+!!„uáerst ruhig
+!	!	!pp	!pp
+4r	2.r	8r	%
+.	.	{8an	{Der
+4r	.	4fn	Tag
+!pp	!	!	!
+([4En ([4An	.	8g-	ist
+.	.	8b-	ver~
+=14	=14	=14	=14
+*	*ClefF4	*	*
+*M2/4	*M2/4	*M2/4	*M2/4
+4En] 4An]	(4AA- (4Cn	12fn	~gan~
+.	.	12an}	~gen} ,
+4BBB-) 4DDn)	.	.	|
+.	.	{12bn	{die
+.	4Gn) 4c#)	8ccn	Nacht
+8r	.	[8ff#	||
+=15	=15	=15	=15
+*ClefG2	*ClefG2	*	*
+{16fn	8r	8ff#]	||
+8dn	.	.	||
+.	.	8an}	||
+[16ee-	.	.	||
+16ee-]	12r	{8.aa-	kommt
+16r	.	.	|
+.	12Bn' 12b-'	.	|
+8r	.	.	|
+.	12cc#'	.	|
+.	.	16ggn	her~
+=16	=16	=16	=16
+*M3/4	*M3/4	*M3/4	*
+*ClefF4	*	*	*
+4r	4r	4dd	~zu ,
+4r	4r	4ccn}	|| }
+!!g- has been put into lowest voice to ease encoding and phrasing
+!p	!p	!	!
+(4FFn (4D- (4An (4g-	{8ee-	4r	%
+.	8ddn	.	%
+=17	=17	=17	=17
+6AA-) 6CC-) 6Gn) 6B-)	6fn}	{8ee	{gib
+.	.	8ddn	auch
+3EEn 3AAn 3E- 3d- 3g-	{6ccn	.	|
+.	.	8a-	den
+.	6b-	.	|
+.	.	8g-	Ver~
+=18	=18	=18	=18
+4Dn 4Fn 4Bn	4en}	6a-	~storb~
+.	.	12g-}	~nen}
+4r	4r	12r	%
+.	.	{6d-	{die
+=19	=19	=19	=19
+6r	4r	[2an	e~
+!ppp	!ppp	!	!
+[3GGG-	.	.	||
+.	4c	.	||
+=20	=20	=20	=20
+4GGG-]	2bbn 22dddn	6an]	||
+.	.	6en	~wi~
+4BBB-~	.	.	||
+.	.	6f#	~ge
+=21	=21	=21	=21
+!	!	!ppp	!ppp
+8r	8r	2ffn}	Ruh} *
+[4.Bn [4.Gn	[4.e- [4.ccn	.	|
+=22	=22	=22	=22
+2Bn_ 2Gn_	4e-] 4ccn]	2r	%
+*	*ClefF4	*	*
+.	[4AAA- [4DD-	.	%
+=23	=23	=23	=23
+2Bn;] 2Gn;]	2AAA-;] 2DD-;]	2r;	%
+==|!	==|!	==|!	==|!
+*-	*-	*-	*-

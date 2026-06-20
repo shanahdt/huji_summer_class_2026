@@ -1,0 +1,170 @@
+!! "Sogdians Drinking Wine", Item 8 from Laurence Picken et al
+!! "Music From the Tang Court" Vol. 4, Cambridge University Press
+!! (Cambridge) 1987; p. 7
+!! NOTE: This file contains an amalgamation of four coordinated ms sources.
+!! SGYR	JCYR	SSSTF	KF/HSFRK (manuscripts)
+!! Lute	Zither	Mouth	Mouth
+!!		Organ	Organ
+**kern	**kern	**kern	**kern
+*M4/4	*M4/4	*M4/4	*M4/4
+=1	=1	=1	=1
+4d	4d 4dd	4dd	4dd
+{8F#	8dd	8dd	4dd
+8E}	8ee	{16ff#	.
+.	.	16ee}	.
+4D	4d 4dd	2dd	4dd
+4d	4dd	.	4dd
+=2	=2	=2	=2
+4d	4d 4dd	4dd	4dd
+4AA	4a	4a	4a
+4A	2A 2a	2a	2a
+4r	.	.	.
+=3	=3	=3	=3
+4G#	4D 4f#	4gg	4gg
+{8G#	4f#	4ff#	4ff#
+8F#}	.	.	.
+{16G#	4D 4f#	4ff#	4ff#
+16F#	.	.	.
+8G#}	.	.	.
+{16c#	8b	4a	8b
+16B	.	.	.
+8A}	8a	.	8a
+=4	=4	=4	=4
+{16F#	4D 4f#	4ff#	4ff#
+16E	.	.	.
+8F#}	.	.	.
+4A	4a	4a	4a
+4A	2A 2a	2a	2a
+4r	.	.	.
+=5	=5	=5	=5
+4d	4d 4dd	4dd	4dd
+{16B	8dd	4b	4b
+16A	.	.	.
+8B}	8b	.	.
+4d	4d 4dd	4dd	4dd
+{16B	4b	4b	4b
+16A	.	.	.
+8B}	.	.	.
+=6	=6	=6	=6
+4d	4d 4dd	4dd	4dd
+4E	8dd	4ee	32dd
+.	.	.	32cc
+.	.	.	16dd
+.	8ee	.	8ee
+4F#	4f# 4ff#	2ff#	2ff#
+4F#	4ff#	.	.
+=7	=7	=7	=7
+{8F#	4f# 4ff#	16ff#	4ff#
+.	.	16ee	.
+8E}	.	8ff#	.
+{16d	8.ff#	8.ee	32ff#
+.	.	.	32ee
+16c#	.	.	16ff#
+8d}	.	.	8ee
+.	32ee	32ee	.
+.	32dd	32dd	.
+4E	4e 4ee	2ee	2ee
+4E	4ee	.	.
+=8	=8	=8	=8
+{16F#	4f# 4ff#	32ee	4ff#
+.	.	[32ff#	.
+16E	.	8.ff#]	.
+8F#}	.	.	.
+{8E 8A	8aa	{8a	8a
+8F#}	8ff#	8ff#}	8ff#
+4A	4a 4aa	2a	2a
+4A	4aa	.	.
+=9	=9	=9	=9
+4d	4d 4dd	4dd	4dd
+{16B	8dd	4b	4b
+16A	.	.	.
+8B}	8b	.	.
+4d	4d 4dd	4dd	4dd
+{16B	4b	4b	4b
+16A	.	.	.
+8B}	.	.	.
+=10	=10	=10	=10
+4d	4d 4dd	4dd	4dd
+4E	8dd	4ee	32dd
+.	.	.	32cc
+.	.	.	16dd
+.	8ee	.	8ee
+4F#	4f# 4ff#	2ff#	2ff#
+4F#	4ff#	.	.
+=11	=11	=11	=11
+{8F#	4f# 4ff#	16ff#	4ff#
+.	.	16ee	.
+8E}	.	8ff#	.
+{16d	8.ff#	8.ee	32ff#
+.	.	.	32ee
+16c#	.	.	16ff#
+8d}	.	.	8ee
+.	32ee	32ee	.
+.	32dd	32dd	.
+4E	4e 4ee	2ee	2ee
+4E	4ee	.	.
+=12	=12	=12	=12
+{16F#	4f# 4ff#	32ee	4ff#
+.	.	[32ff#	.
+16E	.	8.ff#]	.
+8F#}	.	.	.
+{8E 8A	8aa	{8a	8a
+8F#}	8ff#	8ff#}	8ff#
+4A	4a 4aa	2a	2a
+4A	4aa	.	.
+=13	=13	=13	=13
+4d	4d 4dd	{4dd	4dd
+{16B	8dd	4b}	4b
+16A	.	.	.
+8B}	8b	.	.
+4d	4d 4dd	{4dd	4dd
+{16B	4b	4b}	4b
+16A	.	.	.
+8B}	.	.	.
+=14	=14	=14	=14
+4d	4d 4dd	4dd	4dd
+4E	8dd	8dd	32dd
+.	.	.	32cc
+.	.	.	16dd
+.	8ee	8ee	8ee
+4F#	4f# 4ff#	2ff#	4ff#
+4F#	4ff#	.	4ff#
+=15	=15	=15	=15
+{8F#	4f# 4ff#	4ff#	4ff#
+8E}	.	.	.
+{16d	{8.ff#	4ee	32ff#
+.	.	.	32ee
+16c#	.	.	16ff#
+8d}	.	.	8ee
+.	32ee	.	.
+.	32dd}	.	.
+4E	4e 4ee	2ee	2ee
+4E	4ee	.	.
+=16	=16	=16	=16
+{16F#	4f# 4ff#	32ee	4ff#
+.	.	[32ff#	.
+16E	.	8.ff#]	.
+8F#}	.	.	.
+{8E 8A	8aa	{8a	8aa
+8F#}	8ff#	8ff#}	8ff#
+4A	4a 4aa	2a	2aa
+4A	4aa	.	.
+=17	=17	=17	=17
+{8c#	4B 4b	4b	4b
+8B}	.	.	.
+4B	4b	32b	4b
+.	.	32a	.
+.	.	8.b	.
+4d	4d 4dd	4dd	4dd
+4E	8dd	8dd	32dd
+.	.	.	32cc
+.	.	.	16dd
+.	8ee	8ee	8ee
+=18	=18	=18	=18
+{8F#	{16aa	8ff#	8ff#
+.	16ff#	.	.
+8E}	8ee	8ee	8ee
+4D	4dd}	4dd	4dd
+4d	2d 2dd	2dd	2dd
+====	====	====	====
+*-	*-	*-	*-

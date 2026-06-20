@@ -1,0 +1,22 @@
+!!!COM: Beethoven, Ludwig van
+!!!CDT: 1770///-1827///
+!!!ODT: 1798///-1800///
+!!!OTL: String Quartet No. 1 in F Major, Op. 18, No. 1
+!!!OPS: Op. 18
+!!!ONM: No. 1
+!!!OMV: Mvmt. 1
+!!!OMD: Allegro con brio
+!!!PDT: 1801///
+!!!PPP: Vienna
+!!!PPR: C. Haslinger qm Tobias
+!!!ODE: Dem F&uuml;rsten von Lobkowitz gewidmet
+!!!MPD: 1798///-1800///
+**deg	**dynam	**deg	**dynam	**deg	**dynam	**deg	**dynam
+*staff4	*staff4	*staff3	*staff3	*staff2	*staff2	*staff1	*staff1
+*Icello	*Icello	*Iviola	*Iviola	*Ivioln	*Ivioln	*Ivioln	*Ivioln
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*clefF4	*clefF4	*clefC3	*clefC3	*clefG2	*clefG2	*clefG2	*clefG2
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4
+*MM132	*MM132	*MM132	*MM132	*MM132	*MM132	*MM132	*MM132

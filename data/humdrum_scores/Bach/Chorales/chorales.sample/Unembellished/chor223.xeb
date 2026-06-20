@@ -1,0 +1,142 @@
+!!!RWG: WARNING: The embellishment tones have been removed from this file.
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Ich dank' dir, Gott, fuer all' Wohltat
+!!!ONM: No. 223
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*C:	*C:	*C:	*C:	*C:	*C:	*C:	*C:	*C:
+I	ct	ct	ct	ct	4C	4E	4c	4g
+.	.	upt	.	.	.	.	.	.
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+V7d/IV	ct	ct	ct	ct	4BB-	4G	4c	4e
+viib/V	ct	ct	ct	ct	4AA	4A	4c	4f#
+V;	ct;	ct;	ct;	ct;	4GG;	4D;	4B;	4g;
+Vb	ct	ct	ct	ct	4BBn	4G	4d	4g
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+I	ct	ct	[sus]	ct	4C	[4G	4c	4e
+.	.	.	ct	.	.	.	.	.
+V	ct	[ct]	[sus]	ct	4GG	4G]	4B	4d
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	4CC;	4E;	4G;	4c;
+I	ct	ct	ct	ct	4C	4E	4G	4c
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+Vb	ct	ct	ct	ct	4BB	4G	4d	4g
+I	ct	ct	ct	ct	4C	4c	4e	4g
+.	upt7	.	.	.	.	.	.	.
+viib/V	ct	ct	[ret]	ct	4AA	4c	4f#	4a
+.	.	.	ct	.	.	.	.	.
+V	ct	ct	ct	ct	4GG	4d	[4g	4b
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+Ib	ct	ct	[ct]	ct	4E	4c	4g]	4cc
+.	.	.	clnt	.	.	.	.	.
+Ic/V	ct	ct	ct	ct	4D	4d	[4g	4b
+ii7b/V	ct	ct	[ct]	ct	4C	4e	4g]	4a
+V/V	ct	ct	[sus]	ct	4D	4d	4f#	4a
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+V;	ct;	ct;	ct;	ct;	2GG;	2B;	2d;	2g;
+r	r	r	r	r	4r	4r	4r	4r
+Ib	ct	ct	ct	ct	4E	4c	4e	4g
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+ii7b	ct	ct	[sus]	ct	4F	4c	4d	4a
+.	.	.	ct	.	.	.	.	.
+V7b/vi	ct	ct	[ct]	ct	4GG#	4B	8d	4b
+.	.	.	ct	.	.	.	8e	.
+vi;	ct;	ct;	ct;	ct;	4AA;	4A;	4e;	4cc;
+I	ct	ct	ct	ct	4C	4E	[4c	4g
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+IV	ct	ct	[ct]	ct	4F	4F	4c]	4a
+.	.	.	lnt	.	.	.	.	.
+Ib	[sus]	ct	ct	ct	4E	4G	8c	4g
+viib/ii	ct	.	ct	.	.	.	8c#	.
+ii	ct	ct	ct	ct	4D	4A	4d	4f
+.	upt	.	lnt	.	.	.	.	.
+iib	ct	ct	ct	ct	4F	4A	4d	4f
+.	arp	.	.	.	.	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+VI;	ct;	ct;	[sus]	ct;	2A;	2A;	2c#;	2e;
+.	.	.	ct;	.	.	.	.	.
+r	r	r	r	r	4r	4r	4r	4r
+Ib	ct	ct	ct	ct	4E	4c	4g	4ccn
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+IV	ct	ct	[sus]	ct	8F	4c	4f	4a
+.	upt	.	upt	.	8E	.	.	.
+.	.	.	lnt	.	.	.	.	.
+viib	ct	ct	ct	ct	4D	4d	4f	4b
+I;	ct;	ct;	ct;	ct;	4C;	4G;	4e;	4cc;
+ii	ct	ct	ct	ct	4D	4d	4f	4a
+.	.	upt7	.	.	.	.	.	.
+=10	=10	=10	=10	=10	=10	=10	=10	=10
+viioD7/ii	[sus]	ct	ct	ct	4C#	4B-	4e	4g
+.	ct	.	.	.	.	.	.	.
+ii	ct	ct	[sus]	ct	4D	4A	4d	4f
+.	.	.	ct	.	.	.	.	.
+VI;	ct;	ct;	[sus]	ct;	4AA;	4A;	4c#;	4e;
+.	.	.	ct;	.	.	.	.	.
+Vb	ct	ct	ct	ct	4BBn	[4G	4d	4g
+=11	=11	=11	=11	=11	=11	=11	=11	=11
+V7b/ii	ct	[ct]	ct	ct	4C#	8G]	4e	4e
+.	.	ct	.	.	.	[8A	.	.
+V7b/ii	ct	[ct]	ct	ct	4D#	4A]	4B	4f#
+.	.	upt	.	.	.	.	.	.
+.	.	upt	.	.	.	.	.	.
+iii;	ct;	ct;	ct;	ct;	4E;	4E;	4B;	4g;
+Ib	ct	ct	ct	ct	8E	8e	8g	4cc
+V7b/V	ct	ct	ct	.	8F#	8d	8a	.
+=12	=12	=12	=12	=12	=12	=12	=12	=12
+V	ct	ct	[sus]	ct	4G	4d	4g	4b
+.	.	.	ct	.	.	.	.	.
+V/V	ct	ct	[sus]	ct	4D	4d	4f#	4a
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+V;	ct;	ct;	ct;	ct;	4GG;	4B;	4d;	4g;
+Vb	ct	ct	ct	ct	4BB	4G	4d	4g
+=13	=13	=13	=13	=13	=13	=13	=13	=13
+I	ct	ct	ct	ct	4C	4G	4c	4e
+.	upt	.	.	upt	.	.	.	.
+Ib	ct	ct	ct	ct	8E	8c	4c	4g
+V7/IV	ct	ct	.	.	8C	8B-	.	.
+IV	ct	ct	ct	ct	4F	4A	4c	4a
+.	.	.	arp	.	.	.	.	.
+.	.	upt	.	.	.	.	.	.
+V/IV	ct	ct	[sus]	ct	[4C	4c	4e	4g
+.	.	.	ct	.	.	.	.	.
+.	.	upt	.	.	.	.	.	.
+=14	=14	=14	=14	=14	=14	=14	=14	=14
+ii7d	ct	ct	ct	ct	8C]	8A	4d	4f
+V7b	ct	ct	.	.	8BB	8G	.	.
+I	ct	ct	[sus]	ct	4C	4G	4c	4e
+.	.	.	ct	.	.	.	.	.
+ii7b	ct	ct	[ct]	ct	4FF	8A	8c	4d
+viic	.	ct	ct	.	.	8D	8B	.
+.	.	.	lnt	.	.	.	.	.
+V	ct	ct	ct	ct	4GG	4G	4B	4d
+.	.	upt7	.	.	.	.	.	.
+=15	=15	=15	=15	=15	=15	=15	=15	=15
+I;	ct;	ct;	ct;	ct;	1CC;	1E;	1G;	1c;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

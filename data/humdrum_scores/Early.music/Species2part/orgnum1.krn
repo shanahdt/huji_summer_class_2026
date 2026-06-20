@@ -1,0 +1,146 @@
+!! "Cunctipotens genitor" 11th century; example of `Free Organum';
+!! From Example 26a in Archibald Davison & Willi Apel (editors),
+!! _Historical Anthology of Music_ Vol. 1, Oxford U. Pr. (London) -1946, p.22
+!! No regular bars: irregular meter
+**kern	**kern
+{4a	{4a
+4a	4ee
+4g	4gg
+4a	4ee
+4cc	4cc
+4b	4ee
+4a	4dd
+4g	4cc
+4a}	4a}
+!! (end of first phrase)
+{4a	{4a
+4g	4dd
+4f	4ff
+4d	4gg
+4e}	4ee}
+!! (end of second phrase)
+{4e	{4ee
+4g	4cc
+4a	4a
+4d	4dd
+4f	4cc
+4d}	4dd}
+!! (real bar line -- actually double bar repeat; here repeat is written in:)
+{4a	{4a
+4a	4ee
+4g	4gg
+4a	4ee
+4cc	4cc
+4b	4ee
+4a	4dd
+4g	4cc
+4a}	4a}
+!! (end of fourth phrase)
+{4a	{4a
+4g	4dd
+4f	4ff
+4d	4gg
+4e}	4ee}
+!! (end of fifth phrase)
+{4e	{4ee
+4g	4cc
+4a	4a
+4d	4dd
+4f	4cc
+4d}	4dd}
+!! (real bar line -- actually double bar)
+{4a	{4a
+4a	4dd
+4g	4cc
+4a	4a
+4g	4cc
+4f}	4f}
+!! (end of seventh phrase)
+{4g	{4g
+4g	4cc
+4a	4a
+4f	4cc
+4g	4g
+4a	4a
+4e	4b
+4d}	4dd}
+!! (end of eighth phrase)
+{4e	{4b
+4g	4g
+4f	4cc
+4e	4ee
+4f	4cc
+4d}	4dd}
+!!  (real bar line -- actually double bar with repeat; repeat written in here:)
+{4a	{4a
+4a	4dd
+4g	4cc
+4a	4a
+4g	4cc
+4f}	4f}
+!!  (end of tenth phrase)
+{4g	{4g
+4g	4cc
+4a	4a
+4f	4cc
+4g	4g
+4a	4a
+4e	4b
+4d}	4dd}
+!!  (end of eleventh phrase)
+{4e	{4b
+4g	4g
+4f	4cc
+4e	4ee
+4f	4cc
+4d}	4dd}
+!!  (real bar line -- actually double bar)
+{4d	{4dd
+4a	4a
+4g	4cc
+4a	4dd
+4a	4a
+4cc	4cc
+4b	4ee
+4g}	4gg}
+!!  (end of thirteenth phrase)
+{4b	{4b
+4a	4dd
+4cc	4ee
+4cc	4gg
+4a}	4aa}
+!!  (end of fourteenth phrase)
+{4a	{4ee
+4b	4b
+4a	4ee
+4g	4dd
+4f	4cc
+4e	4ee
+4g	4cc
+4a}	4a}
+!!  (real double bar with repeat; repeat written in here:)
+{4d	{4dd
+4a	4a
+4g	4cc
+4a	4dd
+4a	4a
+4cc	4cc
+4b	4ee
+4g}	4gg}
+!!  (end of sixteenth phrase)
+{4b	{4b
+4a	4dd
+4cc	4ee
+4cc	4gg
+4a}	4aa}
+!!  (end of seventeenth phrase)
+{4a	{4ee
+4b	4b
+4a	4ee
+4g	4dd
+4f	4cc
+4e	4ee
+4g	4cc
+4a}	4a}
+==	==
+*-	*-

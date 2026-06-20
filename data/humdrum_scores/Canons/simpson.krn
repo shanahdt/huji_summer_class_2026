@@ -1,0 +1,58 @@
+!!!COM: Christopher Simpson
+!!!OPR: Compendium of Practical Musick
+!!!OTL: [Didactic Example]
+!!!YOR: From Christopher Simpson's "A Compendium of Practical Musick"
+!!!YOR: London: H. Brome, 1678.
+!!!ONB: (First edition in 1667.)
+!!!ONB: Double canon at the unison after a crotchet and minim with the
+!!!ONB: cantus firmus below the guida.
+**kern	**kern	**kern	**kern
+*CF	*conseq1	*conseq2	*guida
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*M4/4	*M4/4	*M4/4	*M4/4
+=1	=1	=1	=1
+1B-	2r	4r	2d
+.	.	2d	.
+.	2d	.	2f
+.	.	[4f	.
+=2	=2	=2	=2
+1F	2f	4f]	4a
+.	.	4a	4A
+.	4a	4A	2d
+.	4A	[4d	.
+=3	=3	=3	=3
+1G	2d	4d]	2B-
+.	.	2B-	.
+.	2B-	.	2d
+.	.	[4d	.
+=4	=4	=4	=4
+1D	2d	4d]	4f
+.	.	4f	4F
+.	4f	4F	2B-
+.	4F	[4B-	.
+=5	=5	=5	=5
+1E-	2B-	4B-]	2G
+.	.	2G	.
+.	2G	.	2c
+.	.	[4e-	.
+=6	=6	=6	=6
+1F	4c	4e-]	4A
+.	4B-	4d	2B-
+.	4c	2c	.
+.	4e-	.	4a
+=7	=7	=7	=7
+1BB-	1d	1B-	1B-
+==	==	==	==
+*-	*-	*-	*-
+!!!CDT: ~1600?-1669//
+!!!CNT: English
+!!!YEP: David Huron and Denis Collins
+!!!YEN: Canada
+!!!AIN: vox
+!!!AGN: vox
+!!!AST: polyphony
+!!!RDT: 1995 July 23
+!!!YED: 1995 August 31
+!!!AFR: cantus firmus canon
+!!!AMT: simple quadruple
+!!!EEV: 1.0

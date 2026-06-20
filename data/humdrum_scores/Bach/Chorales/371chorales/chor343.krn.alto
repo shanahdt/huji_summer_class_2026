@@ -1,0 +1,157 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Nun lieget alles unter dir
+!!!SCT:	BWV 11/6
+!!!PC#:	343
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ialto
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefG2
+*k[f#c#]
+*D:
+*M3/4
+*MM100
+=1-
+4A
+.
+4d
+.
+8dL
+8c#J
+=2
+2d
+.
+.
+.
+8c#L
+8AJ
+=3
+4f#
+.
+2e
+.
+.
+=4
+2e;
+8dL
+8c#J
+=5
+8BL
+8c#J
+[2d
+.
+.
+.
+=6
+8dL]
+16c#L
+16BJJ
+4c#
+.
+[4d
+.
+=7
+4d]
+.
+8c#L
+8BJ
+4c#
+.
+=8
+2.A;
+=9:|!
+*>B
+8c#L
+8BJ
+4.c#
+.
+.
+8d#
+=10
+4e
+.
+4B
+.
+[4e
+.
+=11
+4e]
+.
+8d#L
+8c#XJ
+4d#
+.
+=12
+2.B;
+=13
+4d#
+.
+4B
+.
+4d#
+.
+=14
+4e
+.
+4B
+.
+4B
+.
+=15
+8gL
+8f#J
+8eL
+8dJ
+4e
+=16
+2d;
+4f#
+=17
+8f#L
+8eJ
+2d
+.
+.
+.
+=18
+8c#L
+8dJ
+4e
+.
+[4d
+.
+=19
+8dL]
+8BJ
+4c#;
+4d
+=20
+4d
+.
+8gL
+8f#J
+8eL
+8dJ
+=21
+4.d
+.
+.
+8B
+4c#
+.
+=22
+2.A;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

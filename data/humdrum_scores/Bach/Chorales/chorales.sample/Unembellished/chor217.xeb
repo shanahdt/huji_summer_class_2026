@@ -1,0 +1,87 @@
+!!!RWG: WARNING: The embellishment tones have been removed from this file.
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Ach Gott, wie manches Herzeleid
+!!!ONM: No. 217
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4
+*C:	*C:	*C:	*C:	*C:	*C:	*C:	*C:	*C:
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+I	ct	ct	ct	ct	4C	4G	4e	4cc
+Ib	ct	ct	ct	ct	4E	4c	4g	4cc
+I	ct	ct	ct	ct	4C	4e	4g	4cc
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+IV	ct	ct	ct	ct	2F	4c	4f	4a
+V7d	.	ct	ct	ct	.	4d	4g	4b
+Ib	ct	ct	ct	ct	4E	4e	4g	4cc
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+Vb/V	ct	ct	ct	ct	2F#	2d	2a	2dd
+.	.	.	.	upt7	.	.	.	.
+V	ct	ct	ct	ct	4G	4d	4g	4b
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+V/V;	ct;	ct;	ct;	ct;	2.D;	2.d;	2.f#;	2.a;
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+V/V	ct	ct	ct	ct	4D	4d	4f#	4a
+V	ct	ct	ct	ct	4G	4d	4g	4b
+Ib	ct	ct	ct	ct	4E	4e	4g	4cc
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+Vb	ct	ct	ct	ct	2BB	2d	2g	2dd
+I	ct	ct	ct	ct	4C	4e	4g	4cc
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+V	ct	ct	ct	ct	4G	4d	4g	4b
+V/V	ct	ct	sus	ct	2D	2d	2f#	2a
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+V;	ct;	ct;	ct;	ct;	2.GG;	2.B;	2.g;	2.g;
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+I	ct	ct	ct	ct	4c	4c	4g	4ee
+Vb/vi	ct	ct	ct	ct	4G#	4B	4e	4ee
+V/vi	ct	ct	ct	ct	4E	4e	4g#	4ee
+=10	=10	=10	=10	=10	=10	=10	=10	=10
+vi	ct	ct	ct	ct	2A	4e	4a	4cc
+vii7d	.	ct	ct	ct	.	4f	4b	4dd
+V7/ii	ct	ct	ct	ct	4AA	4g	4cc#	4ee
+=11	=11	=11	=11	=11	=11	=11	=11	=11
+ii	ct	ct	ct	ct	4D	4f	4dd	4ff
+Ib	ct	ct	ct	ct	4E	4g	2cc	2ee
+IV7	ct	ct	.	.	4F	4c	.	.
+=12	=12	=12	=12	=12	=12	=12	=12	=12
+V;	ct;	ct;	ct;	ct;	2.G;	2.B;	2.g;	2.dd;
+=13	=13	=13	=13	=13	=13	=13	=13	=13
+Ib	ct	ct	ct	ct	4E	4c	4g	4cc
+viib	ct	ct	ct	ct	4D	4F	4b	4dd
+I	ct	ct	ct	ct	4C	4G	4cc	4ee
+=14	=14	=14	=14	=14	=14	=14	=14	=14
+ii7b	ct	ct	ct	ct	4F	4A	4cc	2dd
+V	ct	ct	ct	.	4G	4B	4b	.
+vi	ct	ct	ct	ct	4A	4c	4e	4cc
+=15	=15	=15	=15	=15	=15	=15	=15	=15
+V7b/V	ct	ct	ct	ct	4F#	4d	4a	4cc
+V	ct	ct	ct	ct	2G	2d	2g	2b
+.	arp	.	.	.	.	.	.	.
+=16	=16	=16	=16	=16	=16	=16	=16	=16
+I;	ct;	ct;	ct;	ct;	2.C;	2.e;	2.g;	2.cc;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

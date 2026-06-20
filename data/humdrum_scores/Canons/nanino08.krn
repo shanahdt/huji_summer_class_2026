@@ -1,0 +1,175 @@
+!!!COM: Giovanni Maria Nanino
+!!!OPR: Regole di contrappunto di Gio. M. Nanino e del suo fratello minore.
+!!!OTL: [Didactic example]
+!!!YOR: MS ca. 1580-ca.1610.
+!!!YOR: Bologna, Civico Museo Bibliografico Musicale.
+!!!ONB: Reprinted (without acknowledgement) by Rocco Rodio "Regole di musica"
+!!!ONB: [3rd edition].  Naples: Gio. Giocomo Carlino & Costantino Vitale, 1619.
+!!!ONB: Encoded from Rodio, p. 28.
+!!!ONB: Canon at the fifth above after a minim with the cantus firmus above.
+**kern	**kern	**kern
+*k[b-]	*k[b-]	*k[]
+*M4/4	*M4/4	*M4/4
+*guida	*conseq	*CF
+=1	=1	=1
+4FF	2r	1A
+4GG	.	.
+4AA	4C	.
+4BB-	4D	.
+=2	=2	=2
+1C	4E	1E
+.	4F	.
+.	[2G	.
+=3	=3	=3
+1BB-	2G]	1D
+.	[2F	.
+=4	=4	=4
+1D	2F]	1F
+.	[2A	.
+=5	=5	=5
+1C	2A]	1E
+.	[2G	.
+=6	=6	=6
+2.BB-	2G]	1D
+.	[2F	.
+8AA	.	.
+8AA	.	.
+=7	=7	=7
+1FF	4F]	1F
+.	8E	.
+.	8E	.
+.	[2C	.
+=8	=8	=8
+2C	2C]	1G
+2r	2G	.
+=9	=9	=9
+2.FF	2r	1A
+.	[2C	.
+4GG	.	.
+=10	=10	=10
+4AA	4C]	1c
+4BB-	4D	.
+4C	4E	.
+4D	4F	.
+=11	=11	=11
+4E	4G	1B
+4F	4A	.
+2G	4B	.
+.	4c	.
+=12	=12	=12
+2D	2d	1A
+2A	2A	.
+=13	=13	=13
+2AA	2e	1c
+2C	2E	.
+=14	=14	=14
+[1GG	2G	1d
+.	[2D	.
+=15	=15	=15
+2GG]	1D]	1G
+2BB-	.	.
+=16	=16	=16
+4AA	2F	1A
+4BB-	.	.
+4C	4E	.
+4D	4F	.
+=17	=17	=17
+2E	4G	1G
+.	4A	.
+2E	2B	.
+=18	=18	=18
+4D	2B	1d
+4E	.	.
+4F	4A	.
+4G	4B	.
+=19	=19	=19
+2A	4c	1c
+.	4d	.
+2E	2e	.
+=20	=20	=20
+2G	2B-	1d
+[2F	2d	.
+=21	=21	=21
+2F]	1c	1G
+2E	.	.
+=22	=22	=22
+2D	2B-	1F
+2r	2A	.
+=23	=23	=23
+4BB-	2r	1B-
+4C	.	.
+4D	4F	.
+4E	4G	.
+=24	=24	=24
+2F	4A	1A
+.	4B-	.
+2r	2c	.
+=25	=25	=25
+2BB-	2r	1D
+2D	2F	.
+=26	=26	=26
+2.C	2A	1E
+.	[2G	.
+8BB-	.	.
+8AA	.	.
+=27	=27	=27
+1GG	4G]	1G
+.	8F	.
+.	8E	.
+.	[2D	.
+=28	=28	=28
+2.D	2D]	1A
+.	[2A	.
+8C	.	.
+8BB-	.	.
+=29	=29	=29
+4AA	4A]	1c
+4BB-	8G	.
+.	8F	.
+4C	4E	.
+4D	4F	.
+=30	=30	=30
+4E	4G	1B
+4F	4A	.
+[2G	4B	.
+.	4c	.
+=31	=31	=31
+2G]	1d	1A
+[2F	.	.
+=32	=32	=32
+2F]	1c	1G
+[2E	.	.
+=33	=33	=33
+2E]	1B-	1F
+2D	.	.
+=34	=34	=34
+4C	2A	1E
+4AA	.	.
+2C	4G	.
+.	4E	.
+=35	=35	=35
+2GG	2G	1D
+[2D	2D	.
+=36	=36	=36
+2D]	1A	1E
+[2C	.	.
+=37	=37	=37
+2C]	1G	[1D
+4BB-	.	.
+4GG	.	.
+=38	=38	=38
+1D	1F#	1D]
+==	==	==
+*-	*-	*-
+!!!CDT: 1545///-1607/3/11
+!!!OCY: Italia
+!!!ODT: 1586
+!!!AFR: cantus firmus canon
+!!!AST: polyphony
+!!!AMT: simple quadruple
+!!!AIN: vox
+!!!YEP: David Huron and Denis Collins
+!!!YEN: Canada
+!!!EEV: 1.0
+!!!RDT: 1995 July 23
+!!!YED: 1995 August 31

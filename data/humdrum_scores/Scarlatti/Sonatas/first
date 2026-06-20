@@ -1,0 +1,111 @@
+**kern	**dynam	**kern	**dynam
+*staff2	*staff2	*staff1	*staff1
+*Icemba	*Icemba	*Icemba	*Icemba
+*>[A,A1,A,A2,B,B,C]	*>[A,A1,A,A2,B,B,C]	*>[A,A1,A,A2,B,B,C]	*>[A,A1,A,A2,B,B,C]
+*>norep[A,A2,B,C]	*>norep[A,A2,B,C]	*>norep[A,A2,B,C]	*>norep[A,A2,B,C]
+*>A	*>A	*>A	*>A
+*clefF4	*clefF4	*clefG2	*clefG2
+*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*met(c)	*met(c)	*met(c)	*met(c)
+*M4/4	*M4/4	*M4/4	*M4/4
+*MM80	*MM80	*MM80	*MM80
+=1-	=1-	=1-	=1-
+(8D\L	.	4.f/ 4.dd/	mf
+8B-\	.	.	.
+8A\	.	.	.
+8G\J	.	8g\ 8cc#\ (8ee\	.
+8F\L	.	4.a\ 4.dd\ 4.ff\)	.
+8E\	.	.	.
+8D\	.	.	.
+8C#\J	.	8b-\ (8gg\	.
+=2	=2	=2	=2
+*	*	*^	*
+8D\L	.	2r	8a\ 8dd\ 8ff\)	.
+8E\	.	.	4g\ (4ee\	.
+8F\	.	.	.	.
+8G\J	.	.	8f\ 8dd\	.
+8A\L	.	8cc#/L	4.a\	.
+8Bn\	.	8dd/J	.	.
+8c#\	.	[4ee/)	.	.
+8A\J	.	.	8g\	.
+=3	=3	=3	=3	=3
+8d\L	.	8ee/]	4f\	.
+8F\	.	(4dd/	.	.
+8G\	.	.	8e\L	.
+8A\J	.	8ee/	8c#\J	.
+8D\L)	.	2r	4.a\ 4.dd\ 4.ff\)	<
+(8d\	.	.	.	(
+8cn\	.	.	.	(
+8B-\J	.	.	8b-\ 8ee\ (8gg\	(
+=4	=4	=4	=4	=4
+8A\ 8c\L	.	4.r	4.cc\ 4.ff\ 4.aa\)	(
+8G\ 8B-\	.	.	.	(
+8F\ 8A\	.	.	.	(
+8G\ 8B-\J	.	16ee/LL	8b-\ (8gg\	(
+.	.	16dd/JJ	.	(
+4A\ 4c\	.	4.r	8cc\ 8ff\)	(
+.	.	.	4g\ 4ee\	(
+[4B-\ 4d\)	.	.	.	(
+.	.	16b-/LL	8f\ (8dd\	(
+.	.	16a/JJ	.	(
+=5	=5	=5	=5	=5
+*^	*	*	*	*
+4c/	8B-\L]	.	4cc/)	8e\ 8g\L	(
+.	(8A\	.	.	(8f\	(
+4r	8G\	.	4r	8g\	(
+.	8F\J	.	.	8a\J	(
+2r	4E\) 4G\ 4B-\ 4c\	.	8b-/	4g\)	(
+.	.	.	(4gg/	.	(
+.	4F\ 4A\ 4c\	.	.	4a\	(
+.	.	.	8ff/	.	(
+=6	=6	=6	=6	=6	=6
+4C\	(8G/L	.	8ee/L	8g\L	(
+.	8c/	.	8ff/	8a\	(
+4r	8B-/	.	8gg/	8b-\	(
+.	8A/J	.	8aa/J	8cc\J	(
+4G\ 4B-\)	2r	.	4.bb-/	8dd\L	(
+.	.	.	.	8ee\J	(
+4F\ 4c\ 4f\	.	.	.	[4ff\	(
+.	.	.	8aa/	.	(
+*v	*v	*	*	*	*
+=7	=7	=7	=7	=7
+(8C\L	.	8gg/)	8ff\L]	[
+8c\	.	(4ccc/	8ee\	f
+8d\	.	.	8ff\	.
+8e\J	.	8bb-/	8gg\J	.
+8f\L	.	8bb-/L	8cc\	.
+8A\	.	8aa/J	4ff\	.
+8B-\	.	4gg/	.	.
+8c\J	.	.	8ee\	.
+=8	=8	=8	=8	=8
+*^	*	*	*	*
+8r	8d\L)	.	(8ee/L	8ff\)	.
+(8f/L	8D\	.	8dd/J	4b-\	.
+8g/	8E\	.	4cc/	.	.
+[8f/J	8F\J	.	.	4a\	.
+8f/L]	8G\L	.	4b-/	.	.
+16e/L	8GG\	.	.	4g\	.
+16d/JJ	.	.	.	.	.
+4c/)	8AA\	.	4a/	.	.
+.	8BB-\J	.	.	[8f\	.
+=9	=9	=9	=9	=9	=9
+2r	8C/L	.	8g/	8f\L])	.
+.	8CC/	.	(4cc/	8e\	mf
+.	8DD/	.	.	8f\	.
+.	8EE/J	.	4b-/	8g\J	.
+8FF/	4FF\	.	.	8c\	.
+(4F/	.	.	8a/	4f\	.
+.	4C\	.	4g/	.	.
+[8c/	.	.	.	[8e\	.
+=10	=10	=10	=10	=10	=10
+8c/]	4D\	.	4f/	8e\]	.
+4B-/	.	.	.	4d\	.
+.	4E\	.	[4g/	.	.
+16A/LL	.	.	.	8c\	>
+16G/JJ	.	.	.	.	)
+4A/	4F\	.	8g/]	2r	)
+.	.	.	4f/	.	)
+[4B-/)	[4G\	.	.	.	)
+.	.	.	16e/LL	.	)
+.	.	.	16d/JJ	.	]
+*-	*-	*-	*-	*-	*-

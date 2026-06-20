@@ -1,0 +1,150 @@
+X: 1
+%%abc-version 2.0
+%%abcx-abcm2ps-target-version 5.9.1 (29 Sep 2008)
+%%abc-creator hum2abc beta
+%%abcx-conversion-date 2010/10/15 18:18:23
+%%gracespace 0 6 6
+%%humdrum-veritas 2228542626
+%%humdrum-veritas-data 3292278277
+%%continueall 1
+%%barnumbers 0
+L: 1/4
+M: 2/2
+%%staves [1 2 3 4]
+V: 1
+V: 2
+V: 3
+V: 4
+K: C
+[V:1] ^CD | 
+[V:2] ^C,D, | 
+[V:3] ^C,D, | 
+[V:4] ^C,D, | 
+[V:1] ^F4 [I:setbarnb 2]| 
+[V:2] _B,4 | 
+[V:3] D4 | 
+[V:4] D,4 | 
+[V:1] ^F4 | 
+[V:2] A,4 | 
+[V:3] C4 | 
+[V:4] D,4 | 
+[V:1] ^FFFF | 
+[V:2] _B,A,DB, | 
+[V:3] CCCC | 
+[V:4] D,D,D,D, | 
+[V:1] ^F<F^CD | 
+[V:2] _B,<A,^C,D, | 
+[V:3] C<C^C,D, | 
+[V:4] D,<D,^C,D, | 
+[V:1] =F4 | 
+[V:2] A,4 | 
+[V:3] =B,4 | 
+[V:4] D,4 | 
+[V:1] F4 | 
+[V:2] G,4 | 
+[V:3] =B,4 | 
+[V:4] D,4 | 
+[V:1] FFFF | 
+[V:2] A,G,DA, | 
+[V:3] =B,B,B,B, | 
+[V:4] D,D,G,,G,, | 
+[V:1] F<F^CD | 
+[V:2] A,<G,^C,D, | 
+[V:3] =B,<B,^C,D, | 
+[V:4] D,<D,^C,D, | 
+[V:1] D3_B, | 
+[V:2] F,3D, | 
+[V:3] _B,3F, | 
+[V:4] G,,3G,, | 
+[V:1] C3^D/ E/ | 
+[V:2] A,3^F,/ G,/ | 
+[V:3] E,3A,/ _B,/ | 
+[V:4] C,3C,/ C,/ | 
+[V:1] FFFF | 
+[V:2] DDDC | 
+[V:3] A,A,A,A, | 
+[V:4] F,F,_E,E, | 
+[V:1] ^FF3 | 
+[V:2] _B,A,3 | 
+[V:3] DC3 | 
+[V:4] D,D,3 | 
+[V:1] =F3F | 
+[V:2] A,3G, | 
+[V:3] =B,3B, | 
+[V:4] D,3D, | 
+[V:1] D3D/ D/ | 
+[V:2] F,3F,/ G,/ | 
+[V:3] =B,3B,/ B,/ | 
+[V:4] G,,3G,,/ G,,/ | 
+[V:1] DCEC | 
+[V:2] F,E,G,E, | 
+[V:3] _B,B,B,B, | 
+[V:4] G,,C,C,G, | 
+[V:1] FE^CD | 
+[V:2] D,C,^C,D, | 
+[V:3] _B,B,^C,D, | 
+[V:4] G,G,^C,D, | 
+[V:1] ^F4 | 
+[V:2] _B,4 | 
+[V:3] D4 | 
+[V:4] D,4 | 
+[V:1] ^F4 | 
+[V:2] A,4 | 
+[V:3] C4 | 
+[V:4] D,4 | 
+[V:1] ^FFFF | 
+[V:2] _B,A,DB, | 
+[V:3] CCCC | 
+[V:4] D,D,D,D, | 
+[V:1] ^F<F^CD | 
+[V:2] _B,<A,^C,D, | 
+[V:3] C<C^C,D, | 
+[V:4] D,<D,^C,D, | 
+[V:1] =F4 | 
+[V:2] A,4 | 
+[V:3] =B,4 | 
+[V:4] D,4 | 
+[V:1] F4 | 
+[V:2] G,4 | 
+[V:3] =B,4 | 
+[V:4] D,4 | 
+[V:1] FFFF | 
+[V:2] A,G,DA, | 
+[V:3] =B,B,B,B, | 
+[V:4] D,D,G,,G,, | 
+[V:1] F<-F^CD | 
+[V:2] .('A,<G,)^C,D, | 
+[V:3] =B,<-B,^C,D, | 
+[V:4] D,<-D,^C,D, | 
+[V:1] D3_B, | 
+[V:2] F,3D, | 
+[V:3] _B,3F, | 
+[V:4] G,,3G,, | 
+[V:1] C3^D/ E/ | 
+[V:2] A,3^F,/ G,/ | 
+[V:3] E,3A,/ _B,/ | 
+[V:4] C,3C,/ C,/ | 
+[V:1] FFFF | 
+[V:2] DDDC | 
+[V:3] A,A,A,A, | 
+[V:4] F,F,_E,E, | 
+[V:1] ^F2FF | 
+[V:2] _B,2A,D | 
+[V:3] D2CC | 
+[V:4] D,2D,D, | 
+[V:1] =F2F2- | 
+[V:2] A,2A,2- | 
+[V:3] =B,2B,2- | 
+[V:4] D,2G,,2- | 
+[V:1] FF/ F/EC | 
+[V:2] A,A,/ F,/A,A, | 
+[V:3] B,=B,/ B,/CE, | 
+[V:4] G,,D,/ D,/C,C, | 
+[V:1] F4- | 
+[V:2] A,4- | 
+[V:3] .('C,2D,/ F,/A, | 
+[V:4] .('F,,4 | 
+[V:1] F4 |]  
+[V:2] A,4 |]  
+[V:3] C4) |]  
+[V:4] F,4) |]  

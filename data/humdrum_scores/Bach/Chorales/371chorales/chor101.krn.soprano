@@ -1,0 +1,97 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Herr Christ, der ein'ge Gottes Sohn
+!!!SCT:	BWV 164/6
+!!!PC#:	101
+!!!AGN:	chorale
+**kern
+*ICvox
+*Isoprn
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefG2
+*k[b-e-]
+*B-:
+*M4/4
+*met(C)
+*MM100
+4b-
+=1
+8b-L
+8ccJ
+4dd
+4cc
+.
+4b-
+=2
+2a
+.
+.
+4g;
+4dd
+=3
+4ee-
+4cc
+.
+4dd
+.
+4cc
+.
+=4
+2.b-;
+=:|!
+*>B
+8b-L
+8ccJ
+=5
+4dd
+.
+4dd
+.
+4ee-
+.
+4ee-
+.
+=6
+4ff
+8ee-L
+8ddJ
+4cc;
+4ff
+=7
+4dd
+.
+4dd
+.
+4cc
+.
+4b-
+.
+=8
+2a
+.
+.
+4g;
+4dd
+=9
+4ee-
+.
+4cc
+.
+4dd
+.
+4cc
+.
+=10
+2.b-;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

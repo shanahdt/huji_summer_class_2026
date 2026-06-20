@@ -1,0 +1,74 @@
+!!!COM: Webern, Anton : von
+!!!OPS: Opus 11 (Violoncell und Klavier)
+!!!OMV: Stuck III
+!!!OTL: Drei Kleine StÅcke
+!!!YEC: Copyright 1995 McGill???
+!!!CDT: 1993/12/3-1945/9/15 
+!!!YOR: Universal Edition
+!!!YOO: Copyright 1924 by Universal Edition, renewed 1952 by Anton Webern's Erben
+!!!ENC:Norma Welch
+**kern	**kern	**kern
+*staff3	*staff2	*staff1
+*ClefF4	*ClefF4	*ClefF4
+*ICklav	*ICklav	*ICstr
+*Ipiano	*Ipiano	*Icello
+*M2/4	*M2/4	*M2/4
+*MM25	*MM25	*MM25
+*k[]	*k[]	*k[]
+*X:	*X:	*X:
+!! Ñu·erst ruhig (Eighth = ca 50)
+!ppp	!ppp	!ppp
+!	!	!mit DÑmpfer
+=1-	=1-	=1-
+!	!	!trill b, am steg
+2r	2r	2EE-tx
+=2	=2	=2
+*	*	*^
+!	!	!sf dim	!
+8r	8r	2CCn 2FFn	{3AA
+[4.FFFn [4.CC#	[4.Dn	.	.
+.	.	.	6Bn
+=3	=3	=3	=3
+!	!	!	!ppp
+4FFFn] 4CC#]	4D]	.	4.B-}
+*	*	*v	*v
+4r	12r	.
+.	12r	.
+.	.	8r
+!	!ppp	!
+.	{[12F#	.
+=4	=4	=4
+2r	4F#_	2r
+.	12F#]	.
+.	6GG#	.
+=5	=5	=5
+*	*^	*
+!bass	!upper RH	!lower RH	!Cello
+!pp	!pp	!pp	!pp
+6r	[2Gn	6r	4r
+[3EEEn	.	[3E-	.
+.	.	.	[4fn
+=6	=6	=6	=6
+2EEEn]	2Gn]}	2E-]	2f]
+*	*v	*v	*
+=7	=7	=7
+4r	4r	2r
+12r	12r	.
+!ppp	!ppp	!
+[6BBB- [6CCn	[6FF# [6BBn	.
+=8	=8	=8
+2BBB-_ 2CC_	2FF#_ 2BB_	4r
+!	!	!pp
+.	.	8AAn^ 8Dn^
+.	.	8r
+=9	=9	=9
+4BBB-] 4CC]	4FF#] 4BB]	8r
+.	.	4Dn^ 4Gn^
+4r	4r	.
+.	.	8r
+=10	=10	=10
+!	!	!pp dim.
+2r;	2r;	4c#^;
+.	.	4r
+==|!	==|!	==|!
+*-	*-	*-

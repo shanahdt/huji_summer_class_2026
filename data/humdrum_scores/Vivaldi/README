@@ -1,0 +1,562 @@
+
+       + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+       +                                                           +
+       +               THE 12 VIOLIN CONCERTOS OPUS 8              +
+       +                                                           +
+       +                          -  by  -                         +
+       +                                                           +
+       +                      Antonio Vivaldi                      +
+       +                                                           +
+       +                       - including -                       +
+       +                                                           +
+       +                     "THE FOUR SEASONS"                    +
+       +                                                           +
+       + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+
+
+This electronic edition of Antonio Vivaldi's Opus 8 Violin Concertos
+has been produced by the Center for Computer Assisted Research in
+the Humanities.
+
+This document contains information about:
+
+  o  General notes
+  o  Installation
+  o  File and directory organization
+  o  How to use the "edition" command
+  o  Index of works, movements, and sections
+
+A separate document entitled "sources" provides detailed notes
+concerning the scholarly sources available in this distribution.
+
+=============
+GENERAL NOTES
+=============
+
+The full collection of Opus 8 was published by Michel-Charles Le Cene
+in Amsterdam in 1725 under the title "Il Cimento dell'armonia e
+dell'inventione" (The Contest of Harmony and Invention).  It was
+dedicated by Vivaldi to the Bohemian Count Wenceslas, Count of Morzin,
+an advisor to the Austrian Emperor Charles Vi.
+
+The accompanying data files form the electronic companion to the
+critical edition edited by Dr. Eleanor Selfridge-Field and published
+by Dover Publications, New York.
+
+Machine transcription, proof reading, and proof listening was done by
+Steven Rasmussen under the editorial supervision of Dr. Selfridge-Field.
+Translation to the Humdrum **kern format and preparation of the
+variant source data was carried out by Dr. David Huron.  Original music
+entry and editing was done using the "Tenx" facilities designed and
+implemented by Dr. Walter B. Hewlett.
+
+For permission to consult its holdings, we gratefully acknowledge
+the cooperation of the Saechsische Landesbibliotek, Dresden, Germany;
+the Biblioteca Nazionale Universitaria, Turino, Italy; and the Henry
+Watson Music Library, Manchester, United Kingdom.
+
+A detailed description of the **kern representation format is given in
+the accompanying file "kern_hlp.txt".
+
+A detailed description of how to access the variant manuscripts is
+given in the accompanying file "variants.txt".
+
+The accompanying files are protected by copyright and are distributed by
+license only.  Refer to the accompanying license statement and original
+license agreement for details.
+
+============
+INSTALLATION
+============
+
+This release of the "Vivaldi Twelve Violin Concertos" is distributed
+on two DOS-format 1.44 megabtye disks.  All of the files on these disks
+contain raw ASCII (text) data only;  the data are not compressed.
+
+Depending on the installation platform and user requirements, you will
+need to install from EITHER disk #1 OR disk #2 OR BOTH disks #1 and #2.
+
+DISK #1 contains the critical edition prepared by Dr. Eleanor Selfridge-
+        Field.  The data on this disk corresponds precisely with the
+        printed Dover volume of the Selfridge-Field edition.  You can
+        install the files from this disk on any system.
+
+DISK #2 provides Integrated Source Files from which five different sources
+        may be reconstructed:  (1) the Selfridge-Field critical edition
+        (same as Disk #1), (2) the Amsterdam prints, (3) the Dresden
+        manuscripts, (4) the Manchester part-books, and (5) the Turin
+        autographs.  The enclosed "edition" command can be used in
+        conjunction with the files on disk #2 to reconstruct any or all of
+        these sources.  In order to access the variants provided on disk #2,
+        you must have installed a copy of the Humdrum Toolkit.  (See below
+        for information about how to acquire Humdrum.)  The "edition"
+        command itself uses Humdrum utilities to extract a user-specified
+        source from the integrated source files.  You can install files
+        from this disk on any system that supports the Humdrum Toolkit.
+
+To install the data, simply copy the contents of the appropriate disk(s)
+to your hard drive:
+
+ * If you do not use the Humdrum Toolkit, simply copy the contents of
+   disk #1.  This will give you access to the Selfridge-Field Critical
+   Edition.
+
+ * If you have the Humdrum Toolkit, you may copy EITHER disk #1 or
+   disk #2 or BOTH disks.  If you wish to have access only to the
+   Selfridge-Field edition, simply copy disk #1 to your hard drive.  If
+   you wish to have access to one of more of the variant sources, copy
+   disk #2 to your hard drive.  If you would like to have access to both
+   the variant sources and would like to have an independent copy of the
+   Selfridge-Field edition -- without having to generate them using the
+   "edition" command, copy both disks #1 and #2 to your hard drive.
+
+CRITICAL EDITION INSTALLATION
+*****************************
+
+In order to install the Selfridge-Field critical edition, simply copy all of
+the files on Disk #1 into an appropriate directory on your hard drive.
+
+(1) Move to a directory where you would like to install the database.
+    (Recommended: \scores\vivaldi\     OR ~/scores/vivaldi on Unix)
+
+(2) Insert the first distribution disk into an appropriate floppy disk drive.
+
+    Copy all of the files from the distribution disk into the appropriate
+    directory.  Assuming that the distribution disk is located in the A: drive,
+    and that you wish to copy the files to the directory named \scores\vivaldi,
+    the appropriate DOS or OS/2 command is:
+
+         copy a: \scores\vivaldi
+
+    On Unix systems, use the command:
+
+         cp a:* ~/scores/vivaldi
+
+VARIANT SOURCES INSTALLATION
+****************************
+
+In order to install the variant sources for Opus 8, simply copy all of the
+files on Disk #2 into an appropriate directory on your hard drive.
+
+(1) Move to a directory where you would like to install the database.
+    (Recommended: \scores\vivaldi\     OR ~/scores/vivaldi on Unix)
+
+(2) Insert the second distribution disk into an appropriate floppy disk drive.
+
+    Copy all of the files from the distribution disk into the appropriate
+    directory.  Assuming that the distribution disk is located in the A: drive,
+    and that you wish to copy the files to the directory named \scores\vivaldi,
+    the appropriate DOS or OS/2 command is:
+
+         copy a: \scores\vivaldi
+
+    On Unix systems, use the command:
+
+         cp a:* ~/scores/vivaldi
+
+CRITICAL EDITION AND SOURCES INSTALLATION
+*****************************************
+
+The Selfridge-Field edition can be generated from the integrated sources files.
+However, you may find it convenient to install the critical edition directly
+rather than manually generating the files from the integrated source files.
+You can install both as follows:
+
+(1) Move to a directory where you would like to install the critical edition.
+    (Recommended: \scores\vivaldi\critical.ed OR ~/scores/vivaldi/critical.ed on Unix)
+
+(2) Insert the first distribution disk into an appropriate floppy disk drive.
+
+    Copy all of the files from Disk #1 into the appropriate directory.  Assuming
+    that the distribution disk is located in the A: drive, and that you wish to
+    copy the files to the directory named \scores\vivaldi, the appropriate DOS or
+    OS/2 command is:
+
+         copy a: \scores\vivaldi\critical.ed
+
+    On Unix systems, use the command:
+
+         cp a:* ~/scores/vivaldi/critical.ed
+
+(3) Move to a directory where you would like to install the source files.
+    (Recommended: \scores\vivaldi\sources OR ~/scores/vivaldi/sources on Unix)
+
+(4) Insert the second distribution disk into an appropriate floppy disk drive.
+
+    Copy all of the files from the distribution disk into the appropriate
+    directory.  Assuming that the distribution disk is located in the A: drive,
+    and that you wish to copy the files to the directory named \scores\vivaldi,
+    the appropriate DOS or OS/2 command is:
+
+         copy a: \scores\vivaldi\sources
+
+    On Unix systems, use the command:
+
+         cp a:* ~/scores/vivaldi/sources
+
+If you are using the Humdrum Toolkit and wish to have access to the variant
+sources, continue with PART TWO (see below) of the installation procedure.
+
+THE "EDITION" AND "MSOURCE" COMMANDS
+************************************
+
+If you have installed the Integrated Source Files (from Disk #2) you
+will be able to make use of the "edition" and "msource" commands.
+The "edition" command allows you to generate any given musical
+source for a specified movement.  The "msource" command allows you
+to automatically generate all movements derived from a given manuscript
+source.  Both commands are described below.
+
+    N.B. The "edition" and "msource" commands will only run on systems
+    providing a Unix-like shell -- such as Linux, DOS or Windows running
+    MKS, or Apple systems running Mach 10, A/UX, or mklinux.  In addition,
+    the Humdrum Toolkit must also be installed.
+
+First, we need to ensure that the commands are executable on your
+platform.
+
+(1) Change directories to the location where you installed the files
+    from Disk #2.
+
+(2) On DOS and OS/2 systems, make the "edition.ksh" and "msource.ksh"
+    scripts executable by typing the following command:
+
+         chmod +x edition.ksh msource.ksh
+
+(3) On UNIX systems, make the "edition" and "msource" scripts executable
+    by typing the following commands:
+
+         mv edition.ksh edition
+         mv msource.ksh msource
+         chmod +x edition msource
+
+
+(5) On DOS, OS/2 or UNIX systems, invoke the "msource" script to create
+    the variant sources.  Four directories will be created:
+
+    (i)   amsterdm     - replicating the Amsterdam print sources
+    (ii)  dresden      - replicating the Dresden manuscript sources
+    (iii) manchest     - replicating the Manchester part-books
+    (iv)  turino       - replicating the Turin autographs
+
+    Refer to the file "variants.txt" for detailed information concerning
+    each of these sources.
+
+NOTE: In recreating the various sources, the total disk requirements for the
+      Vivaldi Twelve Violin Concertos will expand to roughly 4 megabytes.
+
+
+The distribution disks include an executable program (called "edition")
+that will allow users to access selected sources from the integrated
+source files.
+
+The "edition" command can only be used with the files contained on
+DISK #2.
+
+To install the "edition" command, ensure that the file "edition"
+from DISK #2 was copied into the same directory as the one containing
+the integrated source files for the Vivaldi Opus 8.
+
+On UNIX systems, change the "file mode" so that the file "edition"
+can be executed.  On UNIX systems, you can do this by executing the
+following command:
+
+   chmod a+x edition
+
+On DOS or Windows systems running the MKS Toolkit, you can make this
+file executable by renaming it as follows:
+
+   mv edition edition.ksh
+
+The "edition" command is now ready for execution.
+
+
+======
+INDEX:
+======
+
+==================
+"The Four Seasons" 
+==================
+
+              Title                    Filename
+
+Concerto No. 1 in E major. (Opus 8, No. 1)
+  RV 269,  La Primavera ("Spring")
+
+  1. Allegro  . . . . . . . . . . .   op8n01a.krn
+
+      Section `A':   Spring has come, and birds greet it.
+      Section `B':   Festively with a cheerful song;
+      Section `C1':  And with the breath of gentle breezes
+      Section `C2':  Springs trickle with a sweet murmur.
+
+      Section `D1':  Lightning and thunder, elected to announce it,
+      Section `D2':  Come and cover the air with a black cloak.
+      Section `E1':  Once they are quiet, the brids
+      Section `E2':  Return to their enchanting song.
+
+  2. Largo    . . . . . . . . . . .   op8n01b.krn
+
+      Section `F1':  Then on the pleasant, flowered meadow
+      Section `F2':  A goatherd, with his faithful dog at his side,
+      Section `F3':  Sleeps to the sweet murmur of fronds and plants.
+
+  3. Allegro  . . . . . . . . . . .   op8n01c.krn
+
+      Section `G1':  To the festive sound of a rustic bagpipe
+      Section `G2':  Nymphs and shepherds dance under the beloved canopy
+      Section `G3':  At the brilliant appearance of spring.
+
+
+Concerto No. 2 in G minor. (Opus 8, No. 2)
+  RV 315,  L'Estate ("Summer")
+
+  1. Allegro non molto/Allegro  . .   op8n02a.krn
+
+      Section `A1':  Under the harsh season ignited by the sun
+      Section `A2':  Man and flock languish, and the pine burns;
+      Section `B':   The cuckoo offers his voice, and, soon heard,
+      Section `C':   The young turtledove and goldfinch sing.
+
+  2. Adagio/Presto  . . . . . . . .   op8n02b.krn
+
+      Section `D1':  Zephyr blows gently, but suddenly
+      Section `D2':  Boreas offers opposition to his neighbor;
+      Section `E1':  And the shepherd weeps, because he fears
+      Section `E2':  A severe storm in the offing -- and his destiny.
+
+      Section `F1':  The repose of his tired limbs is disturbed
+      Section `F2':  By the fear of lightning and fiery thunder,
+      Section `F3':  And by a furious swarm of flies and wasps.
+
+  3. Presto . . . . . . . . . . . .   op8n02c.krn
+
+      Section `G1':  Unfortunately, his fears are justified.
+      Section `G2':  The sky thunders and fulminates, and hail
+      Section `G3':  Flattens ears of corn and majestic grains.
+
+Concerto No. 3 in F major. (Opus 8, No. 3)
+  RV 293,  L'Autunno ("Autumn")
+
+  1. Allegro  . . . . . . . . . . .   op8n03a.krn
+
+      Section `A1':  The peasant celebrates the blissful pleasure
+      Section `A2':  Of a happy harvest with dances and songs,
+      Section `B':   And, glowing with the liquor of Bacchus,
+      Section `C':   Many complete their enjoyment with sleep.
+
+  2. Adagio molto . . . . . . . . .   op8n03b.krn
+
+      Section `D1':  The air, tempered by pleasure, makes
+      Section `D2':  Everyone give up dances and songs.
+      Section `D3':  It is the season that invites so many
+      Section `D4':  To the great enjoyment of a sweet sleep.
+
+  3. Allegro  . . . . . . . . . . .   op8n03c.krn
+
+      Section `E1':  At dawn the hunters are off to the hunt
+      Section `E2':  With horns, rifles, and dogs.
+      Section `F':   The wild beast flees, and they follow its trail.
+
+      Section `G1':  Frightened already, and fatigued by the noise
+      Section `G2':  Of rifles and dogs, wounded, it threatens
+      Section `H':   Languidly to flee, but, overcome, it dies.
+
+Concerto No. 4 in F minor. (Opus 8, No. 4)
+  RV 297,  L'Inverno ("Winter")
+
+  1. Allegro non molto  . . . . . .   op8n04a.krn
+
+      Section `A':   To tremble from cold in the icy snow,
+      Section `B':   In the harsh breath of a horrid wind;
+      Section `C':   To run, stamping our feet every moment,
+      Section `D':   Our teeth chattering in the extreme cold.
+
+  2. Largo  . . . . . . . . . . . .   op8n04b.krn
+
+      Section `E1':  Before the fire to pass peaceful,
+      Section `E2':  Contented days while the rain outside pours down.
+
+  3. Allegro  . . . . . . . . . . .   op8n04c.krn
+
+      Section `F':   To walk on the ice and, at a slow pace
+      Section `G':   (For fear of alling), move carefully.
+
+      Section `H':   To make a bold turn, slip, fall down.
+      Section `I':   To go on the ice once more and run hard
+      Section `L':   Until the ice cracks and breaks up.
+
+      Section `M':   To hear the Sirocco, Boreas, and all
+      Section `N1':  The winds at war leave their iron gates:
+      Section `N2':  This is winter, but, even so, what joy it brings!
+
+
+================
+Other Concertos:
+================
+
+              Title                    Filename   Bytes  Checksum A  Checksum B
+
+Concerto No. 5 in E-flat major. (Opus 8, No. 5)
+  RV 253,  La Tempesta di Mare ("The Storm at Sea")
+
+  1. Presto   . . . . . . . . . . . .   op8n05a.krn
+  2. Largo    . . . . . . . . . . . .   op8n05b.krn
+  3. Presto   . . . . . . . . . . . .   op8n05c.krn
+
+Concerto No. 6 in C major. (Opus 8, No. 6)
+  RV 180,  Il Piacere ("Pleasure")
+
+  1. Allegro  . . . . . . . . . . . .   op8n06a.krn
+  2. Largo e cantabile  . . . . . . .   op8n06b.krn
+  3. Allegro  . . . . . . . . . . . .   op8n06c.krn
+
+Concerto No. 7 in D minor. (Opus 8, No. 7)
+  RV 242
+
+  1. Allegro  . . . . . . . . . . . .   op8n07a.krn
+  2. Largo    . . . . . . . . . . . .   op8n07b.krn
+  3. Allegro  . . . . . . . . . . . .   op8n07c.krn
+
+Concerto No. 8 in G minor. (Opus 8, No. 8)
+  RV 332
+
+  1. Allegro  . . . . . . . . . . . .   op8n08a.krn
+  2. Largo    . . . . . . . . . . . .   op8n08b.krn
+  3. Allegro  . . . . . . . . . . . .   op8n08c.krn
+
+Concerto No. 9 in D minor. (Opus 8, No. 9)
+  RV 236
+
+  1. Allegro  . . . . . . . . . . . .   op8n09a.krn
+  2. Largo    . . . . . . . . . . . .   op8n09b.krn
+  3. Allegro  . . . . . . . . . . . .   op8n09c.krn
+
+Concerto No. 10 in B-flat major. (Opus 8, No. 10)
+  RV 362,  La Caccia ("The Hunt")
+
+  1. Allegro  . . . . . . . . . . . .   op8n10a.krn
+  2. Adagio   . . . . . . . . . . . .   op8n10b.krn
+  3. Allegro  . . . . . . . . . . . .   op8n10c.krn
+
+Concerto No. 11 in D major. (Opus 8, No. 11)
+  RV 210
+
+  1. Allegro  . . . . . . . . . . . .   op8n11a.krn
+  2. Largo    . . . . . . . . . . . .   op8n11b.krn
+  3. Allegro  . . . . . . . . . . . .   op8n11c.krn
+
+Concerto No. 12 in C major. (Opus 8, No. 12)
+  RV 178
+
+  1. Allegro  . . . . . . . . . . . .   op8n12a.krn
+  2. Largo    . . . . . . . . . . . .   op8n12b.krn
+  3. Allegro  . . . . . . . . . . . .   op8n12c.krn
+
+==========
+CHECKSUMS:
+==========
+
+     A "checksum" value is an error-checking mechanism that may assist
+     in determining whether a file has been modified or data garbled
+     due to transmission or faulty storage.  The "checksum A" value
+     uses the POSIX.2 checksum algorithm.  The "checksum B" value uses
+     the CCITT cyclic redundancy check algorithm.  Note that checksum
+     commands differ from system to system.  The above checksums were
+     calculated for DOS-format data.
+
+
+============
+ORGANIZATION
+============
+
+The collection of concertos is organized into two subdirectories:
+(1) "seasons" contains the first four concertos comprising Vivaldi's
+"Four Seasons"; (2) "others" contains the remaining eight violin
+concertos (opus 8, Nos. 5 to 12).
+
+All works are encoded in the Humdrum **kern format.  Refer to the accompanying
+tutorial file ("kern_hlp.txt") for a detailed description of the **kern
+representation.  All works consist of monophonic melodies.
+
+==============
+RESEARCH NOTES
+==============
+
+
+============================
+USE OF THE "EDITION" COMMAND
+============================
+
+In order to use the "edition" command, you must have installed the
+files on DISK #2.  (See "INSTALLATION" above.)
+The "edition" command must be run from the directory containing the
+Vivaldi Opus 8 files.  The command is invoked by specifying a single
+option and a single filename.  The option letter is used to identify the
+desired source.  The output file is automatically named by appending the
+source designating letter to the filename.  For example, the command:
+
+   edition -T op8n10c.krn
+
+generates a file "op8n10ct.krn" containing the Turin version of Opus 8,
+No. 10, third movement.  The -? option may be used to determine all
+available versions for a given movement.  Not all sources are available
+for all movements.
+
+Syntax:
+
+     edition -[DdTtMmSs?] Vivaldi_opus8_inputfile
+
+Options:
+
+     -D     : Generate output file encoding to Dresden manuscript.
+     -d     : same as -D
+     -T     : Generate output file encoding to Turin autograph.
+     -t     : same as -T
+     -M     : Generate output file encoding to Manchester part-books.
+     -m     : same as -M
+     -S     : Generate output file encoding to Selfridge-Field critical edition.
+     -s     : same as -S
+     -? file  : Identify all available sources/options for file "file"
+
+In some case, additional options are provided for certain movements.  For
+example the second movement of Opus 8, No. 8  ("op8n08b.krn") provides two
+different versions of the Turin autograph:  the "original" script and a
+later "revised" script overlayed by Vivaldi.  In this case, the -T option
+produces the original Turin document, whereas the -R option generates the
+later revisions introduced by Vivaldi.
+
+Another anomaly is evident in the first movement of Opus 8, No. 10 
+("op8n10b.krn").  This movement has a binary (A-B) form; repeats are marked
+for both the A and B sections.  The "edition" command allows access to
+three different repetition-expansions for each of two sources (Amsterdam
+and Selfridge-Field).  No repeats are generated by default (i.e., -A or -S).
+The A section can be repeated if there is a trailing lower-case "a" following
+after the main option:  e.g.
+
+   edition -Aa op08n10b.krn)
+
+Both the A and B sections are repeated if the source option is followed by
+the trailing "r."  For example,
+
+   edition -Sr op08n10b.krn"
+
+For each 
+
+=======
+ORDERS:
+=======
+
+Copies of the CCARH edition of the Brandenburg Concertos can be ordered
+from:
+
+            Center for Computer Assisted Research
+                in the Humanities
+            Braun Music Center, Stanford University
+            Stanford, California
+            U.S.A.        94305-3076
+
+Telephone Orders:   (415) 322-3307
+      FAX Orders:   (415) 329-8365
+   E-mail orders:   ccarh@netcom.com

@@ -1,0 +1,1138 @@
+!!!COM: Scarlatti, Domenico
+!!!CDT: 1685///-1757///
+!!!OTL: Sonata in G Major, K.425, L.333
+!!!SCT: K. 425
+!!!SCT: L. 333
+!!!OMD: Allegro
+**solfa	**solfa	**dynam
+*staff2	*staff1	*staff1/2
+*Icemba	*Icemba	*Icemba
+*>[A,A,B,B]	*>[A,A,B,B]	*>[A,A,B,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A
+*clefF4	*clefG2	*clefG2
+*k[f#c#]	*k[f#c#]	*k[f#c#]
+*b:	*b:	*b:
+*M2/4	*M2/4	*M2/4
+*MM92	*MM92	*MM92
+=1-	=1-	=1-
+2r	8r	.
+.	(8so\L	p
+.	8me\	.
+.	8do\J)	.
+=2	=2	=2
+.	(soq/	.
+2r	(8.so\L)	.
+.	32fa\LL	.
+.	32so\JJJ	<
+.	8le\L	(
+.	8so\J	[
+=3	=3	=3
+8r	4ti\	>
+*clefG2	*	*
+(8so/L	.	)
+8me/	4do\)	)
+8do/J)	.	)
+=4	=4	=4
+(soq/	.	)
+(8.so/L)	8r	)
+.	(8so\L	)
+32fa/LL	.	)
+32so/JJJ	.	)
+8le/L	8fa\	)
+8fa/J	8le\J)	)
+=5	=5	=5
+.	teq/	)
+4ti/	8le\L	)
+.	16so\L	)
+.	16fa\JJ	)
+4do/)	8me\L	)
+.	8le'\J	)
+=6	=6	=6
+.	(teq/	)
+(4ti/	(8le\L)	)
+.	16so\L	)
+.	16fa\JJ	)
+16do/LL)	8me\L)	)
+(16do/	.	)
+16te/	8fa'\J	)
+16le/JJ	.	)
+=7	=7	=7
+16so/LL)	8so'\L	)
+(16so/	.	)
+16fa/	8do\	)
+16me/JJ	.	)
+*clefF4	*	*
+16re\LL)	8ti\	)
+(16re\	.	)
+16do\	8re\J	)
+16ti\JJ	.	]
+=8	=8	=8
+16do\LL)	8me\L	<
+(16do\	.	(
+16te\	8fa\J	(
+16le\JJ	.	(
+4so\)	16so\LL	(
+.	16le\	(
+.	16fa\	(
+.	16me\JJ	(
+=9	=9	=9
+4so/	16re\LL	(
+.	(16re\	(
+.	16do\	(
+.	16ti\JJ	(
+4so\	16do/LL)	(
+.	(16do/	(
+.	16te/	(
+.	16le/JJ	(
+=10	=10	=10
+4so/	16so/LL)	(
+.	(16so/	(
+.	16fa/	(
+.	16me/JJ	(
+4so\	16re/LL)	(
+.	(16re/	(
+.	16do/	(
+.	16ti/JJ	(
+=11	=11	=11
+4so/	16do/LL)	(
+.	(16do/	(
+.	16te/	(
+.	16le/JJ	(
+*	*clefF4	*clefF4
+4r	16so\LL	(
+.	16do\	(
+.	16me\	(
+.	16fa\JJ	(
+=12	=12	=12
+8r	4so\ 4ti\)	(
+*clefG2	*	*
+(8re/L	.	(
+8ti/	8r	(
+*	*clefG2	*clefG2
+8so/J	8so\	(
+=13	=13	=13
+4do/	16so'\LL	(
+.	16so\	(
+.	16fa\	(
+.	16mi\JJ	[
+4te/	16so\LL	<
+.	16so\	(
+.	16fa\	(
+.	16mi\JJ	(
+=14	=14	=14
+16le/LL)	4do\	(
+(16le/	.	(
+16so/	.	(
+16fa/JJ	.	(
+16le/LL)	4do\	(
+(16le/	.	(
+16so/	.	(
+16fa/JJ	.	(
+=15	=15	=15
+(4te/)	16fa\LL	(
+.	16fa\	(
+.	16me\	[
+.	16re\JJ	<
+4le/	16fa\LL	(
+.	16fa\	(
+.	16me\	(
+.	16re\JJ	(
+=16	=16	=16
+16so/LL)	4te\	(
+(16so/	.	(
+16fa/	.	(
+16me/JJ	.	(
+16so/LL)	4te\	(
+(16so/	.	(
+16fa/	.	(
+16me/JJ	.	[
+=17	=17	=17
+4le/	16do\LL	<
+.	16do\	(
+.	16re\	(
+.	16me\JJ	(
+4fa/	16re\LL	(
+.	16re\	(
+.	16me\	(
+.	16fa\JJ	(
+=18	=18	=18
+4so/	16me\LL	(
+.	16me\	(
+.	16fa\	(
+.	16so\JJ	(
+4re/	16fa\LL	(
+.	16fa\	(
+.	16so\	(
+.	16le\JJ	[
+=19	=19	=19
+16me/LL)	4so\	mf
+(16me/	.	.
+16fa/	.	.
+16so/JJ	.	.
+16fa/LL)	4le\	.
+(16fa/	.	.
+16so/	.	.
+16le/JJ	.	.
+=20	=20	=20
+16so/LL)	4te\	.
+(16so/	.	.
+16le/	.	.
+16te/JJ	.	.
+16le/LL)	8do'\L	.
+(16le/	.	.
+16te/	8me'\J	.
+16do/JJ	.	.
+=21	=21	=21
+4te/)	16re\LL	.
+.	16te\	.
+.	16fa\	.
+.	16so\JJ	.
+4r	16re\LL	.
+.	16me\	.
+.	16te\	.
+.	16do\JJ	.
+=22	=22	=22
+16r	4.re\	.
+(16te/LL	.	.
+16fa/	.	.
+16so/JJ	.	.
+*clefF4	*	*
+16re\LL	.	.
+16me\	.	.
+16te\	8me'\	.
+16do\JJ	.	.
+=23	=23	=23
+4.re\)	16fa\LL	.
+.	16me\	.
+.	16re\	.
+.	16do\JJ	.
+.	16te/LL	.
+.	16le/	.
+8te'\	16so/	.
+.	16fa/JJ	.
+=24	=24	=24
+4me\ 4me\	8so'/L	.
+.	8me'/J	.
+8r	(24so\LL	p
+.	24fa\	.
+.	24me\	.
+8so'\ 8me'\	24re\	.
+.	24do\	.
+.	24te\JJ	.
+=25	=25	=25
+4.le\ 4.me\	8do\L	.
+.	8te\J)	.
+.	(24le\LL	.
+.	24so\	.
+.	24fa\	.
+8le'\ 8fa'\	24me\	.
+.	24re\	.
+.	24do\JJ	.
+=26	=26	=26
+4.so\ 4.fa\	8te\L	.
+.	8le\J)	.
+.	(24so\LL	.
+.	24fa\	.
+.	24me\	.
+8so'\ 8me'\	24re\	.
+.	24do\	.
+.	24te\JJ	.
+=27	=27	=27
+4.fa\ 4.me\	8le\L	.
+.	8so\J)	<
+.	(24fa\LL	(
+.	24me\	(
+.	24re\	(
+8fa'\ 8re'\	24do\	(
+.	24te\	(
+.	24le\JJ	[
+=28	=28	=28
+8me'\ 8me'\L	4so/)	mf
+8me'\J	.	.
+(24so\LL	8r	.
+24fa\	.	.
+24me\	.	.
+24re\	8so'\	.
+24do\	.	.
+24te\JJ	.	.
+=29	=29	=29
+8le\L	4do\	.
+8so\J)	.	.
+(24fa\LL	8r	.
+24me\	.	.
+24re\	.	.
+24do\	8le'\	.
+24te\	.	.
+24le\JJ	.	.
+=30	=30	=30
+8so\L	4te/	.
+8fa\J)	.	.
+(24me\LL	8r	.
+24re\	.	.
+24do\	.	.
+24te\	8so'\	.
+24le\	.	.
+24so\JJ	.	.
+=31	=31	=31
+8fa\L	4le/	.
+8me\J)	.	.
+(24re\LL	8r	.
+24do\	.	.
+24te\	.	.
+24le\	8fa'\	.
+24so\	.	.
+24fa\JJ	.	.
+=32	=32	=32
+8me\)	8so/L	.
+8r	8me/J	.
+8so\	24so\LL	.
+.	24fa\	.
+.	24me\J	.
+8r	8me'\J	.
+=33	=33	=33
+8le\	(24do\LL	.
+.	24re\	.
+.	24me\J	.
+8r	8so'\J)	.
+8te\	(24te\LL	.
+.	24le\	.
+.	24so\J	.
+8r	8so'\J)	.
+=34	=34	=34
+8do\	(24me\LL	.
+.	24fa\	.
+.	24so\J	.
+8r	8me'\J)	.
+8re'\L	8te'\L	.
+8te'\J	8le'\J	.
+=35	=35	=35
+(8me\L	(24so\LL	.
+.	24fa\	.
+.	24so\	.
+.	teq/	.
+8le\J	24le\	.
+.	24so\	.
+.	24fa\JJ	.
+8te'/L)	8so'\L)	.
+8te'/J	8fa'\J	.
+=36	=36	=36
+8me\	8me'^\L	.
+8r	8me'\J	p
+8so\	(24so\LL	.
+.	24fa\	.
+.	24me\J	.
+8r	8me'\J)	.
+=37	=37	=37
+8le\	(24do\LL	.
+.	24re\	.
+.	24me\J	.
+8r	8so'\J)	.
+8te\	(24te\LL	.
+.	24le\	.
+.	24so\J	.
+8r	8so'\J)	.
+=38	=38	=38
+8do\	(24me\LL	.
+.	24fa\	.
+.	24so\J	.
+8r	8me'\J)	.
+8re'\L	8te'\L	.
+8te'\J	8le'\J	.
+=39	=39	=39
+(8me\L	(24so\LL	.
+.	24fa\	.
+.	24so\	.
+.	teq/	.
+8le\J	24le\	.
+.	24so\	.
+.	24fa\JJ	.
+8te'\L)	8so'\L)	.
+8te'\J	8fa'\J	.
+=40	=40	=40
+4me/ 4me/	(8me\L	.
+.	8so\J)	.
+*clefG2	*	*
+8me/ 8ra/L	(24te\LL	<
+.	24le\	(
+.	24so\J	(
+8me/ 8ra/J	8so'\J)	(
+=41	=41	=41
+8me/ 8ra/L	(24te\LL	(
+.	24le\	(
+.	24so\J	(
+8me/ 8ra/	8so'\J)	(
+8me/ 8ra/	(24te\LL	(
+.	24le\	(
+.	24so\J	(
+8me/ 8ra/J	8so'\J)	(
+=42	=42	=42
+8fa/ 8do/L	24me\ (24do\LL	(
+.	24te\	(
+.	24la\J	(
+8fa/ 8do/	8la'\J)	(
+8fa/ 8do/	24me\ (24do\LL	(
+.	24te\	(
+.	24la\J	(
+8me/ 8do/J	8la'\J)	[
+=43	=43	=43
+8me/ 8do/L	8me\ 8la\ (8do\L	mf
+8me/ 8do/	8re\)	.
+8me/ 8do/	8me'\	.
+8me/ 8do/J	8re'\J	.
+=44	=44	=44
+8me/ 8do/L	8do'\L	.
+8me/ 8do/	8te'\	.
+8me/ 8do/	8la'\	.
+8me/ 8do/J	8so'\J	.
+*clefF4	*	*
+=45	=45	=45
+(4re\	8la\ (8do\L	.
+.	8so\ 8te\)	.
+4re/)	8so\ (8te\	.
+.	8fi\ 8la\J)	.
+=46	=46	=46
+.	(fiq/	.
+4so/ 4so/	4.so\)	.
+8te'\L	.	.
+8so'\J	8re'\ 8te'\	p
+=47	=47	=47
+*	*^	*
+(8do\L	(24la/LL	4me\	<
+.	24so/	.	(
+.	24fi/J	.	(
+8la\J)	8fi'/J)	.	(
+(8te\L	(8so/L	4re\	(
+8so\J)	8te/J)	.	(
+=48	=48	=48	=48
+(8do\L	(24la/LL	4me\	(
+.	24so/	.	(
+.	24fi/J	.	(
+8la\J)	8fi'/J)	.	(
+(8te\L	(8so/L	4re\	(
+8so\J)	8re/J)	.	(
+=49	=49	=49	=49
+(8la\L	(24do/LL	4fi\	(
+.	24te/	.	(
+.	24la/J	.	(
+8fi\J)	8la'/J)	.	(
+(8so\L	8te/L	4so\	(
+8so\J)	8re/J	.	(
+=50	=50	=50	=50
+(8la\L	24do/LL	4fi\	(
+.	24te/	.	(
+.	24la/J	.	(
+8fi\J)	8la/J	.	(
+(8so\L	(8te/L	4so\	(
+8so\J)	8re/J)	.	[
+*	*v	*v	*
+=51	=51	=51
+(8do\L	(24la\LL	f
+.	24te\	.
+.	24do\J	.
+8me\J)	8do\J)	.
+(8re\L	(24te\LL	.
+.	24la\	.
+.	24so\	.
+8re\J)	24la\	.
+.	24so\	.
+.	24fi\JJ)	.
+=52	=52	=52
+.	fiq/	.
+4so/ 4so/	4so\	.
+8te'\L	8r	.
+8so'\J	8re'\ 8te'\	p
+=53	=53	=53
+*	*^	*
+(8do\L	(24la/LL	4me\	<
+.	24so/	.	(
+.	24fi/J	.	(
+8la\J)	8fi'/J)	.	(
+(8te\L	(8so/L	4re\	(
+8so\J)	8te/J)	.	(
+=54	=54	=54	=54
+(8do\L	(24la/LL	4me\	(
+.	24so/	.	(
+.	24fi/J	.	(
+8la\J)	8fi'/J)	.	(
+(8te\L	(8so/L	4re\	(
+8so\J)	8re/J)	.	(
+=55	=55	=55	=55
+(8la\L	(24do/LL	4fi\	(
+.	24te/	.	(
+.	24la/J	.	(
+8fi\J)	8la'/J)	.	(
+(8so\L	(8te/L	4so\	(
+8so\J)	8re/J)	.	(
+=56	=56	=56	=56
+(8la\L	(24do/LL	4fi\	(
+.	24te/	.	(
+.	24la/J	.	(
+8fi\J)	8la'/J)	.	(
+(8so\L	(8te/L	4so\	(
+8so\J)	8re/J)	.	[
+*	*v	*v	*
+=57	=57	=57
+8do\L	(24la\LL	f
+.	24te\	.
+.	24do\J	.
+8me\J	8do'\J)	.
+8re\L	(24te\LL	.
+.	24la\	.
+.	24so\	.
+8re\J	24la\	.
+.	24so\	.
+.	24fi\JJ	.
+=58	=58	=58
+4so/ 4so/	8so\L	.
+.	8me\J)	.
+8r	(24re\LL	p
+.	24do\	.
+.	24te\	.
+8te'\	24la\	.
+.	24so\	.
+.	24fa\JJ	.
+=59	=59	=59
+8do\L	8me\L	.
+8te\	8re\J)	.
+8la'\	(24do\LL	.
+.	24te\	.
+.	24la\	.
+8fa'\J	24so\	.
+.	24fa\	.
+.	24me\JJ	.
+=60	=60	=60
+8te\L	8re\L	.
+8la\	8do\J)	.
+8so'\	(24te\LL	.
+.	24la\	.
+.	24so\	.
+8me'\J	24fa\	.
+.	24me\	.
+.	24re\JJ	.
+=61	=61	=61
+(8la\L	8do\L	.
+8so\)	8te\J)	.
+8fi'\	24la\LL	<
+.	24so\	(
+.	24fi\	(
+8re'\J	24me\	(
+.	24re\	(
+.	24do\JJ	[
+=62	=62	=62
+8so'\L	24te\LL	mf
+.	24do\	.
+.	24re\	.
+(8do\J	24do\	.
+.	24re\	.
+.	24me\JJ	.
+8re'\L)	24re/LL	.
+.	24do/	.
+.	24te/	.
+8re'\J	24la/	.
+.	24so/	.
+.	24fi/JJ	.
+=63	=63	=63
+(8me\L	24so/LL	.
+.	24la/	.
+.	24te/	.
+8do\	24do/	.
+.	24re/	.
+.	24me/JJ	.
+8re\)	24re/LL	.
+.	24do/	.
+.	24te/	.
+8re'\J	24la/	.
+.	24so/	.
+.	24fi/JJ	.
+=64	=64	=64
+(8me\L	24so/LL	.
+.	24la/	.
+.	24te/	.
+8do\	24do/	.
+.	24re/	.
+.	24me/JJ	.
+8re\)	24re/LL	.
+.	24do/	.
+.	24te/	.
+8re'\J	24la/	.
+.	24so/	.
+.	24fi/JJ	.
+=65	=65	=65
+(24so\LL	4so/	p
+24la\	.	.
+24te\	.	.
+24do\	.	.
+24re\	.	.
+24me\JJ	.	.
+24re\LL	8la'/L	.
+24do\	.	.
+24te\	.	.
+24la\	8do'/J	.
+24so\	.	.
+24fi\JJ	.	.
+=66	=66	=66
+24so\LL	8te/L	.
+24la\	.	.
+24te\	.	.
+24do\	8so/	.
+24re\	.	.
+24me\JJ	.	.
+24re\LL	8la'/	.
+24do\	.	.
+24te\	.	.
+24la\	8do'/J	.
+24so\	.	.
+24fi\JJ	.	.
+=67	=67	=67
+24so\LL	8te/L	.
+24la\	.	.
+24te\	.	.
+24do\	8so/	.
+24re\	.	.
+24me\JJ	.	.
+24re\LL	8la'/	.
+24do\	.	.
+24te\	.	.
+24la\	8do'/J	.
+24so\	.	.
+24fi\JJ	.	.
+=68	=68	=68
+8so\L)	24so/LL	<
+.	24la/	(
+.	24te/	(
+(8do\J	24do/	(
+.	24re/	(
+.	24me/JJ	(
+8re'\L)	24re/LL	(
+.	24do/	(
+.	24te/	(
+8re'\J	24la/	(
+.	24so/	(
+.	24fi/JJ	(
+=69	=69	=69
+8so'\L	24so/LL	(
+.	24la/	(
+.	24te/	(
+(8do\J	24do/	(
+.	24re/	(
+.	24me/JJ	(
+8re'\L)	8re'\L	(
+8re'\J	8la'\ 8fi'\J	(
+=70	=70	=70
+.	fiq/	[
+4so/ 4so/	4so\ 4so\	f
+4r	4r	.
+=71:|!	=71:|!	=71:|!
+*>B	*>B	*>B
+*M3/8	*M3/8	*M3/8
+*MM138	*MM138	*MM138
+4.r	16so'\LL	f
+.	16so'\	.
+.	16so'\	.
+.	16so'\	.
+.	16so'\	.
+.	16so'\JJ	.
+=72	=72	=72
+4.r	(16le\LL	.
+.	16so\	.
+.	16fa\	.
+.	16me\	.
+.	16re\	.
+.	16do\JJ	.
+=73	=73	=73
+16so'\LL	4ti/)	.
+16so'\	.	.
+16so'\	.	.
+16so'\	.	.
+16so'\	8ti'/	.
+16so'\JJ	.	.
+=74	=74	=74
+(16le\LL	4do/	.
+16so\	.	.
+16fa\	.	.
+16me\	.	.
+16re\	8do'/	.
+16do\JJ	.	.
+=75	=75	=75
+8ti\L)	16re\LL	.
+.	16me\	.
+8so'\	16fa\	.
+.	16re\	.
+8ti'\J	16so\	.
+.	16fa\JJ	.
+=76	=76	=76
+(8do\L	16me\LL	.
+.	16so\	.
+8le\)	16fa\	.
+.	16me\	.
+8fa'\J	16re\	.
+.	16do\JJ	.
+=77	=77	=77
+8so'\L	16ti\LL	.
+.	(16le\	.
+8la'\	16so\	.
+.	16fa\	.
+8ti'\J	16me\	.
+.	16re\JJ	.
+=78	=78	=78
+*^	*	*
+4do/	8do\L	16me\LL	.
+.	.	16re\	.
+.	8re\	16do\	.
+.	.	16te\	.
+8r	8me'\J	16le\	.
+.	.	16so\JJ	.
+*v	*v	*	*
+=79	=79	=79
+8fa'\L	16le\LL)	.
+.	(16so\	.
+8so'\	16fa\	.
+.	16me\	.
+8le'\J	16re\	.
+.	16do\JJ	.
+=80	=80	=80
+*^	*	*
+4te/	8te\L	16re/LL	.
+.	.	16do/	.
+.	8do\	16te/	.
+.	.	16le/	.
+8r	8re'\J	16so/	.
+.	.	16fa/JJ	.
+*v	*v	*	*
+=81	=81	=81
+8me'\L	16so\LL	.
+.	(16fa\)	.
+8fa'\	16me\	.
+.	16re\	.
+8so'\J	16do\	.
+.	16te\JJ	.
+=82	=82	=82
+8le'\L	16do/LL	.
+.	16te/	.
+8te'\	16le/	.
+.	16so/	.
+8do'\J	16fa/	.
+.	16me/JJ	.
+=83	=83	=83
+(16te'\LL	8re'/L)	.
+16te\	.	.
+16re'\	8fa'/	p
+16te\	.	.
+16te'\	8te'/J	.
+16te\JJ	.	.
+=84	=84	=84
+16me'\LL	8so'\L	.
+16te\	.	.
+16so'\	8me'\	.
+16te\	.	.
+16me'\	[8so^\J	.
+16te\JJ	.	.
+=85	=85	=85
+16te'\LL	8so\L]	.
+16te\	.	.
+16re'\	8fa\	.
+16te\	.	.
+16te'\	8le\J	.
+16te\JJ	.	.
+=86	=86	=86
+16me'\LL	8so'\L	.
+16te\	.	.
+16so'\	8me'\	.
+16te\	.	.
+16me'\	[8so^\J	.
+16te\JJ	.	.
+=87	=87	=87
+16te'\LL	8so\L]	.
+16te\	.	.
+16re'\	8fa\	.
+16te\	.	.
+16te'\	8le'\J	.
+16te\JJ	.	.
+=88	=88	=88
+16me'\LL	8so'/L	.
+16te\	.	.
+16so'\	8te'/	.
+16te\	.	.
+16ra'^\	[8ra/J	.
+16te\JJ	.	.
+=89	=89	=89
+16do'\LL)	8ra/L]	.
+16do\	.	.
+16mi'\	8do/	.
+16do\	.	.
+16do'\	8so'/J	.
+16do\JJ	.	.
+=90	=90	=90
+16fa'\LL	8le'\L	<
+16do\	.	(
+16le'\	8fa'\	(
+16do\	.	(
+16fa'\	([8le^\J	(
+16do\JJ	.	(
+=91	=91	=91
+16do'\LL	8le\L]	(
+16do\	.	(
+16mi'\	8so\)	(
+16do\	.	(
+16do'\	8te'\J	(
+16do\JJ	.	(
+=92	=92	=92
+16fa'\LL	8le'\L	(
+16do\	.	(
+16le'\	8fa'\	(
+16do\	.	(
+16fa'\	([8le^\J	(
+16do\JJ	.	(
+=93	=93	=93
+16do'\LL	8le\L]	(
+16do\	.	(
+16mi'\	8so\)	(
+16do\	.	(
+16do'\	8te'\J	(
+16do\JJ	.	(
+=94	=94	=94
+16fa'\LL	8le'\L	(
+16do\	.	(
+16le'\	8do'\	(
+16do\	.	(
+16me'^\	([8me^\J	(
+16do\JJ	.	(
+=95	=95	=95
+(16re'\LL	8me\L]	(
+16re\	.	(
+16fi'\	8re\)	(
+16re\	.	(
+16re'\	8la'\J	(
+16re\JJ	.	(
+=96	=96	=96
+16so'\LL	8te'\L	(
+16re\	.	(
+16te'\	8so'\	(
+16re\	.	(
+16so'\	[8te^\J	(
+16re\JJ	.	(
+=97	=97	=97
+16re'\LL	8te\L]	(
+16re\	.	(
+16fi'\	8la\	(
+16re\	.	(
+16re'\	8do'\J	(
+16re\JJ	.	(
+=98	=98	=98
+16so'\LL	8te'\L	(
+16re\	.	(
+16te'\	8so'\	(
+16re\	.	(
+16so'\	[8te^\J	(
+16re\JJ	.	(
+=99	=99	=99
+16re'\LL	8te\L]	(
+16re\	.	(
+16fi'\	8la\	(
+16re\	.	(
+16re'\	8do'\J	(
+16re\JJ)	.	(
+=100	=100	=100
+(16so'\LL	8ti'\L	(
+16so\	.	(
+16ti'\	8re'\	(
+16so\	.	(
+16so'\	8so'\J	(
+16so\JJ	.	[
+=101	=101	=101
+16do'\LL	8me'\L	f
+16so\	.	.
+16me'\	8do'\	.
+16so\	.	.
+16do'\	[8me^\J	.
+16so\JJ	.	.
+=102	=102	=102
+16so'\LL	8me\L]	.
+16so\	.	.
+16ti'\	8re\	.
+16so\	.	.
+16so'\	8fa'\J	.
+16so\JJ	.	.
+=103	=103	=103
+16do'\LL	8me'\L	.
+16so\	.	.
+16me'\	8do'\	.
+16so\	.	.
+16do'\	[8me^\J	.
+16so\JJ	.	.
+=104	=104	=104
+16so'\LL	8me\L]	.
+16so\	.	.
+16ti'\	8re\	.
+16so\	.	.
+16so'\	8fa'\J	.
+16so\JJ	.	.
+=105	=105	=105
+16do'\LL	8me'\L	.
+16so\	.	.
+16me'\	8so'\	.
+16so\	.	.
+16do'\	8do'\J	.
+(16me\JJ)	.	.
+=106	=106	=106
+16fa'\LL	8le\L	>
+16fa\	.	)
+16re\	8fa\	)
+16fa\	.	)
+16te\	8te'\J	)
+16re\JJ)	.	)
+=107	=107	=107
+(16me'\LL	(8so\L	)
+16me\	.	)
+16do\	8me\)	)
+16me\	.	)
+16le\	8le'\J	)
+(16do\JJ)	.	)
+=108	=108	=108
+16re'\LL	8fa\L	)
+16re\	.	)
+16ti\	8re\	)
+16re\	.	)
+16so\	8so'\J	)
+(16ti\JJ)	.	)
+=109	=109	=109
+16do'\LL	8me\L	)
+16do\	.	)
+16le\	8le\	)
+16do\	.	)
+16fa\	8fa'\J	)
+(16le\JJ)	.	)
+=110	=110	=110
+16te'\LL	8re\L	)
+16te\	.	)
+16so\	8so\	)
+16te\	.	)
+16me\	8me'\J	)
+(16so\JJ)	.	)
+=111	=111	=111
+16le'\LL	8do\L	)
+16le\	.	)
+16fa\	8fa\	)
+16le\	.	)
+16re\	8re'\J	)
+16fa\JJ)	.	]
+=112	=112	=112
+(16so'/LL	(8ti/L	p
+16so/	.	.
+16ti'/	8re/)	.
+16so/	.	.
+16so'/	8re'/J	.
+16so/JJ	.	.
+=113	=113	=113
+16do'/LL	8me/L	.
+16so/	.	.
+16me'/	8do/	.
+16so/	.	.
+16do'/	8fi'/J	.
+16so/JJ	.	.
+=114	=114	=114
+16so'/LL	8so/L	<
+16so/	.	(
+16ti'/	8re/	(
+16so/	.	(
+16so'/	8re'/J	(
+16so/JJ	.	(
+=115	=115	=115
+16do'/LL	8me/L	(
+16so/	.	(
+16me'/	8do/	(
+16so/	.	(
+16do'/	8fi'/J	(
+16so/JJ	.	[
+=116	=116	=116
+*	*^	*
+16so/LL	8so/L	4.so\	f
+16so/	.	.	.
+16fa/	8ti'/ 8re'/	.	.
+16fa/	.	.	.
+16me/	8do'/ 8me'/J	.	.
+16do/JJ)	.	.	.
+*	*v	*v	*
+=117	=117	=117
+*^	*	*
+8r	8fa'\ 8do'\	(24re\LL	.
+.	.	24me\	.
+.	.	24fa\JJ	.
+8do/ 8me/L	4so\	16me\LL	.
+.	.	16do\	.
+8re/J	.	16re\	.
+.	.	16ti\JJ	.
+*v	*v	*	*
+=118	=118	=118
+(16do/LL	8me'\L)	>
+16do/	.	)
+16te/	8re'\	)
+16te/	.	)
+16le/	8do'\J	)
+16le/JJ	.	]
+=119	=119	=119
+16so'/LL	8ti'/L	p
+16so/	.	.
+16ti'/	8re/	.
+16so/	.	.
+16so'/	8re'/J	.
+16so/JJ	.	.
+=120	=120	=120
+16do'/LL	8me/L	.
+16so/	.	.
+16me'/	8do/	.
+16so/	.	.
+16do'/	8fi'/J	.
+16so/JJ	.	.
+=121	=121	=121
+16so'/LL	8so/L	<
+16so/	.	(
+16ti'/	8re/	(
+16so/	.	(
+16so'/	8re'/J	(
+16so/JJ	.	(
+=122	=122	=122
+16do'/LL	8me/L	(
+16so/	.	(
+16me'/	8do/	(
+16so/	.	(
+16do'/	8fa'/J	(
+16so/JJ	.	[
+=123	=123	=123
+*	*^	*
+16so/LL	8so/L	4.so\	f
+16so/	.	.	.
+16fa/	8ti'/ 8re'/	.	.
+16fa/	.	.	.
+16me/	8do'/ 8me'/J	.	.
+16do/JJ)	.	.	.
+*	*v	*v	*
+=124	=124	=124
+*^	*	*
+8r	8fa'\ 8do'\	(24re\LL	.
+.	.	24me\	.
+.	.	24fa\JJ	.
+8do/ 8me/L	4so\	16me\LL	.
+.	.	16do\	.
+8re/J	.	16re\	.
+.	.	16ti\JJ	.
+=125	=125	=125	=125
+[4.do/	8do\L	8do\)	.
+.	8re\	[4do^\ [4do^\	.
+.	8me\J	.	.
+=126	=126	=126	=126
+*	*	*^	*
+4.do/]	4fa\	8do/L]	4.do\]	.
+.	.	(teq/	.	.
+.	.	(8le/)	.	.
+.	8so\	8so/J)	.	.
+*	*	*v	*v	*
+=127	=127	=127	=127
+4.do/	4le\	8do\ (8me\L	.
+.	.	8re\)	.
+.	8me'\	8do^\ [8do^\J	.
+=128	=128	=128	=128
+*	*	*^	*
+4.do/	4fa\	8do/L]	4.do\	.
+.	.	(teq/	.	.
+.	.	(8le/)	.	.
+.	8so'\	8so/J)	.	.
+*	*	*v	*v	*
+=129	=129	=129	=129
+.	.	(faq/	.
+[4.do/	4le\	8do\ (8me\L)	.
+.	.	8re\)	.
+.	8so'\	8do'\ 8me'\J	.
+=130	=130	=130	=130
+*	*	*^	*
+8do/]	8fa\	(24fa/LL	4do\	.
+.	.	24me/	.	.
+.	.	24re/JJ	.	.
+8do'/ 8me'/L	4so\	8me'/L)	.	.
+8re'/ 8fa'/J	.	8re'/J	8ti\	.
+*	*	*v	*v	*
+=131	=131	=131	=131
+[4.do/	(8do\L	8do'\	.
+.	8re\	4do^\ [4do^\	p
+.	8me\J)	.	.
+=132	=132	=132	=132
+*	*	*^	*
+4.do/]	4fa\	8do/L]	4.do\	.
+.	.	(teq/	.	.
+.	.	(8le/)	.	.
+.	8so'\	8so/J)	.	.
+*	*	*v	*v	*
+=133	=133	=133	=133
+.	.	(faq/	.
+4.do/	4le\	8do\ (8me\L)	.
+.	.	8re\)	.
+.	8me'\	[8do^\ [8do^\J	.
+=134	=134	=134	=134
+*	*	*^	*
+4.do/	4fa\	8do/L]	4.do\]	.
+.	.	(teq/	.	.
+.	.	(8le/)	.	.
+.	8so'\	8so/J)	.	.
+*	*	*v	*v	*
+=135	=135	=135	=135
+.	.	(faq/	.
+[4.do/	4le\	8do\ (8me\L)	.
+.	.	8re\)	.
+.	8so'\	8do'\ 8me'\J	.
+=136	=136	=136	=136
+*	*	*^	*
+8do/]	8fa'\	(24fa/LL	4do\	.
+.	.	24me/	.	.
+.	.	24re/JJ	.	.
+8do'/ 8me'/L	4so\	8me'/L)	.	.
+8re'/ 8fa'/J	.	8re'/J	8ti\	.
+*	*	*v	*v	*
+=137	=137	=137	=137
+4.do/	8do\L	(16do\LL	f
+.	.	16do\	.
+.	8re\	16so\	.
+.	.	16me\	.
+.	8me\J	16do\	.
+.	.	16so'\JJ	.
+*v	*v	*	*
+=138	=138	=138
+8fa'/L	16le\LL)	.
+.	(16le\	.
+8so'/	16so\	.
+.	16fa\	.
+8so'/J	16me\	.
+.	16re\JJ)	.
+=139	=139	=139
+8do/L	16r	.
+.	(16do/LL	mf
+8re/	16so/	.
+.	16me/	.
+8me/J	16do/	.
+.	16so/JJ	.
+=140	=140	=140
+8fa'/L	16le/LL)	.
+.	(16le/	.
+8so'/	16so/	.
+.	16fa/	.
+8so'/J	16me/	.
+.	16re/JJ	.
+=141	=141	=141
+8.do/L	8do/L)	.
+.	(8me/	p
+16do/L	.	.
+16me/	[8so/J	.
+16so/JJ	.	.
+=142	=142	=142
+8.do\L	16so/LL]	.
+.	16me/	.
+.	16so/	.
+16so\L	16do/	.
+16me\	16me/	.
+16do\JJ	16so/JJ	.
+=143	=143	=143
+4.do/	4.do\)	.
+==:|!	==:|!	==:|!
+*-	*-	*-
+!!!ENC: Craig Stuart Sapp
+!!!END: 2004/11/03/

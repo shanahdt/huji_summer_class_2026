@@ -1,0 +1,146 @@
+!!!RWG: WARNING: The embellishment tones have been removed from this file.
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Christus ist erstanden, hat ueberwunden
+!!!ONM: No. 200
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*C:	*C:	*C:	*C:	*C:	*C:	*C:	*C:	*C:
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+I	ct	ct	ct	ct	4c	4e	4g	4cc
+Vb	ct	ct	ct	ct	4B	4d	4g	4g
+vii/V	ct	ct	[sus]	ct	4A	4c	4f#	4a
+.	.	.	ct	.	.	.	.	.
+V	ct	ct	ct	ct	4G	4d	4g	4b
+.	upt7	.	.	.	.	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+Ib	ct	ct	ct	ct	4E	4c	4g	2cc
+.	.	upt7	.	.	.	.	.	.
+IV	ct	ct	[sus]	.	4F	4A	4f	.
+.	.	.	ct	.	.	.	.	.
+I;	ct;	ct;	[sus]	ct;	4C;	4G;	4e;	4cc;
+.	.	.	ct;	.	.	.	.	.
+V/IV	ct	ct	ct	ct	4c	4c	[4e	4g
+.	upt7	.	.	.	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+vi	ct	ct	[ct]	ct	4A	4c	8e]	4cc
+viiob/v	.	.	ct	.	.	.	8f#	.
+v	ct	ct	ct	ct	4G	4d	4g	4b-
+iio7b/V/v	ct	ct	ct	ct	4C	4e-	4g	2a
+V/v	ct	ct	ct	.	4D	4d	4f#	.
+.	.	upt7	.	.	.	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+v;	ct;	ct;	ct;	ct;	2GG;	2B-;	2d;	2g;
+v	ct	ct	ct	ct	4G	4B-	4d	4g
+.	.	.	unt	.	.	.	.	.
+viioD7/v	ct	ct	[ct]	ct	4F#	4c	8e-]	4a
+V7b/v	.	.	ct	.	.	.	[8d	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+v	ct	ct	[ct]	ct	4G	4B-	4d]	4b-
+.	.	arp	arp	.	.	.	.	.
+iv/v	ct	ct	apt	ct	4C	4e-	4g	4cc
+.	.	.	ct	.	.	.	.	.
+Vc	ct	ct	aclnt	ct	4D	[4d	4g	4b-
+.	.	.	ct	.	.	.	.	.
+V/v	ct	[ct]	[sus]	ct	4DD	4d]	4f#	4a
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+v;	ct;	ct;	ct;	ct;	2GG;	2B-;	2d;	2g;
+I	ct	ct	ct	ct	4C	[4c	4en	4g
+.	upt	.	upt	.	.	.	.	.
+Ib	ct	[ct]	ct	ct	4E	4c]	4g	4cc
+.	upt	upt	.	.	.	.	.	.
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+Ic	ct	ct	ct	ct	4G	4e	4g	4cc
+.	.	upt	.	.	.	.	.	.
+.	.	ct	.	.	.	.	.	.
+V	ct	ct	ct	ct	4GG	4d	4g	4b
+.	.	arp7	.	.	.	.	.	.
+I;	ct;	[sus]	ct;	ct;	2C;	2e;	2g;	2cc;
+.	.	ct	.	.	.	.	.	.
+.	.	lnt	.	.	.	.	.	.
+.	.	ct;	.	.	.	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+IV	ct	ct	ct	ct	4F	4f	4a	4cc
+.	upt	.	.	.	.	.	.	.
+IV	ct	ct	ct	ct	4F	4f	4a	4cc
+.	upt7	.	upt	.	.	.	.	.
+ii	ct	ct	ct	ct	4D	4f	4f	4dd
+.	upt	upt	upt	.	.	.	.	.
+iib	ct	ct	ct	ct	4F	4d	[4a	4dd
+.	upt	upt	.	.	.	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+IVb	ct	ct	[ct]	ct	4A	[4f	4a]	4cc
+.	arp	.	.	.	.	.	.	.
+ii7	ct	[ct]	ct	ct	8G	8f]	8b-	4b-
+V7/IV	ct	ct	ct	.	8C	8e	8g	.
+IV;	ct;	ct;	ct;	ct;	2F;	2c;	2f;	2a;
+=10	=10	=10	=10	=10	=10	=10	=10	=10
+V/IV	ct	ct	ct	ct	4c	4c	4e	4g
+.	upt7	.	.	.	.	.	.	.
+vi	ct	ct	ct	ct	4A	4c	8e	4a
+viiob/v	.	.	ct	.	.	.	8f#	.
+v	ct	ct	ct	ct	4G	4d	[4g	4b-
+.	arp	.	.	.	.	.	.	.
+iio7b/V/v	ct	ct	[ct]	ct	8C	8e-	8g]	4a
+V/v	ct	ct	ct	.	8D	8d	8f#	.
+.	.	upt7	.	.	.	.	.	.
+=11	=11	=11	=11	=11	=11	=11	=11	=11
+-III;	ct;	ct;	ct;	ct;	2E-;	2B-;	2g;	2g;
+v	ct	ct	ct	ct	4G	4B-	4d	4b-
+.	.	arp	arp	.	.	.	.	.
+V/-VII	ct	ct	[sus]	ct	4F	4f	4a	4cc
+.	.	.	ct	.	.	.	.	.
+=12	=12	=12	=12	=12	=12	=12	=12	=12
+-VII	ct	ct	ct	ct	4B-	4f	2b-	4dd
+.	upt7	.	.	.	.	.	.	.
+IVb/-VII	ct	ct	.	ct	8G	8e-	.	8ee-
+Ic/-VII	ct	ct	.	ct	8F	8f	.	8dd
+ii7b/-VII	ct	ct	ct	ct	8E-	8g	4b-	2cc
+ii7/-VII	ct	ct	.	.	8C	8e-	.	.
+V/-VII	ct	ct	ct	.	4F	4c	4a	.
+.	.	arp	.	.	.	.	.	.
+=13	=13	=13	=13	=13	=13	=13	=13	=13
+I/-VII;	ct;	ct;	ct;	ct;	2BB-;	2f;	2b-;	2dd;
+I/-VII	ct	ct	ct	ct	4B-	4f	4b-	4dd
+V/-VII	ct	ct	[sus]	ct	4F	4f	4a	4cc
+.	.	.	ct	.	.	.	.	.
+=14	=14	=14	=14	=14	=14	=14	=14	=14
+I/-VII	ct	ct	ct	ct	4B-	4f	4b-	4dd
+.	upt7	.	.	.	.	.	.	.
+iio7d/v	ct	ct	ct	ct	8G	8e-	4a	4cc
+V7b/v	ct	ct	.	.	8F#	8d	.	.
+v	ct	ct	ct	ct	4G	4d	4g	4b-
+.	upt	.	.	.	.	.	.	.
+V7d/IV	ct	ct	ct	ct	8B-	4c	4en	4g
+.	ct	.	.	.	.	.	.	.
+=15	=15	=15	=15	=15	=15	=15	=15	=15
+IV	ct	ct	ct	ct	4F	4c	4f	4a
+.	.	.	upt7	.	.	.	.	.
+V7	ct	ct	ct	ct	4G	4G	4d	4bn
+.	.	.	arp7	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	2C;	2G;	2en;	2cc;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

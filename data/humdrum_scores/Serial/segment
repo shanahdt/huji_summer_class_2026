@@ -1,0 +1,89 @@
+#############################################################################
+#                              SEGMENT
+# Programmed by: David Huron        Date: 1994 August 1
+#
+# Modifications:
+#   Date:      Programmer:       Description:
+# 1996 Jan. 31 David Huron       Shortened the script.
+# 						
+# This script carries a preliminary tone-row search in a specified
+# score, given a presumed prime set.
+#
+# Invoke:
+#
+#       segment -n N primerow scorefile > outputfile
+#
+# The -n option is used to specify tone-row lengths less than 12.
+
+if [ "x$1" != "x-n" ]
+then
+	echo "-n option must be specified."
+	echo "USAGE:   segment -n number primerow scorefile"
+	exit
+fi
+
+if [ $2 -gt 12 -o $2 -lt 1 ]
+then
+	echo "segment: ERROR: -n option must be followed by a number between 1 and 12."
+	echo "USAGE:   segment -n number primerow scorefile"
+	exit
+fi
+
+if [ ! -f $3 ]
+then
+	echo "segment: ERROR: Input prime-row file $3 not found."
+	echo "USAGE:   segment -n number primerow scorefile"
+	exit
+fi
+
+# Check that the specified input file exists:
+if [ ! -f $4 ]
+then
+	echo "segment: ERROR: Input score file $4 not found."
+	echo "USAGE:   segment -n number primerow scorefile"
+	exit
+fi
+
+# Also check to ensure that the temporary directory shell variable is defined.
+if [ ! -d $TMPDIR ]
+then
+	echo "Shell temporary directory (\$TMPDIR) undefined."
+	exit
+fi
+
+exit
+
+# Generate the primes, inversions, retrogrades, and retrograde inversions.
+X=11
+while [ $X != -1 ]
+do
+	reihe -a -P $X  $3 | rid -GLId | head -$2 > P$X
+	reihe -a -I $X  $3 | rid -GLId | head -$2 > I$X
+	reihe -a -R $X  $3 | rid -GLId | head -$2 > R$X
+	reihe -a -RI $X $3 | rid -GLId | head -$2 > RI$X
+	let X=$X-1
+done
+
+# Convert the score to pitch-class data and ignore rests.
+pc -atx $1 > $TMPDIR/$$.pc
+humsed 's/r/./g' $TMPDIR/$$.pc > $TMPDIR/$$.scr
+
+# Search for instances of each tone-row variant and label the location.
+X=11
+while [ $X != -1 ]
+do
+	patt -s '=|^\.(	\.)*$' -f P$X  -m -t P$X $TMPDIR/$$.scr  | extract -i '**patt' > $TMPDIR/$$p$X.pat
+	patt -s '=|^\.(	\.)*$' -f I$X  -m -t I$X $TMPDIR/$$.scr  | extract -i '**patt' > $TMPDIR/$$i$X.pat
+	patt -s '=|^\.(	\.)*$' -f R$X  -m -t R$X $TMPDIR/$$.scr  | extract -i '**patt' > $TMPDIR/$$r$X.pat
+	patt -s '=|^\.(	\.)*$' -f RI$X -m -t RI$X $TMPDIR/$$.scr | extract -i '**patt' > $TMPDIR/$$ri$X.pat
+	assemble $TMPDIR/$$p$X.pat $TMPDIR/$$i$X.pat $TMPDIR/$$r$X.pat $TMPDIR/$$ri$X.pat > $TMPDIR/$$z$X.pat
+	cleave -d ' ' -i '**patt' -o '**rows' $TMPDIR/$$z$X.pat > $TMPDIR/$$anal.$X
+	let X=$X-1
+done
+
+# Assemble all of the discovered patterns into a single output.
+assemble $TMPDIR/$$anal.* > $TMPDIR/$$.pat
+cleave -d ' ' -i '**patt' -o '**rows' $TMPDIR/$$.pat
+
+# Clean up some temporary files.
+rm $TMPDIR/$$.pc $TMPDIR/$$.scr $TMPDIR/$$*.pat $TMPDIR/$$anal.*

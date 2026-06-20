@@ -1,0 +1,17 @@
+# OPUS24 Analysis
+#
+pc -atx opus24row.krn > opus24row.pc
+pc -atx opus24.krn > opus24.pc
+matrix -n 7 opus24row.pc
+extract -i '*Ipiano' opus24.pc > piano.pc
+extract -f 3-10 opus24.pc > nopiano.pc
+rowfind piano.pc
+mv analysis.out results/just.piano
+rowfind nopiano.pc
+mv analysis.out results/nopiano
+rowfind opus24.pc
+mv analysis.out results/all.instruments
+assemble results/just.piano results/nopiano results/all.instruments > $TMPDIR/temp
+cleave -d ' ' -i '**rows' -o '**rows' $TMPDIR/temp > $TMPDIR/analysis
+assemble opus24.pc $TMPDIR/analysis > results/analysis.final
+rm $TMPDIR/temp $TMPDIR/analysis

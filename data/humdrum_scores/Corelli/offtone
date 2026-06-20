@@ -1,0 +1,4 @@
+for file in *.krn
+do 
+	solfa $file | rid -GLId | grep -v '=' | head -1 >> offtoon 
+done

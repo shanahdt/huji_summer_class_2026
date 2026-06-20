@@ -1,0 +1,90 @@
+X: 1
+T: Du Lebensfuerst, Herr Jesu Christ
+C: Johann Sebastian Bach
+%%abc-version 2.0
+%%abcx-abcm2ps-target-version 5.9.1 (29 Sep 2008)
+%%abc-creator hum2abc beta
+%%abcx-conversion-date 2019/02/10 22:18:17
+%%abc-copyright Copyright 1992 David Huron
+%%abc-edited-by David Huron
+%%abc-edited-by David Huron
+%%humdrum-veritas 1517959309
+%%humdrum-veritas-data 644463231
+%%continueall 1
+%%barnumbers 0
+L: 1/4
+M: 4/4
+%%staves [1 2 3 4]
+V: 1
+V: 2
+V: 3
+V: 4
+K: C
+[V:1] G [I:setbarnb 1]| 
+[V:2] D | 
+[V:3] B, | 
+[V:4] G,/ ^F,/ | 
+[V:1] GAB/ ^c/d | 
+[V:2] E^FD/ E/F | 
+[V:3] B,/ C/- C/ D/ B,/ A,/A, | 
+[V:4] E,D,G,^F,/ G,/ | 
+[V:1] d^c!fermata!dB | 
+[V:2] E/ ^F/G!fermata!FF | 
+[V:3] A,A,!fermata!A,B,/ A,/ | 
+[V:4] A,A,,!fermata!D,^D, | 
+[V:1] =cBAB | 
+[V:2] ED/ E/^FG | 
+[V:3] G,/ A,/ B,/ C/DD | 
+[V:4] E,/ ^F,/ G,/ C,/ C/ B,/ A,/ G,/ | 
+[V:1] A2!fermata!GG | 
+[V:2] G^F!fermata!DD | 
+[V:3] D>C!fermata!B,B, | 
+[V:4] DD,!fermata!G,G,/ ^F,/ | 
+[V:1] GAB/ ^c/d | 
+[V:2] E^FD/ E/F | 
+[V:3] B,/ C/- C/ D/ B,/ A,/A, | 
+[V:4] E,D,G,^F,/ G,/ | 
+[V:1] d^c!fermata!dB | 
+[V:2] E/ ^F/G!fermata!FF | 
+[V:3] A,A,!fermata!A,B,/ A,/ | 
+[V:4] A,A,,!fermata!D,^D, | 
+[V:1] =cBAB | 
+[V:2] ED/ E/^FG | 
+[V:3] G,/ A,/ B,/ C/DD | 
+[V:4] E,/ ^F,/ G,/ C,/ C/ B,/ A,/ G,/ | 
+[V:1] A2!fermata!GA | 
+[V:2] G^F!fermata!DF/ G/ | 
+[V:3] D>C!fermata!B,D/ E/ | 
+[V:4] DD,!fermata!G,D, | 
+[V:1] ABcc | 
+[V:2] A-A/ ^G/ A/ G/A | 
+[V:3] ^F/ E/DEF | 
+[V:4] D/ ^C/B,A,^D, | 
+[V:1] B/ A/B!fermata!AB | 
+[V:2] A^G!fermata!EE/ ^D/ | 
+[V:3] B,E/ D/!fermata!C=G,/ A,/ | 
+[V:4] E,E,!fermata!A,,E,/ ^F,/ | 
+[V:1] BBc/ d/e | 
+[V:2] EEE/ ^F/ G/ F/ | 
+[V:3] B,/ C/ D/ E/C^C | 
+[V:4] G,^G,A,^A, | 
+[V:1] e^d!fermata!e^f | 
+[V:2] ^F/ G/A!fermata!GA | 
+[V:3] B,B,!fermata!B,D | 
+[V:4] B,B,,!fermata!E,D/ C/ | 
+[V:1] gBcB | 
+[V:2] G/ A/BB/ A/ A/ G/ | 
+[V:3] DGG,/ A,/B, | 
+[V:4] B,/ A,/ G,/ ^F,/ E,/ F,/ G,/ E,/ | 
+[V:1] A2!fermata!Ad | 
+[V:2] G2!fermata!^FG/ F/ | 
+[V:3] E/ D/ E/ ^C/!fermata!DD | 
+[V:4] ^C,/ B,,/ C,/ A,,/!fermata!D,B,, | 
+[V:1] eDcB/ c/ | 
+[V:2] E^FG/ A/D | 
+[V:3] D/ C/ C/ B,/ B,/ A,/G, | 
+[V:4] C,D,E,/ ^F,/G, | 
+[V:1] A2!fermata!G |]  
+[V:2] ED!fermata!D |]  
+[V:3] G,/ ^F,// E,//F,!fermata!B, |]  
+[V:4] C,D,!fermata!G,, |]  

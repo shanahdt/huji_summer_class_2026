@@ -1,0 +1,69 @@
+CHEKSUMS for files from /users/craig/ragtime/joplin
+at http://kern.ccarh.org
+downloaded on Sat Apr 24 22:06:27 PDT 2010
+A current version of these files may be downloaded using the address:
+   http://kern.ccarh.org/cgi-bin/ksdata?l=/users/craig/ragtime/joplin&f=zip
+==================================================================
+
+The following lines list the checksum values for all score
+files in this downloaded zip archive.
+
+A "checksum" value is an error-checking mechanism that may
+assist in determining whether a file has been modified or data
+garbled due to transmission or faulty storage.  The "checksum A"
+value uses the POSIX 2 checksum algorithm.  The "checksum B" value
+uses the CCITT cyclic redundancy check algorithm.  
+
+Note that checksum commands will differ for ASCII files formatted
+in DOS/Windows style or Unix/Macintosh formatted text.  The files in
+this ZIP archive were in Unix/Macintosh line formatting style when the
+checksums were compiled.
+
+checksum A   checksum B    filename
+===================================================================
+
+273548055 11285 antoinette.krn
+1687972858 13476 augustan.krn
+1144316053 16735 bethena.krn
+894529 14275 binks.krn
+1833999101 14495 breeze.krn
+3573450279 12222 cascades.krn
+1213397300 14131 chrysanthemum.krn
+1652120866 11233 cleopha.krn
+2877676678 9753 combination.krn
+1062084477 12623 countryclub.krn
+3172742224 12254 crush.krn
+1990753909 10474 elite.krn
+1198151015 13773 entertainer.krn
+2756256570 14394 eugenia.krn
+3553144875 15505 figleaf.krn
+3431579809 15275 gladiolus.krn
+3231663784 15529 harmony.krn
+2082099878 15248 heliotrope.krn
+1518953866 13787 leola.krn
+2936878633 12597 lilyqueen.krn
+631291879 16366 magnetic.krn
+2865335964 9974 majestic.krn
+3617541362 14032 mapleleaf.krn
+1195731427 16528 newrag.krn
+1630407151 12270 nonpareil.krn
+3153921543 14806 original.krn
+3146770864 10728 palmleaf.krn
+2854540245 13151 paragon.krn
+1785704674 8833 peacherine.krn
+1376978793 14822 pineapple.krn
+23047821 11640 pleasant.krn
+1368954519 12656 reflection.krn
+1760414889 9532 rosebud.krn
+3274439211 16193 roseleaf.krn
+3674831169 7233 school.krn
+2788787415 14968 searchlight.krn
+428477462 15120 solace.krn
+1898433661 8393 something.krn
+1617780307 10865 stoptime.krn
+2082862070 14179 sugarcane.krn
+739825548 14443 sunflower.krn
+367340276 12161 swipesy.krn
+333859160 13475 wallstreet.krn
+270802436 13032 weepingwillow.krn
+3076255142 12857 winners.krn

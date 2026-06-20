@@ -1,0 +1,111 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Befiehl du deine Wege
+!!!SCT:	BWV 271
+!!!PC#:	367
+!!!AGN:	chorale
+**kern
+*ICvox
+*Itenor
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefGv2
+*k[f#c#]
+*b:
+*M4/4
+*met(C)
+*MM100
+4A
+=1
+4G
+4A
+8BL
+8c#J
+4d
+=2
+4d
+4c#
+4d;
+[4c#
+=3
+4c#]
+.
+4B
+.
+4B
+.
+4A#
+.
+=4
+2.B;
+=:|!
+*>B
+8BL
+8AnXJ
+=5
+4G
+.
+8dL
+8c#J
+8BL
+8AJ
+8GL
+8AJ
+=6
+4B
+8AL
+8GJ
+4A;
+4d
+=7
+4d
+.
+4c
+.
+4B
+.
+4B
+.
+=8
+2.B;
+4B
+=9
+8AL
+8BJ
+4c#
+.
+4d
+.
+4e
+=10
+4f#
+4e
+4e;
+8dL
+8c#J
+=11
+8BL
+8c#J
+4d
+.
+8AL
+8BJ
+[4c#
+.
+=12
+8c#L]
+8F#J
+4B
+.
+4A#;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

@@ -1,0 +1,59 @@
+X: 1
+T: Inventio No. 14
+C: Johann Sebastian Bach
+%%abc-version 2.0
+%%abcx-abcm2ps-target-version 5.9.1 (29 Sep 2008)
+%%abc-creator hum2abc beta
+%%abcx-conversion-date 2011/06/26 20:33:16
+%%gracespace 0 6 6
+%%humdrum-veritas 3726495981
+%%humdrum-veritas-data 1490620424
+%%continueall 1
+%%barnumbers 0
+L: 1/16
+M: 4/4
+Q: 1/4=60
+%%staves {1 2}
+V: 1 clef=treble
+V: 2 clef=bass
+K: Bb
+[V:1] z B/ c/ d/ c/ B f d b f d f/ e/ d/ e/ f B d F _A | 
+[V:2] B,2 B,,2 D,2 F,2B,4z4 | 
+[V:1] G E/ F/ G/ F/ E B G e B G B/ _A/ G/ A/ B E G C E | 
+[V:2] z2 B,,2 E,2 G,2B,4z4 | 
+[V:1] A, C/ D/ E/ D/ C A F c A e F/ G/ A/ G/ F c A f c | 
+[V:2] z2 B,,2 C,2 E,2A,4z4 | 
+[V:1] d2 z2 z g/ f/ e/ f/ g c2 z2 z f/ e/ d/ e/ f | 
+[V:2] z B,/ C/ D/ C/ B, E2 z2 z A,/ B,/ C/ B,/ A, D2 z2 | 
+[V:1] B2 z2 z e/ d/ c/ d/ e A c/ B/ A/ B/ c F2 z2 | 
+[V:2] z G,/ A,/ B,/ A,/ G, C C,/ D,/ E,/ D,/ C, F,2 F,,2 z C A, F, | 
+[V:1] f2 F2 A2 c2f4z4 | 
+[V:2] z F,/ G,/ A,/ G,/ F, C A, F C A, C/ B,/ A,/ B,/ C F, A, C, E, | 
+[V:1] z2 F2 B2 d2f4z4 | 
+[V:2] D, B,,/ C,/ D,/ C,/ B,, F, D, B, F, D, F,/ E,/ D,/ E,/ F, B,, D, G,, B,, | 
+[V:1] z2 G2 B2 c2=e4z4 | 
+[V:2] =E,, G,,/ A,,/ B,,/ A,,/ G,, =E, C, G, E, B, C,/ D,/ E,/ D,/ C, G, E, C G, | 
+[V:1] z F/ G/ A/ G/ F c A f c a e/ d/ c/ d/ e A c ^F A | 
+[V:2] A,2 C2 A,2 F,2 ^F,2 A,2 F,2 D,2 | 
+[V:1] B2 d2 B2 G2 _A2 f2 A2 F2 | 
+[V:2] G, G,,/ A,,/ B,,/ A,,/ G,, D, B,, G, D, B, _A,/ G,/ F,/ G,/ A, D, F, B,, D, | 
+[V:1] G C/ D/ E/ D/ C G E c G d _A/ G/ F/ G/ A D F =B, G | 
+[V:2] E,2 G,2 E,2 C,2 =B,,2 D,2 B,,2 G,,2 | 
+[V:1] E2 z2 z C/ D/ E/ D/ C2< c2 B A F/ G/ A/ G/ F | 
+[V:2] C, C,,/ D,,/ E,,/ D,,/ C,,2< C,2 B,, A,, F,,/ G,,/ A,,/ G,,/ F,,2< F,2 E, | 
+[V:1] f2> e2 d B/ c/ d/ c/ B2< b2 _a g b/ a/ g/ a/ b | 
+[V:2] D, B,,/ C,/ D,/ C,/ B,,2< B,2 _A, G, E,/ F,/ G,/ F,/ E,2< E2 D | 
+[V:1] e g/ f/ e/ f/ g c e/ d/ c/ d/ e A c/ d/ e/ d/ c f _A/ G/ F/ G/ A | 
+[V:2] C E/ D/ C/ D/ E A, C/ B,/ A,/ B,/ C F, A,/ B,/ C/ B,/ A, D F,/ E,/ D,/ E,/ F, | 
+[V:1] G B/ c/ d/ c/ B e G/ F/ E/ F/ G F A/ B/ c/ B/ A d F/ E/ D/ E/ F | 
+[V:2] E, G,/ =A,/ B,/ A,/ G, C E,/ D,/ C,/ D,/ E, D, F,/ G,/ A,/ G,/ F, B, D,/ C,/ B,,/ C,/ D, | 
+[V:1] E G/ A/ B/ A/ G c E/ D/ C/ D/ ED4z B/ c/ d/ c/ B | 
+[V:2] C, E,/ F,/ G,/ F,/ E, A, C,/ B,,/ A,,/ B,,/ C, B,, B,/ C/ D/ C/ B, F D B F | 
+[V:1] f d b f d f/ e/ d/ e/ f B e B e G E/ F/ G/ F/ E | 
+[V:2] D F/ E/ D/ E/ F B, D F, _A, G, E,/ F,/ G,/ F,/ E, B, G, E B, | 
+[V:1] B G e B G B/ _A/ G/ A/ B E2 e2- e e/ d/ c/ d/ e | 
+[V:2] G, B,/ _A,/ G,/ A,/ B, E, G, B,, D, C, F,,/ G,,/ =A,,/ G,,/ F,, C, A,, E, C, | 
+[V:1] F2 e2- e c/ d/ e/ d/ c f d/ c/ B/ c/ d F B c A | 
+[V:2] A,, C,/ B,,/ A,,/ B,,/ C, F,, A,, C,, E,, D,, B,,/ C,/ D,/ C,/ B,, F,2 F,,2 | 
+[V:1] !fermata!B16 |]  
+[V:2] !fermata!B,,16 |]  

@@ -1,0 +1,113 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Herr Jesu Christ, du h&ouml;chstes Gut
+!!!SCT:	BWV 168/6
+!!!PC#:	92
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ibass
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefF4
+*k[f#c#]
+*b:
+*M4/4
+*met(C)
+*MM100
+4B
+=1
+4c#
+.
+4C#
+4D
+.
+4E
+.
+=2
+8F#L
+8EJ
+4F#
+.
+4BB;
+4E
+=3
+4AA
+.
+4A
+8dL
+8c#
+8B
+8A#J
+=4
+4B
+.
+4BB
+.
+4F#;
+=:|!
+*>B
+4D
+=5
+4E
+.
+8F#L
+8G#J
+4A
+.
+4A#
+.
+=6
+4B
+.
+4F#
+.
+4BB;
+4B
+.
+=7
+8AnXL
+8G#
+8F#
+8E#J
+4.F#
+.
+.
+8E
+=8
+8DL
+8C#J
+4BB
+4AA;
+4A
+.
+=9
+4B
+.
+4c#
+.
+8dL
+8c#J
+8BL
+8A#J
+=10
+8BL
+8AnXJ
+8GL
+8F#J
+4E
+4F#
+.
+=11
+2.BB;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

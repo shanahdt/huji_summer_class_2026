@@ -1,0 +1,1575 @@
+# EDITION
+#
+# This script is used to select possible editions/versions for the
+# Vivaldi Concertos, Opus 8.
+
+# Help screen.
+if [ X"$1" = X-h ]
+then
+	echo ""
+
+	echo "EDITION  : Generate a file containing a particular source for Vivali Opus 8"
+	echo ""
+	echo "     This command is specific to the 12 Concertos Opus 8 by Antonio Vivaldi."
+	echo "     The command must be run from the directory containing the distribution"
+	echo "     files for Opus 8.  The command is invoked by specifying a single option"
+	echo "     and a single filename.  The option letter is used to identify the desired"
+	echo "     source.  The output file is automatically named by appending the source"
+	echo "     designating letter to the filename.  For example, the command:"
+	echo ""
+	echo "     edition -T op8n10c.krn"
+	echo ""
+	echo "     generates a file \"op8n10ct.krn\" containing the Turin version of Opus 8,"
+	echo "     No. 10, third movement.  The -? option may be used to determine all avail-"
+	echo "     able versions for a given movement.  Not all sources are available for all"
+	echo "     movements.  Additional options are provided for certain files."
+	echo ""
+	echo "Syntax:"
+	echo ""
+	echo "     edition -[DdTtMmSs?] Vivaldi_opus8_inputfile"
+	echo ""
+	echo "Options:"
+	echo ""
+	echo "     -D     : Generate output file encoding to Dresden manuscript."
+	echo "     -d     : same as -D"
+	echo "     -T     : Generate output file encoding to Turin autograph."
+	echo "     -t     : same as -T"
+	echo "     -M     : Generate output file encoding to Manchester part-books."
+	echo "     -m     : same as -M"
+	echo "     -S     : Generate output file encoding to Selfridge-Field critical edition."
+	echo "     -s     : same as -S"
+	echo "     -? file  : Identify all available sources/options for file \"file\""
+	echo ""
+	echo "  Refer to reference notes for further details."
+	echo ""
+	exit
+fi
+
+if [ X"$1" = X-? ]
+then
+	if [ -f $2 ]
+	then
+		sync
+	else
+		echo "edition: ERROR: -? option can be used only with specified input file."
+		exit
+	fi
+fi
+
+# Ensure that the input file is available.
+if [ -f $2 ]
+then
+	sync
+else
+	echo "$2: File not found."
+	exit
+fi
+
+# Normalize different option specifications.
+OPTION="$1"
+
+if [ X"$1" = X-a ]
+then
+	OPTION="-A"
+fi
+if [ X"$1" = X-Amsterdam ]
+then
+	OPTION="-A"
+fi
+if [ X"$1" = X-d ]
+then
+	OPTION="-D"
+fi
+if [ X"$1" = X-Dresden ]
+then
+	OPTION="-D"
+fi
+if [ X"$1" = X-m ]
+then
+	OPTION="-M"
+fi
+if [ X"$1" = X-Manchester ]
+then
+	OPTION="-M"
+fi
+if [ X"$1" = X-r ]
+then
+	OPTION="-R"
+fi
+if [ X"$1" = X-s ]
+then
+	OPTION="-S"
+fi
+if [ X"$1" = X-t ]
+then
+	OPTION="-T"
+fi
+if [ X"$1" = X-Turin ]
+then
+	OPTION="-T"
+fi
+if [ X"$1" = X-o ]
+then
+	OPTION="-O"
+fi
+if [ X"$1" = X-oboe ]
+then
+	OPTION="-O"
+fi
+
+if [ X"$2" = Xop8n01a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n01a.krn > tmp/op8n01aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n01a.krn > tmp/op8n01as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n01b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		echo "edition: No Amsterdam source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		cp op8n01b.krn > tmp/op8n01bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n01c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		echo "edition: No Amsterdam source for this movement."
+		strophe -x A op8n01c.krn > tmp/op8n01ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n01c.krn > tmp/op8n01cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+
+if [ X"$2" = Xop8n02a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n02a.krn | strophe -x A > tmp/op8n02aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n02a.krn | strophe -x S > tmp/op8n02as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+
+if [ X"$2" = Xop8n02b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n02b.krn > tmp/op8n02ba.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n02b.krn > tmp/op8n02bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+
+if [ X"$2" = Xop8n02c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n02c.krn | strophe -x A > tmp/op8n02ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n02c.krn | strophe -x M > tmp/op8n02cm.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n02c.krn | strophe -x S > tmp/op8n02cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+
+if [ X"$2" = Xop8n03a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n03a.krn | strophe -x A > tmp/op8n03aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n03a.krn | strophe -x M > tmp/op8n03am.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n03a.krn | strophe -x S > tmp/op8n03as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n03b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		echo "edition: No Amsterdam source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		cp op8n03b.krn tmp/op8n03bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n03c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n03c.krn | strophe -x A > tmp/op8n03ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n03c.krn | strophe -x M > tmp/op8n03cm.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n03c.krn | strophe -x S > tmp/op8n03cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n04a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n04a.krn > tmp/op8n04aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n04a.krn | sed 's/cemba/organ/' > tmp/op8n04am.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n04a.krn > tmp/op8n04as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n04b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		echo "edition: No Amsterdam source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		strophe -x M op8n04b.krn > tmp/op8n04bm.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n04b.krn > tmp/op8n04bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n04c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n04c.krn | strophe -x A > tmp/op8n04ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n04c.krn | strophe -x M > tmp/op8n04cm.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n04c.krn | strophe -x S > tmp/op8n04cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n05a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n05a.krn | strophe -x A > tmp/op8n05aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n05a.krn | strophe -x M > tmp/op8n05am.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n05a.krn | strophe -x S > tmp/op8n05as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n05b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n05b.krn | strophe -x A > tmp/op8n05ba.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n05b.krn | strophe -x M > tmp/op8n05bm.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n05b.krn | strophe -x S > tmp/op8n05bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n05c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Dresden manuscript (-D or -d)"
+		echo "    Manchester part-book (-M or -m)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n05c.krn | strophe -x A > tmp/op8n05ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		thru -v Dresden op8n05c.krn | strophe -x D > tmp/op8n05cd.krn
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		thru -v Manchester op8n05c.krn | strophe -x M > tmp/op8n05cm.krn
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n05c.krn | strophe -x S > tmp/op8n05cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n06a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n06a > tmp/op8n06aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n06a > tmp/op8n06sa.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n06b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n06b > tmp/op8n06ab.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n06b > tmp/op8n06sb.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n06c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n06c > tmp/op8n06ac.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n06c > tmp/op8n06sc.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n07a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n07a > tmp/op8n07aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n07a > tmp/op8n07sa.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n07b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		echo "edition: No Amsterdam source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		cp op8n07b.krn tmp/op8n07bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n07c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n07c > tmp/op8n07ac.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n07c > tmp/op8n07sc.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n08a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Turin autograph (-T or -t)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n08a.krn | strophe -x A > tmp/op8n08ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n08a.krn | strophe -x S > tmp/op8n08as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		thru -v Turin op8n08a.krn | strophe -x T > tmp/op8n08at.krn
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+# NOTE: For op8n08b.krn: the Turin autograph, violino 1 duplicated violino 2
+#       for the first seven measures (spine 4);  later this was changed to
+#       "Unisoni" so that violino 1 duplicates violino principale throughout
+#       (spine 5).
+
+if [ X"$2" = Xop8n08b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Original Turin autograph (-T or -t)"
+		echo "    Revised Turin autograph (-R or -r)"
+		echo "    Selfridge-Field edition = Revised Turin (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		echo "edition: No Amsterdam source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition (= Revised Turin).
+	then
+		extract -f 1-3,5-7 op8n08b.krn > tmp/op8n08bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph (original).
+	then
+		extract -f 1-4,6-7 op8n08b.krn > tmp/op8n08bt.krn
+		exit
+	fi
+	if [ X$OPTION = X-R ]	# Turin autograph (revised).
+	then
+		extract -f 1-3,5-7 op8n08b.krn > tmp/op8n08bt.krn
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n08c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Turin autograph (-T or -t)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n08c.krn | strophe -x A > tmp/op8n08ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n08c.krn | strophe -x S > tmp/op8n08cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		thru -v Turin op8n08c.krn | strophe -x S > tmp/op8n08ct.krn
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n09a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Turin autograph (= oboe version) (-T or -t)"
+		echo "    Oboe version RV 454 (= Turin autograph) (-O or -o)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n09a.krn | strophe -x A | extract -f 1-5,7 > tmp/op8n09aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n09a.krn | strophe -x S | extract -f 1-5,7 > tmp/op8n09as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		thru -v Selfridge-Field op8n09a.krn | strophe -x S | extract -f 1-4,6-7 > tmp/op8n09at.krn
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version (RV 454).
+	then
+		thru -v Selfridge-Field op8n09a.krn | strophe -x S | extract -f 1-4,6-7 > tmp/op8n09ao.krn
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n09b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Turin autograph (= oboe version) (-T or -t)"
+		echo "    Oboe version RV 454 (= Turin autograph) (-O or -o)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n09b.krn | strophe -x A | extract -f 1,2,4 > tmp/op8n09ba.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n09b.krn | strophe -x S | extract -f 1,2,4 > tmp/op8n09bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		thru -v Selfridge-Field op8n09b.krn | strophe -x S | extract -f 1,3,4 > tmp/op8n09bt.krn
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		thru -v Selfridge-Field op8n09b.krn | strophe -x S | extract -f 1,3,4 > tmp/op8n09bo.krn
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n09c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Turin autograph (RV 454) (-T or -t)"
+		echo "    Oboe version (RV 454) (-O or -o)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n09c.krn | extract -f 1-5,7 > tmp/op8n09ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n09c.krn | extract -f 1-5,7 > tmp/op8n09cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		thru -v Turin op8n09c.krn | extract -f 1-4,6-7 > tmp/op8n09ct.krn
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		thru -v Selfridge-Field op8n09c.krn | extract -f 1-4,6-7 > tmp/op8n09co.krn
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n10a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Dresdent manuscript (-D or -d)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n10a.krn > tmp/op8n10aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		thru -v Dresden op8n10a.krn > tmp/op8n10ad.krn
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n10a.krn > tmp/op8n10as.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+# Choices for op8n10b.krn:
+# This movement has a binary (A-B) form; repeats are marked for both
+# the A and B sections.  In the following versions, the label "rep"
+# means that both A and B sections are repeated, the lable "norep"
+# means that none of the sections are repeated.  Without either "rep"
+# or "norep", the A section is repeated, but not the B section.
+
+if [ X"$2" = Xop8n10b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a; -Aa or -aa; -Ar or -ar)"
+		echo "    Selfridge-Field critical edition (-S or -s; -Sa or -sa; -Sr or -sr)"
+		echo "N.B. This movement has a binary (A-B) form; repeats are marked for both the A and"
+		echo "     and B sections.  In all of the following versions, no repeats are generated"
+		echo "     by default.  The A section can be repeated if there is a trailing lower-case"
+		echo "     \"a\" following after the main option (e.g. edition -Aa op08n10b.krn).  Repeat"
+		echo "     of both the A and B sections is enabled by the trailing \"r\" after the main"
+		echo "     option:  e.g. edition -Sr op08n10b.krn"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam_norep op8n10b.krn > tmp/op8n10ba.krn
+		exit
+	fi
+	if [ X"$OPTION" = X-Aa ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n10b.krn > tmp/op8n10ba.krn
+		exit
+	fi
+	if [ X"$OPTION" = X-Ar ]	# Amsterdam print.
+	then
+		thru -v Amsterdam_rep op8n10b.krn > tmp/op8n10ba.krn
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n10b.krn > tmp/op8n10ba.krn
+		thru -v Amsterdam op8n10b.krn_rep > tmp/op8n10ba.krn
+		thru -v Amsterdam op8n10b.krn_norep > tmp/op8n10ba.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field_norep op8n10b.krn > tmp/op8n10bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-Sa ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n10b.krn > tmp/op8n10bs.krn
+	fi
+	if [ X$OPTION = X-Sr ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field_rep op8n10b.krn > tmp/op8n10bs.krn
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n10c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Dresden manuscript (-D or -d)"
+		echo "    Turin autograph (-T or -t)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n10c.krn > tmp/op8n10ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		thru -v Dresden op8n10c.krn > tmp/op8n10cd.krn
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n10c.krn > tmp/op8n10cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		thru -v Turin op8n10c.krn > tmp/op8n10ct.krn
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n12a.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		strophe -x A op8n12a.krn > tmp/op8n12aa.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		strophe -x S op8n12a.krn > tmp/op8n12sa.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+if [ X"$2" = Xop8n12b.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		echo "edition: No Amsterdam source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		cp op8n12b.krn tmp/op8n12bs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi
+
+
+if [ X"$2" = Xop8n12c.krn ]
+then
+	if [ X"$OPTION" = X-? ]	# Identify possible sources.
+	then
+		echo "Available sources for $2:"
+		echo "    Amsterdam print (-A or -a)"
+		echo "    Selfridge-Field critical edition (-S or -s)"
+		exit
+	fi
+	if [ X"$OPTION" = X-A ]	# Amsterdam print.
+	then
+		thru -v Amsterdam op8n12c.krn | strophe -x A > tmp/op8n12ca.krn
+		exit
+	fi
+	if [ X$OPTION = X-D ]	# Dresden manuscript.
+	then
+		echo "edition: No Dresden source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-M ]	# Manchester part-book.
+	then
+		echo "edition: No Manchester source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-S ]	# Selfridge-Field edition.
+	then
+		thru -v Selfridge-Field op8n12c.krn | strophe -x S > tmp/op8n12cs.krn
+		exit
+	fi
+	if [ X$OPTION = X-T ]	# Turin autograph.
+	then
+		echo "edition: No Turin source for this movement."
+		exit
+	fi
+	if [ X$OPTION = X-O ]	# Oboe version.
+	then
+		echo "edition: No oboe version for this movement."
+		exit
+	fi
+	echo "edition: Option $OPTION illegal."
+fi

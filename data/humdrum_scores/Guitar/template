@@ -1,0 +1,69 @@
+SENT:  Wed Jul 30 17:27:24 EDT 2003
+TO:    trecchia@hotmail.com
+
+
+Tom,
+
+Thanks for writing.
+
+Here's what I propose.  Below is a sample "template"
+I'd like to pay you $2 per piece.  If you rustle-up
+some big fake books, it should be possible to encode
+a piece in as little as 5 minutes.
+
+I'm looking for you to encode say 100 pop songs.
+
+I recommend that you begin by encoding four or five pieces,
+e-mail the encodings to me, and then we can meet to discuss
+any possible problems before you continue encoding more.
+
+Let me make a few comments on the sample encoding
+given below.  The !!!COM: line is to encode the composer
+(if you know who, otherwise omit).  The !!!MPN: line is
+to encode the performer(s) (again omit if not pertinent).
+The !!!OTL: line is to encode the song title.  The !!!YOR:
+line is used to encode the author, title, imprint, and
+page numbers of any source book you may use.  Try your
+best for a key designation -- e.g. *G: for G major,
+*a-: for A-flat minor.
+
+If a song has several verses or chorus, please mark them
+with comments.  Expand the encoding to match the typical
+duration of the song.
+
+Let me know if you have any questions.
+You can phone me at 688-4753.
+
+-David Huron
+
+------------------------------------------------------
+!!!COM: Lennon, John & McCartney, Paul
+!!!MPN: Turner, Tina
+!!!OTL: Have You Seen the Little Piggies?
+!!!YOR: Frank Miller, "The Big Little Fake Book" (1998) pp.8-9
+!!!ENC: Tom Recchia
+**chords
+*M4/4
+*G:
+!! First verse & chorus
+G
+D7
+Emin
+Emin7
+Fsus
+D7
+A7
+G
+D7
+!! Second verse & chorus
+G
+D7
+Emin
+Emin7
+Fsus
+D7
+A7
+G
+D7
+G
+*-

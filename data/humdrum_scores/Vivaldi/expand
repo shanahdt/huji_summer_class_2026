@@ -1,0 +1,206 @@
+# EXPAND
+#
+# This script is used to generate subdirectories containing files for
+# different editions/versions for the Vivaldi Concertos, Opus 8.
+
+# Help screen.
+if [ X"$1" = X-h ]
+then
+	HELP="yes"
+fi
+if [ X"$1" = X-? ]
+then
+	HELP="yes"
+fi
+
+if [ X"$HELP" = Xyes ]
+then
+	echo ""
+
+	echo "EXPAND  : Generate source directories for Vivaldi Opus 8"
+	echo ""
+	echo "     This command is restricted to the 12 Concertos Opus 8 by Antonio Vivaldi."
+	echo "     The command must be run from the directory containing the integrated"
+	echo "     source files for Opus 8.  The command is invoked by specifying one or more"
+	echo "     option letters.  Each option letter identifies a different source"
+	echo "     directory to be created."
+	echo "     For example, the command:"
+	echo ""
+	echo "     expand -a op8n10c.krn"
+	echo ""
+	echo "     generates a subdirectory \"Amsterdm\" containing all movements from Opus 8"
+	echo "     that differ"
+	echo "     Not all sources are available for all"
+	echo "     movements.  Additional options are provided for certain files."
+	echo ""
+	echo "Syntax:"
+	echo ""
+	echo "     expand -[adtmos?]"
+	echo ""
+	echo "Options:"
+	echo ""
+	echo "     -a     : Generate source directory containing Amsterdam print files."
+	echo "     -d     : Generate source directory containing Dresden manuscript files."
+	echo "     -t     : Generate source directory containing Turin autograph files."
+	echo "     -m     : Generate source directory containing Manchester part-books files."
+	echo "     -o     : Generate source directory containing Oboe arrangement files."
+	echo "     -s     : Generate source directory containing Selfridge-Field critical-edition files."
+	echo ""
+	echo "  Refer to reference notes for further details."
+	echo ""
+	exit
+fi
+
+if [ X$OPTION = X-s ]	# Selfridge-Field edition.
+then
+	if [ -d Critical.ed ]
+	then
+		sync
+	else
+		mkdir Critical.ed
+	fi
+
+	strophe -x S op8n01a.krn > Critical.ed/op8n01as.krn
+	cp op8n01b.krn > Critical.ed/op8n01bs.krn
+	strophe -x S op8n01c.krn > Critical.ed/op8n01cs.krn
+	thru -v Selfridge-Field op8n02a.krn | strophe -x S > Critical.ed/op8n02as.krn
+	strophe -x S op8n02b.krn > Critical.ed/op8n02bs.krn
+	thru -v Selfridge-Field op8n02c.krn | strophe -x S > Critical.ed/op8n02cs.krn
+	thru -v Selfridge-Field op8n03a.krn | strophe -x S > Critical.ed/op8n03as.krn
+	cp op8n03b.krn Critical.ed/op8n03bs.krn
+	thru -v Selfridge-Field op8n03c.krn | strophe -x S > Critical.ed/op8n03cs.krn
+	thru -v Selfridge-Field op8n04a.krn > Critical.ed/op8n04as.krn
+	strophe -x S op8n04b.krn > Critical.ed/op8n04bs.krn
+	thru -v Selfridge-Field op8n04c.krn | strophe -x S > Critical.ed/op8n04cs.krn
+	thru -v Selfridge-Field op8n05a.krn | strophe -x S > Critical.ed/op8n05as.krn
+	thru -v Selfridge-Field op8n05b.krn | strophe -x S > Critical.ed/op8n05bs.krn
+	thru -v Selfridge-Field op8n05c.krn | strophe -x S > Critical.ed/op8n05cs.krn
+	strophe -x S op8n06a > Critical.ed/op8n06sa.krn
+	strophe -x S op8n06b > Critical.ed/op8n06sb.krn
+	strophe -x S op8n06c > Critical.ed/op8n06sc.krn
+	strophe -x S op8n07a > Critical.ed/op8n07sa.krn
+	cp op8n07b.krn Critical.ed/op8n07bs.krn
+	strophe -x S op8n07c > Critical.ed/op8n07sc.krn
+	thru -v Selfridge-Field op8n08a.krn | strophe -x S > Critical.ed/op8n08as.krn
+	extract -f 1-3,5-7 op8n08b.krn > Critical.ed/op8n08bs.krn
+	thru -v Selfridge-Field op8n08c.krn | strophe -x S > Critical.ed/op8n08cs.krn
+	thru -v Selfridge-Field op8n09a.krn | strophe -x S | extract -f 1-5,7 > Critical.ed/op8n09as.krn
+	thru -v Selfridge-Field op8n09b.krn | strophe -x S | extract -f 1,2,4 > Critical.ed/op8n09bs.krn
+	thru -v Selfridge-Field op8n09c.krn | extract -f 1-5,7 > Critical.ed/op8n09cs.krn
+	thru -v Selfridge-Field op8n10a.krn > Critical.ed/op8n10as.krn
+	thru -v Selfridge-Field_norep op8n10b.krn > Critical.ed/op8n10bs.krn
+	thru -v Selfridge-Field op8n10c.krn > Critical.ed/op8n10cs.krn
+	strophe -x S op8n12a.krn > Critical.ed/op8n12sa.krn
+	cp op8n12b.krn Critical.ed/op8n12bs.krn
+	thru -v Selfridge-Field op8n12c.krn | strophe -x S > Critical.ed/op8n12cs.krn
+fi
+
+if [ X"$OPTION" = X-a ]	# Amsterdam print.
+then
+	if [ -d Amsterdm ]
+	then
+		sync
+	else
+		mkdir Amsterdm
+	fi
+
+	strophe -x A op8n01a.krn > Amsterdm/op8n01aa.krn
+	cp op8n01b.krn > Amsterdm/op8n01bs.krn
+	strophe -x A op8n01c.krn > Amsterdm/op8n01ca.krn
+	thru -v Amsterdam op8n02a.krn | strophe -x A > Amsterdm/op8n02aa.krn
+	strophe -x A op8n02b.krn > Amsterdm/op8n02ba.krn
+	thru -v Amsterdam op8n02c.krn | strophe -x A > Amsterdm/op8n02ca.krn
+	thru -v Amsterdam op8n03a.krn | strophe -x A > Amsterdm/op8n03aa.krn
+	cp op8n03b.krn Amsterdm/op8n03bs.krn
+	thru -v Amsterdam op8n03c.krn | strophe -x A > Amsterdm/op8n03ca.krn
+	thru -v Amsterdam op8n04a.krn > Amsterdm/op8n04aa.krn
+	strophe -x S op8n04b.krn > Amsterdm/op8n04ba.krn
+	thru -v Amsterdam op8n04c.krn | strophe -x A > Amsterdm/op8n04ca.krn
+	thru -v Amsterdam op8n05a.krn | strophe -x A > Amsterdm/op8n05aa.krn
+	thru -v Amsterdam op8n05b.krn | strophe -x A > Amsterdm/op8n05ba.krn
+	thru -v Amsterdam op8n05c.krn | strophe -x A > Amsterdm/op8n05ca.krn
+	strophe -x A op8n06a > Amsterdm/op8n06aa.krn
+	strophe -x A op8n06b > Amsterdm/op8n06ab.krn
+	strophe -x A op8n06c > Amsterdm/op8n06ac.krn
+	strophe -x A op8n07a > Amsterdm/op8n07aa.krn
+	cp op8n07b.krn Amsterdm/op8n07bs.krn
+	strophe -x A op8n07c > Amsterdm/op8n07ac.krn
+	thru -v Amsterdam op8n08a.krn | strophe -x A > Amsterdm/op8n08ca.krn
+	extract -f 1-3,5-7 op8n08b.krn > Amsterdm/op8n08bs.krn
+	thru -v Amsterdam op8n08c.krn | strophe -x A > Amsterdm/op8n08ca.krn
+	thru -v Amsterdam op8n09a.krn | strophe -x A | extract -f 1-5,7 > Amsterdm/op8n09aa.krn
+	thru -v Amsterdam op8n09b.krn | strophe -x A | extract -f 1,2,4 > Amsterdm/op8n09ba.krn
+	thru -v Amsterdam op8n09c.krn | extract -f 1-5,7 > Amsterdm/op8n09ca.krn
+	thru -v Amsterdam op8n10a.krn > Amsterdm/op8n10aa.krn
+	thru -v Amsterdam_norep op8n10b.krn > Amsterdm/op8n10ba.krn
+	thru -v Amsterdam op8n10c.krn > Amsterdm/op8n10ca.krn
+	strophe -x A op8n12a.krn > Amsterdm/op8n12aa.krn
+	cp op8n12b.krn Amsterdm/op8n12bs.krn
+	thru -v Amsterdam op8n12c.krn | strophe -x A > Amsterdm/op8n12ca.krn
+fi
+
+if [ X$OPTION = X-d ]	# Dresden manuscript.
+then
+	if [ -d Dresden ]
+	then
+		sync
+	else
+		mkdir Dresden
+	fi
+
+	thru -v Dresden op8n05c.krn | strophe -x D > Dresden/op8n05cd.krn
+	thru -v Dresden op8n10c.krn > Dresden/op8n10cd.krn
+fi
+
+if [ X$OPTION = X-t ]	# Turino autograph.
+then
+	if [ -d Turino ]
+	then
+		sync
+	else
+		mkdir Turino
+	fi
+
+	thru -v Turin op8n08a.krn | strophe -x T > Turino/op8n08at.krn
+	extract -f 1-3,5-7 op8n08b.krn > tmp/op8n08bt.krn
+	thru -v Turin op8n08c.krn | strophe -x S > Turino/op8n08ct.krn
+	thru -v Selfridge-Field op8n09a.krn | strophe -x S | extract -f 1-4,6-7 > Turino/op8n09at.krn
+	thru -v Selfridge-Field op8n09b.krn | strophe -x S | extract -f 1,3,4 > Turino/op8n09bt.krn
+	thru -v Turin op8n09c.krn | extract -f 1-4,6-7 > Turino/op8n09ct.krn
+	thru -v Turin op8n10a.krn > Turino/op8n10at.krn
+	thru -v Turin op8n10c.krn > Turino/op8n10ct.krn
+fi
+
+if [ X$OPTION = X-m ]	# Manchester part-book.
+then
+	if [ -d Manchester ]
+	then
+		sync
+	else
+		mkdir Manchester
+	fi
+
+	thru -v Manchester op8n02c.krn | strophe -x M > Manchstr/op8n02cm.krn
+	thru -v Manchester op8n03a.krn | strophe -x M > Manchstr/op8n03am.krn
+	thru -v Manchester op8n03c.krn | strophe -x M > Manchstr/op8n03cm.krn
+	thru -v Manchester op8n04a.krn | sed 's/cemba/organ/' > Manchstr/op8n04am.krn
+	strophe -x M op8n04b.krn > Manchstr/op8n04bm.krn
+	thru -v Manchester op8n04c.krn | strophe -x M > Manchstr/op8n04cm.krn
+	thru -v Manchester op8n05a.krn | strophe -x M > Manchstr/op8n05am.krn
+	thru -v Manchester op8n05b.krn | strophe -x M > Manchstr/op8n05bm.krn
+	thru -v Manchester op8n05c.krn | strophe -x M > Manchstr/op8n05cm.krn
+fi
+
+if [ X$OPTION = X-o ]	# Oboe version (RV 454).
+then
+	if [ -d Oboe ]
+	then
+		sync
+	else
+		mkdir Oboe
+	fi
+
+	thru -v Selfridge-Field op8n09a.krn | strophe -x S | extract -f 1-4,6-7 > Oboe/op8n09ao.krn
+	thru -v Selfridge-Field op8n09b.krn | strophe -x S | extract -f 1,3,4 > Oboe/op8n09bo.krn
+	thru -v Selfridge-Field op8n09c.krn | extract -f 1-4,6-7 > Oboe/op8n09co.krn
+fi

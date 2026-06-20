@@ -1,0 +1,95 @@
+CHEKSUMS for files from /users/craig/classical/beethoven/quartet
+at http://kern.ccarh.org
+downloaded on Sat Nov  6 08:06:40 PDT 2010
+A current version of these files may be downloaded using the address:
+   http://kern.ccarh.org/cgi-bin/ksdata?l=/users/craig/classical/beethoven/quartet&f=zip
+==================================================================
+
+The following lines list the checksum values for all score
+files in this downloaded zip archive.
+
+A "checksum" value is an error-checking mechanism that may
+assist in determining whether a file has been modified or data
+garbled due to transmission or faulty storage.  The "checksum A"
+value uses the POSIX 2 checksum algorithm.  The "checksum B" value
+uses the CCITT cyclic redundancy check algorithm.  
+
+Note that checksum commands will differ for ASCII files formatted
+in DOS/Windows style or Unix/Macintosh formatted text.  The files in
+this ZIP archive were in Unix/Macintosh line formatting style when the
+checksums were compiled.
+
+checksum A   checksum B    filename
+===================================================================
+
+4150350676 64267 quartet01-1.krn
+438720438 41806 quartet01-2.krn
+368007202 20283 quartet01-3.krn
+4016179526 83038 quartet01-4.krn
+315358382 53291 quartet02-1.krn
+4282192805 26232 quartet02-2.krn
+691021333 20521 quartet02-3.krn
+989738836 61486 quartet02-4.krn
+1418784323 50306 quartet03-1.krn
+1090105376 41066 quartet03-2.krn
+3405549787 20383 quartet03-3.krn
+2575714492 65403 quartet03-4.krn
+1141081967 53645 quartet04-1.krn
+432971924 43559 quartet04-2.krn
+4065295887 17188 quartet04-3.krn
+4094619155 42085 quartet04-4.krn
+2027713376 46377 quartet05-1.krn
+1205927478 14772 quartet05-2.krn
+2131664555 41566 quartet05-3.krn
+2863236678 54745 quartet05-4.krn
+3059234509 52823 quartet06-1.krn
+312760002 30403 quartet06-2.krn
+3200315174 15641 quartet06-3.krn
+3073477381 6624 quartet06-4a.krn
+31256999 45560 quartet06-4b.krn
+3563810573 85505 quartet07-1.krn
+1203856927 93116 quartet07-2.krn
+959839497 64386 quartet07-3.krn
+3727334741 78520 quartet07-4.krn
+402920043 72483 quartet08-1.krn
+3742005812 46515 quartet08-2.krn
+3027147972 28472 quartet08-3.krn
+1311757080 76339 quartet08-4.krn
+3600784337 68457 quartet09-1.krn
+3427481990 43906 quartet09-2.krn
+377166487 24757 quartet09-3.krn
+1976441238 92858 quartet09-4.krn
+4144904588 69655 quartet10-1.krn
+3083601432 38928 quartet10-2.krn
+156375286 71486 quartet10-3.krn
+1571056866 42664 quartet10-4.krn
+2053253055 46871 quartet11-1.krn
+687849359 34243 quartet11-2.krn
+4225199592 41924 quartet11-3.krn
+1545311314 48186 quartet11-4.krn
+1534046597 44185 quartet12-1.krn
+1758300248 54891 quartet12-2.krn
+4171574884 76289 quartet12-3.krn
+2791245153 65668 quartet12-4.krn
+1270859862 75903 quartet13-1.krn
+3066304845 22392 quartet13-2.krn
+620480728 54316 quartet13-3.krn
+2878160113 26987 quartet13-4.krn
+367898799 16355 quartet13-5.krn
+4182661166 98485 quartet13-6.krn
+1259597147 22108 quartet14-1.krn
+665075606 31066 quartet14-2.krn
+3038477399 4033 quartet14-3.krn
+3445342374 82931 quartet14-4.krn
+2078486667 70623 quartet14-5.krn
+1514143123 4868 quartet14-6.krn
+2328957623 72421 quartet14-7.krn
+3333518261 73954 quartet15-1.krn
+3331625320 44938 quartet15-2.krn
+3177312620 54146 quartet15-3.krn
+3770061542 11936 quartet15-4.krn
+370459222 72574 quartet15-5.krn
+2683730136 35534 quartet16-1.krn
+3492788263 26353 quartet16-2.krn
+4138559464 11297 quartet16-3.krn
+3409471994 31238 quartet16-4.krn

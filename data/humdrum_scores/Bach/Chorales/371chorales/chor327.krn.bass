@@ -1,0 +1,122 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE: Jesu, nun sei gepreiset
+!!!SCT:	BWV 190/7
+!!!PC#:	327
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ibass
+*>[A,A,B,B,C,C,D]
+*>norep[A,B,C,D]
+*>A
+*clefF4
+*k[f#c#]
+*D:
+*M4/4
+*met(C)
+*MM100
+4D
+=1
+4d
+4cn
+4B
+4A
+=2
+2G
+4Cn;
+4BB
+=3
+4AA#
+4BB
+4GG#
+4AAn
+=4
+2.DD;
+4A
+=5
+4G#
+.
+4E
+4A
+4F#
+=6
+2B
+.
+.
+4B;
+4B
+=7
+4E
+4D
+.
+4A
+.
+.
+4AA
+.
+=8
+2.D;
+=:|!|:
+!!linebreak: 2
+*>B
+4AA
+=9
+4A
+4G
+4F#
+4A
+.
+=10
+2D
+4D;
+=:|!|:
+*>C
+4D
+=11
+4d
+4cn
+4B
+4A
+=12
+4B
+4c#X
+4d;
+4D#
+=13
+4E
+4A
+4B
+4BB
+=14
+2.E;
+=:|!
+*>D
+4A#
+=15
+4B
+4An
+4G
+4F#
+=16
+4E
+4DnX
+4C#;
+4BB
+=17
+4AA#
+4BB
+4GG#
+4AAn
+=18
+2.DD;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

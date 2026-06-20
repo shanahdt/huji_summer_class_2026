@@ -1,0 +1,124 @@
+!!!COM: Webern, Anton : von
+!!!OPS: Opus 11 (Violoncell und Klavier)
+!!!OMV: Stuck I
+!!!OTL: Drei Kleine StÅcke
+!!!YEC: Copyright 1995 McGill???
+!!!CDT: 1993/12/3-1945/9/15 
+!!!YOR: Universal Edition
+!!!YOO: Copyright 1924 by Universal Edition, renewed 1952 by Anton Webern's Erben
+!!!ENC:Norma Welch
+**kern	**kern	**kern
+*staff3	*staff2	*staff1
+*ClefF4	*ClefG2	*ClefF4
+*ICklav	*ICklav	*ICstr
+*Ipiano	*Ipiano	*Icello
+*M6/8	*M6/8	*M6/8
+*MM29	*MM29	*MM29
+*k[]	*k[]	*k[]
+*X:	*X:	*X:
+!! MÑ·ige
+!ppp	!ppp	!ppp
+!	!	!mit DÑmpfer
+!	!	!Als Cellostimme dient das beiliegende Exemplar
+=1-	=1-	=1-
+4.r	4.r	8r
+.	.	8r
+.	.	[8FF#
+8r	8dn': 8fn': 8an': 8een': 8gg#':	8FF#']
+8r	8r	8r
+8r	8r	8r
+=2	=2	=2
+4r	8r	4r
+!	!pp	!
+.	(8eee-	.
+8r	8ccn	8r
+!ppp	!ppp	!
+4.EEn 4.AAn 4.Fn 4.G#	8c#	8.r
+.	4gn)	.
+!	!	!sfp
+.	.	[8.Bn [8.en
+=3	=3	=3
+!!rit.
+4r	4r	4B] 4e]
+!	!	!slur to B-
+!	!	!ppp
+8r	8r	8B-
+8.r	8r	4r
+!!tempo
+.	[4f#	.
+[8.Cn [8.Fn [8.dn	.	.
+.	.	8r
+=4	=4	=4
+!!accel.
+!	!	!am steg
+!ppp	!pp	!pp
+16Cn] 16Fn] 16dn]	16f#]	8r
+16r	16r	.
+8r	8r	(24GG#
+.	.	24En
+.	.	24Gn)
+!	!	!end am steg
+8r	8r	8r
+!f dim	!f dim	!f pizz
+8.FFn: 8.BBn: 8.B-: 8.en: 8.an:	(8.cc#:	8.r
+16r	16g#	8.e-"~
+8r	8Dn	.
+=5	=5	=5
+!!rit.
+!	!	!mf dim
+4r	4r	4cn~
+8r	8r	8r
+!!tempo
+8r	8r	8r
+!pp	!pp	!pp
+4G# 4c# 4an 4ddn	(8bb-	4BBn~
+.	8ggn)	.
+=6	=6	=6
+8r	4r	16r
+!	!	!am Griffbrett
+!	!	!p
+.	.	(16en
+8r	.	16Fn)
+.	.	16r
+!ppp	!ppp	!pp
+16EE-~	8r	8r
+[16GG-~	.	.
+!!rit to end of measure
+!	!ppp	!pp
+16.GG-~]	4Gn	4AA- 4D-
+16.Dn~	.	.
+8.d-~	.	.
+.	8r	8r
+=7	=7	=7
+!!tempo
+16r	16r	8r
+!pp	!pp	!pp
+8.B-~ 8.dn~	8.an~ 8.ccn~	.
+*	*	*ClefC4
+.	.	8f#^ 8bn^
+8r	8r	8r
+!ppp	!	!
+4GGn~ 4BBn~ 4En~	4e-~	4r
+8r	8r	8r
+*	*	*ClefF4
+=8	=8	=8
+2.r	8r	4r
+!	!ppp	!ppp
+.	[4ddn^	.
+.	.	8r
+.	4.dd_	8.r
+!	!	!am steg
+.	.	([16C#
+.	.	16C#]
+.	.	16G
+=9	=9	=9
+8rxx	8dd]	8D#
+16rxx	16r	4en)
+!	!flÅchtig	!end am steg
+16r	16b-'	.
+16B-' 16F#' 16An'	16rxx	.
+16r	16r	.
+4r	4r	4r
+8r	8r	8r
+==|!	==|!	==|!
+*-	*-	*-

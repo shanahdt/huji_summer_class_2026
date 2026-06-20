@@ -1,0 +1,131 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Wie sch&ouml;n leuchtet der Morgenstern
+!!!SCT:	BWV 172/6
+!!!PC#:	323
+!!!AGN:	chorale
+**kern
+*ICvox
+*Isoprn
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefG2
+*k[b-]
+*F:
+*M4/4
+*met(C)
+*MM100
+4f
+=1
+8ccL
+8b-J
+8aL
+8gJ
+4f
+.
+4cc
+=2
+4dd
+.
+.
+4dd
+.
+4cc;
+4cc
+=3
+4dd
+4ee
+4ff
+.
+4ee
+.
+=4
+4dd
+.
+.
+4dd
+4cc;
+4a
+=5
+4dd
+.
+4cc
+4b-
+.
+4a
+.
+=6
+2g
+.
+.
+.
+4f;
+=:|!
+*>B
+4r
+=7
+2cc
+2a;
+=8
+2cc
+2a;
+=9
+4a
+.
+4a
+.
+4g
+.
+4g
+.
+=10
+4a
+.
+4a
+.
+4g
+.
+4g
+.
+=11
+4a
+.
+4a
+.
+2g
+.
+.
+.
+=12
+2f;
+4ff
+.
+4ee
+.
+=13
+4dd
+.
+4cc
+4b-
+.
+4a
+.
+=14
+2g
+.
+.
+.
+.
+.
+4f;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

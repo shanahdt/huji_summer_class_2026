@@ -1,0 +1,92 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Jesus, meine Zuversicht
+!!!SCT:	BWV 365
+!!!PC#:	175
+!!!AGN:	chorale
+**kern
+*ICvox
+*Isoprn
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefG2
+*k[]
+*C:
+*M4/4
+*met(C)
+*MM100
+=1-
+4g
+4e
+.
+4a
+4b
+=2
+4cc
+.
+4cc
+.
+2b;
+.
+=3
+8aL
+8bJ
+4cc
+.
+4g
+.
+4e
+.
+=4
+4f
+.
+4e
+.
+2d
+.
+.
+=5
+1c;
+=6:|!
+*>B
+4e
+.
+4f#
+4g#
+.
+4a
+.
+=7
+4b
+.
+4b
+.
+.
+2a;
+=8
+4b
+.
+4cc
+.
+4dd
+.
+4ee
+.
+=9
+4.dd
+.
+.
+8cc
+.
+2cc;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

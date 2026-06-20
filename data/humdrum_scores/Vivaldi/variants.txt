@@ -1,0 +1,349 @@
+
+       + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+       +                                                           +
+       +              THE SOURCES AND VARIANTS FOR THE             +
+       +                   OPUS 8 VIOLIN CONCERTOS                 +
+       +                                                           +
+       +                          -  by  -                         +
+       +                                                           +
+       +                      Antonio Vivaldi                      +
+       +                                                           +
+       + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+
+
+=========
+VARIANTS:
+=========
+
+The enclosed files encode a number of variants
+The variations arise due to (1) discrepancies between
+different manuscript sources, (2) obvious minor errors in
+the manuscript that are easily corrected,
+(3) omissions (such as missing accompaniment materials).
+
+Five basic sources are distinguished in the enclosed Humdrum files:
+the Amsterdam print (abbreviated "A"), the Dresden manuscripts ("D"),
+the Manchester partbooks ("M"), and the Turin autographs ("T").  In
+addition, the critical edition prepared by Dr. Eleanor Selfridge-Field
+is available (abbreviated "S").  This later edition is the one published
+in the companion score published by Dover Publications, 1996.
+
+General differences between these sources are discussed later in this
+document under the section entitled "Description of Sources."
+
+For any given movement, users can select any of the available sources
+for that movement.  (Note that not all sources are available for each
+concerto.)  Specific sources can be selected by invoking the "edition"
+command, followed by an option the specifies the single-letter
+abbreviation for the desired source.  For example, to select the Turin
+source for the first movement of Opus 8, No. 2, type:
+
+     edition -T op8n02a.krn
+
+This command will create a file "op8n02at.krn" (notice the trailing "t"
+in the filename -- designating the Turin source).  Similarly, the
+command:
+
+     edition -S op8n01b.krn
+
+will create a file "op8n01bs.krn" that contains the Selfridge-Field
+critical edition for second movement of Opus 8, No. 1.
+
+Options can be specified using either upper-case or lower-case characters,
+so -D is equivalent to -d, etc.
+
+==============
+OBOE VARIANTS:
+==============
+
+Two concertos (nos.9 and 12) were also arranged by Vivaldi for oboe.
+In the case of Concerto No. 12, the oboe part is identical to the
+violin part in all respects.  Only the instrument name need be changed
+in order for the work to become Vivaldi's Oboe Concerto RV 449 rather
+than the violin concerto RV 178.
+
+In the case of Concerto No. 9, a few differences exist between the
+violin and oboe versions -- but only in the first movement.  In order
+to create the oboe version of this file, simply type:
+
+     edition -O op8n09a.krn
+
+This command will create a file "op8n09ao.krn" -- where the trailing "o"
+in the filename designates the oboe concerto.  Note that the catalogue
+number for the oboe version is RV 454 rather than RV 236 for the violin
+version.
+
+========
+REPEATS:
+========
+
+Three of the middle (slow) movements in Opus 8 contain binary-form
+repeat signs.  They are the Largo from Opus 8, No. 7 (op8n07b.krn),
+the Adagio from Opus 8, No. 10 (op8n10b.krn), and the Largo from
+Opus 8, No. 12 (op8n12b.krn).  Each of these files encodes the
+respective movements without repeats; the repeats may be expanded,
+however, by using the Humdrum "thru" command.  For example, the
+following command will expand the repeats for op8n12b.krn and place
+the results in a file called "expanded":
+
+     thru op8n12b.krn > expanded
+
+=======================
+OPUS 8 NO. 11, 3rd MOV.
+=======================
+
+The sources for the third movement from Opus 8, No. 11 are especially
+complicated.  There are three extant sources for this work: the Amsterdam
+print, and Turin autograph manuscripts Giordano 29 and Giordano 30.  A
+number of alternative sections can be selected.  The movement's passages
+may be graphically illustrated as follows:
+
+     Opus 8, No. 11, 3rd mov.
+
+            +---2a---+       +---4a---+       +----6a----END
+            |        |       |        |       |
+     ---1---+        +---3---+        +---5---+ -> -> -> +----6c----END
+            |        |       |        |       |          |
+            +---2b---+       +---4b---+       +----6b----+
+
+The upper-most path (1, 2a, 3, 4a, 5, 6a) represents the Amsterdam
+print.  The Giordano 30 manuscript traces the path (1, 2b, 3, 4b, 5, 6c),
+whereas the Giordano 29 manuscript traces the path (1, 2b, 3, 4b, 5, 6b, 6c).
+The Humdrum file ("op8n11c.krn") permits all possible paths to be
+selected by the user.  To select a particular rendition, use the Humdrum
+"thru" command with one of the following ten variations:
+
+                 COMMAND                              PATH
+
+     thru -v Amsterdam op8n11c.krn > newfile    [1,2a,3,4a,5,6a]
+     thru -v Turin1 op8n11c.krn > newfile       [1,2b,3,4a,5,6a]
+     thru -v Turin2 op8n11c.krn > newfile       [1,2a,3,4b,5,6a]
+     thru -v Turin3 op8n11c.krn > newfile       [1,2a,3,4a,5,6c]
+     thru -v Turin4 op8n11c.krn > newfile       [1,2a,3,4a,5,6b,6c]
+     thru -v Turin5 op8n11c.krn > newfile       [1,2b,3,4b,5,6a]
+     thru -v Turin6 op8n11c.krn > newfile       [1,2b,3,4a,5,6c]
+     thru -v Turin7 op8n11c.krn > newfile       [1,2b,3,4a,5,6b,6c]
+     thru -v Turin8 op8n11c.krn > newfile       [1,2b,3,4b,5,6c] Giordano 30
+     thru -v Turin9 op8n11c.krn > newfile       [1,2b,3,4b,5,6b,6c] Giordano 29
+
+
+=======================
+OPUS 8 NO. 4, 2nd MOV.
+=======================
+
+The violoncello obbligato incorporated in this edition demonstrates
+one way to elaborate the skeleton provided by the continuo.  It originates
+on an unnumbered page, facing p. 10, in the Basso continuo partbook
+of the Amsterdam print, suggesting that its publication was an afterthought.
+
+============
+OPUS 8 NO. 5
+============
+
+This concerto is notated with two flats in the key signature in the
+Amsterdam print, Dresden manuscript, and Manchester partbooks.  The
+first and second violines are doubled by oboes in the Dresden manuscript,
+reflecting the greater use of woodwinds in Dresden.  Also in the Dresden
+source there are two *Organo* and two *Basso* parts for the accompaniment
+of the outer movements.  Pisendel's bowings in the Dresden manuscript,
+which are generally longer than those in the Amsterdam print, are adopted
+throughout the Selfridge-Field edition.  Pisendel's *Violino pinrcipale*
+also includes multiple stops on some strongly accented notes and other
+additional notes.  The additional tones are indicated in the Dover print
+in cue-sized notes.  In the Manchester partbooks, the *Violoncello* is
+marked "tacet" in all *soli*.
+
+
+
+More detailed descriptions of the sources are given later in
+this document.
+
+======================
+DESCRIPTION OF SOURCES
+======================
+
+The four chief sources for the concertos Op. 8 are the print made
+in Amsterdam in 1725 by Michel-Charles Le Cene and three incomplete
+sets of manuscripts found in Dresden (Germany), Turin (Italy), and
+Manchester (England).  A specific listing of the contents of these
+sources is given later in this document.  The variants are also
+documented in the companion printed edition published by Dover
+Publications.
+
+==========================
+THE AMSTERDAM PRINT (1725)
+==========================
+
+Like many Dutch prints of Italian music, the published versions of these
+works contain many small defects, such as inconsistencies in the rendering
+of parts that are musically parallel.  Truly incorrect pitches are found
+at a relatively low level, although haphazardly marked accidentals are
+numerous.  Rhythmic errors are few.  The instrumental parts are identified
+as Violino principale, Violino primo, Violino secondo, Alto viola, and Organo
+e Violoncello.  These designations are retained in three Parisian reprints
+-- of c.1739, 1743, and 1748 -- all by Charles-Nicolas Le Clerc, a
+violinist turned publisher.
+
+The more daunting questions that arise from these prints are those of
+authority.  Because Op. 8 carries a dedication written by Vivaldi, we can
+be sure that this publication was sanctioned by the composer.  It seems
+unlikely that he saw proof copy, however.  "The Four Seasons" had a
+substantial performance history prior to publication and thus the copies
+offered for print, even if inadequately proofread, are highly polished
+musically.  One exception, however, is the elusive obbligato Violoncell
+part of the slow movement of the "Winter" concerto, which is missing from
+many modern editions and recordings.  It is incorporated in this edition.
+Discrepancies between parts are widespread, especially in the dynamics
+and placement of text elements in "The Four Seasons."
+
+Many of the remaining works that make up Op. 8 seem not to have had the
+benefit of frequent performance.  While some works -- especially No. 5
+("The Tempest") and No. 10 ("The Hunt") -- give, like "The Four Seasons,"
+evidence of currency in the repertory of the time, other numbers may
+not have been performed prior to publication.  In the case of No. 9, for
+example, the performed version may have been that for oboe (preserved in
+manuscript) rather than that for violin, an adaptation intended to appeal
+to a broader market.  Abrupt transitions are occasionally found in some of
+the other concertos of this collection and many contain unison ritornellos
+that amount to little more than sketches in Vivaldi's autographs.  In
+the case of No. 11, manuscript sources suggest either that Vivaldi never
+settled on a final version of the work or that he adapted the solo
+episodes to suit a series of different violinists.  The work printed by
+Le Cene may represent a preliminary selection of draft material.
+
+=======================
+THE DRESDEN MANUSCRIPTS
+=======================
+
+The manuscript materials preserved in Dresden include scores and parts
+(not necessarily for the same works).  The most valuable of these are the
+copies made by Johann Georg Pisendel, a famous violinist of Vivaldi's
+time, who visited Venice in 1716.  Pisendel became an important exponent
+of Vivaldi's music at the Saxon court in Dresden, where he led the
+orchestra from 1730 to 1755.  He was especially noted for his execution
+of expressive slow movements.
+
+In the case of Op. 8, the greatest differences from the Amsterdam print
+concern the treatment of the Violino principale and Basso continuo parts.
+In the Violino principale the slurs are often longer and differently
+articulated from those of the print.  Since the Pisendel manuscripts
+are earlier than or contemporary with the print, we must regard them
+as more authoritative in these matters.  The Basso continuo tends to be
+more fully articulated rhythmically and more clearly differentiated
+from the Violoncello than in the Amsterdam print.  Although these
+differences may have been influenced by Saxon practice, bowings and
+many virtuoso details have been adopted in this edition.  Continuo
+figuration is far more extensive in these manuscripts, and often more
+accurate, than in the Amsterdam print.  Fermatas on final notes, which
+appear only haphazardly in the print, are ubiquitous in these and the
+other manuscript sets.
+
+========================
+THE MANCHESTER PARTBOOKS
+========================
+
+These partbooks were probably copied in Rome around the time of Vivaldi's
+death.  They show many evidences of use and are valuable for their
+consistency (generally followed in this edition) in the use of slurs
+and ties.  Many notes that are wrong or ambiguous in the print are
+appropriately corrected.  Continuo figuration is fuller and more
+accurately placed than in the Amsterdam print.  The sonnet texts for
+"The Four Seasons" are not given in these parts, but the letters that
+link them with the musical structure are retained.  The placement of labels
+varies between parts.  The Viola part is labelled Violetta.
+
+Since these manuscripts apparently accommodated Roman performance practice,
+their prescriptions -- for example, in the variable instrumentation of
+the Basso continuo -- do not necessarily represent Vivaldi's thinking.
+Some of the more interpretive changes have not been accepted.  Among the
+elements generally rejected are (1) trills or staccatos substituted for
+detached legato and martellato markings, and other changes to Vivaldi's
+articulation;  (2) harmonies changed from minor to major;  (3) cadential
+tones altered to "complete" Vavaldi's harmony, where he has omitted a third
+or fifth;  (4) changes of texture in the inner parts; and (5) transcriptions
+of an octave in the Basso continuo.
+
+==========================
+THE TURIN AUTOGRAPH SCORES
+==========================
+
+Vivaldi's autograph scores in Turin, which constitute the largest surviving
+corpus of his music, are extremely valuable.  They provide insight into
+both Vivaldi's methods of composition and his technical solutions to
+performance problems.  In these sources the variability of Vivaldi's own
+thought on musical construction can be clearly seen.  It is apparent that
+he often fashioned his solos and harmonic schemes first and then left
+the realization of ritornellos to copyists.  For this reason, the sources
+do not always agree on the presence or absence of the ripieno string parts
+in interior passages.  Vivaldi sometimes substituted new solo episodes
+(Nos. 7 and 11).  For the printed version of Nos. 9 and 12, the principal
+instrument was changed from oboe to violin.  Alternative readings of Nos. 7,
+9 and 11 can be created by substituting the Important Variants for standing
+materials.  Rhythmic detail is often more articulate in Vivaldi's manuscripts
+than in th eprint or other copies.  The rhythmic detail of the opening motive
+of No. 10, "The Hunt," offers a striking example.
+
+In solo episodes some of the Turin manuscripts include position numbers for
+certain notes and a wealth of other subtlety in the management of what was,
+for its day, a dauntingly difficult repertory for the virtuoso.  Vivaldi's
+method of assisting other performers is rarely reflected in modern editions;
+some examples of this effort are indicated in the Table of Emendations.
+
+
+
+The accompanying data files form the electronic companion to the
+critical edition edited by Dr. Eleanor Selfridge-Field and published
+by Dover Publications, New York.
+
+For permission to consult its holdings, we gratefully acknowledge
+the cooperation of the Saechsische Landesbibliotek, Dresden, Germany;
+the Biblioteca Nazionale Universitaria, Turin, Italy; and the Henry
+Watson Music Library, Manchester, United Kingdom.
+
+A detailed description of the **kern representation format is given in
+the accompanying file "kern_hlp.txt".
+
+
+op8n07a.krn	Amsterdam	Dresden
+
+op8n09a.krn	extract -f 1-5,7 (violin version: RV 236)--| same
+op8n09a.krn	extract -f 1-4,6-7 (oboe version: RV 454)--| file
+
+op8n11a.krn	Amsterdam, Turin1, Turin2, Turin3
+Turin1 contains variants from the Giordano 30 MS (bars 100-112n)
+Turin2 contains variants from the Giordano 29 MS (bars 122-132)
+Turin3 contains variants from both the Giordano 29 and 30 MS (both of above)
+
+op8n11c.krn	Amsterdam, Turin1, Turin2, Turin3, Turin4
+		Turin5, Turin6, Turin7, Turin8, Turin9
+
+Amsterdam[1,2a,3,4a,5,6a]
+Turin1[1,2b,3,4a,5,6a]
+Turin2[1,2a,3,4b,5,6a]
+Turin3[1,2a,3,4a,5,6c]
+Turin4[1,2a,3,4a,5,6b,6c]
+Turin5[1,2b,3,4b,5,6a]
+Turin6[1,2b,3,4a,5,6c]
+Turin7[1,2b,3,4a,5,6b,6c]
+Turin8[1,2b,3,4b,5,6c] Giordano 30
+Turin9[1,2b,3,4b,5,6b,6c] Giordano 29
+
+Opus 8, No. 11, 3rd mov.
+
+            +---2a---+       +---4a---+       +----6a----END
+            |        |       |        |       |
+     ---1---+        +---3---+        +---5---+ -> -> -> +----6c----END
+            |        |       |        |       |          |
+            +---2b---+       +---4b---+       +----6b----+
+
+
+op8n12b.krn (has AABB repeat sections)
+op8n07b.krn (has AABB repeat sections)
+op8n10b.krn (Adagio) (has AABB repeat sections)
+
+Note:
+For op8n08b.krn:
+In the Turin autograph, violino 1 duplicated violino 2 for the first
+seven measures (spine 4);  later this was changed to "Unisoni" so
+that violino 1 duplicates violino principale throughout (spine 5).
+The Selfridge-Field edition is equivalent to the revised Turin autograph.

@@ -1,0 +1,303 @@
+!!!COM: Webern, Anton : von
+!!!OPS: Opus 12 (Gesang und Klavier)
+!!!OMV: Number 2
+!!!OPR: Vier Lieder
+!!!OTL: Die Geheimnisvolle Flîte, Li-Tai-Po, (aus Hans Bethges "Chinesischer Flîte")
+!!!YEC: Copyright 1995 McGill???
+!!!CDT: 1993/12/3-1945/9/15 
+!!!YOR: Universal Edition
+!!!YOO: Copyright 1925 by Universal Edition, renewed 1953 by Anton Webern's Erben
+!!!ENC:Norma Welch
+**kern	**kern	**kern	**text
+*staff3	*staff2	*staff1	*
+*ClefF4	*ClefG2	*ClefG2	*
+*ICklav	*ICklav	*Ivox	*
+*Ipiano	*Ipiano	*Ivox	*
+*M3/4	*M3/4	*M3/4	*
+*MM54	*MM54	*MM54	*
+*k[]	*k[]	*k[]	*
+*X:	*X:	*X:	*
+!!Langsam (Quarter = ca 54)
+!pp	!pp	!	!
+=1-	=1-	=1-	=1-
+12r	(4en	2.r	%
+6BB-~ 6D-~ 6An~	.	.	%
+4r	8g#)	.	%
+.	8r	.	%
+8r	20r	.	%
+!pp	!pp	!	!
+.	{20cn	.	%
+.	20fn	.	%
+8Bn' 8E-' 8Gn'	.	.	%
+.	20an	.	%
+.	20een}	.	%
+=2	=2	=2	=2
+*ClefG2	*	*	*
+*p dim	*p dim	*	*
+{6g-' {6b-' {6ddn'	{6ggn' {6eee-'	2.r	%
+6fn' 6an' 6dd-'	6gg-' 6dddn'	.	%
+6en'} 6a-'} 6ccn'}	6ffn} 6ddd-'}	.	%
+=3	=3	=3	=3
+2r	2r	8r	%
+!	!	!p	!p
+.	.	{8gn	{An
+.	.	8f#	ei~
+.	.	8g#	~nem
+=4	=4	=4	=4
+*ClefF4	*	*	*
+*M4/4	*M4/4	*M4/4	*
+!ppp cresc	!	!	!
+20r	4r	4.bn	A~
+20FFFn'	.	.	||
+20G-'	.	.	||
+20BBB-'	.	.	||
+20AAn'	.	.	||
+!pp	!	!	!
+!	!tr(b)	!	!
+4.Dn	4.e-tx 4.a-tx	.	||
+.	.	8c#'}	~bend ,
+.	.	{8cn	{da
+8r	8r	8fn	die
+8r	4r	8b-	Blu~
+!ppp	!	!	!
+24DD-	.	8bn	~men
+24Cn	.	.	|
+24GG-	.	.	|
+=5	=5	=5	=5
+*M3/4	*M3/4	*M3/4	*
+!pp	!pp	!	!
+2.Fn^t 2.An^t	16r	12ccn	duf~
+.	8.en~ 8.ee-~	.	|
+.	.	12g-	~te~
+.	.	12d-}	~ten}
+.	16r	8r	%
+.	8.b-~ 8.ggn~	.	%
+!	!	!p	!p
+.	.	{8dn	{und
+.	20r	8a-	al~
+!	!pp	!	!
+.	20ggg-'	.	||
+.	20ddd-'	.	||
+.	.	8gn	~le
+.	20aa-'	.	||
+.	20ccn	.	||
+=6	=6	=6	=6
+*M2/4	*M2/4	*M2/4	*
+16r	8r	6bn	BlÑt~
+8.EEn~ 8.BB-~	.	.	||
+.	[8ddn	.	||
+.	.	12f#	~ter
+16r	16ddn]	8fn	an
+!pp	!pp	!	!
+[8.GGn [8.Cn [8.F#	16r	.	|
+.	[8cc#	8en	den
+=7	=7	=7	=7
+*M3/4	*M3/4	*M3/4	*
+8GG] 8C] 8F#]	8cc#]	6g#	BlÑu~
+8r	8r	.	||
+.	.	12d#'}	~men ,}
+4r	4r	8r	%
+!pp	!pp	!pp	!pp
+.	.	{4dn	{trug
+16r	4r	.	|
+16E-'	.	.	|
+16An'	.	8en	der
+16cn'	.	.	|
+=8	=8	=8	=8
+*M2/4	*M2/4	*M2/4	*
+8BBn~	(4.gn (4.b-	6en	Wind
+16Fn'	.	.	|
+.	.	6dn	mir
+16G#'	.	.	|
+4Dn~ 4F#~ 4c#~	.	.	|
+.	.	6e-	das
+.	[8ffn [8aan	.	.
+=9	=9	=9	=9
+*M3/4	*M3/4	*M3/4	*
+16r	4ff]) 4aa])	4e-}	Lied}
+!pp	!pp	!p	!
+8.GG# 8.BBn 8.Gn	.	.	|
+!	!	!p	!p
+16r	8r	{12dn	ei~
+([8.FFn ([8.BB- ([8.En	.	.	||
+.	.	12fn	~ner
+.	(4Bn (4e-	.	|
+.	.	12f#	ent~
+4FFn_ 8BB-_ 8En_	.	8gn	~fern~
+.	8an') 8cc#)	8f#	~ten
+=10	=10	=10	=10
+*M2/4	*M2/4	*M2/4	*
+4FFn] 8BB-] 8En]	(4Bn (4e-	6ccn	Flî~
+.	.	6b-	~te
+4En) 4AAn) 4E-)	4c#) 4fn)	.	|
+.	.	6a-	zu} *
+=11	=11	=11	=11
+*M3/4	*M3/4	*M3/4	*
+4r	8r	2.r	%
+!p	!p	!	!
+.	{4cn	.	%
+[2EE- [2AA- [2Dn	.	.	%
+.	4bn	.	%
+.	4b-	.	%
+=12	=12	=12	=12
+2EE-] 2AA-] 2Dn]	4.An	4r	%
+.	.	8.r	%
+.	8Gn}	.	%
+!	!	!pp	!pp
+.	.	{16cn	{Da
+12r	12r	16d-	schnitt
+.	.	16ccn	ich
+*	*ClefF4	*	*
+(6DDn (6GGn	(6D# (6G#	.	|
+.	.	16cn	ei~
+.	.	16c#	~nen
+=13	=13	=13	=13
+*M2/4	*M2/4	*M2/4	*
+!ppp	!ppp	!	!
+2CC#) 2AAn)	2En) 2B-)	8f#	Wei~
+.	.	8ccn	~den~
+.	.	8f#	~zweig
+.	.	8bn	vom
+=14	=14	=14	=14
+!!splitting staff2 into two parts till end of measure 19
+*	*^	*	*
+4r	4r	4r	8an	Strau~
+.	.	4r	8gn}	~che} ,
+{4DDn {4GGn	4DD#	{8G#	12r	%
+.	.	.	{12fn	{und
+.	.	8Bn	.	|
+.	.	.	12f#	mein
+=15	=15	=15	=15	=15
+4CC# 4AAn	4F	6cn	4en	Lied
+.	.	6Bn	.	|
+4DDn} 4BB-}	4G-	.	4b-	flog ,
+.	.	6e-	.	|
+=16	=16	=16	=16	=16
+*	*ClefG2	*ClefG2	*	*
+*M3/4	*M3/4	*M3/4	*M3/4	*
+!pp	!p	!p	!	!
+{8AA-	2AAn 2e-	4gn	8ddn	Ant-
+8En	.	.	8ccn	-wort
+4Fn	.	4g-}	8d-	ge~
+.	.	.	8cn}	~bend} ,
+!	!	!	!mp	!mp
+4F#	4B- 4dn	{12fn	{8g#	{durch
+.	.	12an	.	.
+.	.	.	8an	die
+.	.	12f#	.	.
+=17	=17	=17	=17	=17
+4AAn	4.A- 4.d-	8gn	4ee-	blÅ~
+.	.	4g-	.	||
+4EE-}	.	.	4ddn	~hen~
+.	8Gn 8cn	8fn}	.	||
+!p	!p	!p	!	!
+{8Cn	8r	{16f#	4cc#	~de
+.	.	16an	.	|
+8BBn	8f	16b-	.	|
+.	.	16een	.	|
+=18	=18	=18	=19	19
+16BB-	4bn 4ffn	8aa-	4en}	Nacht} *
+16An	.	.	.	||
+16F#	.	8ggn	.	||
+16Dn	.	.	.	||
+!!rit.
+8EEn	4dn 4gn	4b-}	4r	%
+4CC#	.	.	.	%
+.	4fn 4bn	{8een	4r	%
+8CCn}	.	8ee-	.	%
+=19	=19	=19	=19	=19
+!pp	!pp	!pp	!	!
+(2BBn (2Fn (2B-	2.e-	8ddn	4r	%
+.	.	4an}	.	%
+.	.	.	4r	%
+.	.	{4dd-	.	%
+!	!	!	!p	!p
+4BB-) 4En) 4An)	.	.	{4gn	{Seit
+.	.	8ccn}	.	|
+*	*v	*v	*	*
+!!tempo
+=20	=20	=20	=20
+*M2/4	*M2/4	*M2/4	*
+!ppp	!ppp	!	!
+8EEn' 8BBn'	{16ee-	4d-	je~
+.	16bb-	.	||
+{8G#	8ccn'}	.	||
+8gn	8ffn'	4e-	~nem
+8an	8ddn'	.	|
+=21	=21	=21	=21
+!pp	!pp	!	!
+8B-'	16r	3dn	A~
+.	{8f#'	.	||
+4An~	.	.	||
+.	8g#'	.	||
+.	8ccn'	.	||
+.	.	6dd-'	~bend
+8GG#'	.	.	||
+.	16ggn'	.	||
+=22	=22	=22	=22
+*M3/4	*M3/4	*M3/4	*
+!begin phrase	!	!	!
+!pp	!p	!	!
+8DDn	16r	{4g-	{hî~
+.	[8.ccc#	.	||
+8B-	.	.	||
+4E- 4Bn	16ccc#]	4fn}	ren} ,
+.	16ggn	.	|
+.	16ddn	.	|
+.	16a-	.	|
+!	!	!p	!p
+8En 8B-	8gg-	{8cn	{wenn
+8An	8ffn}	8d-	|
+=23	=23	=23	=23
+!	!pp	!	!
+4E- 4An 4dn	16r	6a-	Er~
+!end bass phrase	!	!	!
+.	{16bn	.	||
+.	[8cn	.	||
+.	.	6gn	~de
+16r	6cn]	.	|
+!pp	!	!	!
+{16F#	.	.	|
+.	.	6b-}	schlÑft} ,
+16C#	.	.	|
+.	12ee-'	.	|
+16GGn}	.	.	|
+12en~	16r	8r	%
+.	{8.a- {8.ddn	.	%
+12Fn~	.	.	%
+!	!	!p	!p
+.	.	{8bn	{die
+12AAn~	.	.	|
+=24	=24	=24	=24
+{8EE-	4.gn 4.ff#	4cn	Vî~
+8Dn	.	.	||
+4.BBn}	.	4cc#}	~gel}
+.	[4.B- [4.an	.	|
+!	!	!pp	!pp
+.	.	{8en	{ein
+{8EE-	.	8fn	Ge~
+=25	=25	=25	=25
+!!rit.
+8CCn	4B-] 4an]	4f#}	SprÑch}
+4BBn}	.	.	|
+.	8d- 8ccn	8r	%
+4EE-~	8an	{8fn	{in
+.	[4F# [4cn [4fn	8gn	in~
+8GGGn~	.	8g#	~rer
+=26	=26	=26	=26
+2CCC#~	4F#] 4cn] 4fn]	6an	Spra~
+.	.	12bn}	~che} *
+.	2An~ 2e-~ 2a-~	4r	%
+[4DDDn~	.	4r	%
+=27	=27	=27	=27
+!	!ppp	!	!
+*	*^	*	*
+2.DDDn~_	[2.f# [2.cc#	4.ggn'~	2.r	%
+.	.	[2ffn~	.	%
+=28	=28	=28	.	%
+4DDDn]	4f#] 4cc#]	4ffn]	2.r	%
+*	*v	*v	*	*
+4r	4r	.	%
+4r	4r	.	%
+==|!	==|!	==|!	==|!
+*-	*-	*-	*-

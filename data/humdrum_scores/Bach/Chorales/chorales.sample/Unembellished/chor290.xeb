@@ -1,0 +1,147 @@
+!!!RWG: WARNING: The embellishment tones have been removed from this file.
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Es ist das Heil uns kommen her
+!!!ONM: No. 290
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*E:	*E:	*E:	*E:	*E:	*E:	*E:	*E:	*E:
+I	ct	ct	ct	ct	4E	4e	4g#	4b
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+I	ct	ct	alnt	ct	4E	4B	4g#	4b
+.	.	.	ct	.	.	.	.	.
+V7b	ct	ct	ct	ct	4D#	4f#	4a	4b
+I	ct	ct	ct	ct	4E	4e	8g#	8b
+IVc	.	.	ct	ct	.	.	8a	8cc#
+V7b/IV	ct	ct	ct	ct	4GG#	4e	4b	4ddn
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+IV	ct	ct	sus	ct	4AA	8e	4a	4cc#
+iib	.	ct	ct	.	.	8f#	.	.
+-IIIb	ct	ct	ct	ct	8BB	4gn	8dn	4b
+viio7/-VII	ct	.	ct	.	8C#	.	8e	.
+-VII;	ct;	ct;	ct;	ct;	4Dn;	4dn;	4f#;	4a;
+Vb	ct	ct	ct	ct	4D#	4B	4f#	4b
+.	.	.	.	upt7	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+I	ct	ct	ct	ct	2E	4B	4e	4g#
+.	.	upt	.	upt	.	.	.	.
+I	.	ct	ct	ct	.	4G#	4B	8e
+.	upt7	.	.	ct	.	.	.	8f#
+vi	ct	ct	ct	ct	4C#	4c#	4e	4g#
+.	upt	.	.	.	.	.	.	.
+V7d/ii	ct	ct	ct	ct	8E	4F#	4c#	4a#
+.	ct	.	.	.	8F#	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+iib/V	ct	ct	ct	ct	8D#	8F#	2f#	4b
+ii/V	ct	ct	.	.	8BB	8B	.	.
+V/V	ct	ct	.	ct	4F#	4A#	.	4cc#
+.	.	.	upt7	.	.	.	.	.
+V;	ct;	ct;	ct;	ct;	4BB;	4F#;	4d#;	4b;
+!! Repeat from the beginning.
+I	ct	ct	ct	ct	4E	4e	4g#	4b
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+I	ct	ct	ct	ct	4E	4B	4f#	4b
+.	.	.	alnt	.	.	.	.	.
+V7b	ct	ct	ct	ct	4D#	4f#	4a	4b
+I	ct	ct	ct	ct	4E	4e	8g#	8b
+IVc	.	.	ct	ct	.	.	8a	8cc#
+V7b/IV	ct	ct	ct	ct	4GG#	4e	4b	4ddn
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+IV	ct	ct	sus	ct	4AA	8e	4a	4cc#
+iib	.	ct	ct	.	.	8f#	.	.
+-IIIb	ct	ct	ct	ct	8BB	4gn	8dn	4b
+viio7/-VII	ct	.	ct	.	8C#	.	8e	.
+-VII;	ct;	ct;	ct;	ct;	4Dn;	4dn;	4f#;	4a;
+Vb	ct	ct	ct	ct	4D#	4B	4f#	4b
+.	.	.	.	upt7	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+I	ct	ct	ct	ct	2E	4B	4e	4g#
+.	.	upt	.	upt	.	.	.	.
+I	.	ct	ct	ct	.	4G#	4B	8e
+.	upt7	.	.	ct	.	.	.	8f#
+vi	ct	ct	ct	ct	4C#	4c#	4e	4g#
+.	upt	.	.	.	.	.	.	.
+V7d/ii	ct	ct	ct	ct	8E	4F#	4c#	4a#
+.	ct	.	.	.	8F#	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+iib/V	ct	ct	ct	ct	8D#	8F#	2f#	4b
+ii/V	ct	ct	.	.	8BB	8B	.	.
+V/V	ct	ct	.	ct	4F#	4A#	.	4cc#
+.	.	.	upt7	.	.	.	.	.
+V;	ct;	ct;	ct;	ct;	4BB;	4F#;	4d#;	4b;
+!! Continuing.
+I	ct	ct	ct	ct	4E	4G#	4e	4b
+.	upt7	.	upt	.	.	.	.	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+vi	ct	ct	ct	ct	4C#	4c#	4g#	4ee
+.	.	.	cupt	.	.	.	.	.
+V	ct	ct	ct	ct	4BB	4d#	4b	4dd#
+.	.	upt	.	.	.	.	.	.
+V/V	ct	ct	ct	ct	4F#	4f#	4a#	4cc#
+.	upt	.	upt	.	.	.	.	.
+V7d	ct	ct	ct	ct	4An	4B	4f#	4dd#
+.	arp	.	.	.	.	.	.	.
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+Ib	ct	ct	ct	ct	8g#	4B	8b	8ee
+I7	ct	.	ct	ct	8E	.	8g#	8dd#
+V/V	ct	ct	ct	ct	4F#	4f#	4a#	4cc#
+.	.	upt7	.	.	.	.	.	.
+V;	ct;	ct;	ct;	ct;	4BB;	4d#;	4f#;	4b;
+I	ct	ct	ct	ct	4E	4e	4g#	4b
+.	upt	.	cupt	.	.	.	.	.
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+Ib	ct	ct	ct	ct	8G#	8B	8b	4ee
+IV	ct	ct	ct	.	8A	8c#	8a	.
+v	ct	ct	apt	ct	4B	4dn	4f#	4b
+.	.	.	ct	.	.	.	.	.
+V7d/ii	ct	ct	ct	ct	8B	8c#	8e#	4cc#
+viio7c	ct	ct	ct	.	8A	8d#	8f#	.
+viib/ii	ct	ct	ct	ct	8G#	8e#	8g#	8g#
+ii	ct	ct	ct	ct	8F#	8f#	8c#	8a
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+V7b/ii	ct	ct	ct	ct	4E#	4g#	4c#	4b
+.	.	arp	arp	.	.	.	.	.
+ii	ct	ct	sus	ct	4F#	4c#	4f#	4a
+.	.	.	ct	.	.	.	.	.
+VI;	ct;	ct;	sus	ct;	4C#;	4c#;	8e#;	4g#;
+.	.	.	ct;	.	.	.	.	.
+VI	ct	ct	ct	ct	4c#	4c#	4e#	4g#
+.	upt7	.	.	.	.	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+iib	ct	ct	ct	ct	8A	8c#	8f#	8f#
+Ib	ct	ct	ct	ct	8G#	8B	8en	8g#
+viiob	ct	ct	ct	ct	4F#	4A	4d#	4a
+.	.	.	upt	.	.	.	.	.
+Ic	ct	ct	ct	ct	8G#	4e	8B	4g#
+IV7	ct	.	ct	.	8A	.	8c#	.
+V	ct	ct	ct	ct	4B	4B	4d#	4f#
+.	.	upt7	.	.	.	.	.	.
+=10	=10	=10	=10	=10	=10	=10	=10	=10
+viioD7d/V	sus	ct	ct	ct	4A#	4Gn	4e	4c#
+.	ct	.	.	.	.	.	.	.
+V	ct	ct	ct	ct	4B	4F#	4B	4d#
+.	.	arp7	.	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	4E;	4G#;	4B;	4e;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

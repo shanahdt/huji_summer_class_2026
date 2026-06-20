@@ -1,0 +1,145 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Es woll' uns Gott gen&auml;dig sein
+!!!SCT:	BWV 311
+!!!PC#:	16
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ibass
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefF4
+*k[f#c#]
+*b:
+*M4/4
+*met(C)
+*MM100
+4F#
+=1
+4B
+4AnX
+.
+4G
+4F#
+.
+=2
+4E
+.
+4D
+.
+4C#
+4BB
+=3
+2F#;
+4r
+4A#
+=4
+4B
+.
+4E
+4F#
+4G
+.
+=5
+4C#
+4D
+.
+4D#
+4E
+.
+=6
+2.F#;
+=:|!
+*>B
+4F#
+=7
+8BBL
+8C#J
+4D
+4AA
+.
+4AA#
+=8
+4BB
+.
+4GG
+4FF#;
+4F#
+=9
+4B
+.
+4c#
+4d
+8c#L
+8BJ
+=10
+4A#
+.
+4B
+4F#;
+4D#
+=11
+4E
+.
+4F#
+.
+8G#L
+8F#
+8E
+8DJ
+=12
+8C#L
+8BB
+8C#
+8AAJ
+4D;
+8AL
+8G#J
+=13
+4F#
+.
+8EL
+8DnXJ
+8C#L
+8BBJ
+4AA#X
+.
+=14
+4BB
+.
+8C#L
+8D#J
+4E;
+8F#L
+8G#J
+=15
+4A
+.
+8BL
+8c#J
+4d
+.
+4D
+.
+=16
+4C
+4BB
+4AA#
+4BB
+=17
+2.FF#;
+.
+.
+.
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

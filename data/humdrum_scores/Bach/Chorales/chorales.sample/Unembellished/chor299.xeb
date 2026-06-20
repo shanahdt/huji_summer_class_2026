@@ -1,0 +1,136 @@
+!!!RWG: WARNING: The embellishment tones have been removed from this file.
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Meinen Jesum lass ich nicht
+!!!ONM: No. 299
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*E-:	*E-:	*E-:	*E-:	*E-:	*E-:	*E-:	*E-:	*E-:
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+I	ct	ct	ct	ct	4E-	4e-	4g	4b-
+.	upt	.	.	.	.	.	.	.
+Ib	ct	ct	ct	ct	4G	4e-	4g	4b-
+.	arp	.	.	.	.	.	.	.
+IV	ct	ct	ct	ct	4A-	4c	4e-	4cc
+.	lnt	.	.	.	.	.	.	.
+iib	ct	ct	ct	ct	4A-	4f	4a-	4cc
+.	arp	.	.	.	.	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+V7	ct	ct	ct	ct	4B-	4f	4a-	4dd
+.	.	lnt	lnt	.	.	.	.	.
+V7	ct	ct	ct	ct	4BB-	4f	4a-	4dd
+.	.	arp	.	upt	.	.	.	.
+.	.	.	.	ct	.	.	.	.
+I;	ct;	ct;	ct;	ct;	2E-;	2B-;	2g;	2ee-;
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+V	ct	ct	ct	ct	4BB-	4d	4b-	4ff
+.	upt	upt	.	.	.	.	.	.
+Vb	ct	ct	ct	ct	4D	4f	4b-	4ff
+.	arp	arp	upt7	.	.	.	.	.
+vi	ct	sus	ct	ct	4C	4c	[4g	4ee-
+.	upt	ct	.	.	.	.	.	.
+.	.	clnt	.	.	.	.	.	.
+vi	ct	ct	[ct]	ct	8E-	4c	8g]	4ee-
+V7/V	ct	.	ct	.	8F	.	8an	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+iii	ct	ct	ct	ct	4G	4B-	4b-	4dd
+.	upt7	.	cupt	.	.	.	.	.
+I	ct	ct	ct	apt	8E-	4B-	8g	4ee-
+vi7	ct	.	ct	apt	8C	.	8e-	.
+.	.	.	.	ct	.	.	.	.
+V/V	ct	sus	ct	ct	4F	2An	2f	2cc
+.	.	cht	.	.	.	.	.	.
+V/V	ct	ct	.	.	4FF	.	.	.
+.	.	.	upt7	.	.	.	.	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+V;	ct;	ct;	ct;	ct;	2BB-;	2F;	2d;	2b-;
+I	ct	ct	ct	ct	4E-	4G	4e-	4b-
+.	upt	upt	.	.	.	.	.	.
+Ib	ct	ct	ct	ct	4G	4B-	4e-	4b-
+.	arp	arp	.	.	.	.	.	.
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+IV	ct	ct	ct	ct	4A-	4A-	4e-	4cc
+.	upt7	upt	.	.	.	.	.	.
+ii	ct	ct	ct	ct	4F	4c	4a-	4cc
+.	upt7	.	.	.	.	.	.	.
+V7b	ct	ct	ct	ct	8D	8F	8a-	4b-
+viio/ii	ct	ct	ct	.	8En	8G	8g	.
+ii	ct	ct	ct	ct	4F	4A-	4f	4a-
+.	.	upt	.	ant	.	.	.	.
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+VI;	ct;	ct;	ct;	ct;	2C;	2c;	2en;	2g;
+I	ct	ct	ct	ct	4G	4B-	4e-	4b-
+.	upt	upt	upt	.	.	.	.	.
+V7b/ii	ct	ct	ct	ct	4En	4G	4g	4b-
+.	arp	.	arp	.	.	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+ii	ct	ct	ct	ct	4F	4A-	4c	4a-
+.	upt7	.	.	.	.	.	.	.
+V7b	ct	ct	ct	ct	4D	4B-	4f	4a-
+.	arp	.	arp	.	.	.	.	.
+I	ct	ct	ct	ct	4E-	4B-	4e-	4g
+.	arp	.	.	.	.	.	.	.
+ii7b	ct	ct	ct	ct	8A-	8c	4e-	4f
+ii7	ct	ct	.	apt	8F	8A-	.	.
+.	.	.	.	ct	.	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+V	ct	ct	sus	ct	4B-	8B-	4d	2f
+.	.	cht	.	.	.	.	.	.
+V7	ct	ct	ct	.	4BB-	4A-	4d	.
+I;	ct;	ct;	ct;	ct;	2E-;	2G;	2B-;	2e-;
+=10	=10	=10	=10	=10	=10	=10	=10	=10
+I	ct	ct	ct	ct	4e-	4e-	4g	4b-
+.	cupt7	.	.	.	.	.	.	.
+vi7	ct	ct	ct	ct	4c	4e-	4g	4b-
+.	upt7	.	.	.	.	.	.	.
+IV	ct	ct	ct	ct	4A-	4e-	4a-	4cc
+.	upt7	.	.	.	.	.	.	.
+ii	ct	ct	ct	ct	4F	4f	4a-	4cc
+.	upt7	.	upt	.	.	.	.	.
+=11	=11	=11	=11	=11	=11	=11	=11	=11
+viiob/vi	ct	ct	ct	ct	4D	4Bn	4f	4dd
+.	upt	upt	.	.	.	.	.	.
+V/vi	ct	ct	ct	ct	8BBn	8d	4g	4dd
+V/vi	ct	ct	.	apt	8GG	8Bn	.	.
+.	.	.	.	ct	.	.	.	.
+vi;	ct;	ct;	ct;	ct;	2C;	2c;	2g;	2ee-;
+=12	=12	=12	=12	=12	=12	=12	=12	=12
+I	ct	ct	ct	ct	4E-	4G	4e-	4b-
+.	cupt7	.	.	.	.	.	.	.
+vi7	ct	ct	ct	ct	4C	4G	4e-	4b-
+.	upt7	.	.	ct	.	.	.	.
+.	.	.	.	cunt	.	.	.	.
+IV	ct	ct	ct	ct	8AA-	8A-	8e-	8cc
+V	ct	ct	ct	ct	8BB-	8F	8d	8b-
+IVb	ct	ct	ct	ct	8C	8E-	4e-	8a-
+Ic	ct	ct	.	ct	8BB-	8B-	.	8g
+=13	=13	=13	=13	=13	=13	=13	=13	=13
+ii7b	ct	ct	ct	ct	4AA-	4c	4e-	8f
+.	.	.	.	upt	.	.	.	.
+.	.	.	.	ct	.	.	.	8a-
+V	ct	ct	ct	ct	4BB-	4B-	4d	4f
+.	.	upt7	.	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	2E-;	2G;	2B-;	2e-;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

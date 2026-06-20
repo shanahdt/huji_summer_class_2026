@@ -1,0 +1,95 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Komm, Gott Schoepfer, heiliger Geist
+!!!ONM: No. 187
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+!! NOTE: The actual key is more G Mixolydian.
+!!      (There are no sharps and flats in the key signature.)
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*G:	*G:	*G:	*G:	*G:	*G:	*G:	*G:	*G:
+I	ct	ct	ct	ct	4G	4B	8d	4g
+.	.	.	upt	.	.	.	8e	.
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+-VII	ct	ct	ct	ct	4F	4c	[4f	4a
+IV	ct	ct	[sus]	ct	4C	4c	8f]	4g
+.	.	.	ct	.	.	.	8e	.
+v	ct	ct	sus	ct	4D	4A	8e	4f
+.	.	.	ct	.	.	.	16d	.
+.	.	.	upt7	.	.	.	16c	.
+vi	ct	ct	ct	ct	4E	8G	8B	4g
+.	.	app	arp	.	.	16c	[8e	.
+.	.	ct	.	.	.	16B	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+ii	ct	ct	[ct]	ct	4AA	8c	8e]	4cc
+-VIIb	.	ct	ct	.	.	8f	8c	.
+I	ct	ct	ct	ct	4GG	4B	8g	4dd
+.	.	.	upt7	.	.	.	8f	.
+IV;	ct;	ct;	ct;	ct;	4C;	4G;	4e;	4cc;
+-VII	ct	ct	ct	ct	4F	4A	8c	4cc
+.	.	.	upt	.	.	.	8d	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+vi	ct	ct	ct	ct	4E	8B	4e	4g
+.	.	upt	.	.	.	8c	.	.
+iiib	ct	ct	ct	ct	4D	4d	4f	4b
+IV	ct	ct	ct	ct	[4C	4e	4g	4cc
+I	[sus]	ct	ct	ct	8C]	[4d	4g	4dd
+.	ct	.	.	.	8BB	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+IV	ct	[sus]	ct	ct	4C	8d]	[4g	4ee
+.	.	ct	.	.	.	16c	.	.
+.	.	lnt	.	.	.	16B	.	.
+IV	ct	ct	[ct]	ct	4CC	8c	8g]	4ee
+vii7c	.	ct	ct	.	.	8A	8f#	.
+I;	ct;	ct;	ct;	ct;	4G;	4B;	4g;	4dd;
+I	ct	ct	ct	ct	4G	4B	4g	4dd
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+IV	ct	ct	ct	ct	4C	8c	4g	8ee
+.	.	upt	.	upt	.	8B	.	8dd
+IVb	ct	ct	ct	ct	4E	4c	[4g	4cc
+-VII	ct	ct	[sus]	ct	4F	4c	8g]	4a
+.	.	.	ct	.	.	.	[8f	.
+IV	ct	ct	[sus]	ct	4c	4c	8f]	4g
+.	.	.	ct	.	.	.	8e	.
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+I	ct	ct	ct	ct	8G	4d	4g	4b
+.	upt7	.	.	.	8F	.	.	.
+vii/v	ct	ct	ct	ct	4E	4e	4g	4cc#
+v;	ct;	ct;	ct;	ct;	4D;	4f;	4a;	4dd;
+vi	ct	ct	ct	ct	4E	4B	4e	4g
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+ii	ct	ct	ct	ct	8AA	4A	8e	4cc
+.	upt	.	upt	.	8BB	.	8d	.
+iib	ct	ct	ct	ct	4C	4A	[4e	4a
+v	ct	ct	[sus]	ct	4D	8A	8e]	4f
+-IIIb	.	ct	ct	.	.	8B-	16d	.
+.	.	.	upt	.	.	.	16e	.
+-VIIb	ct	ct	ct	ct	4AA	4c	[4f	4a
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+I7b	ct	ct	[ct]	ct	4BB	[4d	4f]	2g
+IV	ct	[sus]	ct	.	4C	8d]	4e	.
+.	.	ct	.	.	.	[8c	.	.
+I;	ct;	[sus]	ct;	ct;	4GG;	8c]	4d;	4g;
+.	.	ct;	.	.	.	8B;	.	.
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

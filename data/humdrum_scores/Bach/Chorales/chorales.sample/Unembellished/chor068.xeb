@@ -1,0 +1,111 @@
+!!!RWG: WARNING: The embellishment tones have been removed from this file.
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Wenn wir in hoechsten Noeten sein
+!!!ONM: No. 68
+!!!OCL: Erk
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**harm	**embel	**embel	**embel	**embel	**kern	**kern	**kern	**kern
+!	! bass	! tenor	! alto	! soprano	! bass	! tenor	! alto	! soprano
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:
+I	ct	ct	ct	ct	4F	4A	4c	4f
+.	upt	upt	.	.	.	.	.	.
+=1	=1	=1	=1	=1	=1	=1	=1	=1
+-ivb	ct	ct	[sus]	ct	4D	4F	4Bn	4f
+.	.	.	ct	.	.	.	.	.
+Vb	ct	ct	ct	ct	8E	8c	[4c	4g
+V7	ct	ct	.	.	8C	8B-	.	.
+I	ct	ct	[ct]	ct	4F	4A	4c]	4a
+.	.	upt	upt	.	.	.	.	.
+V	ct	ct	ct	ct	4C	4c	4e	4g
+.	.	.	.	upt	.	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2	=2
+IVb	ct	ct	ct	ct	8D	8F	8f	4b-
+V7b	ct	ct	ct	.	8E	8c	8g	.
+I	ct	ct	[sus]	ct	4F	4c	[4f	4a
+.	.	.	ct	.	.	.	.	.
+ii7b	ct	ct	[ct]	ct	4BB-	8d	4f]	4.g
+iib	.	ct	apt	.	.	8B-	.	.
+.	.	.	ct	.	.	.	.	.
+V	ct	ct	ct	.	4C	4G	4e	.
+.	.	arp	.	ct	.	.	.	8g
+.	.	upt7	.	.	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3
+I;	ct;	ct;	ct;	ct;	2FF;	2A;	2c;	2f;
+r	r	r	r	r	4r	4r	4r	4r
+I	ct	ct	ct	ct	4F	4c	[4f	4a
+.	cupt7	.	.	.	.	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4	=4
+IVb	ct	ct	[ct]	ct	8D	8d	8f]	4b-
+V7b	ct	ct	ct	.	8En	8c	8g	.
+I	ct	ct	[sus]	ct	4F	4c	4f	4a
+.	.	.	ct	.	.	.	.	.
+V7b/V	ct	ct	[ct]	ct	8BBn	8d	8f	4g
+V	ct	ct	ct	.	8C	8c	8e	.
+vii/V	ct	[sus]	ct	ct	4D	4Bn	4d	4f
+.	.	ct	.	.	.	.	.	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5
+V	ct	ct	ct	ct	4C	4c	4G	4e
+.	upt7	.	.	.	.	.	.	.
+Ib	ct	ct	ct	ct	4AA	4F	4c	4f
+.	arp	.	.	.	.	.	.	.
+V;	ct;	ct;	ct;	ct;	4C;	4E;	4c;	4g;
+iii	ct	ct	ct	ct	4AA	4A	4e	4cc
+.	.	.	cupt	.	.	.	.	.
+=6	=6	=6	=6	=6	=6	=6	=6	=6
+ii	ct	ct	ct	ct	4GG	8d	8g	4b-
+viioD7/vi	.	ct	ct	.	.	8c#	8e	.
+vi	ct	ct	ct	ct	4D	4d	4fn	4a
+.	upt7	.	upt	.	.	.	.	.
+Vb/V	ct	ct	ct	ct	4BBn	4G	4d	4g
+.	.	.	.	upt7	.	.	.	.
+V	ct	ct	[sus]	ct	4C	4G	[4c	4e
+.	.	.	ct	.	.	.	.	.
+=7	=7	=7	=7	=7	=7	=7	=7	=7
+I	ct	ct	[ct]	ct	4FF	4A	4c]	4f
+.	.	.	unt	.	.	.	.	.
+.	.	.	ct	.	.	.	.	.
+V/V	ct	ct	ct	ct	4GG	4G	4Bn	4d
+.	.	upt7	.	.	.	.	.	.
+V;	ct;	ct;	ct;	ct;	4C;	4E;	4G;	4c;
+I	ct	ct	ct	ct	4FF	4c	4f	4a
+.	.	.	cupt7	.	.	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8	=8
+ii	ct	ct	ct	ct	4GG	4B-	4d	4b-
+.	.	.	upt	.	.	.	.	.
+Ib	ct	ct	ct	ct	4AA	[4c	4f	4a
+.	upt	.	.	.	.	.	.	.
+V	ct	[ct]	[sus]	ct	4C	4c]	4e	4g
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+vi	ct	ct	[sus]	ct	4D	8A	8d	4f
+IVb	.	ct	ct	.	.	8B-	8d	.
+.	.	.	upt	.	.	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9	=9
+Ib	ct	ct	ct	ct	4AA	4c	4f	4a
+.	upt	.	.	.	.	.	.	.
+V	ct	ct	[sus]	ct	4C	4c	4e	4g
+.	.	.	ct	.	.	.	.	.
+.	.	upt7	.	.	.	.	.	.
+I;	ct;	ct;	ct;	ct;	4FF;	4A;	4c;	4f;
+==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1

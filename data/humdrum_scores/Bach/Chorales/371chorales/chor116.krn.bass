@@ -1,0 +1,246 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Nun lob, mein Seel, den Herren
+!!!SCT:	BWV 29/8
+!!!PC#:	116
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ibass
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefF4
+*k[f#c#]
+*D:
+*M3/4
+*MM100
+8dL
+8c#J
+=1
+4B
+2F#
+.
+.
+=2
+8GL
+8F#J
+4E
+.
+4F#
+.
+=3
+8BL
+8AJ
+4G
+4A
+=4
+2D;
+4D
+=5
+4.d
+.
+.
+8c#L
+8B
+8A#J
+=6
+8BL
+8AnXJ
+8GL
+8F#J
+8GL
+8EJ
+=7
+4F#
+.
+4G
+4A
+.
+=8
+2D;
+=:|!
+*>B
+4F#
+=9
+8GL
+8AJ
+8GL
+8F#J
+8EL
+8DJ
+=10
+2A
+.
+.
+.
+4A#
+.
+=11
+4B
+.
+4E
+.
+4F#
+.
+=12
+2BB;
+4C#
+.
+=13
+8G#L
+8EJ
+8F#L
+8G#J
+8AL
+8G#J
+=14
+8F#L
+8EJ
+4D
+4E
+.
+=15
+2AA;
+8AL
+8GnXJ
+=16
+4F#
+.
+8BL
+8AJ
+8GL
+8F#J
+=17
+8GL
+8EJ
+8AL
+8GJ
+8F#L
+8EJ
+=18
+8DL
+8EJ
+8DL
+8C#J
+8DL
+8F#J
+=19
+2G;
+.
+8GL
+8F#J
+=20
+4E
+8F#L
+8GJ
+8AL
+8BJ
+=21
+4c
+.
+4A
+4B
+.
+=22
+2E;
+4A
+=23
+8dL
+8c#J
+8BL
+8AJ
+8GL
+8F#J
+=24
+8EL
+8DJ
+8CL
+8BBJ
+8AAL
+8GGJ
+=25
+4FF#
+.
+4F#
+.
+4D
+.
+!! 5-voice texture on first beat in this measure in Edition Breitkopf version:
+!!Bass2	Bass1	Tenor	Alto	Soprano
+!!=25	=25	=25	=25
+!!4FF#\	8F#\L	4e]	8a\L	4.aa/
+!!.	8G\J	.	8g\J	.
+!!8F#\L	4.d/	[2a\	.
+!!8E\J	.	.	8gg/L
+!!4D\	.	.	8ff#/
+!!.	8c/	.	8ee/J
+=26
+2G;
+.
+4d
+.
+=27
+8G#L
+8EJ
+8F#L
+8G#J
+8AL
+8G#J
+=28
+8F#L
+8EJ
+4D
+4E
+.
+=29
+2AA;
+8AL
+8G#J
+=30
+8F#L
+8EJ
+8F#L
+8G#J
+4A
+=31
+8D#L
+8C#J
+8D#L
+8E#J
+8F#L
+8EJ
+=32
+8DnXL
+8C#J
+4D
+4DD
+=33
+2AA;
+8DL
+8C#J
+=34
+8BBL
+8AAJ
+8BBL
+8DJ
+8C#L
+8EJ
+=35
+4D
+.
+4GG
+.
+4AA
+=36
+2DD;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

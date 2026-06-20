@@ -1,0 +1,151 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Allein zu dir, Herr Jesu Christ
+!!!SCT:	BWV 261
+!!!PC#:	359
+!!!AGN:	chorale
+**kern
+*ICvox
+*Itenor
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefGv2
+*k[f#c#]
+*b:
+*M4/4
+*met(C)
+*MM100
+4A
+.
+=1
+4d
+4d
+.
+4d
+.
+4d
+.
+=2
+4c#
+8dL
+8c#J
+4B
+4A
+=3
+2A;
+4ry
+4d
+=4
+4c#
+.
+4d
+8eL
+8dJ
+4c#
+=5
+4d
+4e
+.
+8A#L
+8BJ
+[4c#
+.
+=6
+4c#]
+2B
+.
+.
+4A#
+.
+=7
+2B;
+4ry
+=:|!
+*>B
+4d
+=8
+8dL
+8BJ
+4c#
+8c#L
+8AJ
+4B
+.
+=9
+4B
+4c#
+4d;
+4f#
+=10
+4e
+4e
+4d
+8dL
+8c#J
+=11
+4B
+.
+4B
+.
+2B;
+=12
+4ry
+4B
+8B
+4A
+.
+8G#
+=13
+4F#
+4F#
+8GnXL
+8AJ
+8BL
+8c#J
+=14
+4d#;
+2ry
+8BL
+16c#L
+16dJJ
+=15
+4c#
+8dL
+8eJ
+4f#
+4e
+=16
+4d;
+2ry
+4d
+=17
+4G#
+4A#
+8BL
+8c#J
+[4d
+.
+=18
+4d]
+.
+2c#
+.
+.
+[4B
+.
+=19
+4B]
+4A#
+.
+2B;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

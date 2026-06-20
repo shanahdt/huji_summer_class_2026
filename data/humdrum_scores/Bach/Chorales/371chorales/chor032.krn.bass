@@ -1,0 +1,110 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Nun danket alle Gott
+!!!SCT:	BWV 386
+!!!PC#:	32
+!!!AGN:	chorale
+**kern
+*ICvox
+*Ibass
+*>[A,A,B]
+*>norep[A,B]
+*>A
+*clefF4
+*k[f#c#g#]
+*A:
+*M4/4
+*met(C)
+*MM100
+4AA
+=1
+8AL
+8BJ
+8c#L
+8AJ
+8DL
+8EJ
+8F#L
+8DJ
+=2
+2A;
+4r
+4A
+=3
+4G#
+4A
+8EL
+8DJ
+8C#L
+8AAJ
+=4
+2E
+.
+.
+.
+4AA;
+=:|!
+*>B
+4E
+.
+=5
+8EL
+8F#J
+8G#L
+8EJ
+8AAL
+8BBJ
+.
+8C#L
+8AAJ
+=6
+2EE;
+4r
+4E
+=7
+8AL
+8BJ
+8c#L
+8G#J
+8AL
+8F#J
+8BL
+8BBJ
+=8
+2E;
+4r
+4A
+=9
+8dL
+8c#
+8B
+8A#J
+8BL
+8D
+8E
+8F#J
+=10
+2BB;
+4r
+8C#L
+8DJ
+=11
+4E
+8AL
+8F#J
+8DL
+8BBJ
+8EL
+8EEJ
+=12
+2.AA;
+==
+*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c. 1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22
