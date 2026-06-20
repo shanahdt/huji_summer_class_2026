@@ -1,5 +1,5 @@
-# Corpus Studies in Music
-## Summer Institute 2026 · Bienen School of Music, Northwestern University
+# Quantitative Methods in Musicology
+## Daniel Shanahan, Summer 2026
 
 ## Instructor
 
