@@ -33,7 +33,7 @@ It's obviously not a lot to just say that there's a lot of something, and the di
 We have a few corpora that we will be working with in this class:
 
 1. Beregovski's Klezmer Corpus (see Malin and Shanahan, 2025); see [here](https://shanahdt.github.io/mode_in_klezmer/).
-2. The Essen Folksong Collection (Schaffrath and Huron, 1995; see [hree](https://github.com/ccarh/essen-folksong-collection)).
+2. The Essen Folksong Collection (Schaffrath and Huron, 1995; see [here](https://github.com/ccarh/essen-folksong-collection)).
 3. The Meertens Tune Collection of Dutch Folksongs (Van Kranenburg, et al. 2014; see [here](https://www.liederenbank.nl/mtc/))
 4. The Bach Chorales (encoded by David Huron)
 5. The McGill Billboard Corpus (Burgoyne, 2012; see [here](https://ddmal.ca/research/The_McGill_Billboard_Project_(Chord_Analysis_Dataset)/)).
@@ -51,15 +51,15 @@ It's very possible that conversations will take us to other copora, as well! Als
 | 4 | Wed 24 Jun | Melodic Similarity |
 | 5 | Thu 25 Jun | Metadata and Categories |
 | — | Fri–Sat | *No class* |
-| 7 | Sun 28 Jun | Clustering and Machine Learning |
-| 6 | Mon 29 Jun | Audio Features and What They Measure |
-| 8 | Tue 30 Jun | Synthesis, Final Thoughts, and Presentations/Discussions |
+| 6 | Sun 28 Jun | Clustering and Machine Learning |
+| 7 | Mon 29 Jun | Audio Features and What They Measure |
+| 8 | Tue 30 Jun | Synthesis, Final Thoughts, and (Brief) Presentations/Discussions |
 
 
 ## Assessments 
 
 1. Daily Quizzes (Ungraded—-I'm treating these as simply self-reflective knowledge checks)
-2. Daily logging of progress on your project (with prompts)
+2. Daily emails logging of progress on your project (I'll give prompts)
 3. A final project with a brief presentation 
 
 
@@ -70,11 +70,17 @@ These can all be found here on teh website. They are simply meant to reinforce t
 
 ### The Daily Logging
 
-I'd like to work closely with each of you on your projects for the next couple of weeks. Please **email me** daily a response to the prompt at the end of each class--I will do my best to respond promptly to each (although there is a bit of timezone difference in my favor; you might get responses when you're sleeping).
+I'd like to work closely with each of you on your projects for the next couple of weeks. Please **email me** daily a response to the prompt at the end of each class--I will do my best to respond promptly to each (although there is a bit of timezone difference in my favor; you might get responses when you're sleeping). 
 
 ### The Final Project 
 
-Two weeks isn't really enough time to come up with an earth-shattering presentation, but it is long enough to dive deeply into something that interests you. My hope is that you can take a question that might be of interest to you (with the data available), and make a meaningful step toward answering it. If you're interested in another repertoire, you can view this as an opportunity to build a tool that could be applied to a different corpus at a later date.
+Two weeks isn't really enough time to come up with an earth-shattering presentation, but it is long enough to dive deeply into something that interests you. My hope is that you can take a question that might be of interest to you (with the data available), and make a meaningful step toward answering it. If you're interested in another repertoire, you can view this as an opportunity to build a tool that could be applied to a different corpus at a later date. I'm hoping that you can have a 10-minute presentation ready to discuss:
+
+- your dataset
+- what you did with it
+- what you expected to find
+- how you tested your hypothesis
+- and what you would do differently or expand upon in the future
 
 ## Running the notebooks
 
@@ -91,4 +97,3 @@ jupyter notebook
 ```
 
 This can sometimes cause frustration. Just let me know and we can work through anything together!
-
