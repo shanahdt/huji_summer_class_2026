@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Day 2 Quiz: Pitch Distributions and Mode &#8212; Corpus Studies in Music</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'quizpages/day2_quiz';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 3 Quiz: N-grams and Melodic Tendency" href="day3_quiz.html" />
+    <link rel="prev" title="Day 1 Quiz: Encoding as Interpretation" href="day1_quiz.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Corpus Studies in Music</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Corpus Studies in Music
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sessions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day1_encoding.html">Day 1 · Encoding (21 Jun)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day2_pitch_mode.html">Day 2 · Pitch &amp; Mode (22 Jun)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day3_ngrams.html">Day 3 · N-grams (23 Jun)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day4_similarity.html">Day 4 · Similarity (24 Jun)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day5_metadata.html">Day 5 · Metadata (25 Jun)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day6_audio.html">Day 6 · Audio (28 Jun)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day7_clustering.html">Day 7 · Clustering (29 Jun)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/day8_synthesis.html">Day 8 · Synthesis (30 Jun)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quizzes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="day1_quiz.html">Day 1 Quiz</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 2 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day3_quiz.html">Day 3 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day4_quiz.html">Day 4 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day5_quiz.html">Day 5 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day6_quiz.html">Day 6 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day7_quiz.html">Day 7 Quiz</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026/issues/new?title=Issue%20on%20page%20%2Fquizpages/day2_quiz.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/quizpages/day2_quiz.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Day 2 Quiz: Pitch Distributions and Mode</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="day-2-quiz-pitch-distributions-and-mode">
+<h1>Day 2 Quiz: Pitch Distributions and Mode<a class="headerlink" href="#day-2-quiz-pitch-distributions-and-mode" title="Link to this heading">#</a></h1>
+<p>These questions are ungraded self-assessments. Answer them before running the analysis
+cells in the notebook — the goal is to make your assumptions explicit before the data does.</p>
+<p>When you’re done, close this tab and return to the notebook.</p>
+<hr class="docutils" />
+<div id="quiz-day2-quiz" class="jb-quiz-container"></div>
+<script>
+(function() {
+  var questions = [{"question": "A pitch class profile (sometimes called a key profile) represents a melody as 12 numbers. What do those 12 numbers count?", "type": "multiple_choice", "answers": [{"answer": "The proportion of notes belonging to each of the 12 pitch classes (C, C#, D... B), ignoring octave", "correct": true, "feedback": "Correct. A pitch class profile collapses all octaves \u2014 G3, G4, and G5 all count as pitch class 7 \u2014 and records what fraction of notes fall in each of the 12 chromatic pitch classes."}, {"answer": "The 12 most common melodic intervals in the piece", "correct": false, "feedback": "That would be an interval profile, not a pitch class profile. Pitch class profiles count pitch occurrences, not transitions between pitches."}, {"answer": "The 12 scale degrees present in the melody", "correct": false, "feedback": "Scale degrees are relative to a tonic (1=tonic, 2=supertonic...). Pitch classes are absolute (C=0, C#=1...). The profiles look similar but encode different things."}, {"answer": "The number of times each of 12 rhythmic values appears", "correct": false, "feedback": "That would be a rhythm histogram. Pitch class profiles only concern pitch, not rhythm."}]}, {"question": "The Krumhansl-Schmuckler key-finding algorithm correlates a melody's pitch class profile against pre-computed major and minor key templates. Those templates came from probe-tone experiments with Western listeners. Select ALL the reasons this algorithm is likely to struggle with freygish (ahavah rabbah).", "type": "many_choice", "answers": [{"answer": "Freygish uses an augmented second, a pitch interval absent from Western major and minor scales", "correct": true, "feedback": "Correct. The augmented second between scale degrees 2 and 3 in freygish (e.g. Ab and B in G freygish) has no equivalent in major or minor, so the algorithm has no template that fits this characteristic feature."}, {"answer": "The KS templates were derived from listeners trained in Western tonal music, who had no exposure to klezmer modes", "correct": true, "feedback": "Correct. Probe-tone ratings reflect the internalized expectations of the listener population. Western-trained listeners rate probe tones differently from how klezmer musicians would."}, {"answer": "Freygish has the same pitch content as Western Phrygian dominant, which has its own KS template", "correct": false, "feedback": "The KS algorithm only has templates for the 24 major and minor keys \u2014 there is no Phrygian dominant template. Freygish would be forced into the nearest major or minor match."}, {"answer": "The algorithm cannot process kern files directly", "correct": false, "feedback": "music21 can parse kern and then apply key-finding algorithms to the resulting Score object. The file format is not the issue."}]}, {"question": "You compute the Pearson correlation between a tune's pitch class profile and the KS major template and get r = 0.42. You then compute the correlation with the KS minor template and get r = 0.71. What does the algorithm report?", "type": "multiple_choice", "answers": [{"answer": "The tune is in a minor key, because that template has the higher correlation", "correct": true, "feedback": "Correct. The KS algorithm reports the key whose template has the highest correlation with the tune's pitch profile. r=0.71 (minor) > r=0.42 (major), so it reports minor."}, {"answer": "The tune is in a major key, because major is more common in Western music", "correct": false, "feedback": "The algorithm makes no assumption about frequency of major vs minor. It simply reports the highest correlation."}, {"answer": "The result is ambiguous because neither correlation is above 0.8", "correct": false, "feedback": "The KS algorithm always reports the single best-matching key regardless of absolute correlation strength. The correlationCoefficient attribute in music21 reports the winning score, not a threshold."}, {"answer": "The tune is in a mode unrelated to major or minor", "correct": false, "feedback": "The KS algorithm can only report one of the 24 major/minor keys \u2014 it has no category for 'other mode'. It will force-fit freygish into whichever major or minor key it most resembles."}]}, {"question": "In the Beregovski corpus, what is the most theoretically interesting reason to compare mode profiles across genres (e.g. freylekhs vs dobranoch)?", "type": "multiple_choice", "answers": [{"answer": "To test whether modal choice is genre-specific or cuts across genres, which would reveal whether mode and dance function are coupled in this repertoire", "correct": true, "feedback": "Correct. If certain modes cluster with certain genres, it suggests mode is tied to social function (dance type, occasion). If modes are evenly distributed across genres, mode may be a more independent musical parameter."}, {"answer": "To check whether Malin made errors in his mode annotations", "correct": false, "feedback": "Cross-tabulating mode and genre would not reveal annotation errors \u2014 Malin's annotations and Beregovski's genre labels are independent. Errors would require comparing against a separate source of ground truth."}, {"answer": "Because the key-finding algorithm performs better on some genres than others", "correct": false, "feedback": "This might be true but it is not the primary theoretical interest. The deeper question is about the relationship between modal identity and musical/social function."}, {"answer": "To normalize the pitch profiles before clustering", "correct": false, "feedback": "Genre-mode cross-tabulation is an analytical question, not a preprocessing step for normalization."}]}];
+  var container = document.getElementById('quiz-day2-quiz');
+  var answered = {};
+  if (!document.getElementById('jb-quiz-style')) {
+    var style = document.createElement('style');
+    style.id = 'jb-quiz-style';
+    style.textContent = '.jb-quiz-container{font-family:-apple-system,sans-serif;margin:1em 0 2em}.jb-question{background:#f8f9fa;border-left:4px solid #4c72b0;border-radius:4px;padding:1em 1.2em;margin-bottom:1.2em}.jb-qtext{font-weight:600;margin-bottom:.6em;font-size:.95em}.jb-qnum{display:inline-block;background:#4c72b0;color:#fff;font-size:.75em;padding:1px 8px;border-radius:10px;margin-right:6px}.jb-qtype{font-size:.8em;color:#666;font-style:italic;margin-bottom:.7em}.jb-answers{display:flex;flex-direction:column;gap:6px}.jb-btn{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1.5px solid #dee2e6;border-radius:5px;background:#fff;cursor:pointer;text-align:left;font-size:.88em;font-family:inherit;color:#212529;width:100%;transition:all .15s}.jb-btn:hover:not(:disabled){border-color:#4c72b0;background:#e8eef8}.jb-btn:disabled{cursor:default}.jb-btn.correct{border-color:#198754;background:#d1e7dd}.jb-btn.incorrect{border-color:#dc3545;background:#f8d7da}.jb-btn.missed{border-color:#198754;background:#d1e7dd;opacity:.7}.jb-btn.dim{opacity:.45}.jb-icon{font-size:1em;flex-shrink:0;width:16px}.jb-feedback{font-size:.8em;color:#555;font-style:italic;display:block;margin-top:4px}.jb-check{margin-top:8px;padding:6px 14px;background:#4c72b0;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.88em;font-family:inherit}.jb-check:hover{background:#3a5a9a}.jb-numeric-row{display:flex;gap:8px;align-items:center;margin-bottom:6px}.jb-input{font-family:monospace;padding:6px 8px;border:1.5px solid #dee2e6;border-radius:4px;width:120px;font-size:.88em}.jb-fb-box{padding:7px 12px;border-radius:4px;font-size:.85em;display:none;margin-top:4px}.jb-fb-box.correct{background:#d1e7dd;color:#0a3622;display:block}.jb-fb-box.incorrect{background:#f8d7da;color:#58151c;display:block}.jb-hint{font-size:.8em;color:#666;font-style:italic;margin-bottom:6px}.jb-score{background:#fff3cd;border:1px solid #ffc107;border-radius:4px;padding:8px 14px;font-size:.88em;margin-top:.5em;display:none}.jb-score.show{display:block}';
+    document.head.appendChild(style);
+  }
+  var scoreEl = document.createElement('div');
+  scoreEl.className = 'jb-score';
+  function checkAllDone() {
+    if (Object.keys(answered).length === questions.length) {
+      var c = Object.values(answered).filter(Boolean).length;
+      scoreEl.textContent = 'Score: ' + c + ' / ' + questions.length;
+      scoreEl.className = 'jb-score show';
+    }
+  }
+  questions.forEach(function(q, qi) {
+    var qDiv = document.createElement('div'); qDiv.className = 'jb-question';
+    var qText = document.createElement('div'); qText.className = 'jb-qtext';
+    qText.innerHTML = '<span class="jb-qnum">Q'+(qi+1)+'</span>'+q.question;
+    qDiv.appendChild(qText);
+    var qType = document.createElement('div'); qType.className = 'jb-qtype';
+    qType.textContent = q.type==='multiple_choice'?'Select one correct answer':q.type==='many_choice'?'Select ALL that apply':'Enter a numeric answer';
+    qDiv.appendChild(qType);
+    if (q.type === 'multiple_choice') {
+      var aDiv = document.createElement('div'); aDiv.className = 'jb-answers';
+      q.answers.forEach(function(ans, ai) {
+        var btn = document.createElement('button'); btn.className = 'jb-btn';
+        btn.innerHTML = '<span class="jb-icon">&#9675;</span><span class="jb-atext">'+ans.answer+'</span>';
+        btn.addEventListener('click', function() {
+          if (answered[qi]!==undefined) return;
+          answered[qi] = ans.correct;
+          aDiv.querySelectorAll('.jb-btn').forEach(function(b,bi) {
+            b.disabled=true;
+            var icon=b.querySelector('.jb-icon'), txt=b.querySelector('.jb-atext');
+            if (bi===ai) {
+              b.classList.add(ans.correct?'correct':'incorrect');
+              icon.textContent=ans.correct?'✓':'✗';
+              var fb=document.createElement('span'); fb.className='jb-feedback';
+              fb.textContent=ans.feedback; txt.appendChild(fb);
+            } else if (q.answers[bi].correct) {
+              b.classList.add('correct'); icon.textContent='✓';
+            } else { b.classList.add('dim'); icon.textContent='○'; }
+          }); checkAllDone();
+        });
+        aDiv.appendChild(btn);
+      }); qDiv.appendChild(aDiv);
+    } else if (q.type === 'many_choice') {
+      var aDiv=document.createElement('div'); aDiv.className='jb-answers';
+      var sel={}, btnEls=[];
+      q.answers.forEach(function(ans,ai) {
+        var btn=document.createElement('button'); btn.className='jb-btn';
+        btn.innerHTML='<span class="jb-icon">&#9633;</span><span class="jb-atext">'+ans.answer+'</span>';
+        btn.addEventListener('click',function() {
+          if (answered[qi]!==undefined) return;
+          sel[ai]=!sel[ai];
+          btn.querySelector('.jb-icon').textContent=sel[ai]?'☑':'□';
+        });
+        aDiv.appendChild(btn); btnEls.push(btn);
+      });
+      var chk=document.createElement('button'); chk.className='jb-check';
+      chk.textContent='Check answers';
+      chk.addEventListener('click',function() {
+        if (answered[qi]!==undefined) return;
+        var ok=true;
+        q.answers.forEach(function(ans,ai) {
+          var b=btnEls[ai]; b.disabled=true;
+          var icon=b.querySelector('.jb-icon'), txt=b.querySelector('.jb-atext'), was=!!sel[ai];
+          if (ans.correct&&was){b.classList.add('correct');icon.textContent='✓';}
+          else if (ans.correct&&!was){b.classList.add('missed');icon.textContent='✓ (missed)';ok=false;}
+          else if (!ans.correct&&was){b.classList.add('incorrect');icon.textContent='✗';ok=false;}
+          else{b.classList.add('dim');icon.textContent='□';}
+          if (was||ans.correct){
+            var fb=document.createElement('span');fb.className='jb-feedback';
+            fb.textContent=ans.feedback;txt.appendChild(fb);
+          }
+        });
+        answered[qi]=ok; chk.disabled=true; checkAllDone();
+      });
+      qDiv.appendChild(aDiv); qDiv.appendChild(chk);
+    } else if (q.type === 'numeric') {
+      var correctVal=null, feedbackText='';
+      if (q.answers&&q.answers[0]){
+        correctVal=q.answers[0].value!==undefined?q.answers[0].value:q.answers[0].correct;
+        feedbackText=q.answers[0].feedback||'';
+      }
+      if (q.hint){
+        var h=document.createElement('div');h.className='jb-hint';
+        h.textContent='Hint: '+q.hint;qDiv.appendChild(h);
+      }
+      var row=document.createElement('div');row.className='jb-numeric-row';
+      var inp=document.createElement('input');inp.type='number';inp.step='0.01';
+      inp.className='jb-input';inp.placeholder='Answer';
+      var chk2=document.createElement('button');chk2.className='jb-check';chk2.textContent='Check';
+      var fb=document.createElement('div');fb.className='jb-fb-box';
+      chk2.addEventListener('click',function(){
+        if(answered[qi]!==undefined)return;
+        var val=parseFloat(inp.value);
+        if(isNaN(val)){fb.className='jb-fb-box incorrect';fb.textContent='Please enter a number.';return;}
+        var ok=Math.abs(val-correctVal)<=0.01;
+        answered[qi]=ok;inp.disabled=true;chk2.disabled=true;
+        fb.className='jb-fb-box '+(ok?'correct':'incorrect');
+        fb.textContent=(ok?'✓ ':'✗ Not quite. ')+feedbackText;
+        checkAllDone();
+      });
+      row.appendChild(inp);row.appendChild(chk2);
+      qDiv.appendChild(row);qDiv.appendChild(fb);
+    }
+    container.appendChild(qDiv);
+  });
+  container.appendChild(scoreEl);
+})();
+</script>
+<hr class="docutils" />
+<p><em><a class="reference internal" href="../notebooks/day2_pitch_mode.html"><span class="std std-doc">← Back to Pitch Distributions and Mode notebook</span></a></em></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./quizpages"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day1_quiz.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 1 Quiz: Encoding as Interpretation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="day3_quiz.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 3 Quiz: N-grams and Melodic Tendency</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daniel Shanahan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

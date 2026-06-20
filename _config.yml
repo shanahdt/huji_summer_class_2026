@@ -1,0 +1,29 @@
+title: "Corpus Studies in Music"
+author: "Daniel Shanahan"
+
+execute:
+  execute_notebooks: "off"
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  home_page_in_navbar: true
+
+repository:
+  url: https://github.com/shanahdt/corpus-studies-israel-2026
+  path_to_book: .
+  branch: main
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
+
+parse:
+  myst_enable_extensions:
+    - html_admonition
+    - html_image
+  myst_html_meta: {}
+
+sphinx:
+  config:
+    bibtex_bibfiles: []
+    myst_allow_raw_html: true

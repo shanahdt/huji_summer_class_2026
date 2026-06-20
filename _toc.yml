@@ -1,0 +1,37 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Sessions
+    chapters:
+      - file: notebooks/day1_encoding
+        title: "Day 1 · Encoding (21 Jun)"
+      - file: notebooks/day2_pitch_mode
+        title: "Day 2 · Pitch & Mode (22 Jun)"
+      - file: notebooks/day3_ngrams
+        title: "Day 3 · N-grams (23 Jun)"
+      - file: notebooks/day4_similarity
+        title: "Day 4 · Similarity (24 Jun)"
+      - file: notebooks/day5_metadata
+        title: "Day 5 · Metadata (25 Jun)"
+      - file: notebooks/day6_audio
+        title: "Day 6 · Audio (28 Jun)"
+      - file: notebooks/day7_clustering
+        title: "Day 7 · Clustering (29 Jun)"
+      - file: notebooks/day8_synthesis
+        title: "Day 8 · Synthesis (30 Jun)"
+  - caption: Quizzes
+    chapters:
+      - file: quizpages/day1_quiz
+        title: "Day 1 Quiz"
+      - file: quizpages/day2_quiz
+        title: "Day 2 Quiz"
+      - file: quizpages/day3_quiz
+        title: "Day 3 Quiz"
+      - file: quizpages/day4_quiz
+        title: "Day 4 Quiz"
+      - file: quizpages/day5_quiz
+        title: "Day 5 Quiz"
+      - file: quizpages/day6_quiz
+        title: "Day 6 Quiz"
+      - file: quizpages/day7_quiz
+        title: "Day 7 Quiz"

@@ -1,0 +1,80 @@
+[
+  {
+    "question": "You run a chi-square test of independence on mode \u00d7 genre and get \u03c7\u00b2=24.3, p=0.002. What can you conclude?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "There is a statistically significant association between mode and genre in this corpus",
+        "correct": true,
+        "feedback": "Correct. p=0.002 is well below the conventional threshold of 0.05, so we reject the null hypothesis of independence. Mode and genre are not distributed independently of each other in this corpus."
+      },
+      {
+        "answer": "Mode causes genre \u2014 freygish tunes became freylekhs because of their mode",
+        "correct": false,
+        "feedback": "Chi-square tests association, not causation. A significant result tells us the two variables co-vary; it says nothing about which (if either) causes the other."
+      },
+      {
+        "answer": "The result is musically meaningful",
+        "correct": false,
+        "feedback": "Statistical significance and musical meaningfulness are different things. A significant association might reflect the music, the communities Beregovski documented, his collection methodology, or some combination. Statistical significance alone does not settle this."
+      },
+      {
+        "answer": "You would get the same result in any klezmer corpus",
+        "correct": false,
+        "feedback": "This result is specific to this corpus collected by this collector in this region and period. Generalizing beyond Beregovski's collection requires additional evidence."
+      }
+    ]
+  },
+  {
+    "question": "Beregovski collected tunes from musicians who had learned them in specific communities. Some metadata records that a musician learned a tune in a different location from where it was collected. Select ALL the questions this 'traveled tune' information could help answer.",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "Whether tunes change melodically as they travel between communities",
+        "correct": true,
+        "feedback": "Correct. If you have multiple versions of tunes with different origin/collection location pairs, you could test whether traveled tunes show greater melodic variation from local versions."
+      },
+      {
+        "answer": "Whether certain modes were more portable (traveled more) than others",
+        "correct": true,
+        "feedback": "Correct. If freygish tunes appear disproportionately among traveled tunes, that would suggest something about freygish's cultural mobility or prestige."
+      },
+      {
+        "answer": "The exact route a tune took between communities",
+        "correct": false,
+        "feedback": "The metadata only records origin and collection location \u2014 not intermediate stops. Reconstructing transmission routes would require additional historical or musicological evidence."
+      },
+      {
+        "answer": "Whether geographic distance between origin and collection correlates with melodic difference",
+        "correct": true,
+        "feedback": "Correct. If you geocode the locations and compute distances, you could test whether tunes that traveled farther changed more \u2014 a hypothesis about oral transmission and distance."
+      }
+    ]
+  },
+  {
+    "question": "When you find a significant association between mode and region in Beregovski's corpus, you need to ask whether it reflects the music, the communities, or the collection. Which of the following would most help you distinguish between these interpretations?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Comparing the result to a second, independently collected corpus of klezmer from overlapping regions",
+        "correct": true,
+        "feedback": "Correct. If the mode-region association appears in both corpora, it is more likely to reflect genuine musical or community patterns. If it only appears in Beregovski, it may reflect his collection choices."
+      },
+      {
+        "answer": "Running the chi-square test again with a different significance threshold",
+        "correct": false,
+        "feedback": "Changing the threshold does not change the result or help distinguish between interpretations. It only changes how we label the same p-value."
+      },
+      {
+        "answer": "Using a larger n-gram window in the bigram analysis",
+        "correct": false,
+        "feedback": "Bigram window size is a different analytical parameter entirely. It would not help distinguish musical from collector-based explanations of mode-region association."
+      },
+      {
+        "answer": "Reading Slobin (1986) on Beregovski's collection methodology",
+        "correct": true,
+        "feedback": "Also correct. Slobin's analysis of Beregovski's research practices is essential context for interpreting any pattern in the corpus. Understanding who Beregovski talked to, where, and why can illuminate whether regional patterns reflect the music or the collector."
+      }
+    ]
+  }
+]

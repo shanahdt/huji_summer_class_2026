@@ -1,0 +1,106 @@
+[
+  {
+    "question": "A melodic bigram is a pair of consecutive scale degrees (e.g. 1\u21922, 5\u21923). What does a high bigram frequency tell us, according to Huron's theory of musical expectation?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "That transition is statistically common in the style, and listeners enculturated in that style have learned to expect it",
+        "correct": true,
+        "feedback": "Correct. Huron argues that statistical regularities in a corpus shape listener expectations through implicit learning. A high-frequency bigram is one that enculturated listeners have internalized as 'normal' or 'expected'."
+      },
+      {
+        "answer": "That transition is particularly expressive or emotionally significant",
+        "correct": false,
+        "feedback": "Frequency and expressiveness are different things. A common transition may be neutral background; rare transitions may carry expressive weight precisely because they violate expectation."
+      },
+      {
+        "answer": "That transition always occurs at metrically strong positions",
+        "correct": false,
+        "feedback": "Bigram frequency counts all occurrences regardless of metric position. Beat-strength filtering is a separate analytical step."
+      },
+      {
+        "answer": "That transition is unique to this repertoire and not found in other styles",
+        "correct": false,
+        "feedback": "Frequency within a corpus says nothing about uniqueness across corpora. You would need a comparative bigram analysis to identify style-specific transitions."
+      }
+    ]
+  },
+  {
+    "question": "You extract the top-20 bigrams from freygish tunes and compute Jaccard similarity between the freygish bigram set and the minor bigram set. You get J = 0.38. What does this mean?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "38% of the bigrams in the combined set appear in both modes' top-20 lists",
+        "correct": true,
+        "feedback": "Correct. Jaccard similarity = |intersection| / |union|. 0.38 means 38% of all unique bigrams across both lists are shared between the two modes."
+      },
+      {
+        "answer": "Freygish and minor are 38% similar overall",
+        "correct": false,
+        "feedback": "Jaccard similarity is specific to the feature set you chose \u2014 here, top-20 trigrams. It is not a global similarity measure between the modes as a whole."
+      },
+      {
+        "answer": "38% of freygish tunes are misclassified as minor",
+        "correct": false,
+        "feedback": "Jaccard similarity between bigram sets has nothing to do with classification accuracy. That is a different calculation entirely."
+      },
+      {
+        "answer": "The two modes share 38 bigrams",
+        "correct": false,
+        "feedback": "Jaccard is a proportion (0 to 1), not a count. J=0.38 means 38% of the union set is shared, but the actual count depends on how large the union is."
+      }
+    ]
+  },
+  {
+    "question": "Beat-strength filtering means only analyzing note transitions that occur on metrically strong beats. What theoretical assumption motivates this choice?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Metrically strong notes are more perceptually salient and more likely to define the modal or tonal character of a melody",
+        "correct": true,
+        "feedback": "Correct. This assumption comes from theories of metrical hierarchy (Lerdahl & Jackendoff's GTTM) \u2014 notes on strong beats are structurally prominent and more likely to convey tonal function than passing tones on weak beats."
+      },
+      {
+        "answer": "Weak beats are more likely to contain errors in the kern encoding",
+        "correct": false,
+        "feedback": "Encoding accuracy is not related to metric position. This is a music-theoretic assumption about perceptual salience, not a data quality concern."
+      },
+      {
+        "answer": "It reduces the dataset size, making computation faster",
+        "correct": false,
+        "feedback": "Speed might be a side effect, but it is not the theoretical motivation. The reason is about what notes carry structural information."
+      },
+      {
+        "answer": "Strong beat notes are always chord tones in klezmer",
+        "correct": false,
+        "feedback": "Klezmer is monophonic in this corpus \u2014 there are no chords. And 'always' is too strong even for harmonic music. The claim is about salience, not about harmonic function."
+      }
+    ]
+  },
+  {
+    "question": "The Beregovski corpus bigram data is available pre-computed on the companion website. Why might you still want to reproduce it yourself in Python?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "To apply it to a specific subset (e.g. only bulgar tunes, or only one region)",
+        "correct": true,
+        "feedback": "Correct. The pre-computed data covers the full corpus. Reproducing it yourself lets you filter to any subset that matches your research question."
+      },
+      {
+        "answer": "To use different n values (trigrams, 4-grams) beyond what the website provides",
+        "correct": true,
+        "feedback": "Correct. The website provides bigram data. If you want trigrams or other n-gram sizes, you need to compute them yourself."
+      },
+      {
+        "answer": "Because the website data contains errors",
+        "correct": false,
+        "feedback": "There is no reason to assume errors. The website data is from the published paper. The motivation for recomputing is flexibility, not distrust."
+      },
+      {
+        "answer": "To apply the same pipeline to a different corpus (e.g. Charlie Parker) for comparison",
+        "correct": true,
+        "feedback": "Correct. Once you have the bigram extraction function working on Beregovski, you can run it on any other corpus in the same format to make direct comparisons."
+      }
+    ]
+  }
+]

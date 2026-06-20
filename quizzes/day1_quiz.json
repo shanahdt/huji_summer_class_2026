@@ -1,0 +1,106 @@
+[
+  {
+    "question": "In kern notation, what does the exclamation mark (!!!) at the start of a line indicate?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "A global metadata record (reference record)",
+        "correct": true,
+        "feedback": "Correct. Lines beginning with !!! are global reference records \u2014 metadata like title, composer, or collection information that applies to the whole file."
+      },
+      {
+        "answer": "A barline",
+        "correct": false,
+        "feedback": "Barlines in kern are indicated with = (e.g. =1, =2). The ! prefix marks metadata."
+      },
+      {
+        "answer": "A rest",
+        "correct": false,
+        "feedback": "Rests are encoded as 'r' in kern (e.g. 4r = quarter rest). The !!! prefix marks metadata."
+      },
+      {
+        "answer": "The end of a spine",
+        "correct": false,
+        "feedback": "Spine endings are marked with *- in kern. The !!! prefix marks global metadata records."
+      }
+    ]
+  },
+  {
+    "question": "All tunes in the Beregovski corpus are notated in G, regardless of original performance pitch. Select ALL true consequences of this decision.",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "Pitch class 7 (G) always corresponds to scale degree 1",
+        "correct": true,
+        "feedback": "Correct. With G as tonic, G (pc 7) is always scale degree 1 \u2014 pitch class and scale degree are equivalent."
+      },
+      {
+        "answer": "Absolute pitch comparison and scale-degree comparison give equivalent results",
+        "correct": true,
+        "feedback": "Correct. Because all tunes share G as tonic, comparing absolute pitches and comparing scale degrees produce the same relative relationships."
+      },
+      {
+        "answer": "The augmented second characteristic of freygish will always appear between the same two pitch classes",
+        "correct": true,
+        "feedback": "Correct. In freygish notated in G, the augmented second always falls between Ab (pc 8) and B (pc 11), making it easy to identify computationally."
+      },
+      {
+        "answer": "The encoding faithfully represents the pitch at which tunes were originally performed",
+        "correct": false,
+        "feedback": "No \u2014 the G notation is a computational convenience, not a record of performance pitch. Beregovski's informants performed in various keys; the notation standardizes this away."
+      }
+    ]
+  },
+  {
+    "question": "DARMS was designed so that non-musicians could encode scores affordably. What does this design goal build into the encoding system?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Spatial position on the staff is primary \u2014 notes are defined by where they sit on a grid, not by musical function",
+        "correct": true,
+        "feedback": "Correct. DARMS encodes notes by their spatial position (a number representing staff position), reflecting the goal of letting non-musicians encode visually without needing to interpret musical meaning."
+      },
+      {
+        "answer": "It encodes microtones and non-Western pitch systems by default",
+        "correct": false,
+        "feedback": "That was MUSTRAN's explicit goal, not DARMS. MUSTRAN was designed with extensibility for non-Western music in mind."
+      },
+      {
+        "answer": "It represents performance nuance like dynamics and articulation more richly than Humdrum",
+        "correct": false,
+        "feedback": "DARMS was designed for cheap and accessible encoding, not for expressive richness. Humdrum's kern format actually handles a wider range of musical information."
+      },
+      {
+        "answer": "Rhythm is implicit and derived from note position",
+        "correct": false,
+        "feedback": "DARMS does encode rhythm explicitly using letter codes (W=whole, H=half, Q=quarter, E=eighth, etc.)."
+      }
+    ]
+  },
+  {
+    "question": "Humdrum kern represents polyphonic music by having multiple 'spines' (columns), with each moment in time as a new row. What analytical operation does this two-dimensional structure make especially easy?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Finding all simultaneous events at a specific moment",
+        "correct": true,
+        "feedback": "Correct. Because each row is a moment in time, a single row contains all simultaneous events across all voices \u2014 making vertical (harmonic) analysis straightforward."
+      },
+      {
+        "answer": "Representing indefinite pitch (like percussion)",
+        "correct": false,
+        "feedback": "Indefinite pitch is handled in kern with specific tokens, but it is not the primary advantage of the two-dimensional structure."
+      },
+      {
+        "answer": "Encoding continuous audio waveforms",
+        "correct": false,
+        "feedback": "Kern is a symbolic (score-based) format. It represents discrete note events, not continuous audio."
+      },
+      {
+        "answer": "Automatic transposition to any key",
+        "correct": false,
+        "feedback": "Transposition requires additional processing \u2014 the two-dimensional structure does not automatically handle this."
+      }
+    ]
+  }
+]

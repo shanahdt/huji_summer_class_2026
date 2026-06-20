@@ -1,0 +1,80 @@
+[
+  {
+    "question": "A chromagram represents audio as a 12\u00d7T matrix (12 pitch classes \u00d7 time frames). How does this differ from the pitch class profile we computed from kern notation?",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "The chromagram includes a time dimension \u2014 pitch class energy varies frame by frame",
+        "correct": true,
+        "feedback": "Correct. A chromagram shows how pitch class content changes across time, not just the overall distribution. The score-based pitch class profile collapses time entirely."
+      },
+      {
+        "answer": "The chromagram is derived from acoustic energy, not from symbolic note events",
+        "correct": true,
+        "feedback": "Correct. Chroma features are computed from the frequency content of the audio signal using a constant-Q transform or similar. They do not know about 'notes' \u2014 just spectral energy at each pitch class."
+      },
+      {
+        "answer": "The chromagram cannot represent the augmented second characteristic of freygish",
+        "correct": false,
+        "feedback": "The chromagram will show energy at the pitch classes corresponding to the augmented second \u2014 it just represents them as energy distributions rather than symbolic intervals."
+      },
+      {
+        "answer": "The chromagram requires knowing the key before extraction",
+        "correct": false,
+        "feedback": "Chroma extraction is key-agnostic \u2014 it measures energy at all 12 pitch classes simultaneously. No prior key assumption is needed."
+      }
+    ]
+  },
+  {
+    "question": "MFCCs (Mel-Frequency Cepstral Coefficients) are used to represent timbre in audio analysis. Spotify used MFCCs as part of what they called 'acousticness' and 'energy'. What do MFCCs primarily capture?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "The spectral envelope of the sound \u2014 the overall shape of the frequency content, associated with instrument tone color",
+        "correct": true,
+        "feedback": "Correct. MFCCs compress the spectral envelope into a small number of coefficients. They are very sensitive to timbre (e.g. clarinet vs violin) but relatively insensitive to pitch and melody."
+      },
+      {
+        "answer": "The pitch of the fundamental frequency",
+        "correct": false,
+        "feedback": "Pitch tracking (F0 estimation) is a separate operation. MFCCs describe the spectral envelope, not the fundamental frequency."
+      },
+      {
+        "answer": "The tempo and rhythmic structure of the recording",
+        "correct": false,
+        "feedback": "Tempo and rhythm are estimated by separate algorithms (onset detection, beat tracking). MFCCs are a spectral feature."
+      },
+      {
+        "answer": "The loudness at each moment in time",
+        "correct": false,
+        "feedback": "Loudness is captured by RMS energy or similar measures. MFCCs describe spectral shape, which correlates loosely with timbre and roughness but is not primarily a loudness measure."
+      }
+    ]
+  },
+  {
+    "question": "You compute the Pearson correlation between the corpus pitch class profile (from kern) and a chromagram mean (from a recording) and get r = 0.61. A colleague says this means 'the score and the recording agree about 61% of the time'. What is wrong with this interpretation?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Pearson r is not a percentage of agreement \u2014 it measures linear association between two profiles, not proportion of matching events",
+        "correct": true,
+        "feedback": "Correct. r=0.61 means the two 12-dimensional profiles are positively correlated \u2014 when one is high, the other tends to be high. It does not mean 61% of notes match or 61% of time frames agree."
+      },
+      {
+        "answer": "The correlation should be computed on the raw counts, not the proportions",
+        "correct": false,
+        "feedback": "Normalizing to proportions before correlating is standard and correct. The issue is the misinterpretation of r as a percentage, not the normalization choice."
+      },
+      {
+        "answer": "A correlation of 0.61 means the two sources are unrelated",
+        "correct": false,
+        "feedback": "r=0.61 is a moderate positive correlation \u2014 the sources are meaningfully related, not unrelated. The issue is the specific 'percentage of agreement' misreading."
+      },
+      {
+        "answer": "You cannot correlate score data with audio data",
+        "correct": false,
+        "feedback": "Correlating score-derived and audio-derived pitch profiles is a legitimate and informative operation. The issue is only the interpretation of what the correlation coefficient means."
+      }
+    ]
+  }
+]

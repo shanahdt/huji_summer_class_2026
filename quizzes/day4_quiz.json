@@ -1,0 +1,97 @@
+[
+  {
+    "question": "Edit distance (Levenshtein) treats a melody as a string of symbols. What is the most significant musical limitation of the basic version?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "All edit operations cost equally, so substituting a semitone costs the same as substituting a tritone",
+        "correct": true,
+        "feedback": "Correct. Musically, not all substitutions are equal \u2014 replacing a neighbor tone is more 'natural' than replacing a note with its tritone. Mongeau & Sankoff's (1990) weighted edit distance addresses this by making substitution cost proportional to interval size."
+      },
+      {
+        "answer": "It cannot handle melodies of different lengths",
+        "correct": false,
+        "feedback": "Edit distance handles different lengths through insertions and deletions \u2014 that is actually one of its strengths over fixed-length comparison methods."
+      },
+      {
+        "answer": "It requires the melodies to be in the same key",
+        "correct": false,
+        "feedback": "If you use scale degrees rather than absolute pitches, edit distance is key-invariant. Key is not the main limitation."
+      },
+      {
+        "answer": "It is too computationally expensive for a corpus of 245 tunes",
+        "correct": false,
+        "feedback": "O(m\u00d7n) dynamic programming is fast enough for melodies of typical length. Computational cost is not a practical issue here."
+      }
+    ]
+  },
+  {
+    "question": "Which of the following melodic representations are transposition-invariant? Select ALL that apply.",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "Absolute pitch names (G4, A4, B4...)",
+        "correct": false,
+        "feedback": "Absolute pitches change with transposition. G major and A major have completely different pitch names."
+      },
+      {
+        "answer": "Scale degrees (1, 2, 3, 4, 5...)",
+        "correct": true,
+        "feedback": "Correct. Scale degrees are relative to the tonic, so they remain the same across transpositions of the same melody."
+      },
+      {
+        "answer": "Melodic contour (up / down / same)",
+        "correct": true,
+        "feedback": "Correct. Contour describes direction of movement only, with no reference to specific pitches or intervals."
+      },
+      {
+        "answer": "Directed melodic intervals in semitones (+2, -3, +5...)",
+        "correct": true,
+        "feedback": "Correct. An ascending major second is always +2 semitones regardless of starting pitch."
+      },
+      {
+        "answer": "Pitch class (C=0, C#=1 ... B=11)",
+        "correct": false,
+        "feedback": "Pitch class is octave-invariant but not transposition-invariant. G major and F major have different pitch class profiles."
+      }
+    ]
+  },
+  {
+    "question": "N-gram Jaccard similarity treats melodies as sets of local patterns. What is the main thing it CANNOT capture?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Whether the same local patterns appear in the same global order",
+        "correct": true,
+        "feedback": "Correct. A melody that uses the same four-note patterns in a completely different order looks identical to the original under Jaccard. The metric is sensitive to what patterns exist, not where they fall in the melody as a whole."
+      },
+      {
+        "answer": "Whether the melodies share any common notes",
+        "correct": false,
+        "feedback": "N-gram overlap does capture shared local patterns \u2014 including individual notes as 1-grams if you use n=1."
+      },
+      {
+        "answer": "Whether the melodies are in the same mode",
+        "correct": false,
+        "feedback": "Using scale degrees, n-gram Jaccard can be sensitive to modal differences \u2014 freygish tunes have characteristic bigrams (like the augmented second) that minor tunes lack."
+      },
+      {
+        "answer": "Whether the melodies are the same length",
+        "correct": false,
+        "feedback": "Jaccard is set-based and therefore length-independent by design."
+      }
+    ]
+  },
+  {
+    "question": "You compute normalized edit distance between two scale-degree sequences of lengths 12 and 15. The raw Levenshtein distance is 6. What is the normalized edit distance?",
+    "type": "numeric",
+    "answers": [
+      {
+        "type": "value",
+        "correct": 0.4,
+        "feedback": "Correct. Normalized edit distance = 6 / max(12, 15) = 6 / 15 = 0.40.",
+        "value": 0.4
+      }
+    ]
+  }
+]
