@@ -26,28 +26,23 @@
     ]
   },
   {
-    "question": "All tunes in the Beregovski corpus are notated in G, regardless of original performance pitch. Select ALL true consequences of this decision.",
+    "question": "What do the 'J' and 'L' symbols mean in kern notation?",
     "type": "many_choice",
     "answers": [
       {
-        "answer": "Pitch class 7 (G) always corresponds to scale degree 1",
+        "answer": "These are beaming instructions. They are mandating a beam to start ('J') or to end ('L') at this note.",
         "correct": true,
-        "feedback": "Correct. With G as tonic, G (pc 7) is always scale degree 1 \u2014 pitch class and scale degree are equivalent."
+        "feedback": "Correct. In kern notation, 'J' indicates that a beam should start at this note, and 'L' indicates that a beam should end at this note."
       },
       {
-        "answer": "Absolute pitch comparison and scale-degree comparison give equivalent results",
-        "correct": true,
-        "feedback": "Correct. Because all tunes share G as tonic, comparing absolute pitches and comparing scale degrees produce the same relative relationships."
-      },
-      {
-        "answer": "The augmented second characteristic of freygish will always appear between the same two pitch classes",
-        "correct": true,
-        "feedback": "Correct. In freygish notated in G, the augmented second always falls between Ab (pc 8) and B (pc 11), making it easy to identify computationally."
-      },
-      {
-        "answer": "The encoding faithfully represents the pitch at which tunes were originally performed",
+        "answer": "'J' marks a jazz-style articulation, 'L' marks a legato phrase",
         "correct": false,
-        "feedback": "No \u2014 the G notation is a computational convenience, not a record of performance pitch. Beregovski's informants performed in various keys; the notation standardizes this away."
+        "feedback": "Incorrect. 'J' and 'L' are not used for articulations in kern notation."
+      },
+      {
+        "answer": "They are telling the reader where to 'Jump' to in the score",
+        "correct": false,
+        "feedback": "Incorrect. 'J' and 'L' are not used for jumps in kern notation. They indicate the start and end of beams."
       }
     ]
   },
@@ -100,6 +95,85 @@
         "answer": "Automatic transposition to any key",
         "correct": false,
         "feedback": "Transposition requires additional processing \u2014 the two-dimensional structure does not automatically handle this."
+      }
+    ]
+  },
+  {
+    "question": "In the Day 1 corpus code, why do we initialize a counter with every category (for example all 12 pitch classes) before counting?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "So categories with no occurrences still appear in the output with count 0",
+        "correct": true,
+        "feedback": "Correct. Pre-initializing ensures a complete and consistent table, including categories that do not appear in the current data."
+      },
+      {
+        "answer": "Because Counter cannot add keys dynamically while looping",
+        "correct": false,
+        "feedback": "Counter can add keys dynamically. Pre-initialization is for completeness and stable output order, not a requirement."
+      },
+      {
+        "answer": "Because music21 only works if all categories already exist",
+        "correct": false,
+        "feedback": "music21 does not require this. It is a Python data-handling decision for clearer reporting."
+      },
+      {
+        "answer": "To force all categories to have equal counts",
+        "correct": false,
+        "feedback": "Initializing to zero does not force equal counts; it only ensures all categories are represented."
+      }
+    ]
+  },
+  {
+    "question": "The Day 1 notebook uses `pitch_names, counts = zip(*pitch_class_table)` before plotting. What does this do?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "It unpacks a list of (name, count) pairs into one sequence of names and one sequence of counts",
+        "correct": true,
+        "feedback": "Correct. `zip(*pairs)` transposes rows into columns, which is exactly what plotting functions need for x and y inputs."
+      },
+      {
+        "answer": "It compresses the table to remove zero values",
+        "correct": false,
+        "feedback": "`zip` does not filter values. It reorganizes structure only."
+      },
+      {
+        "answer": "It sorts pitch classes by count from highest to lowest",
+        "correct": false,
+        "feedback": "Sorting is a separate operation. `zip` does not sort."
+      },
+      {
+        "answer": "It converts pitch classes into scale degrees",
+        "correct": false,
+        "feedback": "That requires key-relative mapping logic, not `zip`."
+      }
+    ]
+  },
+
+  {
+    "question": "Select ALL statements that are good methodological cautions for Day 1 corpus counting.",
+    "type": "many_choice",
+    "answers": [
+      {
+        "answer": "A single estimated key per piece can hide common musical choices such as modulation or tonal ambiguity",
+        "correct": true,
+        "feedback": "Correct. One key label can hide internal tonal changes and mixed tonal centers."
+      },
+      {
+        "answer": "Pitch-class counts ignore register, so octave information is lost",
+        "correct": true,
+        "feedback": "Correct. Pitch classes collapse octave, which is useful for some questions but discards registral detail."
+      },
+      {
+        "answer": "A chart with clear labels guarantees a correct analytical interpretation",
+        "correct": false,
+        "feedback": "Clear visualization helps communication, but interpretation still depends on assumptions and context."
+      },
+      {
+        "answer": "Counting notes alone does not capture rhythmic salience or phrase position",
+        "correct": true,
+        "feedback": "Correct. Event counts summarize frequency, not metrical weight, phrase structure, or duration emphasis."
       }
     ]
   }
