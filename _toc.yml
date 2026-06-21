@@ -5,8 +5,8 @@ parts:
     chapters:
       - file: notebooks/day1_encoding
         title: "Day 1 · Encoding (21 Jun)"
-      - file: notebooks/day2_ngrams
-        title: "Day 2 · N-Grams (22 Jun)"
+      # - file: notebooks/day2_ngrams
+      #   title: "Day 2 · N-Grams (22 Jun)"
       # - file: notebooks/day2_ngrams
      # title: "Day 2 · N-Grams (22 Jun)"
       #   title: "Day 3 · N-grams (23 Jun)"
