@@ -10,7 +10,86 @@ When you're done, close this tab and return to the notebook.
 <div id="quiz-day2-quiz" class="jb-quiz-container"></div>
 <script>
 (function() {
-  var questions = [{"question": "A pitch class profile (sometimes called a key profile) represents a melody as 12 numbers. What do those 12 numbers count?", "type": "multiple_choice", "answers": [{"answer": "The proportion of notes belonging to each of the 12 pitch classes (C, C#, D... B), ignoring octave", "correct": true, "feedback": "Correct. A pitch class profile collapses all octaves \u2014 G3, G4, and G5 all count as pitch class 7 \u2014 and records what fraction of notes fall in each of the 12 chromatic pitch classes."}, {"answer": "The 12 most common melodic intervals in the piece", "correct": false, "feedback": "That would be an interval profile, not a pitch class profile. Pitch class profiles count pitch occurrences, not transitions between pitches."}, {"answer": "The 12 scale degrees present in the melody", "correct": false, "feedback": "Scale degrees are relative to a tonic (1=tonic, 2=supertonic...). Pitch classes are absolute (C=0, C#=1...). The profiles look similar but encode different things."}, {"answer": "The number of times each of 12 rhythmic values appears", "correct": false, "feedback": "That would be a rhythm histogram. Pitch class profiles only concern pitch, not rhythm."}]}, {"question": "The Krumhansl-Schmuckler key-finding algorithm correlates a melody's pitch class profile against pre-computed major and minor key templates. Those templates came from probe-tone experiments with Western listeners. Select ALL the reasons this algorithm is likely to struggle with freygish (ahavah rabbah).", "type": "many_choice", "answers": [{"answer": "Freygish uses an augmented second, a pitch interval absent from Western major and minor scales", "correct": true, "feedback": "Correct. The augmented second between scale degrees 2 and 3 in freygish (e.g. Ab and B in G freygish) has no equivalent in major or minor, so the algorithm has no template that fits this characteristic feature."}, {"answer": "The KS templates were derived from listeners trained in Western tonal music, who had no exposure to klezmer modes", "correct": true, "feedback": "Correct. Probe-tone ratings reflect the internalized expectations of the listener population. Western-trained listeners rate probe tones differently from how klezmer musicians would."}, {"answer": "Freygish has the same pitch content as Western Phrygian dominant, which has its own KS template", "correct": false, "feedback": "The KS algorithm only has templates for the 24 major and minor keys \u2014 there is no Phrygian dominant template. Freygish would be forced into the nearest major or minor match."}, {"answer": "The algorithm cannot process kern files directly", "correct": false, "feedback": "music21 can parse kern and then apply key-finding algorithms to the resulting Score object. The file format is not the issue."}]}, {"question": "You compute the Pearson correlation between a tune's pitch class profile and the KS major template and get r = 0.42. You then compute the correlation with the KS minor template and get r = 0.71. What does the algorithm report?", "type": "multiple_choice", "answers": [{"answer": "The tune is in a minor key, because that template has the higher correlation", "correct": true, "feedback": "Correct. The KS algorithm reports the key whose template has the highest correlation with the tune's pitch profile. r=0.71 (minor) > r=0.42 (major), so it reports minor."}, {"answer": "The tune is in a major key, because major is more common in Western music", "correct": false, "feedback": "The algorithm makes no assumption about frequency of major vs minor. It simply reports the highest correlation."}, {"answer": "The result is ambiguous because neither correlation is above 0.8", "correct": false, "feedback": "The KS algorithm always reports the single best-matching key regardless of absolute correlation strength. The correlationCoefficient attribute in music21 reports the winning score, not a threshold."}, {"answer": "The tune is in a mode unrelated to major or minor", "correct": false, "feedback": "The KS algorithm can only report one of the 24 major/minor keys \u2014 it has no category for 'other mode'. It will force-fit freygish into whichever major or minor key it most resembles."}]}, {"question": "In the Beregovski corpus, what is the most theoretically interesting reason to compare mode profiles across genres (e.g. freylekhs vs dobranoch)?", "type": "multiple_choice", "answers": [{"answer": "To test whether modal choice is genre-specific or cuts across genres, which would reveal whether mode and dance function are coupled in this repertoire", "correct": true, "feedback": "Correct. If certain modes cluster with certain genres, it suggests mode is tied to social function (dance type, occasion). If modes are evenly distributed across genres, mode may be a more independent musical parameter."}, {"answer": "To check whether Malin made errors in his mode annotations", "correct": false, "feedback": "Cross-tabulating mode and genre would not reveal annotation errors \u2014 Malin's annotations and Beregovski's genre labels are independent. Errors would require comparing against a separate source of ground truth."}, {"answer": "Because the key-finding algorithm performs better on some genres than others", "correct": false, "feedback": "This might be true but it is not the primary theoretical interest. The deeper question is about the relationship between modal identity and musical/social function."}, {"answer": "To normalize the pitch profiles before clustering", "correct": false, "feedback": "Genre-mode cross-tabulation is an analytical question, not a preprocessing step for normalization."}]}];
+  var questions = [
+  {
+  "question": "The notebook compares Charlie Parker and Dizzy Gillespie using scale-degree bigrams estimated relative to each piece's detected key. What is the main analytical risk of this approach for jazz?",
+  "type": "multiple_choice",
+  "answers": [
+    {
+      "answer": "Jazz uses heavy chromaticism and chord substitutions, so many notes don't belong to the detected key — mapping them to a major scale loses their function",
+      "correct": true,
+      "feedback": "Correct. A bebop line over a ii–V–I might include tritone substitutions, passing tones, and altered tensions that the key-detection algorithm maps incorrectly. The scale-degree representation is a simplifying choice that works better for diatonic repertoire."
+    },
+    {
+      "answer": "The Omnibook transcriptions are not in kern format so the parser cannot read them",
+      "correct": false,
+      "feedback": "The data files are in kern format — that's not the issue. The risk is in the analytical interpretation of the scale degrees, not in the file parsing."
+    },
+    {
+      "answer": "Parker and Gillespie play in different keys so scale degrees cannot be compared",
+      "correct": false,
+      "feedback": "The code normalizes to scale degrees relative to the detected tonic for each piece, so absolute key is not the problem. The issue is that the tonal language of bebop is not well-described by a single major scale."
+    },
+    {
+      "answer": "Bigrams can only capture diatonic music and throw an error on chromatic passages",
+      "correct": false,
+      "feedback": "The code handles chromatic notes by mapping them to the nearest scale degree or filtering them out with `if degree is not None`. No error is thrown — but the mapping silently loses information about chromatic function."
+    }
+  ]
+    },
+    {
+  "question": "The notebook represents bigrams as a transition matrix — a grid where rows are 'from' notes and columns are 'to' notes, and each cell contains a count or percentage. What does a row in the percentage version tell you?",
+  "type": "multiple_choice",
+  "answers": [
+    {
+      "answer": "Given that a melody is currently on note X, the probability of each possible next note",
+      "correct": true,
+      "feedback": "Correct. Each row sums to 100%. If you're on G4, the row for G4 tells you how often each other note followed G4 in this corpus — a conditional probability distribution."
+    },
+    {
+      "answer": "How many times note X appeared in the corpus overall",
+      "correct": false,
+      "feedback": "That would be a unigram count (pitch histogram), not a bigram transition matrix. The matrix specifically captures what follows each note, not how often the note itself occurs."
+    },
+    {
+      "answer": "The most common note in the corpus for each starting pitch",
+      "correct": false,
+      "feedback": "The row shows the full distribution of following notes, not just the single most common one. Reading only the highest cell would lose information about the full transition profile."
+    },
+    {
+      "answer": "The percentage of the melody that consists of that note",
+      "correct": false,
+      "feedback": "That would be the pitch class profile from Day 1. The transition matrix is about movement between notes, not about how often any single note appears."
+    }
+  ]
+},
+{
+  "question": "The notebook shows Huron's scale-degree transition tables. According to Huron, why do listeners expect certain melodic transitions more than others?",
+  "type": "multiple_choice",
+  "answers": [
+    {
+      "answer": "Because those transitions are statistically frequent in the music they grew up hearing, and listeners internalize these patterns through exposure",
+      "correct": true,
+      "feedback": "Correct. Huron's expectation theory holds that statistical regularities in a musical culture shape listener predictions through implicit learning — the same mechanism that makes Q→U feel 'obvious' in English spelling."
+    },
+    {
+      "answer": "Because those transitions are inherently more consonant or pleasant",
+      "correct": false,
+      "feedback": "Consonance is a separate property. A transition like 7→1 is expected because of statistical frequency in tonal music, not because it is inherently more consonant than other intervals."
+    },
+    {
+      "answer": "Because composers intentionally write the most common transitions to please listeners",
+      "correct": false,
+      "feedback": "Huron's account is statistical and cultural, not intentional. Composers absorb stylistic norms and reproduce them — but the norms emerge from the corpus as a whole, not from individual decisions."
+    },
+    {
+      "answer": "Because music theory rules prescribe which melodic intervals are permitted",
+      "correct": false,
+      "feedback": "Music theory describes norms after the fact. Huron is making a psychological and statistical claim about expectation, which can exist even for patterns that no theory explicitly prescribes."
+    }
+  ]
+}
+  ];
   var container = document.getElementById('quiz-day2-quiz');
   var answered = {};
   if (!document.getElementById('jb-quiz-style')) {
