@@ -1,4 +1,4 @@
-# Day 2 Quiz: Pitch Distributions and Mode
+# Day 2 Quiz: N-Grams
 
 These questions are ungraded self-assessments. Answer them before running the analysis
 cells in the notebook — the goal is to make your assumptions explicit before the data does.
