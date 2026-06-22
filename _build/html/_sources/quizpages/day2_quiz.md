@@ -1,4 +1,4 @@
-# Day 2 Quiz: N-Grams
+# Day 2 Quiz: N-Grams, etc.
 
 These questions are ungraded self-assessments. Answer them before running the analysis
 cells in the notebook — the goal is to make your assumptions explicit before the data does.
@@ -16,14 +16,14 @@ When you're done, close this tab and return to the notebook.
   "type": "multiple_choice",
   "answers": [
     {
-      "answer": "Jazz uses heavy chromaticism and chord substitutions, so many notes don't belong to the detected key — mapping them to a major scale loses their function",
-      "correct": true,
-      "feedback": "Correct. A bebop line over a ii–V–I might include tritone substitutions, passing tones, and altered tensions that the key-detection algorithm maps incorrectly. The scale-degree representation is a simplifying choice that works better for diatonic repertoire."
-    },
-    {
       "answer": "The Omnibook transcriptions are not in kern format so the parser cannot read them",
       "correct": false,
       "feedback": "The data files are in kern format — that's not the issue. The risk is in the analytical interpretation of the scale degrees, not in the file parsing."
+    },
+        {
+      "answer": "Jazz uses heavy chromaticism and chord substitutions, so many notes don't belong to the detected key — mapping them to a major scale loses their function",
+      "correct": true,
+      "feedback": "Correct. A bebop line over a ii–V–I might include tritone substitutions, passing tones, and altered tensions that the key-detection algorithm maps incorrectly. The scale-degree representation is a simplifying choice that works better for diatonic repertoire."
     },
     {
       "answer": "Parker and Gillespie play in different keys so scale degrees cannot be compared",
@@ -42,11 +42,6 @@ When you're done, close this tab and return to the notebook.
   "type": "multiple_choice",
   "answers": [
     {
-      "answer": "Given that a melody is currently on note X, the probability of each possible next note",
-      "correct": true,
-      "feedback": "Correct. Each row sums to 100%. If you're on G4, the row for G4 tells you how often each other note followed G4 in this corpus — a conditional probability distribution."
-    },
-    {
       "answer": "How many times note X appeared in the corpus overall",
       "correct": false,
       "feedback": "That would be a unigram count (pitch histogram), not a bigram transition matrix. The matrix specifically captures what follows each note, not how often the note itself occurs."
@@ -60,6 +55,11 @@ When you're done, close this tab and return to the notebook.
       "answer": "The percentage of the melody that consists of that note",
       "correct": false,
       "feedback": "That would be the pitch class profile from Day 1. The transition matrix is about movement between notes, not about how often any single note appears."
+    },
+        {
+      "answer": "Given that a melody is currently on note X, the probability of each possible next note",
+      "correct": true,
+      "feedback": "Correct. Each row sums to 100%. If you're on G4, the row for G4 tells you how often each other note followed G4 in this corpus — a conditional probability distribution."
     }
   ]
 },
@@ -67,11 +67,6 @@ When you're done, close this tab and return to the notebook.
   "question": "The notebook shows Huron's scale-degree transition tables. According to Huron, why do listeners expect certain melodic transitions more than others?",
   "type": "multiple_choice",
   "answers": [
-    {
-      "answer": "Because those transitions are statistically frequent in the music they grew up hearing, and listeners internalize these patterns through exposure",
-      "correct": true,
-      "feedback": "Correct. Huron's expectation theory holds that statistical regularities in a musical culture shape listener predictions through implicit learning — the same mechanism that makes Q→U feel 'obvious' in English spelling."
-    },
     {
       "answer": "Because those transitions are inherently more consonant or pleasant",
       "correct": false,
@@ -81,6 +76,11 @@ When you're done, close this tab and return to the notebook.
       "answer": "Because composers intentionally write the most common transitions to please listeners",
       "correct": false,
       "feedback": "Huron's account is statistical and cultural, not intentional. Composers absorb stylistic norms and reproduce them — but the norms emerge from the corpus as a whole, not from individual decisions."
+    },
+        {
+      "answer": "Because those transitions are statistically frequent in the music they grew up hearing, and listeners internalize these patterns through exposure",
+      "correct": true,
+      "feedback": "Correct. Huron's expectation theory holds that statistical regularities in a musical culture shape listener predictions through implicit learning — the same mechanism that makes Q→U feel 'obvious' in English spelling."
     },
     {
       "answer": "Because music theory rules prescribe which melodic intervals are permitted",
