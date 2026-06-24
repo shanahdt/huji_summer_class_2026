@@ -33,6 +33,8 @@ import pandas as pd
 import seaborn as sns
 from music21 import converter
 
+from .corpus import PITCH_CLASS_NAMES
+
 # ── Low-level n-gram helpers ──────────────────────────────────────────────────
 
 def get_ngrams(sequence, n):
@@ -79,6 +81,30 @@ def note_sequence(file_path_or_score):
                 names.append(p.nameWithOctave)
         else:
             names.append(element.pitch.nameWithOctave)
+    return names
+
+
+def pitch_class_sequence(file_path_or_score):
+    """
+    Return the pitch-class name (e.g. 'C', 'C#', 'D', ...) for every note in
+    a piece, in order, with octaves folded together. Chords are expanded
+    into their individual pitches. Sibling of note_sequence() (full
+    pitch+octave) and scale_degree_sequence() (key-relative) — use whichever
+    granularity suits the question you're asking.
+
+    Example
+    -------
+        pitch_class_sequence('../data/happy_birthday.krn')
+        # → ['G', 'G', 'A', 'G', 'C', 'B', ...]
+    """
+    score = (converter.parse(str(file_path_or_score))
+             if isinstance(file_path_or_score, (str, Path))
+             else file_path_or_score)
+    names = []
+    for element in score.recurse().notes:
+        pitches = element.pitches if element.isChord else [element.pitch]
+        for p in pitches:
+            names.append(PITCH_CLASS_NAMES[p.pitchClass])
     return names
 
 

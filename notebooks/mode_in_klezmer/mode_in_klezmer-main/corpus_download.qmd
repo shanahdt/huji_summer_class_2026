@@ -1,0 +1,23 @@
+---
+title: Downloadable Corpus
+---
+
+## The Link to the Corpus 
+
+The full corpus can be found [here](https://github.com/shanahdt/mode_in_klezmer/tree/main/corpus). 
+
+If you would like to see more, including the data broken into mode and the scripts for analysis, you can view them  on our [github site](https://github.com/shanahdt/mode_in_klezmer).
+
+
+## How the corpus was assembled.
+
+The dataset is collected from Beregovski’s _Jewish Instrumental Folk Music_ (see [the introduction page](introduction.qmd) for a description of this). The corpus was digitized from the second English edition by Research Assistants Rebecca Hamel and Izzy Fincher with funding from the Center for Humanities & the Arts and Program in Jewish Studies at the University of Colorado Boulder. Daniel Shanahan converted xml files to the **kern format. Research Assistant Laine Gruver assisted with data entry for the website.
+
+More information can be found on the introduction page.
+
+## How to Cite
+
+Please cite the following work when using this corpus:
+
+[Malin, Yonatan and Daniel Shanahan, 2025. "Modes in Klezmer Music: A Corpus Study Based on Beregovski’s *Jewish Instrumental Folk Music*." *Music Theory Online* 31 (3).](https://www.mtosmt.org/issues/mto.25.31.3/mto.25.31.3.malin.html)
+

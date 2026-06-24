@@ -1,0 +1,60 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  page-navigation: true
+  title: "Modes in Klezmer Music"
+  description: "Supplemental Materials for MTO Submission"
+  site-url: "https://shanahdt.github.io/mode_in_klezmer/"
+  repo-url: "https://github.com/shanahdt/mode_in_klezmer"
+  repo-actions: [edit, issue]
+
+  sidebar:
+    style: "docked"
+    search: true
+    title: false
+    pinned: false
+    collapse-level: 0
+    contents:
+      - section: "Welcome"
+        contents:  
+          - introduction.qmd
+      - section: "Metadata and Analysis"
+        contents:
+          - beregovski_metadata.qmd
+          - malin_and_shanahan_metadata.qmd
+        collapse-level: 1
+      - section: "Mode Data"
+        contents:
+          - pitch_histograms.qmd
+          - pitch_counts.qmd
+          - melodic_tendencies.qmd
+      - section: "Downloadable Corpus"
+        contents: 
+          - corpus_download.qmd
+
+  
+      
+
+         
+
+          
+
+  page-footer:
+    right: "This page is built with [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2025, Yonatan Malin and Daniel Shanahan<br>Last modified: June 30, 2025"
+    background: "#D9E3E4"
+
+
+format:
+  html:
+    page-layout: article
+    theme:
+      light: [flatly, theme.scss]
+      dark: [flatly, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: false
+    last-modified: true

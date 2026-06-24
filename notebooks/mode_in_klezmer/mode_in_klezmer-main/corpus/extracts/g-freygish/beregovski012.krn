@@ -1,0 +1,74 @@
+!!!OTL: 12. Dobriden
+!!!Genre:	Dobriden
+!!!Mode:	Freygish
+!!!Listening/dance:	listening
+!!!One_Mode:	no
+!!!Orig_tonic: D
+**kern
+*thru
+*I"P1
+*clefG2
+*k[b-e-a-]
+*G:frey
+*M3/4
+*>A
+!!!Begin-Modulation
+*G:frey
+!LO:TX:a:i:t=G-freygish
+=13
+4bn
+4dd
+4cc
+=14
+4.bnt
+8a-L
+8g
+8fJ
+=15
+4g
+4gg
+8ddL
+8bnJ
+=16
+2.g
+!!!Begin-Modulation
+*G:frey
+!LO:TX:a:i:t=G-freygish
+=25
+8ffL
+8gg
+8ff
+8ee-
+8dd
+8ccJ
+=26
+4.bnt
+8gL
+8a-
+8enJ
+=27
+2.f
+=28
+2f
+4ff
+=29
+8ffL
+8ee-
+8dd
+8cc
+8bn
+8ccJ
+=30
+4.bn
+8a-L
+8g
+8fJ
+=31
+4g
+4gg
+8ddL
+8bnJ
+=32
+2.g
+==
+*-

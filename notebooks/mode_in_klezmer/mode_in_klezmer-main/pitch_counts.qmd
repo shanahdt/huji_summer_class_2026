@@ -1,0 +1,67 @@
+---
+title: Pitch Counts
+---
+
+Below are sortable tables showing the counts of pitches in each mode. This can be cross-references with the 
+visualizations from the [pitch histogram page](pitch_histograms.qmd), or can be used for additional data analysis as needed.
+
+
+## G Freygish
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+library(DT)
+library(humdrumR)
+library(tidyverse)
+```
+
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+freygish <- readHumdrum('corpus/extracts/g-freygish/*.krn')
+freygish |> 
+    pitch(simple = FALSE) |>
+    count()|> 
+    as_tibble() |> 
+    arrange(desc(n)) |>
+    datatable(filter="top")
+```
+
+## G Raised Fourth
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+raised <- readHumdrum('corpus/extracts/g-raised-fourth/*.krn')
+Pitch <- raised |> 
+    pitch(simple = FALSE)
+
+Pitch |>
+    count() |> 
+    as_tibble() |> 
+    arrange(desc(n)) |>
+    datatable(filter="top")
+
+```
+
+## G Major
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+
+major <- readHumdrum('corpus/extracts/g-major/*.krn')
+major <- major |> 
+    pitch(simple = FALSE) 
+
+major |> count() |> as_tibble() |> 
+    arrange(desc(n)) |> 
+    datatable(filter="top")
+
+```
+
+## G Minor
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+minor <- readHumdrum('corpus/extracts/g-minor/*.krn')
+minor |> 
+    pitch(simple = FALSE) |>
+    count() |> 
+    as_tibble() |> 
+    arrange(desc(n)) |>
+    datatable(filter="top")
+```

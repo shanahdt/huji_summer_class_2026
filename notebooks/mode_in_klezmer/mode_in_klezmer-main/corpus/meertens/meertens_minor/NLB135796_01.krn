@@ -1,0 +1,113 @@
+!! Published by the Meertens Institute (http://www.meertens.knaw.nl)
+!! Part of the Database of Dutch Songs (NLB) (http://www.liederenbank.nl)
+!! NLB identifier: NLB135796_01
+!! NLB record number: 135796
+!! NLB strophe/voice number: 1
+**kern
+*staff1
+*M4/4
+*MM120
+*k[b-]
+*g:dor
+!! verse 0
+{4g
+=1
+2b-
+4.cc
+16b-
+16cc
+=2
+8dd
+8cc
+8dd
+8ee-
+4dd;
+4gg
+=3
+4aa
+4bb-
+4aa
+(8gg
+8ff#)
+=4
+8gg
+8ff#
+8gg
+8aa
+4gg;}
+!! verse 1
+{4g
+=5
+4.b-
+8cc
+4.cc
+16b-
+16cc
+=6
+8dd
+8cc
+8dd
+8ee-
+4dd;
+4gg
+=7
+4aa
+4bb-
+4aa
+(8gg
+8ff#)
+=8
+2.gg;}
+!! verse 2
+{4dd
+=9
+2ee-
+2dd
+=10
+2.cc;
+4ff
+=11
+4ee-
+4dd
+4cc
+4b-
+=12
+8cc
+8b-
+8cc
+8dd
+4cc;
+4ff
+=13
+2dd
+2cc
+=14
+2.b-;}
+!! verse 3
+{4bb-
+=15
+2aa
+2gg
+=16
+2.ff#;
+4aa
+=17
+4dd
+4ee
+4ff#
+4gg
+=18
+8aa
+8gg
+8aa
+8bb-
+4aa;
+4dd
+=19
+2gg
+2ff#
+=20
+2.gg;}
+==|!
+*-
+!! produced by wce2krn 1.64 (released on 7 June 2014)

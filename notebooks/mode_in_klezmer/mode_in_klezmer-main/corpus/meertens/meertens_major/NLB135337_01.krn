@@ -1,0 +1,146 @@
+Published by the Meertens Institute (http://www.meertens.knaw.nl)
+Part of the Database of Dutch Songs (NLB) (http://www.liederenbank.nl)
+NLB identifier: NLB135337_01
+NLB record number: 135337
+NLB strophe/voice number: 1
+**kern
+*staff1
+*M4/4
+*MM120
+*k[]
+*G:mix
+verse 0
+{4.g
+8a
+=1
+4g
+4g
+4a
+4b
+=2
+2cc
+4cc
+4b
+=3
+2cc;;}
+verse 1
+{8g
+8a
+8b
+8cc
+=4
+4dd
+4dd
+4cc
+4b
+=5
+2a
+4a
+4g#
+=6
+2a;}
+verse 2
+{8g
+8a
+8b
+8cc
+=7
+2dd
+2b
+=8
+2cc
+4.dd
+8ee
+=9
+2ee;;}
+verse 3
+{4.dd
+8ff
+=10
+4ee
+4dd
+4cc
+4b
+=11
+4cc#
+4dd
+4ee
+4cc#
+=12
+(2dd
+4a
+4f#
+=13
+2d);}
+verse 4
+{8g
+8a
+8b
+8cc
+=14
+4.dd
+8ee
+4dd
+4dd
+=15
+4cc
+4b
+4a
+4g
+=16
+4a
+4a;;}
+verse 5
+{8g
+8a
+8b
+8cc
+=17
+4.dd
+8ee
+4dd
+4dd
+=18
+4cc
+4b
+2a
+=19
+4a
+4g#
+2a;}
+verse 6
+=20
+{4.a
+8b
+4cc
+4b
+=21
+4a
+4g
+2f#;;}
+verse 7
+=22
+{4d
+4d
+4.e
+8f#
+=23
+4.g
+8a
+4b
+4g
+=24
+4a
+4f#
+2g
+=25
+2G
+2r;}
+verse 8
+=26
+{4G
+4A
+2G;}
+==|!
+*-
+produced by wce2krn 1.64 (released on 7 June 2014)

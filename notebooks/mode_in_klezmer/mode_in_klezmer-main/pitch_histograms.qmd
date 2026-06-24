@@ -1,0 +1,436 @@
+---
+title: Pitch Histograms
+echo: false
+---
+
+```{r, echo=F, warnings=FALSE, message=FALSE}
+library(tidyverse)
+library(humdrumR)
+```
+
+
+## G Freygish
+
+::: panel-tabset
+## Count Data
+```{ojs, echo=F}
+
+data = FileAttachment("freygish_1.csv").csv({typed: true})
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+
+  marks: [
+    Plot.barY(data,
+        Plot.groupX(
+          {y: "count"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+
+```
+
+
+## Percentage
+ 
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+```
+
+## Cumulative Duration
+
+Please note that the durations are calculated here based on quarter notes.
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches", y: "durations",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+```
+
+:::
+
+Data can be found [here](freygish_1.csv)
+
+
+## G Raised Fourth
+
+::: panel-tabset
+
+## Count Data
+
+```{ojs, echo=F}
+
+raised_fourth_data = FileAttachment("raised_fourth_1.csv").csv({typed: true})
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+   domain: [
+       "G3", "Ab3", "G#3", "A3", "Bb3", "A#3", "B3", "C4", "Db4", "C#4", "D4","Eb4", "D#4",     
+                    "E4","F4","Gb4", "F#4", "G4",
+                    "Ab4", "G#4", "A4", "Bb4", "A#4", "B4",
+                    "C5","Db5", "C#5", "D5", "Eb5", "D#5", 
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5","Gb5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6","C#6", "D6"]
+  },
+
+  marks: [
+    Plot.barY(raised_fourth_data,
+        Plot.groupX(
+          {y: "count"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+
+```
+
+
+## Percentage
+ 
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3", "Ab3", "G#3", "A3", "Bb3", "A#3", "B3", "C4", "Db4", "C#4", "D4","Eb4", "D#4",     
+                    "E4","F4","Gb4", "F#4", "G4",
+                    "Ab4", "G#4", "A4", "Bb4", "A#4", "B4",
+                    "C5","Db5", "C#5", "D5", "Eb5", "D#5", 
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5","Gb5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6","C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(raised_fourth_data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+```
+
+## Cumulative Duration
+
+Please note that the durations are calculated here based on quarter notes.
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3", "Ab3", "G#3", "A3", "Bb3", "A#3", "B3", "C4", "Db4", "C#4", "D4","Eb4", "D#4",     
+                    "E4","F4","Gb4", "F#4", "G4",
+                    "Ab4", "G#4", "A4", "Bb4", "A#4", "B4",
+                    "C5","Db5", "C#5", "D5", "Eb5", "D#5", 
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5","Gb5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6","C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(raised_fourth_data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches", y: "durations",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+```
+:::
+
+Data can be found [here](raised_fourth.csv)
+
+
+## G Major
+
+
+::: panel-tabset
+
+## Count Data
+
+```{ojs, echo=F}
+
+major_data = FileAttachment("major_1.csv").csv({typed: true})
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+
+  marks: [
+    Plot.barY(major_data,
+        Plot.groupX(
+          {y: "count"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+
+```
+
+
+## Percentage
+ 
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+      domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(major_data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"})),
+    Plot.ruleY([0]),
+  ]
+})
+```
+
+## Cumulative Duration
+
+Please note that the durations are calculated here based on quarter notes.
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(major_data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches", y: "durations",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"},
+                               )),
+    Plot.ruleY([0]),
+ ]
+})
+```
+:::
+
+Data can be found [here](major_1.csv)
+
+## G Minor 
+
+::: panel-tabset
+
+## Count Data
+
+```{ojs, echo=F}
+
+minor_data = FileAttachment("minor.csv").csv({typed: true})
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+      domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+
+  marks: [
+    Plot.barY(minor_data,
+        Plot.groupX(
+          {y: "count"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+
+```
+
+
+## Percentage
+ 
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(minor_data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+```
+
+## Cumulative Duration
+
+Please note that the durations are calculated here based on quarter notes.
+
+```{ojs, echo=FALSE}
+Plot.plot({
+  width: 800,
+  marginBottom: 100,
+  y: {grid: true},
+  x: {
+    label: null,
+    tickRotate: 45,
+    domain: [
+       "G3","Ab3","G#3","A3","Bb3","B3","C4","C#4","D4", "Eb4", "D#4",    
+                    "E4","F4","F#4","G4", "Ab4",
+                    "G#4", "A4", "Bb4","A#4","B4",
+                    "C5", "Db5", "C#5", "D5","Eb5",
+                    "E5","F5", "Gb5", "F#5","G5",
+                    "Ab5", "G#5", "A5", "Bb5", "A#5", 
+                    "B5","C6", "Db6", "C#6", "D6"]
+  },
+  marks: [
+    Plot.barY(minor_data, 
+        Plot.groupX(
+          {y: "proportion"}, 
+          {x: "pitches", y: "durations",
+          fill: d => /^G/.test(d.pitches) ? "#778ff0" : "#000000"}
+                               )),
+    Plot.ruleY([0]),
+  ]
+})
+```
+:::
+
+Data can be found [here](raised_fourth.csv)

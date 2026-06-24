@@ -1,0 +1,136 @@
+---
+title: Other Major Keys
+---
+
+
+```{r, echo=F, warnings=FALSE, message=FALSE}
+library(tidyverse)
+library(humdrumR)
+```
+
+### B-Flat Major
+
+```{r, b-flat-major-histogram, echo=F, warnings=FALSE, message=FALSE, eval=FALSE}
+major <- readHumdrum('corpus/extracts/major/b-flat/*.krn')
+major_1 <- major |> 
+    pitch(simple = FALSE) |>
+    humdrumR::tally() |> as_tibble() |>
+    filter(!grepl("[CDEF].*3", Pitch)) |> filter(!grepl("[789]", Pitch)) |> 
+    filter(!grepl("[A|B].*6", Pitch)) |>
+    filter(!grepl("G#6", Pitch))
+
+
+major_1$Pitch <- factor(major_1$Pitch, levels = major_1$Pitch)
+    
+ggplot(major_1, aes(x=Pitch, y=n)) +
+    geom_bar(stat="identity") + theme_bw() +
+    labs(y="count") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+
+And as a percentage:
+
+```{r, b-flat-major-percentage, echo=F, warnings=FALSE, message=FALSE, eval=FALSE}
+x <-  major |> 
+    pitch(simple = FALSE) |>
+    humdrumR::tally() 
+percentage <- x/sum(x) * 100
+percentage <- as_tibble(percentage)
+percentage <- percentage |> 
+    filter(!grepl("[CDEF].*3", Pitch)) |> filter(!grepl("[789]", Pitch)) |> 
+    filter(!grepl("[A|B].*6", Pitch)) |>
+    filter(!grepl("G#6", Pitch))
+
+percentage$Pitch <- factor(percentage$Pitch, levels = percentage$Pitch)
+ggplot(percentage, aes(x=Pitch, y=n)) +
+    geom_bar(stat="identity") + theme_bw() +
+    labs(y="percentage") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+
+
+### C Major
+
+```{r, c-major-histogram, echo=F, warnings=FALSE, message=FALSE}, eval=FALSE
+major <- readHumdrum('corpus/extracts/major/c-major/*.krn')
+major_1 <- major |> 
+    pitch(simple = FALSE) |>
+    humdrumR::tally() |> as_tibble() |>
+    filter(!grepl("[CDEF].*3", Pitch)) |> filter(!grepl("[789]", Pitch)) |> 
+    filter(!grepl("[A|B].*6", Pitch)) |>
+    filter(!grepl("G#6", Pitch))
+
+
+major_1$Pitch <- factor(major_1$Pitch, levels = major_1$Pitch)
+    
+ggplot(major_1, aes(x=Pitch, y=n)) +
+    geom_bar(stat="identity") + theme_bw() +
+    labs(y="count") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+As a percentage:
+
+```{r, c-major-percentage, echo=F, warnings=FALSE, message=FALSE, eval=FALSE}
+x <-  major |> 
+    pitch(simple = FALSE) |>
+    humdrumR::tally() 
+percentage <- x/sum(x) * 100
+percentage <- as_tibble(percentage)
+percentage <- percentage |> 
+    filter(!grepl("[CDEF].*3", Pitch)) |> filter(!grepl("[789]", Pitch)) |> 
+    filter(!grepl("[A|B].*6", Pitch)) |>
+    filter(!grepl("G#6", Pitch))
+
+percentage$Pitch <- factor(percentage$Pitch, levels = percentage$Pitch)
+ggplot(percentage, aes(x=Pitch, y=n)) +
+    geom_bar(stat="identity") + theme_bw() +
+    labs(y="percentage") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+
+
+### F Major
+
+```{r, f-major-histogram, echo=F, warnings=FALSE, message=FALSE, eval=FALSE}
+major <- readHumdrum('corpus/extracts/major/f-major/*.krn')
+major_1 <- major |> 
+    pitch(simple = FALSE) |>
+    humdrumR::tally() |> as_tibble() |>
+    filter(!grepl("[CDEF].*3", Pitch)) |> filter(!grepl("[789]", Pitch)) |> 
+    filter(!grepl("[A|B].*6", Pitch)) |>
+    filter(!grepl("G#6", Pitch))
+
+
+major_1$Pitch <- factor(major_1$Pitch, levels = major_1$Pitch)
+    
+ggplot(major_1, aes(x=Pitch, y=n)) +
+    geom_bar(stat="identity") + theme_bw() +
+    labs(y="count") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+As a percentage:
+
+```{r, f-major-percentage, echo=F, warnings=FALSE, message=FALSE, eval=FALSE}
+x <-  major |> 
+    pitch(simple = FALSE) |>
+    humdrumR::tally() 
+percentage <- x/sum(x) * 100
+percentage <- as_tibble(percentage)
+percentage <- percentage |> 
+    filter(!grepl("[CDEF].*3", Pitch)) |> filter(!grepl("[789]", Pitch)) |> 
+    filter(!grepl("[A|B].*6", Pitch)) |>
+    filter(!grepl("G#6", Pitch))
+
+percentage$Pitch <- factor(percentage$Pitch, levels = percentage$Pitch)
+ggplot(percentage, aes(x=Pitch, y=n)) +
+    geom_bar(stat="identity") + theme_bw() +
+    labs(y="percentage") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+

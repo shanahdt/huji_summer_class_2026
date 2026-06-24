@@ -1,0 +1,19 @@
+---
+title: Beregovski's Metadata
+from: markdown-smart
+---
+
+In order to search for specific items, use quotation marks. For example, searching for C major will give you anything that has both C and major, but searching for "C major" will return results that are explicitly in C major.
+
+Clicking on the linked number of the tune will direct you to the [Verovio Humdrum Viewer](https://verovio.humdrum.org) representation of the score.
+
+```{r, echo=F, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(janitor)
+library(DT)
+df <- read.csv("data/beregovski-metadata.tsv", sep="\t", header=TRUE)
+df <- df |> clean_names()
+df <- df |>  select(!c(mode, modulation_pathway, modulation_measures, one_mode, mode_notes))
+df |>          
+    datatable(filter="top", rownames=FALSE, escape=FALSE )
+```

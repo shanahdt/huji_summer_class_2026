@@ -20,15 +20,110 @@ Beginner usage
     tunes_df, streams, counts = describe_corpus('../data/Essen/England')
 """
 
+import shutil
+import zipfile
 from glob import glob
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import pandas as pd
+import requests
 from music21 import converter, interval, note
 
 # 12 pitch classes in the order music21 numbers them (C = 0, C#/Db = 1, ...).
 PITCH_CLASS_NAMES = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
+
+
+# ── Downloading a corpus that lives outside the course repo ─────────────────
+
+def download_corpus(repo_url, subdir='kern', target_dir=None, pattern='*.krn', verbose=True):
+    """
+    Download one folder out of a GitHub repo that isn't the course repo
+    itself (the course repo is handled by setup_colab() instead).
+
+    Safe to call every time a notebook runs: if the files are already on
+    disk, this returns immediately without downloading anything again.
+
+    Parameters
+    ----------
+    repo_url : str
+        A GitHub repo URL, e.g. 'https://github.com/shanahdt/mode_in_klezmer'.
+    subdir : str
+        Which folder inside the repo to keep (default 'kern').
+    target_dir : str or Path, optional
+        Where to put the files locally. Default: a folder named after the
+        repo, e.g. 'mode_in_klezmer/kern'.
+    pattern : str
+        Glob pattern used to check whether the download already happened,
+        and to report how many files are ready (default '*.krn').
+    verbose : bool
+        Print progress.
+
+    Returns
+    -------
+    Path to the local folder containing the extracted files.
+
+    Example
+    -------
+        from utils import download_corpus
+        kern_dir = download_corpus('https://github.com/shanahdt/mode_in_klezmer')
+    """
+    repo_name = repo_url.rstrip('/').split('/')[-1]
+    target_dir = Path(target_dir) if target_dir else Path(repo_name) / subdir
+
+    if target_dir.exists() and list(target_dir.glob(pattern)):
+        if verbose:
+            print(f'{target_dir} already has {pattern} files — skipping download.')
+        return target_dir
+
+    download_root = target_dir.parent if target_dir.name == subdir else target_dir
+    download_root.mkdir(parents=True, exist_ok=True)
+    zip_path = download_root / 'repo.zip'
+
+    # GitHub repos default to either a 'main' or a 'master' branch — try both
+    # rather than hard-coding one and failing mysteriously if it's wrong.
+    last_error = None
+    for branch in ('main', 'master'):
+        try:
+            zip_url = f'{repo_url.rstrip("/")}/archive/refs/heads/{branch}.zip'
+            response = requests.get(zip_url, timeout=30)
+            response.raise_for_status()
+            zip_path.write_bytes(response.content)
+            break
+        except Exception as e:
+            last_error = e
+    else:
+        raise RuntimeError(
+            f"Couldn't download {repo_url} (tried the 'main' and 'master' "
+            f'branches). Last error: {last_error}'
+        )
+
+    if verbose:
+        print(f'Downloaded {zip_path.stat().st_size:,} bytes, extracting...')
+
+    with zipfile.ZipFile(zip_path) as z:
+        z.extractall(download_root)
+
+    # GitHub's zip extracts into a folder like 'mode_in_klezmer-main/' —
+    # find it and pull out just the subfolder we actually want.
+    extracted = list(download_root.glob(f'{repo_name}-*/{subdir}'))
+    if not extracted:
+        siblings = [p.name for p in download_root.glob(f'{repo_name}-*')]
+        raise FileNotFoundError(
+            f"Extracted the zip but couldn't find a '{subdir}' folder inside "
+            f'it. Found these top-level folders instead: {siblings}'
+        )
+
+    if target_dir.exists():
+        shutil.rmtree(target_dir)
+    shutil.copytree(extracted[0], target_dir)
+    zip_path.unlink()
+
+    if verbose:
+        n_files = len(list(target_dir.glob(pattern)))
+        print(f'{n_files} {pattern} file(s) ready in {target_dir}')
+
+    return target_dir
 
 
 # ── Loading a single piece ───────────────────────────────────────────────────

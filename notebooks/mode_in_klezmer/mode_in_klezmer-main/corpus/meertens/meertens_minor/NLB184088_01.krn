@@ -1,0 +1,90 @@
+Published by the Meertens Institute (http://www.meertens.knaw.nl)
+Part of the Database of Dutch Songs (NLB) (http://www.liederenbank.nl)
+NLB identifier: NLB184088_01
+NLB record number: 184088
+NLB strophe/voice number: 1
+**kern
+*staff1
+*M3/4
+*MM120
+*k[]
+*d:dor
+verse 0
+=1
+{4a
+4r
+4r
+=2
+4dd
+4r
+4r
+=3
+8ee
+8ff
+4gg
+4ff
+=4
+4ee
+8a
+8b-
+4a;
+=5
+4dd
+8cc
+8b-
+8a
+8b-
+=6
+4a
+8g
+8f
+4e
+=7
+8f
+8g
+4.g
+8a
+=8
+2.a;}
+verse 1
+=9
+{4ee
+8ee
+8ee
+8ee
+8ee
+=10
+2ee
+4a
+=11
+8ee
+8ff
+4gg
+8ff
+8gg
+=12
+2ee
+4a;
+=13
+8aa
+8gg
+8ff
+8ee
+8dd
+8cc
+=14
+8b-
+8a
+8g
+8f
+4e
+=15
+8f
+8g
+4.e
+8d
+=16
+2.d;}
+==|!
+*-
+produced by wce2krn 1.64 (released on 7 June 2014)

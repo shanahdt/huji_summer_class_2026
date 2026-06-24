@@ -1,0 +1,455 @@
+Published by the Meertens Institute (http://www.meertens.knaw.nl)
+Part of the Database of Dutch Songs (NLB) (http://www.liederenbank.nl)
+NLB identifier: NLB167440_01
+NLB record number: 167440
+NLB strophe/voice number: 1
+**kern
+*staff1
+*M5/4
+*MM120
+*k[]
+*C:
+verse 0
+{16r
+16ff
+16gg
+16ee
+16dd
+16cc#
+16dd
+16cc
+16b
+16a
+16b
+16a
+16g
+16f
+2g;}
+verse 1
+{16e
+16f
+16g
+16f
+16g
+16a
+16b
+16a
+16b
+16cc
+16dd
+16f
+1g;}
+verse 2
+{32dd
+16.b
+32cc
+16.a
+32b
+16.g
+32a
+16.f
+1g;}
+verse 3
+{16d
+16e
+16f
+16g
+16a
+16g
+16f
+1g;}
+verse 4
+{8dd
+16g
+16d
+16g
+16b
+16g
+16b
+16dd
+16b
+16dd
+16.gg
+16dd
+16ee
+16cc#
+16dd
+16b
+16cc
+16a
+16b
+16g
+16dd
+16f
+1g;}
+verse 5
+{16gg
+16ff
+16ee
+16dd
+16cc
+16b
+16ee
+16dd
+16cc
+16b
+16cc
+16a
+1g;}
+verse 6
+{16ee
+16dd
+16cc
+16b
+16cc
+16b
+16a
+16g
+16a
+16g
+16f
+1g;}
+verse 7
+{16b
+16a
+16g
+16f
+1g;}
+verse 8
+{16a
+16g
+16f
+1g;}
+verse 9
+{16dd
+16f
+1g;}
+verse 10
+{16cc
+16b
+16cc
+16dd
+16f
+1g;}
+verse 11
+{16a
+16g
+1g;}
+verse 12
+{16b
+16cc
+16a
+1g;}
+verse 13
+{16a
+16g
+16f
+16e
+16f
+1g;}
+verse 14
+{16cc
+16b
+16a
+1g;}
+verse 15
+{16g
+16a
+16a
+1g;}
+verse 16
+{8a
+8g
+1g;}
+verse 17
+{16g
+16f
+16a
+1g;}
+verse 18
+{16gg
+16a
+1g;}
+verse 19
+{16b
+16cc
+16dd
+16ee
+16ff
+1g;}
+verse 20
+{16dd
+16a
+1g#;}
+verse 21
+{1e
+8r
+16g
+16b
+16dd#
+16.ee
+16b
+16.cc
+16a#
+16.b
+16a
+16g
+16f#
+16e
+16f#
+16e
+16d#
+1e;}
+verse 22
+{16d#
+16e
+16f#
+16g
+16a
+16b
+16d#
+1e;}
+verse 23
+{16dd
+16cc
+16b
+16a
+16b
+16a
+16g
+16f#
+16e
+16d
+16f#
+1e;}
+verse 24
+{16a
+16g
+16f#
+16g
+16f#
+16e
+16f#
+16e
+16d
+16dd
+16f#
+1e;}
+verse 25
+{16cc
+16b
+16a
+16g
+16f#
+16e
+16d#
+1e;}
+verse 26
+{1e
+16c
+16e
+16g
+16.a
+16cc
+16ee
+16gg
+16.aa
+16ff#
+16ee
+16dd
+16cc
+16b
+16a
+16g
+16f#
+16e
+16d
+16c
+16d
+1e;}
+verse 27
+{16cc#
+16dd
+16b
+16a
+16g
+16f#
+16e
+16d#
+16e
+1e;}
+verse 28
+{16g
+16a
+16b
+16cc#
+16dd
+1e;}
+verse 29
+{16g
+16cc
+16ee
+16dd
+16cc
+16b
+16a
+16g
+16f#
+16e
+16d
+16f#
+1e;}
+verse 30
+{16B
+16d
+16f#
+16b
+16g
+16f#
+16e
+16d
+1e;}
+verse 31
+{16e
+16d
+16f#
+1e;}
+verse 32
+{16a
+16e
+1e;}
+verse 33
+{16e
+16d
+16e
+1e;}
+verse 34
+{16f
+16e
+16d
+1e;}
+verse 35
+{16e
+16d
+16e
+16f#
+16e
+1e;}
+verse 36
+{16f#
+16e
+16d
+16f#
+1e;}
+verse 37
+{16cc
+16g
+16f#
+1e;}
+verse 38
+{16e
+16f#
+16e
+1e;}
+verse 39
+{16d
+16f
+1e;}
+verse 40
+{16g
+16f#
+16e
+16d
+1e;}
+verse 41
+{16f#
+16e
+16d
+16e
+16f#
+16e
+1e;}
+verse 42
+{4d#
+1e;}
+verse 43
+{16cc
+16dd
+16f#
+16f#
+1e;}
+verse 44
+{16dd
+16f#
+1e;}
+verse 45
+{16d
+16e
+16f
+1e;}
+verse 46
+{16cc#
+16dd
+16e
+1e;}
+verse 47
+{16b
+16a
+16g
+16a
+16b
+16cc
+16dd
+1ee;}
+verse 48
+{16g#
+16a
+16g#
+16a
+16b
+16cc
+16b
+16cc
+16dd
+1ee;}
+verse 49
+{16g#
+16a
+16b
+16a
+16b
+16cc
+16b
+16cc
+16dd
+1ee;}
+verse 50
+{16dd
+16ee
+16ff#
+1ee;}
+verse 51
+{16dd
+16cc
+16b
+16cc
+16dd
+1ee;}
+verse 52
+{16dd
+16cc
+16dd
+1ee;}
+verse 53
+{16b
+16cc
+16dd
+1ee;}
+verse 54
+{16gg
+16ff#
+16ee
+1ee;}
+==|!
+*-
+produced by wce2krn 1.64 (released on 7 June 2014)
