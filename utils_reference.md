@@ -307,6 +307,68 @@ mi = mutual_information(pitch_classes, duration_bins)
 mi, joint = pitch_duration_mutual_information('../data/happy_birthday.krn')
 ```
 
+### Corpus-scale and historical entropy questions
+
+**`hartley_information(n_symbols, n_possible)`** — BUILDING BLOCK: Hartley's 1928 pre-Shannon information measure, H = n·log2(s), assuming every symbol is equally likely. Shannon entropy is always ≤ this — the gap is a measure of how much structure/redundancy a melody has.
+```python
+hartley_information(85, 12)    # UConn fight song
+hartley_information(142, 12)   # Northwestern fight song
+```
+
+**`compare_entropy_representations(file_path_or_score, plot=True)`** — ONE-STOP: how much does a piece's entropy depend on HOW you describe it? Computes Shannon entropy across six representations of the same piece (raw pitch, pitch class, diatonic scale degree 1–7, melodic interval, contour, binned duration) and plots them side by side.
+```python
+table = compare_entropy_representations('../data/happy_birthday.krn')
+```
+
+**`corpus_entropy_profile(kern_dir, representation='scale_degree', verbose=True, plot=True)`** — ONE-STOP: what does the entropy DISTRIBUTION look like across a whole corpus? Entropy per piece, plus mean/median/min/max and a histogram with the mean marked.
+```python
+profile = corpus_entropy_profile('../data/Essen/England')
+```
+
+**`compare_corpus_conditional_entropy(kern_dir_a, kern_dir_b, names=(...), n=2, representation='scale_degree', plot=True)`** — ONE-STOP: the corpus-scale counterpart to `conditional_entropy()` — pools every piece's n-grams within each corpus first, then compares how PREDICTABLE (not just how pitch-distributed) two corpora's melodies are.
+```python
+result = compare_corpus_conditional_entropy(
+    '../data/Essen/England', '../data/Essen/Italia', names=('English', 'Italian'))
+```
+
+**`date_from_kern_headers(file_path)`** — Extracts a composition year from a kern file's reference records: tries `!!!CDT` first, but since that field is usually the COMPOSER's own birth–death lifespan in real kern files (not the piece's date), a CDT with two years more than 15 years apart is treated as a lifespan and skipped in favor of `!!!PDT` (publication date), then `!!!CBY` (birth year + 25) as a last resort. Returns `None` if nothing usable is found.
+```python
+date_from_kern_headers('../data/humdrum_scores/Mozart/Sonatas/sonata01-1.krn')
+```
+
+**`entropy_over_time(kern_dirs, representation='scale_degree', min_year=1600, max_year=1950, smooth=True, plot=True)`** — ONE-STOP: has melodic entropy changed over music history? Scans one or more composer/corpus folders (recursively — these are usually organized into genre subfolders), extracts dates via `date_from_kern_headers()`, and scatter-plots entropy against year (colored by composer, with a LOWESS trend line). Always reports how many files had a recoverable, in-range date vs. how many were skipped.
+```python
+df = entropy_over_time(['../data/humdrum_scores/Beethoven', '../data/humdrum_scores/Chopin'])
+```
+
+---
+
+## Day 4 — `utils/tfidf.py`: distinctiveness for n-grams and chord progressions
+
+Raw frequency doesn't tell you what's DISTINCTIVE about a corpus — a common n-gram might just be common everywhere. These borrow TF-IDF from text mining to find n-grams/progressions that are characteristic of one corpus but not generically frequent.
+
+**`distinctive_ngrams(counter_a, counter_b, name_a='A', name_b='B', top_n=10)`** — BUILDING BLOCK: lightweight two-corpus comparison (no IDF) — for each n-gram, `distinctiveness = freq_in_this_corpus / (freq_a + freq_b + ε)`. Good for a quick two-way comparison; use `tf_idf_ngrams()` for 3+ corpora.
+```python
+counter_a, _ = extract_scale_degree_bigrams(parker_files, 'Parker')
+counter_b, _ = extract_scale_degree_bigrams(dizzy_files, 'Dizzy')
+dist_a, dist_b = distinctive_ngrams(counter_a, counter_b, 'Parker', 'Dizzy')
+```
+
+**`tf_idf_ngrams(corpus_dict, n=2, top_n=20, representation='scale_degree', plot=True)`** — ONE-STOP: full multi-corpus TF-IDF over melodic n-grams (`representation` can be `'scale_degree'`, `'pitch_class'`, `'interval'`, or `'contour'`). Smoothed IDF = log((n_corpora+1)/(DF+1)) + 1, so a term that appears in every corpus scores low even if it's frequent. One bar-chart subplot per corpus.
+```python
+table = tf_idf_ngrams({'Parker': parker_files, 'Dizzy': dizzy_files})
+```
+
+**`tf_idf_chord_progressions(corpus_dict, n=2, top_n=20, plot=True)`** — ONE-STOP: the harmonic counterpart — TF-IDF over Roman-numeral n-grams. Auto-detects file type: `.krn` files are chordified and Roman-numeralized against the piece's own detected key; `.csv` files are treated as Billboard-style chord sheets (expects a `'chord'` column).
+```python
+table = tf_idf_chord_progressions({'Bach': bach_kern_files, 'Beatles': beatles_chord_csvs})
+```
+
+**`plot_tfidf_heatmap(tfidf_df, top_n=20, figsize=(12, 8))`** — Alternative visualization for the output of either TF-IDF function above: rows = top_n most-distinctive terms (by max TF-IDF across any corpus), columns = corpora, color = TF-IDF (blue scale).
+```python
+plot_tfidf_heatmap(table)
+```
+
 ---
 
 ## Day 4 — `utils/similarity.py`: comparing melodies and corpora

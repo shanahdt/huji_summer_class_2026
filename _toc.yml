@@ -11,8 +11,8 @@ parts:
         title: "Day 3 · Pitch Mode (23 Jun)"
       - file: notebooks/day4_similarity
         title: "Day 4 · Similarity (24 Jun)"
-      # - file: notebooks/day5_metadata
-      #   title: "Day 5 · Metadata (25 Jun)"
+      - file: notebooks/day5_information
+        title: "Day 5 · Information and Distinctiveness (25 Jun)"
       # - file: notebooks/day6_audio
       #   title: "Day 6 · Audio (28 Jun)"
       # - file: notebooks/day7_clustering

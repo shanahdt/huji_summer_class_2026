@@ -22,7 +22,14 @@ Where to find things
                            compare_keyfinding_corpus)
     utils/information_theory.py — Day 4: entropy, predictability, and shared
                            information (pitch_entropy, conditional_entropy,
-                           compare_corpus_entropy, pitch_duration_mutual_information)
+                           compare_corpus_entropy, pitch_duration_mutual_information);
+                           also hartley_information(), compare_entropy_representations(),
+                           corpus_entropy_profile(), compare_corpus_conditional_entropy(),
+                           date_from_kern_headers(), and entropy_over_time() for
+                           corpus- and history-scale entropy questions
+    utils/tfidf.py        — Day 4: TF-IDF distinctiveness for melodic n-grams and
+                           harmonic progressions (distinctive_ngrams, tf_idf_ngrams,
+                           tf_idf_chord_progressions, plot_tfidf_heatmap)
     utils/similarity.py — Day 4: melodic/corpus similarity, four ways —
                            set overlap (jaccard, tversky_index), edit
                            distance (melodic_edit_distance), spatial distance
@@ -136,6 +143,20 @@ from .information_theory import (
     compare_corpus_entropy,
     mutual_information,
     pitch_duration_mutual_information,
+    hartley_information,
+    compare_entropy_representations,
+    corpus_entropy_profile,
+    compare_corpus_conditional_entropy,
+    date_from_kern_headers,
+    entropy_over_time,
+)
+
+# ── Day 4: TF-IDF distinctiveness for n-grams and chord progressions ────────
+from .tfidf import (
+    distinctive_ngrams,
+    tf_idf_ngrams,
+    tf_idf_chord_progressions,
+    plot_tfidf_heatmap,
 )
 
 # ── Day 4: similarity (Jaccard, edit distance, Tversky index) ────────────────
@@ -205,6 +226,10 @@ __all__ = [
     # information_theory.py
     'shannon_entropy', 'pitch_entropy', 'conditional_entropy', 'kl_divergence',
     'compare_corpus_entropy', 'mutual_information', 'pitch_duration_mutual_information',
+    'hartley_information', 'compare_entropy_representations', 'corpus_entropy_profile',
+    'compare_corpus_conditional_entropy', 'date_from_kern_headers', 'entropy_over_time',
+    # tfidf.py
+    'distinctive_ngrams', 'tf_idf_ngrams', 'tf_idf_chord_progressions', 'plot_tfidf_heatmap',
     # similarity.py
     'jaccard', 'jaccard_matrix', 'edit_distance', 'normalized_edit_distance',
     'melodic_edit_distance', 'tversky_index', 'tversky_matrix',
