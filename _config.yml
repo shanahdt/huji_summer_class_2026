@@ -27,3 +27,4 @@ sphinx:
   config:
     bibtex_bibfiles: []
     myst_allow_raw_html: true
+    html_extra_path: ["hairpins.html"]

@@ -35,3 +35,7 @@ parts:
       #   title: "Day 6 Quiz"
       # - file: quizpages/day7_quiz
       #   title: "Day 7 Quiz"
+  - caption: Tools
+    chapters:
+      - file: tools/hairpins
+        title: "Asymmetrical Dynamics — Sampling Tools"
