@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asymmetrical Dynamics — Sampling Tools</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --paper:#EAF0F2;
+    --ink:#1B3A4B;
+    --ink-soft:#3F5A68;
+    --line:#C6D4D9;
+    --cresc:#D9622B;
+    --dim:#1E8C7E;
+    --card:#FFFFFF;
+    --shadow: 0 1px 2px rgba(27,58,75,0.08), 0 4px 14px rgba(27,58,75,0.06);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0/100% 28px,
+      var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    padding-bottom:60px;
+  }
+  header{
+    padding:36px 24px 10px;
+    max-width:820px;
+    margin:0 auto;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{ content:""; width:18px; height:1px; background:var(--ink-soft); display:inline-block; }
+  h1{
+    font-family:'Zilla Slab', serif;
+    font-weight:700;
+    font-size:clamp(26px,5vw,38px);
+    margin:8px 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .sub{ font-size:14.5px; color:var(--ink-soft); max-width:560px; line-height:1.5; }
+
+  .signature{ max-width:820px; margin:6px auto 4px; padding:0 24px; }
+  .sig-svg{ width:100%; height:52px; display:block; }
+  .sig-hairpin{ fill:none; stroke-width:2.5; stroke-linecap:round; }
+
+  main{ max-width:820px; margin:0 auto; padding:20px 24px 0; display:flex; flex-direction:column; gap:22px; }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:24px 26px 28px;
+    box-shadow:var(--shadow);
+  }
+  .card .step{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  h2{ font-family:'Zilla Slab', serif; font-size:20px; margin:4px 0 4px; }
+  p.help{ color:var(--ink-soft); font-size:13.5px; line-height:1.5; max-width:600px; margin:0 0 14px; }
+
+  button.primary{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    padding:10px 18px;
+    border-radius:3px;
+    cursor:pointer;
+  }
+  button.primary:hover{ background:var(--ink-soft); }
+  button.ghost{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    background:none;
+    border:1px solid var(--line);
+    color:var(--ink-soft);
+    padding:8px 14px;
+    border-radius:3px;
+    cursor:pointer;
+  }
+
+  /* --- Score generator --- */
+  .result-box{
+    margin-top:16px;
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:16px 18px;
+    display:none;
+  }
+  .result-box.show{ display:block; }
+  .result-box .work{ font-family:'Zilla Slab', serif; font-size:19px; margin-bottom:2px; }
+  .result-box .composer{ font-size:13px; color:var(--ink-soft); margin-bottom:10px; }
+  .result-box a{ color:var(--ink); font-family:'IBM Plex Mono', monospace; font-size:12.5px; word-break:break-all; }
+  .result-box .pages{ font-size:12.5px; color:var(--ink-soft); margin-top:8px; }
+
+  /* --- Number generator --- */
+  .num-row{ display:flex; gap:14px; align-items:flex-end; flex-wrap:wrap; margin-top:4px; }
+  .field{ display:flex; flex-direction:column; gap:5px; }
+  .field label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.04em; }
+  input[type=number]{
+    font-family:'Inter', sans-serif;
+    font-size:14px;
+    padding:8px 10px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    width:110px;
+    background:var(--card);
+    color:var(--ink);
+  }
+  .num-result{
+    font-family:'Zilla Slab', serif;
+    font-size:44px;
+    margin-top:16px;
+    color:var(--ink);
+    min-height:54px;
+  }
+  .num-result .unit{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-soft); margin-left:8px; }
+
+  /* --- Ruler --- */
+  .ruler-wrap{ margin-top:18px; overflow-x:auto; }
+  .ruler{
+    height:70px;
+    width:20cm;
+    max-width:none;
+    position:relative;
+    border:1px solid var(--ink);
+    border-left:none;
+    background:var(--card);
+  }
+  .ruler .cm-mark{ position:absolute; top:0; width:1cm; height:100%; border-left:1px solid var(--ink); }
+  .ruler .cm-mark span{ position:absolute; top:36px; left:2px; font-family:'IBM Plex Mono', monospace; font-size:9px; color:var(--ink-soft); }
+  .ruler .mm-mark{ position:absolute; top:0; width:1mm; border-left:1px solid var(--line); height:14px; }
+  .ruler .mm-mark.mid{ height:22px; border-left-color:var(--ink-soft); }
+
+  .note{
+    font-size:12.5px;
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--ink-soft);
+    background:rgba(27,58,75,0.05);
+    border-left:2px solid var(--ink-soft);
+    padding:8px 12px;
+    margin:14px 0 0;
+  }
+
+  @media print{
+    body *{ visibility:hidden; }
+    .print-target, .print-target *{ visibility:visible; }
+    .print-target{ position:absolute; top:0; left:0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Group Task 11 — Field Tools</div>
+  <h1>Asymmetrical Dynamics: Sampling Tools</h1>
+  <p class="sub">Three separate tools for the matched-pairs sampling task: a random score picker, a random page-number roller, and a printable to-scale ruler.</p>
+</header>
+
+<div class="signature">
+  <svg class="sig-svg" viewBox="0 0 780 52" preserveAspectRatio="none">
+    <line x1="0" y1="42" x2="780" y2="42" stroke="#1B3A4B" stroke-width="1"/>
+    <path class="sig-hairpin" d="M 30 36 L 200 14 M 30 36 L 200 36" stroke="#D9622B"/>
+    <path class="sig-hairpin" d="M 500 14 L 590 36 M 500 36 L 590 36" stroke="#1E8C7E"/>
+  </svg>
+</div>
+
+<main>
+
+  <!-- 1. RANDOM SCORE GENERATOR -->
+  <div class="card">
+    <div class="step">01</div>
+    <h2>Random score generator</h2>
+    <p class="help">Draws from a fixed pool of freely available IMSLP scores instead of IMSLP's site-wide random page button, which mostly lands on non-score pages. Click to draw your volume.</p>
+    <button class="primary" id="drawBtn">Draw a random volume</button>
+    <div class="result-box" id="resultBox">
+      <div class="composer" id="resComposer"></div>
+      <div class="work" id="resWork"></div>
+      <a id="resLink" href="#" target="_blank" rel="noopener"></a>
+      <div class="pages" id="resPages"></div>
+    </div>
+  </div>
+
+  <!-- 2. RANDOM NUMBER GENERATOR -->
+  <div class="card">
+    <div class="step">02</div>
+    <h2>Random page-number generator</h2>
+    <p class="help">Check the total page count of the Complete Score PDF you drew above, enter it below, and roll. Navigate to that page number in the PDF to start your search for a hairpin.</p>
+    <div class="num-row">
+      <div class="field">
+        <label for="minPage">Min page</label>
+        <input type="number" id="minPage" value="1" min="1">
+      </div>
+      <div class="field">
+        <label for="maxPage">Max page (total pages)</label>
+        <input type="number" id="maxPage" value="200" min="1">
+      </div>
+      <button class="primary" id="rollBtn">Roll</button>
+    </div>
+    <div class="num-result" id="numResult"><span id="numVal">—</span><span class="unit" id="numUnit"></span></div>
+  </div>
+
+  <!-- 3. PRINTABLE RULER -->
+  <div class="card">
+    <div class="step">03</div>
+    <h2>Printable ruler</h2>
+    <p class="help">A separate, to-scale centimeter ruler for measuring hairpin length directly off a printed page. Printing this card only (not the whole page) keeps it accurate.</p>
+    <div class="note">In the print dialog, set <strong>Scale = 100% / Actual size</strong> — turn off "Fit to page," or the physical measurement will be wrong.</div>
+    <div class="ruler-wrap print-target" id="rulerWrap">
+      <div class="ruler" id="ruler"></div>
+    </div>
+    <button class="primary" onclick="window.print()" style="margin-top:16px;">Print ruler</button>
+  </div>
+
+</main>
+
+<script>
+// ---------- score pool ----------
+const POOL = [
+  { composer:"Johannes Brahms", work:"Symphony No. 4, Op. 98", url:"https://imslp.org/wiki/Symphony_No.4,_Op.98_(Brahms,_Johannes)", pages:"~170 (Complete Score, check chosen upload)" },
+  { composer:"Pyotr Ilyich Tchaikovsky", work:"Symphony No. 5, Op. 64", url:"https://imslp.org/wiki/Symphony_No.5,_Op.64_(Tchaikovsky,_Pyotr)", pages:"~212 (Complete Score, check chosen upload)" },
+  { composer:"Antonín Dvořák", work:"Symphony No. 9, Op. 95 \"From the New World\"", url:"https://imslp.org/wiki/Symphony_No.9,_Op.95_(Dvořák,_Antonín)", pages:"~204 (Complete Score, check chosen upload)" },
+  { composer:"Edward Elgar", work:"Variations on an Original Theme \"Enigma\", Op. 36", url:"https://imslp.org/wiki/Variations_on_an_Original_Theme_'Enigma',_Op.36_(Elgar,_Edward)", pages:"varies by upload — check PDF" },
+  { composer:"Ludwig van Beethoven", work:"Piano Sonata No. 32, Op. 111", url:"https://imslp.org/wiki/Piano_Sonata_No.32,_Op.111_(Beethoven,_Ludwig_van)", pages:"~20 (Complete Score, check chosen upload)" },
+  { composer:"Jean Sibelius", work:"Symphony No. 2, Op. 43", url:"https://imslp.org/wiki/Symphony_No.2,_Op.43_(Sibelius,_Jean)", pages:"~143 (Complete Score, check chosen upload)" }
+];
+
+let lastIdx = -1;
+document.getElementById('drawBtn').addEventListener('click', ()=>{
+  let idx;
+  do { idx = Math.floor(Math.random()*POOL.length); } while(idx===lastIdx && POOL.length>1);
+  lastIdx = idx;
+  const item = POOL[idx];
+  document.getElementById('resComposer').textContent = item.composer;
+  document.getElementById('resWork').textContent = item.work;
+  document.getElementById('resLink').textContent = item.url;
+  document.getElementById('resLink').href = item.url;
+  document.getElementById('resPages').textContent = "Typical page count: " + item.pages;
+  document.getElementById('resultBox').classList.add('show');
+});
+
+// ---------- random number generator ----------
+document.getElementById('rollBtn').addEventListener('click', ()=>{
+  const min = parseInt(document.getElementById('minPage').value) || 1;
+  const max = parseInt(document.getElementById('maxPage').value) || min;
+  const lo = Math.min(min,max), hi = Math.max(min,max);
+  const n = Math.floor(Math.random()*(hi-lo+1)) + lo;
+  document.getElementById('numVal').textContent = n;
+  document.getElementById('numUnit').textContent = 'page';
+});
+
+// ---------- ruler ----------
+(function(){
+  const ruler = document.getElementById('ruler');
+  let html = '';
+  for(let cm=0; cm<=20; cm++){
+    html += `<div class="cm-mark" style="left:${cm}cm;">${cm<20?'<span>'+cm+'</span>':''}</div>`;
+    if(cm<20){
+      for(let mm=1; mm<10; mm++){
+        html += `<div class="mm-mark${mm===5?' mid':''}" style="left:${cm}cm ${mm}mm;"></div>`;
+      }
+    }
+  }
+  ruler.innerHTML = html;
+})();
+</script>
+</body>
+</html>
