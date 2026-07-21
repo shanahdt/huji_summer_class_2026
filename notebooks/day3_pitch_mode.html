@@ -1,0 +1,1550 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Day 3: Pitch Distributions and Mode &#8212; Corpus Studies in Music</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/day3_pitch_mode';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 4: Melodic Similarity" href="day4_similarity.html" />
+    <link rel="prev" title="Day 2: N-grams and Melodic Tendency" href="day2_ngrams.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Corpus Studies in Music</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Quantitative Methods in Musicology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sessions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="day1_encoding.html">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day2_ngrams.html">Day 2: N-grams and Melodic Tendency</a></li>
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 3: Pitch Distributions and Mode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day4_similarity.html">Day 4: Melodic Similarity</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day5_information.html">Day 5 · Information and Distinctiveness (25 Jun)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quizzes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day1_quiz.html">Day 1 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day2_quiz.html">Day 2 Quiz</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/hairpins.html">Asymmetrical Dynamics — Sampling Tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanahdt/corpus-studies-israel-2026/blob/main/./notebooks/day3_pitch_mode.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026/issues/new?title=Issue%20on%20page%20%2Fnotebooks/day3_pitch_mode.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/day3_pitch_mode.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Day 3: Pitch Distributions and Mode</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 3: Pitch Distributions and Mode</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-key-finding-interesting">Why is Key-Finding Interesting?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-key-finding">A Brief History of Key Finding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longuet-higgins-and-steedman">Longuet-Higgins and Steedman</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-krumhansl-schmuckler-key-finding-weightings">The Krumhansl-Schmuckler Key-Finding Weightings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bellman-budge-profiles">Bellman-Budge Profiles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-temperley-kostka-payne-corpus">The Temperley (Kostka-Payne Corpus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aarden-s-folk-song-key-profiles">Aarden’s Folk Song Key-Profiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sapp-s-simple-weightings">Sapp’s Simple Weightings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#albrecht-and-shanahan-2013">Albrecht and Shanahan (2013)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-they-each-perform-on-a-corpus-of-classical-music">How do they each perform on a corpus of classical music?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-own-algorithm">Making your own algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trained-from-a-corpus">Trained from a corpus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-from-another-corpus">Modified from another corpus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-from-a-corpus">Training from a corpus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-manually-building-an-algorithm">Option 2: Manually building an algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#keyscapes">Keyscapes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-window-sizes">Changing the Window Sizes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-accuracy-with-chi-square-t-tests-and-more">Testing Accuracy with Chi-Square, T-Tests, and More</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-a-t-test">Comparing with a T-Test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance">Analysis of Variance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-test-bach-key-profiles-chopin-and-beethoven">Empirical Test: Bach Key-Profiles, Chopin, and Beethoven</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#email-to-dan-day-3">Email to Dan, Day 3</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a class="reference external" href="https://colab.research.google.com/github/shanahdt/huji_summer_class_2026/blob/main/notebooks/day3_pitch_mode.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section id="day-3-pitch-distributions-and-mode">
+<h1>Day 3: Pitch Distributions and Mode<a class="headerlink" href="#day-3-pitch-distributions-and-mode" title="Link to this heading">#</a></h1>
+<p><strong>Date:</strong> Tuesday 23 June 2026</p>
+<ul class="simple">
+<li><p>Let’s talk about key-finding algorithms.</p></li>
+<li><p>Explore where they might disagree, and try to figure out why.</p></li>
+<li><p>What would it look like to devise your own key-finding algorithm?</p></li>
+</ul>
+<section id="why-is-key-finding-interesting">
+<h2>Why is Key-Finding Interesting?<a class="headerlink" href="#why-is-key-finding-interesting" title="Link to this heading">#</a></h2>
+<p>When we hear this ringtone, it sounds as though it’s in C, but why?</p>
+<p><img alt="Nokia" src="../_images/nokia.png" /></p>
+<ul class="simple">
+<li><p>It doesn’t begin with C, it begins with G.</p></li>
+<li><p>C isn’t the most common note–in fact, it only occurs once before the final bar, and it’s on the “and” of 2 in the third measure (a pretty weak position metrically).</p></li>
+<li><p>Is a key just whatever key the piece ends in? If we ended this on A, would it sound like it’s in A minor? It would be the same key signature, and we’d actually have a nice cadential ascent to the final A from the G in the third measure.</p></li>
+</ul>
+<p>So what gives? Why do we hear this as being in C?</p>
+<p>Perhaps a follow-up question might simply be: what makes us hear something as being in a key?</p>
+</section>
+<section id="a-brief-history-of-key-finding">
+<h2>A Brief History of Key Finding<a class="headerlink" href="#a-brief-history-of-key-finding" title="Link to this heading">#</a></h2>
+<section id="longuet-higgins-and-steedman">
+<h3>Longuet-Higgins and Steedman<a class="headerlink" href="#longuet-higgins-and-steedman" title="Link to this heading">#</a></h3>
+<p>This approach used what we might call an <em>exclusionary approach</em>, eliminating different key possibilities as pitch classes were introduced over the course of a musical passage.</p>
+<p>For example, with the Nokia theme, the opening G would fit into seven major keys (G, C, D, F, B-flats, A-flat, E-flat;); six of those keys would include the opening two notes; and three of those six would still be possible when presented with the first three notes. By the end of the first measure, however, the only major key that would encompass all four melody notes would be C major. If more than one key was still available however, the algorithm would place more weight on the pitches present at the start of the piece. This worked quite well on pieces that were overtly tonal, but it was less effective for pieces that contained non-diatonic pitches (<strong>which is most pieces!</strong>)</p>
+<p><img alt="Longuet-Higgins and Steedmans 1971 Key-Finding Algorithm" src="../_images/longuet-higgins-steedman-1971.jpg" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Colab/local-safe setup for importing utils</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<span class="c1"># If we&#39;re in Colab, make sure the repo exists and we&#39;re in notebooks/.</span>
+<span class="k">if</span> <span class="s1">&#39;google.colab&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="n">repo_url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/shanahdt/huji_summer_class_2026.git&#39;</span>
+    <span class="n">repo_name</span> <span class="o">=</span> <span class="s1">&#39;huji_summer_class_2026&#39;</span>
+    <span class="n">repo_root</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/content/</span><span class="si">{</span><span class="n">repo_name</span><span class="si">}</span><span class="s1">&#39;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">repo_root</span><span class="p">):</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;git&#39;</span><span class="p">,</span> <span class="s1">&#39;clone&#39;</span><span class="p">,</span> <span class="n">repo_url</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">repo_root</span><span class="si">}</span><span class="s1">/notebooks&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Colab setup complete.&#39;</span><span class="p">)</span>
+
+<span class="c1"># Ensure the repo root (where utils.py lives) is on sys.path.</span>
+<span class="n">repo_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">repo_root</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">repo_root</span><span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">compare_keyfinding_algorithms</span><span class="p">,</span> <span class="n">compare_keyfinding_corpus</span><span class="p">,</span> <span class="n">load_essen_keys</span><span class="p">,</span> <span class="n">setup_colab</span>
+
+<span class="c1"># This is safe in both Colab and local notebooks.</span>
+<span class="n">setup_colab</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data directory found — running locally, no clone needed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-krumhansl-schmuckler-key-finding-weightings">
+<h3>The Krumhansl-Schmuckler Key-Finding Weightings<a class="headerlink" href="#the-krumhansl-schmuckler-key-finding-weightings" title="Link to this heading">#</a></h3>
+<p>As you might guess, the Longuet-Higgins and Steedman would miss a lot of musical instances. For example, pieces that have non-harmonic chords would struggle, as would pieces that had a lot of chromatic ornamentations. Ideally an algorithm would allow for these pitches to occur, but acknowledge that pitches in the key might be a better fit than those outside of the key, and that certain pitches in the key should be more heavily weighted than others.</p>
+<p>Carol Krumhansl and Mark Schmuckler (Krumhansl, 1990) would devise an algorithm that tallied up the pitch classes of an excerpt and compared the distribution of these pitch classes to ratings from an earlier probe-tone experiment. (Krumhansl and Kessler, 1982). The weightings can be seen below.</p>
+<p>We might think of this as a <em>correlational approach</em>. We tally up all of the pitches in a corpus, and then run a correlation on this key-profile. We run this over all of the keys, and the one that best fits is then labeled as “the key”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span> 
+<span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;KrumhanslSchmuckler&#39;</span><span class="p">)</span>   <span class="c1"># music21&#39;s own built-in</span>
+<span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;G&#39;, &#39;major&#39;, 0.9058541327248869)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bellman-budge-profiles">
+<h3>Bellman-Budge Profiles<a class="headerlink" href="#bellman-budge-profiles" title="Link to this heading">#</a></h3>
+<p>An interesting distinction here is that of experiment-derived vs. corpus-derived weightings. Should a key-finding algorithm intend to match how we hear key in a controlled lab environment (with basic harmonic progression stimuli), or should they use real music as a starting point? If they use real music, which music?</p>
+<p>Hector Bellman created a key-finding algorithm that used Helen Budge’s dissertation from the 1940s as a starting point. Budge tallied up note occurrences in composers from the classical music canon, looking at the tonal makeup of a large collection of pieces. Bellman then used these frequencies as the starting point for his own key-finding algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;BellmanBudge&#39;</span><span class="p">)</span>   <span class="c1"># music21&#39;s own built-in</span>
+<span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;G&#39;, &#39;major&#39;, 0.8399322804707328)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-temperley-kostka-payne-corpus">
+<h2>The Temperley (Kostka-Payne Corpus)<a class="headerlink" href="#the-temperley-kostka-payne-corpus" title="Link to this heading">#</a></h2>
+<p>David Temperley (2001) also employed Western classical music as a starting point for his early key-finding work (not to be confused with his more dynamic Bayesian-informed later work). He used examples from a commonly used music theory textbook (Stefan Kostka and Dorothy Payne’s <em>Tonal Harmony</em>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;Temperley&#39;</span><span class="p">)</span>   <span class="c1"># music21&#39;s own built-in</span>
+<span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;G&#39;, &#39;major&#39;, 0.8427643638430807)
+</pre></div>
+</div>
+</div>
+</div>
+<section id="aarden-s-folk-song-key-profiles">
+<h3>Aarden’s Folk Song Key-Profiles<a class="headerlink" href="#aarden-s-folk-song-key-profiles" title="Link to this heading">#</a></h3>
+<p>Bret Aarden (2003) argued that folk music would be a better fit than those generated from classical music. He used the Essen Folksong collection (consisting of thousands of folksongs throughout Europe, although with an uneven balance toward German folksong), to come up with the weightings below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;AardenEssen&#39;</span><span class="p">)</span>   <span class="c1"># music21&#39;s own built-in</span>
+<span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;G&#39;, &#39;major&#39;, 0.7589770756363191)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sapp-s-simple-weightings">
+<h3>Sapp’s Simple Weightings<a class="headerlink" href="#sapp-s-simple-weightings" title="Link to this heading">#</a></h3>
+<p>Craig Sapp argued that we probably didn’t even need to get frequencies from corpora or experiments. If we just assume that the tonic and the dominant (scale degrees 1 and 5) are the most important, and the other pitches in the key are less important, but more important than those not in the key, then we have a pretty simple weighting system (that works quite well!).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">major</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">minor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;Simple&#39;</span><span class="p">)</span>   <span class="c1"># music21&#39;s own built-in</span>
+<span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;G&#39;, &#39;major&#39;, 0.9358274847434941)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="albrecht-and-shanahan-2013">
+<h3>Albrecht and Shanahan (2013)<a class="headerlink" href="#albrecht-and-shanahan-2013" title="Link to this heading">#</a></h3>
+<p>Josh Albrecht and I tried our hands at this problem, and picked a set of classical works from the Humdrum corpus, looking at only the first and last eight measures of each. The numbers are below.</p>
+<p>We also tried a Euclidean distance approach, rather than a correlational approach.</p>
+<p>We tried to explain it as follows:</p>
+<blockquote>
+<div><p>In a two-dimensional space, if there were 70% of pitch X and 30% pitch Y, the Cartesian
+location of the point representing this pitch-class distribution would be at X 1⁄4 0.7 and Y 1⁄4
+0.3. In this case, we are examining the distribution of 12 pitch classes, resulting in a
+12-dimensional Cartesian space. The pitch-class distribution of each piece is represented by a
+point in that 12-dimensional space. The distance is then measured between this point and the 24
+points representing the 12 major and 12 minor key pitch-class distributions, and the key
+separated by the shortest distance is taken to be the key of the work.</p>
+</div></blockquote>
+<p>Below is a table comparing how well this did to the others.</p>
+<p><img alt="Comparing the Albrecht and Shanahan to others" src="../_images/albrecht-shanahan-comparison.png" /></p>
+</section>
+<section id="how-do-they-each-perform-on-a-corpus-of-classical-music">
+<h3>How do they each perform on a corpus of classical music?<a class="headerlink" href="#how-do-they-each-perform-on-a-corpus-of-classical-music" title="Link to this heading">#</a></h3>
+<p>They each perform a bit differently on different types of tasks.</p>
+<p><img alt="Comparing key-finding algorithms in major, minor, and overall (from Albrecht and Shanahan, 2013)" src="../_images/albrecht-shanahan-keyfinding-performance.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_piece</span><span class="p">,</span> <span class="n">AlbrechtShanahan</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">load_piece</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">AlbrechtShanahan</span><span class="p">()</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+<span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;G&#39;, &#39;major&#39;, 0.9346156266856994)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">compare_keyfinding_algorithms</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Essen/Czech/czech01.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">49</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">table</span> <span class="o">=</span> <span class="n">compare_keyfinding_algorithms</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Essen/Czech/czech01.krn&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/Downloads/huji_summer_class_2026/notebooks/../utils/keyfinding.py:162,</span> in <span class="ni">compare_keyfinding_algorithms</span><span class="nt">(file_path_or_score, algorithms, plot, title)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="k">def</span><span class="w"> </span><span class="nf">compare_keyfinding_algorithms</span><span class="p">(</span><span class="n">file_path_or_score</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>                                    <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span><span class="sd">     ONE-STOP function: run several key-finding algorithms on one piece and</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span><span class="sd">     show a table + bar chart comparing what each one decided.</span>
+<span class="sd">   (...)    160         table</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="n">score</span> <span class="o">=</span> <span class="n">_as_score</span><span class="p">(</span><span class="n">file_path_or_score</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="n">algos</span> <span class="o">=</span> <span class="n">algorithms</span> <span class="ow">or</span> <span class="n">DEFAULT_ALGORITHMS</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>     <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nn">File ~/Downloads/huji_summer_class_2026/notebooks/../utils/keyfinding.py:86,</span> in <span class="ni">_as_score</span><span class="nt">(file_path_or_score)</span>
+<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="k">def</span><span class="w"> </span><span class="nf">_as_score</span><span class="p">(</span><span class="n">file_path_or_score</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file_path_or_score</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">)):</span>
+<span class="ne">---&gt; </span><span class="mi">86</span>         <span class="k">return</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path_or_score</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>     <span class="k">return</span> <span class="n">file_path_or_score</span>
+
+<span class="nn">File ~/Downloads/huji_summer_class_2026/corpus-env/lib/python3.14/site-packages/music21/converter/__init__.py:1412,</span> in <span class="ni">parse</span><span class="nt">(value, forceSource, number, format, **keywords)</span>
+<span class="nn">   1409     raise FileNotFoundError(f&#39;Cannot find file</span> in <span class="ni">{str</span><span class="nt">(value)}&#39;)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1410</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">common</span><span class="o">.</span><span class="n">findFormatFile</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1411</span>     <span class="c1"># assume mistyped file path</span>
+<span class="nn">-&gt; 1412     raise FileNotFoundError(f&#39;Cannot find file</span> in <span class="ni">{str</span><span class="nt">(value)}&#39;)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1413</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1414</span>     <span class="c1"># all else, including MidiBytes</span>
+<span class="g g-Whitespace">   </span><span class="mi">1415</span>     <span class="k">return</span> <span class="n">parseData</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="n">number</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span> <span class="o">**</span><span class="n">keywords</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: Cannot find file in ../data/humdrum_scores/Essen/Czech/czech01.krn
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maybe we could compare with a more difficult piece…</p>
+<p>Here’s the Chopin A-Minor <em>Prélude</em> (op.28. no.2):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">compare_keyfinding_algorithms</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Chopin/Preludes/prelude28-02.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>prelude28-02.krn: 2 unique key answer(s) across 6 algorithm(s). Majority answer: a minor.
+</pre></div>
+</div>
+<img alt="../_images/dcbbda3526f049a2a96f00d418ac36f5efd455c4496319ac416375b79c0625e8.png" src="../_images/dcbbda3526f049a2a96f00d418ac36f5efd455c4496319ac416375b79c0625e8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">bach_chorale_key_table</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">bach_chorale_key_table</span><span class="p">()</span>
+<span class="n">table</span>
+<span class="c1">## save as a CSV file</span>
+<span class="c1">#table.to_csv(&#39;../data/bach_chorale_key_table.csv&#39;, index=False)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Analyzing 1/370...
+  Analyzing 51/370...
+  Analyzing 101/370...
+  Analyzing 151/370...
+  Analyzing 201/370...
+  Analyzing 251/370...
+  Analyzing 301/370...
+  Analyzing 351/370...
+Analyzed 370 chorale(s).
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tune_id</th>
+      <th>annotated_key</th>
+      <th>Krumhansl-Schmuckler</th>
+      <th>Aarden-Essen</th>
+      <th>Simple Weights</th>
+      <th>Bellman-Budge</th>
+      <th>Temperley-Kostka-Payne</th>
+      <th>Albrecht-Shanahan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chor001</td>
+      <td>G major</td>
+      <td>G major (0.95)</td>
+      <td>G major (0.95)</td>
+      <td>G major (0.97)</td>
+      <td>G major (0.97)</td>
+      <td>G major (0.97)</td>
+      <td>G major (0.99)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>chor002</td>
+      <td>A major</td>
+      <td>E major (0.85)</td>
+      <td>A major (0.96)</td>
+      <td>A major (0.92)</td>
+      <td>A major (0.95)</td>
+      <td>A major (0.94)</td>
+      <td>A major (0.92)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>chor003</td>
+      <td>A dorian</td>
+      <td>A minor (0.77)</td>
+      <td>A minor (0.89)</td>
+      <td>A minor (0.91)</td>
+      <td>A minor (0.95)</td>
+      <td>A minor (0.91)</td>
+      <td>A minor (0.95)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>chor004</td>
+      <td>E major</td>
+      <td>E major (0.89)</td>
+      <td>E major (0.91)</td>
+      <td>E major (0.95)</td>
+      <td>E major (0.93)</td>
+      <td>E major (0.91)</td>
+      <td>E major (0.95)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>chor005</td>
+      <td>G major</td>
+      <td>G major (0.89)</td>
+      <td>G major (0.93)</td>
+      <td>G major (0.94)</td>
+      <td>G major (0.93)</td>
+      <td>G major (0.93)</td>
+      <td>G major (0.93)</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>365</th>
+      <td>chor367</td>
+      <td>B minor</td>
+      <td>B minor (0.90)</td>
+      <td>B minor (0.94)</td>
+      <td>B minor (0.86)</td>
+      <td>D major (0.81)</td>
+      <td>D major (0.87)</td>
+      <td>B minor (0.88)</td>
+    </tr>
+    <tr>
+      <th>366</th>
+      <td>chor368</td>
+      <td>F major</td>
+      <td>F major (0.96)</td>
+      <td>F major (0.94)</td>
+      <td>F major (0.98)</td>
+      <td>F major (0.97)</td>
+      <td>F major (0.98)</td>
+      <td>F major (0.99)</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>chor369</td>
+      <td>B- dorian</td>
+      <td>B- minor (0.82)</td>
+      <td>B- minor (0.97)</td>
+      <td>B- minor (0.94)</td>
+      <td>B- minor (0.92)</td>
+      <td>B- minor (0.93)</td>
+      <td>B- minor (0.96)</td>
+    </tr>
+    <tr>
+      <th>368</th>
+      <td>chor370</td>
+      <td>A minor</td>
+      <td>A minor (0.83)</td>
+      <td>A minor (0.95)</td>
+      <td>A minor (0.96)</td>
+      <td>A minor (0.94)</td>
+      <td>A minor (0.93)</td>
+      <td>A minor (0.98)</td>
+    </tr>
+    <tr>
+      <th>369</th>
+      <td>chor371</td>
+      <td>E minor</td>
+      <td>E minor (0.78)</td>
+      <td>E minor (0.89)</td>
+      <td>E minor (0.90)</td>
+      <td>E minor (0.84)</td>
+      <td>E minor (0.82)</td>
+      <td>E minor (0.95)</td>
+    </tr>
+  </tbody>
+</table>
+<p>370 rows × 8 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">,</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">compare_keyfinding_corpus</span><span class="p">(</span>
+    <span class="s1">&#39;../data/humdrum_scores/Bach/Chorales/371chorales&#39;</span><span class="p">,</span>
+    <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;chor*.krn&#39;</span><span class="p">,</span>
+    <span class="n">ground_truth</span><span class="o">=</span><span class="n">ground_truth</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Analyzing 1/370...
+  Analyzing 26/370...
+  Analyzing 51/370...
+  Analyzing 76/370...
+  Analyzing 101/370...
+  Analyzing 126/370...
+  Analyzing 151/370...
+  Analyzing 176/370...
+  Analyzing 201/370...
+  Analyzing 226/370...
+  Analyzing 251/370...
+  Analyzing 276/370...
+  Analyzing 301/370...
+  Analyzing 326/370...
+  Analyzing 351/370...
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/a08843c2e9167dccb1792526c30e7ceb54c769a0b72073b6be2d2e2bc9300071.png"><img alt="../_images/a08843c2e9167dccb1792526c30e7ceb54c769a0b72073b6be2d2e2bc9300071.png" src="../_images/a08843c2e9167dccb1792526c30e7ceb54c769a0b72073b6be2d2e2bc9300071.png" style="width: 790px; height: 438px;" />
+</a>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="making-your-own-algorithm">
+<h1>Making your own algorithm<a class="headerlink" href="#making-your-own-algorithm" title="Link to this heading">#</a></h1>
+<p>We could also make our own algorithms, either trained on data or modified from others. The process will go as follows:</p>
+<section id="trained-from-a-corpus">
+<h2>Trained from a corpus<a class="headerlink" href="#trained-from-a-corpus" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Load a corpus and get ratings from the corpus (this normalizes to a single key that was assigned with ground truth)</p></li>
+<li><p>Use those ratings to construct the new algorithm.</p></li>
+</ol>
+</section>
+<section id="modified-from-another-corpus">
+<h2>Modified from another corpus<a class="headerlink" href="#modified-from-another-corpus" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a variable from another profile, and adjust them individually.</p></li>
+</ol>
+<p>Let’s look how each works.</p>
+</section>
+<section id="training-from-a-corpus">
+<h2>Training from a corpus<a class="headerlink" href="#training-from-a-corpus" title="Link to this heading">#</a></h2>
+<p>We have a few helper functions for this. The first is to load</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_keys_from_title</span><span class="p">,</span> <span class="n">compare_keyfinding_corpus</span><span class="p">,</span> <span class="n">train_key_profile</span>
+
+<span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_keys_from_title</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Beethoven&#39;</span><span class="p">)</span>
+<span class="n">results</span><span class="p">,</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">compare_keyfinding_corpus</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Beethoven&#39;</span><span class="p">,</span> <span class="n">ground_truth</span><span class="o">=</span><span class="n">ground_truth</span><span class="p">)</span>
+<span class="n">my_beethoven_profile</span> <span class="o">=</span> <span class="n">train_key_profile</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Beethoven&#39;</span><span class="p">,</span> <span class="n">ground_truth</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found a key in the title for 58/58 file(s).
+No pieces could be analyzed.
+Trained on 58 piece(s): 40 major, 18 minor.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we’ve gotten the profile, we can see how they’re all weighted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_beethoven_profile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;major&#39;: [0.1483461139743995, 0.03115143405409777, 0.11706969186768912, 0.034901075632476304, 0.11045267731760934, 0.10711476108901355, 0.03159256835743642, 0.1497871526986391, 0.04014322160381728, 0.1024534419504018, 0.04895855543220133, 0.07802930602221847], &#39;minor&#39;: [0.14145512086728165, 0.041192512288734766, 0.09507777254056966, 0.10842704195003704, 0.05151168271496869, 0.1034778802774224, 0.027136219783179583, 0.15333984243485288, 0.0865766615042758, 0.045720826880344755, 0.09401723789643796, 0.05206720086189482]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now we can use our “make_key_algorithm” to train it, and then test it on a piece.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_piece</span><span class="p">,</span> <span class="n">make_key_algorithm</span>
+
+<span class="n">MyBeethoven</span> <span class="o">=</span> <span class="n">make_key_algorithm</span><span class="p">(</span>
+    <span class="n">my_beethoven_profile</span><span class="p">[</span><span class="s1">&#39;major&#39;</span><span class="p">],</span> 
+    <span class="n">my_beethoven_profile</span><span class="p">[</span><span class="s1">&#39;minor&#39;</span><span class="p">],</span> 
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;My Beethoven Profile&#39;</span>
+<span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">load_piece</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Beethoven/Quartets.Str/quartet01-1.krn&#39;</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">MyBeethoven</span><span class="p">()</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F major 0.9196800838697314
+</pre></div>
+</div>
+</div>
+</div>
+<section id="option-2-manually-building-an-algorithm">
+<h3>Option 2: Manually building an algorithm<a class="headerlink" href="#option-2-manually-building-an-algorithm" title="Link to this heading">#</a></h3>
+<p>You can put your own numbers in, much like Craig Sapp did with the Simple Weightings.</p>
+<p>Here, my random numbers really mess up “Happy Birthday”…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_piece</span><span class="p">,</span> <span class="n">make_key_algorithm</span>
+
+<span class="n">major</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">minor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">MyAlgorithm</span> <span class="o">=</span> <span class="n">make_key_algorithm</span><span class="p">(</span><span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;My Profile&#39;</span><span class="p">)</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">load_piece</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>   <span class="c1"># parse first</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">MyAlgorithm</span><span class="p">()</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">key</span><span class="o">.</span><span class="n">correlationCoefficient</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D major 0.45071606504889
+</pre></div>
+</div>
+</div>
+</div>
+<p>You could also take a profile and adjust it. Here is one that takes the Kruhmansl-Schmuckler algorithm and emphasizes the fifth scale degree.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_key_profile</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">get_key_profile</span><span class="p">(</span><span class="s1">&#39;Krumhansl-Schmuckler&#39;</span><span class="p">)</span>   <span class="c1"># or pass the class itself</span>
+<span class="n">my_major</span> <span class="o">=</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;major&#39;</span><span class="p">][:]</span>   <span class="c1"># copy it so editing is safe</span>
+<span class="n">my_major</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.5</span>               <span class="c1"># e.g. exaggerate the fifth</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_major</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 7.785, 2.39, 3.66, 2.29, 2.88]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="keyscapes">
+<h1>Keyscapes<a class="headerlink" href="#keyscapes" title="Link to this heading">#</a></h1>
+<p>One useful way of seeing what’s happening with a key-finding algorithm within a piece is by looking at “keyscapes”.</p>
+<p>These show varying windows of key-judgments throughout a piece. The code below uses the Aarden-Essen algorithm on Happy Birthday.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">keyscape</span><span class="p">,</span> <span class="n">compare_keyscapes</span>
+
+<span class="n">keyscape</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/63b1de92886e585f955b761929b936273b2155e6ab9ba06775a2182e8465d7b1.png"><img alt="../_images/63b1de92886e585f955b761929b936273b2155e6ab9ba06775a2182e8465d7b1.png" src="../_images/63b1de92886e585f955b761929b936273b2155e6ab9ba06775a2182e8465d7b1.png" style="width: 789px; height: 489px;" />
+</a>
+</div>
+</div>
+<p>We can also compare what’s happening with each algorithm with our compare_keyscapes function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compare_keyscapes</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">);</span>   <span class="c1"># compares all 6 algorithms</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/danielshanahan/Downloads/huji_summer_class_2026/notebooks/../utils/keyfinding.py:1248: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=(0, 0.08, 1, 1))
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/cf15e66695f11144b644f5da21648e89748d7bb5a08e962ceedb7d539b6a9ab8.png"><img alt="../_images/cf15e66695f11144b644f5da21648e89748d7bb5a08e962ceedb7d539b6a9ab8.png" src="../_images/cf15e66695f11144b644f5da21648e89748d7bb5a08e962ceedb7d539b6a9ab8.png" style="width: 1909px; height: 519px;" />
+</a>
+</div>
+</div>
+<section id="changing-the-window-sizes">
+<h2>Changing the Window Sizes<a class="headerlink" href="#changing-the-window-sizes" title="Link to this heading">#</a></h2>
+<p>We can look at how the perception of key changes based on the size of the window we are analyzing, as well…</p>
+<p>Play with the window size argument below and see how the perception of the key changes…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">keyscape</span><span class="p">,</span> <span class="n">compare_keyscapes</span>
+
+<span class="c1"># single algorithm, one fixed 8-beat window (a strip, not a triangle)</span>
+<span class="n">keyscape</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/f503761886dca671239838a802e1ac720ca1e8a5b9daea82c8779c6e42ca4dc7.png"><img alt="../_images/f503761886dca671239838a802e1ac720ca1e8a5b9daea82c8779c6e42ca4dc7.png" src="../_images/f503761886dca671239838a802e1ac720ca1e8a5b9daea82c8779c6e42ca4dc7.png" style="width: 789px; height: 239px;" />
+</a>
+</div>
+</div>
+<p>And again, we can compare with different window sizes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compare all 6 default algorithms at that same fixed window</span>
+<span class="n">compare_keyscapes</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/danielshanahan/Downloads/huji_summer_class_2026/notebooks/../utils/keyfinding.py:1248: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout(rect=(0, 0.08, 1, 1))
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/c3f3224787e06fb8fe26fb414f9f950ad5565b0b3875447cddbd74857864d39d.png"><img alt="../_images/c3f3224787e06fb8fe26fb414f9f950ad5565b0b3875447cddbd74857864d39d.png" src="../_images/c3f3224787e06fb8fe26fb414f9f950ad5565b0b3875447cddbd74857864d39d.png" style="width: 1909px; height: 274px;" />
+</a>
+</div>
+</div>
+</section>
+</section>
+<section id="testing-accuracy-with-chi-square-t-tests-and-more">
+<h1>Testing Accuracy with Chi-Square, T-Tests, and More<a class="headerlink" href="#testing-accuracy-with-chi-square-t-tests-and-more" title="Link to this heading">#</a></h1>
+<p>Let’s return to our empirical approaches! How do we know if these are truly performing better?</p>
+<p>We can return to our chi-square for a first pass!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_essen_keys</span><span class="p">,</span> <span class="n">compare_keyfinding_corpus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">chi_square_accuracy</span><span class="p">,</span> <span class="n">ttest_algorithm_correlations</span><span class="p">,</span> <span class="n">compare_algorithms_anova</span>
+
+<span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_essen_keys</span><span class="p">(</span><span class="s1">&#39;../data/essen_keys.csv&#39;</span><span class="p">)</span>
+<span class="n">results</span><span class="p">,</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">compare_keyfinding_corpus</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Czech&#39;</span><span class="p">,</span> <span class="n">ground_truth</span><span class="o">=</span><span class="n">ground_truth</span><span class="p">)</span>
+<span class="n">table</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span> <span class="o">=</span> <span class="n">chi_square_accuracy</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="c1"># Chi-square test of independence — accuracy (both_correct) vs. algorithm:</span>
+<span class="c1">#   chi2 = 5.455, dof = 5, p = 0.3630</span>
+<span class="c1">#   -&gt; p &gt;= 0.05: no significant evidence that accuracy differs by algorithm.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Analyzing 1/43...
+  Analyzing 26/43...
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/2d941d93a4c80c4566ea3c05207e93caf751fdec73763a21bd2538cb166c671c.png"><img alt="../_images/2d941d93a4c80c4566ea3c05207e93caf751fdec73763a21bd2538cb166c671c.png" src="../_images/2d941d93a4c80c4566ea3c05207e93caf751fdec73763a21bd2538cb166c671c.png" style="width: 790px; height: 438px;" />
+</a>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-square test of independence — accuracy (both_correct) vs. algorithm:
+  chi2 = 9.837, dof = 5, p = 0.0800
+  -&gt; p &gt;= 0.05: no significant evidence that accuracy differs by algorithm.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/3cd6e1ba8d00a0b612f5f555d87f2aca6fcadb2b57797df496177ab8590fe3a8.png"><img alt="../_images/3cd6e1ba8d00a0b612f5f555d87f2aca6fcadb2b57797df496177ab8590fe3a8.png" src="../_images/3cd6e1ba8d00a0b612f5f555d87f2aca6fcadb2b57797df496177ab8590fe3a8.png" style="width: 789px; height: 437px;" />
+</a>
+</div>
+</div>
+<section id="comparing-with-a-t-test">
+<h2>Comparing with a T-Test<a class="headerlink" href="#comparing-with-a-t-test" title="Link to this heading">#</a></h2>
+<p>A t-test is used to see if two distributions differ signficantly from one another. Here we can see that there is no significant difference with the Czech folksongs.</p>
+<p>Note that I cannot say that it is “almost significant”!!! It is or it isn’t.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">mean_a</span><span class="p">,</span> <span class="n">mean_b</span> <span class="o">=</span> <span class="n">ttest_algorithm_correlations</span><span class="p">(</span>
+    <span class="n">results</span><span class="p">,</span> <span class="s1">&#39;Krumhansl-Schmuckler&#39;</span><span class="p">,</span> <span class="s1">&#39;Albrecht-Shanahan&#39;</span><span class="p">)</span>
+<span class="c1"># Paired t-test: Krumhansl-Schmuckler (mean=0.840) vs. Albrecht-Shanahan (mean=0.901)</span>
+<span class="c1">#   t = -2.30, p = 0.0612</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paired t-test: Krumhansl-Schmuckler (mean=0.789) vs. Albrecht-Shanahan (mean=0.803)
+  t = -1.996, p = 0.0524
+  -&gt; p &gt;= 0.05: no significant difference detected.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/05569ca40e6feaa6321ea4055d58fc2bdad8d74a8f9a867a37f91eba1d4201d3.png"><img alt="../_images/05569ca40e6feaa6321ea4055d58fc2bdad8d74a8f9a867a37f91eba1d4201d3.png" src="../_images/05569ca40e6feaa6321ea4055d58fc2bdad8d74a8f9a867a37f91eba1d4201d3.png" style="width: 483px; height: 438px;" />
+</a>
+</div>
+</div>
+</section>
+</section>
+<section id="analysis-of-variance">
+<h1>Analysis of Variance<a class="headerlink" href="#analysis-of-variance" title="Link to this heading">#</a></h1>
+<p>We can see if there’s any difference in the variance here of each of these algorithms, as well with an ANOVA.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">compare_algorithms_anova</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>               <span class="c1"># one-way ANOVA</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">compare_algorithms_anova</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;kruskal&#39;</span><span class="p">)</span>  <span class="c1"># non-parametric version</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>One-way ANOVA on &#39;correlation&#39; across 6 algorithm(s):
+  statistic = 0.940, p = 0.4555
+  -&gt; p &gt;= 0.05: no significant overall difference detected.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/f20531be3fbf2ca1046b7f9005813a83df850a3c0f41f3e1f70b895ee770b246.png"><img alt="../_images/f20531be3fbf2ca1046b7f9005813a83df850a3c0f41f3e1f70b895ee770b246.png" src="../_images/f20531be3fbf2ca1046b7f9005813a83df850a3c0f41f3e1f70b895ee770b246.png" style="width: 890px; height: 487px;" />
+</a>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kruskal-Wallis on &#39;correlation&#39; across 6 algorithm(s):
+  statistic = 5.309, p = 0.3793
+  -&gt; p &gt;= 0.05: no significant overall difference detected.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/3b454113af67a6585e5a516dbb2b960d6a8d05f9296b2491cef86aed0122f7d8.png"><img alt="../_images/3b454113af67a6585e5a516dbb2b960d6a8d05f9296b2491cef86aed0122f7d8.png" src="../_images/3b454113af67a6585e5a516dbb2b960d6a8d05f9296b2491cef86aed0122f7d8.png" style="width: 890px; height: 487px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="empirical-test-bach-key-profiles-chopin-and-beethoven">
+<h1>Empirical Test: Bach Key-Profiles, Chopin, and Beethoven<a class="headerlink" href="#empirical-test-bach-key-profiles-chopin-and-beethoven" title="Link to this heading">#</a></h1>
+<p>H1: A key-finding algorithm trained on Bach’s music will perform better on Chopin than on Beethoven.
+H0: There is no signficant difference between the performances.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train on Bach chorales, then test on Chopin and Beethoven</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load_keys_from_kern</span><span class="p">,</span>
+    <span class="n">load_keys_from_title</span><span class="p">,</span>
+    <span class="n">train_key_profile</span><span class="p">,</span>
+    <span class="n">make_key_algorithm</span><span class="p">,</span>
+    <span class="n">compare_keyfinding_corpus</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="c1"># 1) Ground-truth keys</span>
+<span class="n">bach_truth</span> <span class="o">=</span> <span class="n">load_keys_from_kern</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Bach/Chorales/371chorales&#39;</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;chor*.krn&#39;</span><span class="p">)</span>
+<span class="n">chopin_truth</span> <span class="o">=</span> <span class="n">load_keys_from_title</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Chopin/Preludes&#39;</span><span class="p">)</span>
+<span class="n">beeth_truth</span> <span class="o">=</span> <span class="n">load_keys_from_title</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Beethoven/Quartets.Str&#39;</span><span class="p">)</span>
+
+<span class="c1"># 2) Train a custom profile on Bach chorales</span>
+<span class="n">bach_profile</span> <span class="o">=</span> <span class="n">train_key_profile</span><span class="p">(</span>
+    <span class="s1">&#39;../data/humdrum_scores/Bach/Chorales/371chorales&#39;</span><span class="p">,</span>
+    <span class="n">bach_truth</span><span class="p">,</span>
+    <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;chor*.krn&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># 3) Build a key algorithm object from those learned weights</span>
+<span class="n">bach_trained_alg</span> <span class="o">=</span> <span class="n">make_key_algorithm</span><span class="p">(</span>
+    <span class="n">bach_profile</span><span class="p">[</span><span class="s1">&#39;major&#39;</span><span class="p">],</span>
+    <span class="n">bach_profile</span><span class="p">[</span><span class="s1">&#39;minor&#39;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Bach-trained&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># 4) Test on Chopin and Beethoven (custom algorithm only, no defaults)</span>
+<span class="n">chopin_results</span><span class="p">,</span> <span class="n">chopin_summary</span> <span class="o">=</span> <span class="n">compare_keyfinding_corpus</span><span class="p">(</span>
+    <span class="s1">&#39;../data/humdrum_scores/Chopin/Preludes&#39;</span><span class="p">,</span>
+    <span class="n">algorithms</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Bach-trained&#39;</span><span class="p">:</span> <span class="n">bach_trained_alg</span><span class="p">},</span>
+    <span class="n">ground_truth</span><span class="o">=</span><span class="n">chopin_truth</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+<span class="n">beeth_results</span><span class="p">,</span> <span class="n">beeth_summary</span> <span class="o">=</span> <span class="n">compare_keyfinding_corpus</span><span class="p">(</span>
+    <span class="s1">&#39;../data/humdrum_scores/Beethoven/Quartets.Str&#39;</span><span class="p">,</span>
+    <span class="n">algorithms</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Bach-trained&#39;</span><span class="p">:</span> <span class="n">bach_trained_alg</span><span class="p">},</span>
+    <span class="n">ground_truth</span><span class="o">=</span><span class="n">beeth_truth</span><span class="p">,</span>
+    <span class="n">plot</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bach training + transfer setup complete.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chopin rows:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">chopin_results</span><span class="p">),</span> <span class="s1">&#39;| Beethoven rows:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">beeth_results</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found a key for 323/370 file(s).
+No key token found in 47 file(s): chor003, chor008, chor015, chor019, chor025, chor034, chor049, chor070, chor082, chor087, ...
+Found a key in the title for 24/24 file(s).
+Found a key in the title for 58/58 file(s).
+Trained on 323 piece(s): 185 major, 138 minor.
+Skipped 47 piece(s) (no ground truth, unreadable, or non-major/minor mode).
+  Analyzing 1/24...
+  Analyzing 1/58...
+  Analyzing 26/58...
+  Analyzing 51/58...
+Bach training + transfer setup complete.
+Chopin rows: 24 | Beethoven rows: 58
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># H1: A key-finding algorithm trained on Bach will perform better on Chopin than Beethoven</span>
+<span class="c1"># H0: No significant difference</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">chi2_contingency</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Results</span>
+<span class="n">chopin_accuracy</span> <span class="o">=</span> <span class="n">chopin_results</span><span class="p">[</span><span class="s1">&#39;both_correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">beeth_accuracy</span>  <span class="o">=</span> <span class="n">beeth_results</span><span class="p">[</span><span class="s1">&#39;both_correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Chopin accuracy:    </span><span class="si">{</span><span class="n">chopin_accuracy</span><span class="si">:</span><span class="s1">.1%</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Beethoven accuracy: </span><span class="si">{</span><span class="n">beeth_accuracy</span><span class="si">:</span><span class="s1">.1%</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Stacked bar plot</span>
+<span class="n">chopin_correct</span>   <span class="o">=</span> <span class="n">chopin_results</span><span class="p">[</span><span class="s1">&#39;both_correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">chopin_wrong</span>     <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">chopin_results</span><span class="p">[</span><span class="s1">&#39;both_correct&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">beeth_correct</span>    <span class="o">=</span> <span class="n">beeth_results</span><span class="p">[</span><span class="s1">&#39;both_correct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">beeth_wrong</span>      <span class="o">=</span> <span class="p">(</span><span class="o">~</span><span class="n">beeth_results</span><span class="p">[</span><span class="s1">&#39;both_correct&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="s1">&#39;Chopin&#39;</span><span class="p">,</span> <span class="s1">&#39;Beethoven&#39;</span><span class="p">],</span> <span class="p">[</span><span class="n">chopin_correct</span><span class="p">,</span> <span class="n">beeth_correct</span><span class="p">],</span>
+       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Correct&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">([</span><span class="s1">&#39;Chopin&#39;</span><span class="p">,</span> <span class="s1">&#39;Beethoven&#39;</span><span class="p">],</span> <span class="p">[</span><span class="n">chopin_wrong</span><span class="p">,</span> <span class="n">beeth_wrong</span><span class="p">],</span>
+       <span class="n">bottom</span><span class="o">=</span><span class="p">[</span><span class="n">chopin_correct</span><span class="p">,</span> <span class="n">beeth_correct</span><span class="p">],</span>
+       <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Wrong&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Number of pieces&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Bach-trained algorithm: accuracy on Chopin vs Beethoven&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Chi-square test</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Chopin&#39;</span><span class="p">:</span>    <span class="p">[</span><span class="n">chopin_correct</span><span class="p">,</span> <span class="n">chopin_wrong</span><span class="p">],</span>
+    <span class="s1">&#39;Beethoven&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">beeth_correct</span><span class="p">,</span>  <span class="n">beeth_wrong</span><span class="p">]</span>
+<span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">,</span> <span class="s1">&#39;wrong&#39;</span><span class="p">])</span>
+
+<span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">ct</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Chi-square: chi2=</span><span class="si">{</span><span class="n">chi2</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">, p=</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;H1 supported&#39;</span> <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s1">&#39;H1 not supported&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chopin accuracy:    87.5%
+Beethoven accuracy: 50.0%
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/af4da8b9340aa4fc5bcbe29970bf0852a0cc9b3e64af78b901a7f40a3fb9ffd0.png"><img alt="../_images/af4da8b9340aa4fc5bcbe29970bf0852a0cc9b3e64af78b901a7f40a3fb9ffd0.png" src="../_images/af4da8b9340aa4fc5bcbe29970bf0852a0cc9b3e64af78b901a7f40a3fb9ffd0.png" style="width: 589px; height: 489px;" />
+</a>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-square: chi2=8.518, p=0.0035
+H1 supported
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">ttest_rel</span>
+
+<span class="c1"># Paired t-test: are Chopin correlation scores higher than Beethoven?</span>
+<span class="c1"># Paired because... wait, these are different pieces so it&#39;s actually unpaired</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">ttest_ind</span>
+
+<span class="n">t</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">chopin_results</span><span class="p">[</span><span class="s1">&#39;correlation&#39;</span><span class="p">],</span> 
+                 <span class="n">beeth_results</span><span class="p">[</span><span class="s1">&#39;correlation&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean correlation — Chopin:    </span><span class="si">{</span><span class="n">chopin_results</span><span class="p">[</span><span class="s2">&quot;correlation&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean correlation — Beethoven: </span><span class="si">{</span><span class="n">beeth_results</span><span class="p">[</span><span class="s2">&quot;correlation&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;t = </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">, p = </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean correlation — Chopin:    0.848
+Mean correlation — Beethoven: 0.920
+t = -4.777, p = 0.0000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="email-to-dan-day-3">
+<h1>Email to Dan, Day 3<a class="headerlink" href="#email-to-dan-day-3" title="Link to this heading">#</a></h1>
+<p>What are your thoughts on key-finding algorithms? Are they useful as a way of modeling perception? Is it more utilitarian (“I have thousands of pieces that need key signatures!”)? What can we learn? Is there more to learn?</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day2_ngrams.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 2: N-grams and Melodic Tendency</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="day4_similarity.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 4: Melodic Similarity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 3: Pitch Distributions and Mode</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-key-finding-interesting">Why is Key-Finding Interesting?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-brief-history-of-key-finding">A Brief History of Key Finding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longuet-higgins-and-steedman">Longuet-Higgins and Steedman</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-krumhansl-schmuckler-key-finding-weightings">The Krumhansl-Schmuckler Key-Finding Weightings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bellman-budge-profiles">Bellman-Budge Profiles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-temperley-kostka-payne-corpus">The Temperley (Kostka-Payne Corpus)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aarden-s-folk-song-key-profiles">Aarden’s Folk Song Key-Profiles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sapp-s-simple-weightings">Sapp’s Simple Weightings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#albrecht-and-shanahan-2013">Albrecht and Shanahan (2013)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-they-each-perform-on-a-corpus-of-classical-music">How do they each perform on a corpus of classical music?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-own-algorithm">Making your own algorithm</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trained-from-a-corpus">Trained from a corpus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modified-from-another-corpus">Modified from another corpus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-from-a-corpus">Training from a corpus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-manually-building-an-algorithm">Option 2: Manually building an algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#keyscapes">Keyscapes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-window-sizes">Changing the Window Sizes</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-accuracy-with-chi-square-t-tests-and-more">Testing Accuracy with Chi-Square, T-Tests, and More</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-with-a-t-test">Comparing with a T-Test</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance">Analysis of Variance</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-test-bach-key-profiles-chopin-and-beethoven">Empirical Test: Bach Key-Profiles, Chopin, and Beethoven</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#email-to-dan-day-3">Email to Dan, Day 3</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daniel Shanahan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quantitative Methods in Musicology &#8212; Corpus Studies in Music</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/intro_slides';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Corpus Studies in Music</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Quantitative Methods in Musicology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sessions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="day1_encoding.html">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day2_ngrams.html">Day 2: N-grams and Melodic Tendency</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day3_pitch_mode.html">Day 3: Pitch Distributions and Mode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day4_similarity.html">Day 4: Melodic Similarity</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day5_information.html">Day 5 · Information and Distinctiveness (25 Jun)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quizzes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day1_quiz.html">Day 1 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day2_quiz.html">Day 2 Quiz</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/hairpins.html">Asymmetrical Dynamics — Sampling Tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanahdt/corpus-studies-israel-2026/blob/main/./notebooks/intro_slides.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026/issues/new?title=Issue%20on%20page%20%2Fnotebooks/intro_slides.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/intro_slides.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Quantitative Methods in Musicology</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summer-institute-2026-hebrew-university-of-jerusalem">Summer Institute 2026 · Hebrew University of Jerusalem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-questions-for-the-next-eight-days">Three questions for the next eight days</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-corpora">Primary corpora</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eight-days">Eight days</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-things">Three things</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-daily-quizzes">The Daily Quizzes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-daily-logging">The Daily Logging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-final-project">The Final Project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-notebooks">Running the notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-locally-optional">Running locally (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-start">Let’s start</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quantitative-methods-in-musicology">
+<h1>Quantitative Methods in Musicology<a class="headerlink" href="#quantitative-methods-in-musicology" title="Link to this heading">#</a></h1>
+<section id="summer-institute-2026-hebrew-university-of-jerusalem">
+<h2>Summer Institute 2026 · Hebrew University of Jerusalem<a class="headerlink" href="#summer-institute-2026-hebrew-university-of-jerusalem" title="Link to this heading">#</a></h2>
+<p><strong>Daniel Shanahan</strong></p>
+<p>Welcome everyone. Brief intro — who I am, where I’m from, why this course.</p>
+</section>
+<section id="three-questions-for-the-next-eight-days">
+<h2>Three questions for the next eight days<a class="headerlink" href="#three-questions-for-the-next-eight-days" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><strong>What kind of knowledge does corpus analysis produce?</strong></p>
+</div></blockquote>
+<p>Every method encodes assumptions about what music is,<br />
+what matters about it, and whose music counts as data.</p>
+<p>Pause here. Ask: what do you think counts as data in musicology?
+This is the question we’ll return to every single day.</p>
+<blockquote>
+<div><p><strong>How can we ask questions that are musicologically meaningful?</strong></p>
+</div></blockquote>
+<p>The distance between <strong>frequency</strong> and <strong>meaning</strong> is often a large one.</p>
+<p>Just because something appears a lot doesn’t mean it matters.
+Scale degree 5 is the most common in almost everything — so what?</p>
+<blockquote>
+<div><p><strong>Ask questions that are specifically of interest to <em>you</em>.</strong></p>
+</div></blockquote>
+<p>Fluency in Python is not the goal. A good research question is.</p>
+<p>This is the most important slide. The tools are in service of curiosity.
+Tell them: by Day 5 you should have a research question you care about.</p>
+</section>
+<section id="primary-corpora">
+<h2>Primary corpora<a class="headerlink" href="#primary-corpora" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Beregovski Klezmer Corpus</strong> — Malin &amp; Shanahan (2025)</p></li>
+<li><p><strong>Essen Folksong Collection</strong> — Schaffrath &amp; Huron (1995)</p></li>
+<li><p><strong>Meertens Tune Collection</strong> — Van Kranenburg et al. (2014)</p></li>
+<li><p><strong>Bach Chorales</strong> — encoded by David Huron</p></li>
+<li><p><strong>McGill Billboard Corpus</strong> — Burgoyne (2012)</p></li>
+</ol>
+<p><em>Bring your own corpus — we can work with it.</em></p>
+<p>We’ll use Beregovski most heavily — 245 klezmer tunes in kern format.
+The others come in later sessions. Mention the klezmer connection to Israel.</p>
+</section>
+<section id="eight-days">
+<h2>Eight days<a class="headerlink" href="#eight-days" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Day</p></th>
+<th class="head"><p>Date</p></th>
+<th class="head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Sun 21 Jun</p></td>
+<td><p>Encoding and Counting</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Mon 22 Jun</p></td>
+<td><p>N-grams and Melodic Tendency</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Tue 23 Jun</p></td>
+<td><p>Pitch Distributions and Key-Finding</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Wed 24 Jun</p></td>
+<td><p>Melodic Similarity</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Thu 25 Jun</p></td>
+<td><p>Metadata and Categories</p></td>
+</tr>
+<tr class="row-odd"><td><p>—</p></td>
+<td><p>Fri–Sat</p></td>
+<td><p><em>No class</em></p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Sun 28 Jun</p></td>
+<td><p>Clustering and Machine Learning</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Mon 29 Jun</p></td>
+<td><p>Audio Features</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Tue 30 Jun</p></td>
+<td><p>Presentations</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each session is 3 hours. We’ll take breaks as needed.
+Days 1-5 build the foundation; Days 6-8 synthesize.</p>
+</section>
+<section id="three-things">
+<h2>Three things<a class="headerlink" href="#three-things" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Daily quiz</strong> — ungraded, self-reflective, just for you</p></li>
+<li><p><strong>Daily log</strong> — email me your response to the session prompt</p></li>
+<li><p><strong>Final presentation</strong> — 10 minutes on Day 8</p></li>
+</ol>
+<p>Emphasize: the quiz is truly ungraded. No data is stored. It’s a thinking tool.
+The daily log is the main thing — I’ll respond to each one.
+The presentation: dataset, method, hypothesis, result, what’s next.</p>
+<section id="the-daily-quizzes">
+<h3>The Daily Quizzes<a class="headerlink" href="#the-daily-quizzes" title="Link to this heading">#</a></h3>
+<p>These can all be found on the website…</p>
+</section>
+<section id="the-daily-logging">
+<h3>The Daily Logging<a class="headerlink" href="#the-daily-logging" title="Link to this heading">#</a></h3>
+<p>I’d like to work closely with each of you…</p>
+</section>
+<section id="the-final-project">
+<h3>The Final Project<a class="headerlink" href="#the-final-project" title="Link to this heading">#</a></h3>
+<p>Two weeks isn’t really enough time…</p>
+</section>
+</section>
+<section id="running-the-notebooks">
+<h2>Running the notebooks<a class="headerlink" href="#running-the-notebooks" title="Link to this heading">#</a></h2>
+<p>Click the badge at the top of each notebook:</p>
+<p><a class="reference external" href="https://colab.research.google.com/github/shanahdt/huji_summer_class_2026/blob/main/notebooks/day1_encoding.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p><em>No installation. No account setup beyond Google. Just click and run.</em></p>
+<p>Demo this live — open the notebook in Colab right now.
+First cell clones the repo so data files are available.
+Tell them: if anything breaks, just tell me.</p>
+</section>
+<section id="running-locally-optional">
+<h2>Running locally (optional)<a class="headerlink" href="#running-locally-optional" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/shanahdt/huji_summer_class_2026
+<span class="nb">cd</span><span class="w"> </span>huji_summer_class_2026
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>corpus-env
+<span class="nb">source</span><span class="w"> </span>corpus-env/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>music21<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>scipy<span class="w"> </span>scikit-learn<span class="w"> </span>librosa<span class="w"> </span>requests
+jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+<p>Only go here if someone specifically asks. Most people should use Colab.</p>
+</section>
+<section id="let-s-start">
+<h2>Let’s start<a class="headerlink" href="#let-s-start" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p><em>What kind of knowledge does corpus analysis produce?</em></p>
+</div></blockquote>
+<p>Open the Day 1 notebook and we’ll find out.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summer-institute-2026-hebrew-university-of-jerusalem">Summer Institute 2026 · Hebrew University of Jerusalem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-questions-for-the-next-eight-days">Three questions for the next eight days</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-corpora">Primary corpora</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eight-days">Eight days</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-things">Three things</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-daily-quizzes">The Daily Quizzes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-daily-logging">The Daily Logging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-final-project">The Final Project</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-notebooks">Running the notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-locally-optional">Running locally (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-start">Let’s start</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daniel Shanahan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

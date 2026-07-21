@@ -1,0 +1,2061 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Day 4: Melodic Similarity &#8212; Corpus Studies in Music</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/day4_similarity';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 5: Information, Surprise, and What Music Tells Us" href="day5_information.html" />
+    <link rel="prev" title="Day 3: Pitch Distributions and Mode" href="day3_pitch_mode.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Corpus Studies in Music</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Quantitative Methods in Musicology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sessions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="day1_encoding.html">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day2_ngrams.html">Day 2: N-grams and Melodic Tendency</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day3_pitch_mode.html">Day 3: Pitch Distributions and Mode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 4: Melodic Similarity</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day5_information.html">Day 5 · Information and Distinctiveness (25 Jun)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quizzes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day1_quiz.html">Day 1 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day2_quiz.html">Day 2 Quiz</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/hairpins.html">Asymmetrical Dynamics — Sampling Tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanahdt/corpus-studies-israel-2026/blob/main/./notebooks/day4_similarity.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026/issues/new?title=Issue%20on%20page%20%2Fnotebooks/day4_similarity.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/day4_similarity.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Day 4: Melodic Similarity</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 4: Melodic Similarity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-think-about-musical-similarity">How do we think about musical similarity?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-setting-up">Part 1: Setting Up</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-similarity-as-transformation">Part 2: Similarity as Transformation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-ways-to-represent-a-note-before-comparing-it">Three ways to represent a note, before comparing it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jaccard-similarity">Jaccard Similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-these-numbers-telling-us">What are these numbers telling us?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-distance-by-hand">Edit Distance By Hand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-up-a-pairwise-similarity-matrix">Scaling up: a pairwise similarity matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-disagreement-matter">Why does the disagreement matter?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-a-disagreement">Exercise: A Disagreement!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jaccard-at-the-corpus-level">Jaccard, at the corpus level</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Jaccard at the corpus level</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-similarity-as-spatial-distance">Part 3: Similarity as Spatial Distance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-the-features-which-are-quite-arbitrary-and-just-for-demonstration">Explaining the features (which are quite arbitrary, and just for demonstration!!!)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-spatial-similarity-matrix-get-its-numbers">How does the spatial similarity matrix get its numbers?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-spatial-distance-ever-break-down">Why would spatial distance ever break down?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-a-spatial-distance-approach">Limitations of a spatial-distance approach</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-discuss-transitivity-violations">Let’s discuss transitivity violations!</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-similarity-as-feature-set-interaction">Part 4: Similarity as Feature-Set Interaction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-all-features-count-equally-salience">Not all features count equally: salience</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tversky-s-index-in-code">Tversky’s index, in code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-tversky-matrix">Reading the Tversky matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-melodic-plagiarism">Case study: melodic plagiarism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-context-changes-which-features-matter">Case study: context changes which features matter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-a-feature-set-approach">Limitations of a feature-set approach</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-similarity-as-alignment">Part 5: Similarity as Alignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-structural-alignment-output">Reading the structural alignment output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-from-similarity-to-recommendation">Part 6: From similarity to recommendation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#item-item-more-like-this">Item-item: “more like this”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-user-people-with-similar-taste">User-user: “people with similar taste”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-exercise-discussing-disagreement">In-class exercise: Discussing disagreement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-log-entry-4">Project Log — Entry 4</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a class="reference external" href="https://colab.research.google.com/github/shanahdt/huji_summer_class_2026/blob/main/notebooks/day4_similarity.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section id="day-4-melodic-similarity">
+<h1>Day 4: Melodic Similarity<a class="headerlink" href="#day-4-melodic-similarity" title="Link to this heading">#</a></h1>
+<p><strong>Date:</strong> Wednesday 24 June 2026</p>
+<ul class="simple">
+<li><p>Today we’re talking about what it means to think of music as “similar”.</p></li>
+<li><p>We’ll build several different similarity metrics and point them at different melodies. We will then pick apart the underlying assumptions of these algorithms.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Clone repo first if running in Colab</span>
+<span class="n">repo_url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/shanahdt/huji_summer_class_2026.git&#39;</span>
+<span class="n">repo_name</span> <span class="o">=</span> <span class="s1">&#39;huji_summer_class_2026&#39;</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/content/</span><span class="si">{</span><span class="n">repo_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">):</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;git&#39;</span><span class="p">,</span> <span class="s1">&#39;clone&#39;</span><span class="p">,</span> <span class="n">repo_url</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/content/</span><span class="si">{</span><span class="n">repo_name</span><span class="si">}</span><span class="s1">/notebooks&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cloned and ready.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Running locally — data directory found.&#39;</span><span class="p">)</span>
+
+<span class="c1"># Now that the repo exists, we can import utils</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">repo_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">repo_root</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">repo_root</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup_colab</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">,</span> <span class="n">font_scale</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Imports OK.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running locally — data directory found.
+Imports OK.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-do-we-think-about-musical-similarity">
+<h1>How do we think about musical similarity?<a class="headerlink" href="#how-do-we-think-about-musical-similarity" title="Link to this heading">#</a></h1>
+<p>There isn’t one agreed-upon theory of similarity in cognition: there are (at least) four,
+and each one answers a different question about what we mean when we say two things are “alike”:</p>
+<ol class="arabic simple">
+<li><p><strong>Similarity as Spatial Distance</strong> — reduce each piece to a handful of numbers (a point in
+space) and measure how close the points are.</p></li>
+<li><p><strong>Similarity as Feature-Set Interaction</strong> — similarity grows with shared features and shrinks
+with distinctive ones (Tversky, 1977).</p></li>
+<li><p><strong>Similarity as Transformation</strong> — how many edits does it take to turn one into the other?</p></li>
+<li><p><strong>Similarity as Alignment</strong> — line two things up and compare their higher-order <em>structure</em>,
+not just their parts (Gentner, 1983).</p></li>
+</ol>
+<p><img alt="" src="../_images/four_theories.png" /></p>
+<p>Today’s we will go through all four, in roughly this order: Transformation, then Spatial
+Distance (and where it breaks down), then Feature-Set Interaction (and where <em>that</em> breaks
+down), then Alignment.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Theory</p></th>
+<th class="head"><p>Functions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Transformation</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">melodic_edit_distance()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Spatial Distance</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">spatial_similarity_matrix()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Feature-Set Interaction</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">jaccard()</span></code>, <code class="docutils literal notranslate"><span class="pre">tversky_index()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Alignment</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">structural_alignment()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="part-1-setting-up">
+<h1>Part 1: Setting Up<a class="headerlink" href="#part-1-setting-up" title="Link to this heading">#</a></h1>
+<p>Let’s load Czech files for now, but we can adjust later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_corpus</span>
+
+<span class="n">corpus_df</span><span class="p">,</span> <span class="n">streams</span> <span class="o">=</span> <span class="n">load_corpus</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Czech/&#39;</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;../data/Essen/Czech/</span><span class="si">{</span><span class="n">tune_id</span><span class="si">}</span><span class="s1">.krn&#39;</span> 
+         <span class="k">for</span> <span class="n">tune_id</span> <span class="ow">in</span> <span class="n">corpus_df</span><span class="p">[</span><span class="s1">&#39;tune_id&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Loading 1/43...
+Loaded 43 tunes.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-2-similarity-as-transformation">
+<h1>Part 2: Similarity as Transformation<a class="headerlink" href="#part-2-similarity-as-transformation" title="Link to this heading">#</a></h1>
+<p>One very concrete way to ask “how similar are A and B?” is: <strong>how many edits does it take to turn
+A into B?</strong> Fewer edits, more similar.</p>
+<p>Here’s a non-musical example. What’s the distance between “Dan Shanahan” and the Irish rugby
+international “Dan Sheehan”?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Dan</span> <span class="pre">Shanahan</span></code> → <code class="docutils literal notranslate"><span class="pre">Dan</span> <span class="pre">Sh~~a~~eehan</span></code> (1 deletion)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dan</span> <span class="pre">Shaneehan</span></code> → <code class="docutils literal notranslate"><span class="pre">Dan</span> <span class="pre">Sheehan</span></code> (well, plus 2 substitutions along the way)</p></li>
+<li><p><strong>Levenshtein distance = 3</strong></p></li>
+</ul>
+<p>This is <strong>edit distance</strong> (Levenshtein distance): the minimum number of insertions, deletions,
+and substitutions needed to turn one sequence into another. It generalizes to <em>any</em> sequence –
+characters, note names, scale degrees – which is exactly why it’s useful for melodies. Here’s a
+helpful comparison of related sequence-distance algorithms, for context:</p>
+<p><img alt="" src="images/transformation_operations.png" /></p>
+<section id="three-ways-to-represent-a-note-before-comparing-it">
+<h2>Three ways to represent a note, before comparing it<a class="headerlink" href="#three-ways-to-represent-a-note-before-comparing-it" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Representation</p></th>
+<th class="head"><p>Preserves</p></th>
+<th class="head"><p>Ignores</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Absolute pitches</p></td>
+<td><p>Exact notes</p></td>
+<td><p>Transposition</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scale degrees</p></td>
+<td><p>Tonal function</p></td>
+<td><p>Absolute pitch</p></td>
+</tr>
+<tr class="row-even"><td><p>Contour</p></td>
+<td><p>Shape (up/down/same)</p></td>
+<td><p>Interval size</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Edit distance doesn’t care WHAT the sequence elements are, only how many edits separate two
+sequences of them – so the representation you choose changes the answer.</p>
+</section>
+<section id="jaccard-similarity">
+<h2>Jaccard Similarity<a class="headerlink" href="#jaccard-similarity" title="Link to this heading">#</a></h2>
+<p>A different way to ask “how similar are two melodies?” is to ignore
+the order entirely and just ask: <strong>do they share the same local patterns?</strong> Something like n-grams, maybe?</p>
+<p><em>Jaccard similarity</em> compares two <em>sets</em> of n-grams:</p>
+<p>$$J(A, B) = \frac{|A \cap B|}{|A \cup B|}$$</p>
+<p>In non math-speak, this just means that the number of n-grams they <strong>share</strong>, divided by
+the total number of <strong>unique n-grams across both</strong>.</p>
+<ul class="simple">
+<li><p>1.0 = identical sets (every pattern in A also appears in B)</p></li>
+<li><p>0.0 = no overlap at all</p></li>
+</ul>
+<p>For example, we could extract all trigrams from each tune, then ask what fraction of the combined pool they share.</p>
+<p><strong>Interestingly,</strong> Jaccard doesn’t care where in the melody a pattern appears — only whether it appears at all. Two melodies that use the same melodic idioms in a completely different
+order could score <strong>high on Jaccard similarity</strong> (lots of shared
+patterns) but also <strong>high on edit distance</strong> (many edits needed to
+align the sequences position by position). The metrics would disagree, with<br />
+one calling the tunes similar, the other calling them different.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">melodic_edit_distance</span><span class="p">,</span> <span class="n">ngram_similarity</span><span class="p">,</span> <span class="n">contour_similarity</span>
+
+<span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">files</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tunes: </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s1"> vs </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Edit (norm):  </span><span class="si">{</span><span class="n">melodic_edit_distance</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;scale_degree&quot;</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Jaccard:      </span><span class="si">{</span><span class="n">ngram_similarity</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;scale_degree&quot;</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Contour:      </span><span class="si">{</span><span class="n">contour_similarity</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tunes: czech01 vs czech02
+Edit (norm):  0.733
+Jaccard:      0.071
+Contour:      0.360
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-are-these-numbers-telling-us">
+<h2>What are these numbers telling us?<a class="headerlink" href="#what-are-these-numbers-telling-us" title="Link to this heading">#</a></h2>
+<p>Let’s look at what we just computed for <code class="docutils literal notranslate"><span class="pre">czech01</span></code> vs <code class="docutils literal notranslate"><span class="pre">czech02</span></code>:</p>
+<ul class="simple">
+<li><p><strong>Edit distance: 0.733</strong> — these two tunes are pretty dissimilar by this measure.
+It would take edits on roughly 73% of the notes to turn one melody into the other.
+Edit distance reads the sequence left to right, so it’s sensitive to notes appearing
+in different positions even if they show up in both melodies.</p></li>
+<li><p><strong>Jaccard: 0.071</strong> — only about 7% overlap in shared trigrams. This sounds dramatic,
+but Jaccard on trigrams is actually the strictest of our three metrics — it requires
+<em>three consecutive notes</em> to match exactly. That’s a high bar, and two folksongs can
+share a lot of melodic vocabulary while still arranging it differently enough to score low here.</p></li>
+<li><p><strong>Contour: 0.360</strong> — the melodies move in the same direction (up/down/same) about
+36% of the time. This is the most generous of the three measures, and arguably the
+most musically interesting: even though the specific notes and patterns differ,
+these tunes share something about their <em>shape</em> — perhaps both rise at phrase
+beginnings, or fall at cadences.</p></li>
+</ul>
+<p>They’re answering different questions:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>The question it’s asking</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit distance</p></td>
+<td><p>How different are the note sequences, position by position?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jaccard</p></td>
+<td><p>Do they share the same local melodic idioms?</p></td>
+</tr>
+<tr class="row-even"><td><p>Contour</p></td>
+<td><p>Do they move in similar ways, regardless of the specific notes?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Which one should we trust? That depends entirely on what we’re trying to do.
+A musician working in an oral tradition might trust contour most — melodic shape
+tends to be preserved even when specific pitches drift over time and across regions.
+A search engine trying to find exact tune matches would want Jaccard’s precision.</p>
+<p>The uncomfortable conclusion: <strong>the metric you choose determines the answer you get.</strong></p>
+<section id="edit-distance-by-hand">
+<h3>Edit Distance By Hand<a class="headerlink" href="#edit-distance-by-hand" title="Link to this heading">#</a></h3>
+<p>Here are three short melodies. The second is the same as the first but with one note changed; the third changes more.</p>
+<p><img alt="" src="../_images/edit_distance_grading.png" /></p>
+<p>Here  edit distance of 2 for the middle line and 12 “if only looking at pitches” for the bottom line – a useful reminder that edit distance depends entirely on how finely you slice the comparison (note-by-note? pitch-only? rhythm too?), same as the representation choice
+in the table above.</p>
+</section>
+<section id="scaling-up-a-pairwise-similarity-matrix">
+<h3>Scaling up: a pairwise similarity matrix<a class="headerlink" href="#scaling-up-a-pairwise-similarity-matrix" title="Link to this heading">#</a></h3>
+<p>One pair of tunes is a toy example. The real payoff of having a <em>similarity metric</em> is that it can be applied to large corpora. Here I’ve opted for 10 tunes (but we can change it!).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### how many tunes are we interested in comparing??</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">files_subset</span> <span class="o">=</span> <span class="n">files</span><span class="p">[:</span><span class="n">N</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">files_subset</span><span class="p">)</span><span class="si">}</span><span class="s1"> tunes selected&#39;</span><span class="p">)</span>
+
+
+<span class="c1">### just plotting the matrices.</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">similarity_matrices</span>
+
+
+<span class="c1">## note the by scale degree argument! You can also change </span>
+<span class="c1">## it to by=&#39;pitch&#39; to compare by pitch directly or by=&quot;interval&quot; </span>
+<span class="c1">## to compare by melodic intervals</span>
+<span class="n">matrices</span><span class="p">,</span> <span class="n">tids</span> <span class="o">=</span> <span class="n">similarity_matrices</span><span class="p">(</span><span class="n">files_subset</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;scale_degree&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">edit_mat</span><span class="p">,</span> <span class="n">jac_mat</span><span class="p">,</span> <span class="n">con_mat</span> <span class="o">=</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;edit&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;jaccard&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;contour&#39;</span><span class="p">]</span>
+
+<span class="n">short_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">stem</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files_subset</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">mat</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> 
+                           <span class="p">[</span><span class="n">edit_mat</span><span class="p">,</span> <span class="n">jac_mat</span><span class="p">,</span> <span class="n">con_mat</span><span class="p">],</span>
+                           <span class="p">[</span><span class="s1">&#39;Edit&#39;</span><span class="p">,</span> <span class="s1">&#39;Jaccard&#39;</span><span class="p">,</span> <span class="s1">&#39;Contour&#39;</span><span class="p">]):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;YlOrRd&#39;</span><span class="p">,</span>
+                <span class="n">xticklabels</span><span class="o">=</span><span class="n">short_labels</span><span class="p">,</span> 
+                <span class="n">yticklabels</span><span class="o">=</span><span class="n">short_labels</span><span class="p">,</span>
+                <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Pairwise distance — darker = MORE different&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 tunes selected
+  1/10...
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/d1dc04bf32b76175ba70f7911bea5fe5106dfdca54e755e2fc52d71e8d2a54d1.png"><img alt="../_images/d1dc04bf32b76175ba70f7911bea5fe5106dfdca54e755e2fc52d71e8d2a54d1.png" src="../_images/d1dc04bf32b76175ba70f7911bea5fe5106dfdca54e755e2fc52d71e8d2a54d1.png" style="width: 1564px; height: 509px;" />
+</a>
+</div>
+</div>
+<p>We can also just run this code to find the top disagreements. (you can ignore this ugly code, but run the cell…)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diffs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tids</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">t2</span> <span class="ow">in</span> <span class="n">tids</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">diffs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">abs</span><span class="p">(</span><span class="n">edit_mat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]</span> <span class="o">-</span> <span class="n">jac_mat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]),</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span>
+                       <span class="n">edit_mat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="n">jac_mat</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]))</span>
+<span class="n">diffs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Top 5 metric disagreements (edit vs Jaccard):&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Tune A&#39;</span><span class="si">:</span><span class="s2">25s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;Tune B&#39;</span><span class="si">:</span><span class="s2">25s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;Edit&#39;</span><span class="si">:</span><span class="s2">&gt;8s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;Jaccard&#39;</span><span class="si">:</span><span class="s2">&gt;8s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;Diff&#39;</span><span class="si">:</span><span class="s2">&gt;7s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">diff</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">ed</span><span class="p">,</span> <span class="n">jac</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">t1</span><span class="si">:</span><span class="s1">25s</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">t2</span><span class="si">:</span><span class="s1">25s</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">ed</span><span class="si">:</span><span class="s1">8.3f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">jac</span><span class="si">:</span><span class="s1">8.3f</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">diff</span><span class="si">:</span><span class="s1">7.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Top 5 metric disagreements (edit vs Jaccard):
+Tune A                    Tune B                        Edit  Jaccard    Diff
+czech08                   czech09                      0.481    0.854   0.372
+czech05                   czech08                      0.654    1.000   0.346
+czech02                   czech03                      0.654    1.000   0.346
+czech05                   czech09                      0.667    1.000   0.333
+czech06                   czech09                      0.548    0.850   0.302
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="why-does-the-disagreement-matter">
+<h2>Why does the disagreement matter?<a class="headerlink" href="#why-does-the-disagreement-matter" title="Link to this heading">#</a></h2>
+<p>Just to reiterate the point above about metrics, we can look at <strong>czech02 vs czech03</strong>: edit distance is 0.654 but Jaccard distance is 1.000. How can two tunes be moderately
+similar by one measure and completely different by another?</p>
+<p><strong>Edit distance</strong> gives partial credit. It reads the melody
+left to right and asks: how many individual notes would I need
+to change? If the same note appears in both tunes — even in
+a slightly different position — it counts toward similarity.</p>
+<p><strong>Jaccard distance</strong> gives no partial credit. It asks: do
+these tunes share any identical three-note sequences?
+If czech02 contains C-D-E somewhere and czech03 never does,
+that trigram contributes nothing to their similarity.
+Jaccard distance of 1.0 means zero shared trigrams.</p>
+<p>Two tunes can share the same melodic vocabulary without ever producing
+the same local three-note phrase.</p>
+<p>Edit distance and Jaccard (n-gram overlap, via <code class="docutils literal notranslate"><span class="pre">ngram_similarity()</span></code> above) don’t always agree –
+the table makes that concrete. <em>Why</em> they disagree is the question the rest of this notebook is
+really about: edit distance cares about ORDER, Jaccard only cares about SET MEMBERSHIP. Part 4
+below makes that distinction the main event.</p>
+</section>
+<section id="exercise-a-disagreement">
+<h2>Exercise: A Disagreement!<a class="headerlink" href="#exercise-a-disagreement" title="Link to this heading">#</a></h2>
+<p>The table above shows the pairs where these measurements really disagree the most. Pick any pair of tunes in the list and run
+the cell below to see both melodies as scale degrees.</p>
+<p>Be ready to discuss:</p>
+<ul class="simple">
+<li><p>What do you notice about the two sequences?</p></li>
+<li><p>Which metric’s verdict would a musician trust more
+for deciding whether two tunes are “similar”? Why?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">compare_tunes</span>
+<span class="n">compare_tunes</span><span class="p">(</span><span class="n">tids</span><span class="p">,</span> <span class="n">corpus_df</span><span class="p">,</span> <span class="n">edit_mat</span><span class="p">,</span> <span class="n">jac_mat</span><span class="p">,</span> <span class="n">con_mat</span><span class="p">,</span> 
+              <span class="n">a</span><span class="o">=</span><span class="s1">&#39;czech02&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;czech01&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>czech02:
+  scale_degrees: [1, 3, 2, 1, 2, 2, 5, 5, 1, 2, 3, 1, 6, 2, 2, 4, 4, 1, 1, 3]
+  pitches: [&#39;G4&#39;, &#39;B-4&#39;, &#39;A4&#39;, &#39;G4&#39;, &#39;A4&#39;, &#39;A4&#39;, &#39;D5&#39;, &#39;D5&#39;, &#39;G4&#39;, &#39;A4&#39;, &#39;B-4&#39;, &#39;G4&#39;, &#39;F4&#39;, &#39;A4&#39;, &#39;A4&#39;, &#39;C5&#39;, &#39;C5&#39;, &#39;G4&#39;, &#39;G4&#39;, &#39;B-4&#39;]
+  intervals: [3, -1, -2, 2, 0, 5, 0, -7, 2, 1, -3, -2, 4, 0, 3, 0, -5, 0, 3, -1]
+
+czech01:
+  scale_degrees: [1, 1, 1, 1, 1, 4, 2, 3, 4, 5, 6, 6, 5, 4, 4, 4, 6, 1, 2, 3]
+  pitches: [&#39;G4&#39;, &#39;G4&#39;, &#39;G4&#39;, &#39;G4&#39;, &#39;G4&#39;, &#39;C5&#39;, &#39;A4&#39;, &#39;B4&#39;, &#39;C5&#39;, &#39;D5&#39;, &#39;E5&#39;, &#39;E5&#39;, &#39;D5&#39;, &#39;C5&#39;, &#39;C5&#39;, &#39;C5&#39;, &#39;F4&#39;, &#39;G4&#39;, &#39;A4&#39;, &#39;B4&#39;]
+  intervals: [0, 0, 0, 0, 5, -3, 2, 1, 2, 2, 0, -2, -2, 0, 0, -7, 2, 2, 2, 3]
+
+Edit distance: 0.733
+Jaccard:       0.929
+Contour:       0.640
+</pre></div>
+</div>
+</div>
+</div>
+<section id="jaccard-at-the-corpus-level">
+<h3>Jaccard, at the corpus level<a class="headerlink" href="#jaccard-at-the-corpus-level" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">jaccard()</span></code> asks a different-scale question than Part 2’s <code class="docutils literal notranslate"><span class="pre">ngram_similarity()</span></code>: instead of
+comparing two individual TUNES, it compares two whole CORPORA via their n-gram Counters
+(<code class="docutils literal notranslate"><span class="pre">|intersection|</span> <span class="pre">/</span> <span class="pre">|union|</span></code> of the top-N most common n-grams). 1.0 means two musicians’ top
+bigrams are identical; 0.0 means no overlap at all.</p>
+<p>Let’s zoom out from individual tunes to whole musicians – Parker vs. Dizzy this time.</p>
+</section>
+</section>
+<section id="id1">
+<h2>Jaccard at the corpus level<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Until now we’ve been comparing individual tunes to each other.
+Jaccard can also work at a larger scale — comparing two whole
+<em>corpora</em> by asking how much their melodic vocabularies overlap.</p>
+<p>Instead of comparing two sequences note by note, we pool all
+the bigrams from every tune in each corpus, take the top 50
+most common, and ask: how much do those top-50 lists overlap?</p>
+<p><strong>Parker vs Dizzy: 0.639</strong></p>
+<p>63.9% of the top-50 scale-degree bigrams are shared between
+Charlie Parker and Dizzy Gillespie. That’s a high number —
+it tells us these two musicians are drawing from a very similar
+melodic vocabulary, which makes sense: they were both bebop
+musicians working in the same tradition, often recording together.</p>
+<p>The matrix makes this concrete:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Parker</p></th>
+<th class="head"><p>Dizzy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Parker</p></td>
+<td><p>1.000</p></td>
+<td><p>0.639</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dizzy</p></td>
+<td><p>0.639</p></td>
+<td><p>1.000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The diagonal is always 1.0 — a corpus is identical to itself.
+The off-diagonal tells you the overlap between the two.</p>
+<p><strong>What would a low number mean?</strong></p>
+<p>If we compared Parker to, say, a Czech folksong corpus, we’d
+expect a much lower Jaccard score — different traditions,
+different scales, different melodic habits. The number would
+reflect genuine stylistic distance, not just individual variation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">,</span> <span class="n">jaccard</span><span class="p">,</span> <span class="n">jaccard_matrix</span>
+
+<span class="n">parker_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/charlie_parker_no_chords/*.krn&#39;</span><span class="p">))</span>
+<span class="n">dizzy_files</span>  <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/dizzy_gillespie_no_chords/*.krn&#39;</span><span class="p">))</span>
+
+<span class="n">parker_counter</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">parker_files</span><span class="p">,</span> <span class="s1">&#39;Parker&#39;</span><span class="p">)</span>
+<span class="n">dizzy_counter</span><span class="p">,</span> <span class="n">_</span>  <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">dizzy_files</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">)</span>
+
+<span class="n">j</span> <span class="o">=</span> <span class="n">jaccard</span><span class="p">(</span><span class="n">parker_counter</span><span class="p">,</span> <span class="n">dizzy_counter</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Jaccard similarity (top 50 scale-degree bigrams): </span><span class="si">{</span><span class="n">j</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you have more than two musicians/corpora to compare, <code class="docutils literal notranslate"><span class="pre">jaccard_matrix()</span></code> builds the whole
+pairwise table in one call – handy for a heatmap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">jaccard_matrix</span><span class="p">({</span><span class="s1">&#39;Parker&#39;</span><span class="p">:</span> <span class="n">parker_counter</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">:</span> <span class="n">dizzy_counter</span><span class="p">})</span>
+<span class="n">matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-3-similarity-as-spatial-distance">
+<h1>Part 3: Similarity as Spatial Distance<a class="headerlink" href="#part-3-similarity-as-spatial-distance" title="Link to this heading">#</a></h1>
+<p>A completely different starting point: instead of comparing sequences directly, reduce each
+piece to a handful of numbers – a <em>point in space</em> – then measure how close two points are.</p>
+<p>$$sim(A, B) = \frac{1}{1 + \sqrt{\sum_{i=1}^{n}(A_i - B_i)^2}}$$</p>
+<p><img alt="" src="../_images/spatial_distance.png" /></p>
+<p>Similarity is the inverse of distance, totaled across every musical dimension you chose to
+measure. Here’s an example that Morgan Patrick and I used for a discussed of spatial distance with four tunes by Charles Mingus. Here we plotted just two features (tonic prevalence and note density).</p>
+<section id="explaining-the-features-which-are-quite-arbitrary-and-just-for-demonstration">
+<h2>Explaining the features (which are quite arbitrary, and just for demonstration!!!)<a class="headerlink" href="#explaining-the-features-which-are-quite-arbitrary-and-just-for-demonstration" title="Link to this heading">#</a></h2>
+<p>So far we’ve been comparing melodies directly — note by note,
+pattern by pattern. But there’s another approach: instead of
+comparing the sequences themselves, we can summarise each melody
+as a small set of numbers, and then compare those numbers.</p>
+<p>Each row in the table above is one tune, described by four features:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">note_density</span></code></strong> — how many notes per beat, on average.
+A tune with lots of fast ornamental notes will score high;
+a slow, sparse melody will score low. czech01 (1.5) moves
+much faster than czech02 (0.54).</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">tonic_prevalence</span></code></strong> — what fraction of the notes are the
+tonic pitch (scale degree 1). A strongly tonal tune that keeps
+returning home will score high. czech04 scores very low (0.038) —
+it rarely lands on the tonic, suggesting it either avoids it
+or cadences elsewhere.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pitch_range</span></code></strong> — the span from the lowest to the highest note,
+in semitones. czech03 has a range of 14 semitones (more than an
+octave), while czech05 stays within 8 semitones — a much more
+compact melody.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">mean_interval</span></code></strong> — the average size of melodic leaps in
+semitones. Higher values mean the melody tends to jump around;
+lower values mean it moves mostly by steps. czech03 (3.2)
+leaps more than czech04 (2.1).</p>
+<p>These four numbers together place each tune at a specific
+“location” in a four-dimensional space. Two tunes that end up
+near each other in that space share similar density, tonal
+focus, range, and motion — even if their actual note sequences
+are completely different.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">melodic_feature_vector</span><span class="p">,</span> <span class="n">feature_matrix</span><span class="p">,</span> <span class="n">spatial_similarity</span><span class="p">,</span> <span class="n">spatial_similarity_matrix</span>
+<span class="c1"># one tune&#39;s &quot;point in space&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">melodic_feature_vector</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># the same four features, for every tune in our N=20 subset</span>
+<span class="n">feats</span> <span class="o">=</span> <span class="n">feature_matrix</span><span class="p">(</span><span class="n">files_subset</span><span class="p">,</span> <span class="n">tune_ids</span><span class="o">=</span><span class="n">tids</span><span class="p">)</span>
+<span class="n">feats</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>note_density         1.500000
+tonic_prevalence     0.100000
+pitch_range         11.000000
+mean_interval        2.206897
+dtype: float64
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>note_density</th>
+      <th>tonic_prevalence</th>
+      <th>pitch_range</th>
+      <th>mean_interval</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>czech01</th>
+      <td>1.500000</td>
+      <td>0.100000</td>
+      <td>11.0</td>
+      <td>2.206897</td>
+    </tr>
+    <tr>
+      <th>czech02</th>
+      <td>0.541667</td>
+      <td>0.307692</td>
+      <td>12.0</td>
+      <td>2.240000</td>
+    </tr>
+    <tr>
+      <th>czech03</th>
+      <td>1.500000</td>
+      <td>0.277778</td>
+      <td>14.0</td>
+      <td>3.235294</td>
+    </tr>
+    <tr>
+      <th>czech04</th>
+      <td>1.444444</td>
+      <td>0.038462</td>
+      <td>12.0</td>
+      <td>2.080000</td>
+    </tr>
+    <tr>
+      <th>czech05</th>
+      <td>0.600000</td>
+      <td>0.250000</td>
+      <td>8.0</td>
+      <td>2.909091</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_spatial</span> <span class="o">=</span> <span class="n">spatial_similarity_matrix</span><span class="p">(</span><span class="n">feats</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sim_spatial</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">6</span><span class="p">,</span> <span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b4f81c42f9ace5a28308babd2535c636e8974661b708d14451e98b6909c776c7.png" src="../_images/b4f81c42f9ace5a28308babd2535c636e8974661b708d14451e98b6909c776c7.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>czech01</th>
+      <th>czech02</th>
+      <th>czech03</th>
+      <th>czech04</th>
+      <th>czech05</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>czech01</th>
+      <td>1.000</td>
+      <td>0.253</td>
+      <td>0.238</td>
+      <td>0.546</td>
+      <td>0.233</td>
+    </tr>
+    <tr>
+      <th>czech02</th>
+      <td>0.253</td>
+      <td>1.000</td>
+      <td>0.236</td>
+      <td>0.234</td>
+      <td>0.279</td>
+    </tr>
+    <tr>
+      <th>czech03</th>
+      <td>0.238</td>
+      <td>0.236</td>
+      <td>1.000</td>
+      <td>0.220</td>
+      <td>0.211</td>
+    </tr>
+    <tr>
+      <th>czech04</th>
+      <td>0.546</td>
+      <td>0.234</td>
+      <td>0.220</td>
+      <td>1.000</td>
+      <td>0.205</td>
+    </tr>
+    <tr>
+      <th>czech05</th>
+      <td>0.233</td>
+      <td>0.279</td>
+      <td>0.211</td>
+      <td>0.205</td>
+      <td>1.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="how-does-the-spatial-similarity-matrix-get-its-numbers">
+<h2>How does the spatial similarity matrix get its numbers?<a class="headerlink" href="#how-does-the-spatial-similarity-matrix-get-its-numbers" title="Link to this heading">#</a></h2>
+<p>Each tune is reduced to <em>four numbers</em>. It turns into a point in a four-dimensional
+space. The similarity between two tunes is just how close those
+points are, converted to a [0,1] scale:</p>
+<p>$$sim(A, B) = \frac{1}{1 + \text{distance}(A, B)}$$</p>
+<p>Close points → small distance → score near 1.0<br />
+Far apart → large distance → score near 0.0</p>
+<p><strong>Why czech01 and czech04 score highest (0.55):</strong></p>
+<p>Look at the feature table. These two tunes are the most similar
+across all four features — similar note density (~1.5 vs ~1.4),
+similar pitch range (11 vs 12 semitones), similar mean interval
+(2.2 vs 2.1). The one difference is tonic prevalence (0.10 vs 0.04)
+but that gap is small enough that the overall distance is low.</p>
+<p>Here’s the math worked out:</p>
+<p><code class="docutils literal notranslate"><span class="pre">czech01:</span> <span class="pre">note_density=1.500,</span> <span class="pre">tonic_prevalence=0.100,</span> <span class="pre">pitch_range=11.0,</span> <span class="pre">mean_interval=2.207</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">czech04:</span> <span class="pre">note_density=1.444,</span> <span class="pre">tonic_prevalence=0.038,</span> <span class="pre">pitch_range=12.0,</span> <span class="pre">mean_interval=2.080</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">distance</span> <span class="pre">=</span> <span class="pre">sqrt((1.500-1.444)²</span> <span class="pre">+</span> <span class="pre">(0.100-0.038)²</span> <span class="pre">+</span> <span class="pre">(11.0-12.0)²</span> <span class="pre">+</span> <span class="pre">(2.207-2.080)²)</span>&#160;&#160; <span class="pre">=</span> <span class="pre">sqrt(0.003</span> <span class="pre">+</span> <span class="pre">0.004</span> <span class="pre">+</span> <span class="pre">1.000</span> <span class="pre">+</span> <span class="pre">0.016)</span>&#160;&#160; <span class="pre">=</span> <span class="pre">sqrt(1.023)</span>&#160;&#160; <span class="pre">≈</span> <span class="pre">1.011</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">sim</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">1.011)</span> <span class="pre">≈</span> <span class="pre">0.497</span></code></p>
+<p><strong>Why all scores are relatively low (0.20–0.55):</strong></p>
+<p>The four features don’t vary that
+dramatically (they are all Czech folksongs), so they share
+a lot of general character. The spatial model is sensitive to
+the specific numbers, so even small differences in pitch range
+or note density push tunes apart in feature space.</p>
+<p>This is one limitation of spatial distance: in a stylistically
+homogeneous corpus, everything ends up at roughly the same distance
+from everything else, and the matrix tells you less than you’d hope.</p>
+<p>Two features fit on a scatter plot; real feature spaces usually have more dimensions than you
+can draw. The standard move is <strong>PCA</strong> – project the high-dimensional feature space down to 2
+axes that capture as much of the spread as possible. Here’s a real example, comparing two
+Renaissance composers across several melodic-motion features:</p>
+<p>Let’s do the same thing with our own 20-tune feature table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaled</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">feats</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">scaled</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">tid</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">feats</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;PC1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PC2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Spatial projection of tunes (PCA)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c3c118cd5d9ecea315f6ce135310fa7770dbe98fb7f8109b8b476b3bc3a41b82.png" src="../_images/c3c118cd5d9ecea315f6ce135310fa7770dbe98fb7f8109b8b476b3bc3a41b82.png" />
+</div>
+</div>
+<p><img alt="" src="../_images/josquin.png" /></p>
+<section id="why-would-spatial-distance-ever-break-down">
+<h3>Why would spatial distance ever break down?<a class="headerlink" href="#why-would-spatial-distance-ever-break-down" title="Link to this heading">#</a></h3>
+<p>Picture a theme and four variations, all built from the same musical material. Spatially,
+each variation can be roughly the same distance from the <em>theme</em> without being close to <em>each
+other</em> at all:</p>
+<p><img alt="" src="../_images/theme_and_variations.png" /></p>
+<p>That’s already a hint at the cracks in this approach…</p>
+</section>
+<section id="limitations-of-a-spatial-distance-approach">
+<h3>Limitations of a spatial-distance approach<a class="headerlink" href="#limitations-of-a-spatial-distance-approach" title="Link to this heading">#</a></h3>
+<p>There are some limitations with this approcah, however!</p>
+<p>Specifically, spatial models assume three things that real similarity judgments routinely violate:</p>
+<p><strong>Reflexivity</strong> – identical objects must have the same “address,” so they should always be
+judged equally similar to one another. But Krumhansl (1979) found it’s <em>easier</em> to judge two
+chords as identical when they’re central to the key than when they’re out-of-key. How
+recognizable something is (think back to the classification work from Week 1) changes how
+readily it’s judged similar. That doesn’t really fit with how spatial distance works.</p>
+<p>That is, where they are in space is context dependent.</p>
+<p><strong>Symmetry</strong> – In this approach, sim(A, B) must equal sim(B, A).
+Bartlett and Dowling (1988) found that when a
+diatonic melody followed a highly chromatic one, listeners rated the pair <em>more</em> similar than
+when the order was reversed. Familiarity and fluency aren’t symmetric. Going from unfamiliar to
+familiar is easier than the reverse, but a fixed point in space can’t capture that either.</p>
+<p>And my favorite…</p>
+<p><strong>Transitivity</strong> (“triangle inequality”) – if A is similar to B, and B is similar to C, then A
+shouldn’t be wildly dissimilar from C. <strong>The classic example: Jamaica is similar to Cuba
+(geographic proximity); Cuba is similar to Russia (political affinity, historically); Jamaica and
+Russia are not similar at all.</strong></p>
+<p>Morgan Patrick and I discussed this in terms of Jazz tunes (as an example):</p>
+<p><img alt="" src="../_images/squishy_triangle.png" /></p>
+<p><strong>To summarize:</strong> spatial accounts assume reflexivity, symmetry, and transitivity, but these
+assumptions are frequently at odds with how people <em>actually</em> judge similarity.</p>
+</section>
+</section>
+<section id="let-s-discuss-transitivity-violations">
+<h2>Let’s discuss transitivity violations!<a class="headerlink" href="#let-s-discuss-transitivity-violations" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils.similarity</span><span class="w"> </span><span class="kn">import</span> <span class="n">find_transitivity_violation</span>
+
+
+<span class="n">find_transitivity_violation</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Polska&#39;</span><span class="p">,</span> 
+                             <span class="n">n_tunes</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                             <span class="n">sim_threshold</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>   
+                             <span class="n">diff_threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Biggest transitivity violation found:
+
+  polska17 ~ polska22:  0.445  (similar)
+  polska22 ~ polska24:  0.736  (similar)
+  polska17 ~ polska24:  0.389  (not similar) ←
+
+Violation score: 0.792
+
+Musical question: why are polska17 and polska22 similar,
+and polska22 and polska24 similar, but polska17 and polska24 are not?
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-4-similarity-as-feature-set-interaction">
+<h1>Part 4: Similarity as Feature-Set Interaction<a class="headerlink" href="#part-4-similarity-as-feature-set-interaction" title="Link to this heading">#</a></h1>
+<p>Tversky (1977) argued similarity is perceived in terms of <em>discrete features</em>, not coordinates in a space. Perceived similarity increases with shared features and decreases with features unique to either side. Four Charles Mingus tunes, compared two different ways:</p>
+<p><img alt="" src="../_images/mingus_features.png" /></p>
+<section id="not-all-features-count-equally-salience">
+<h2>Not all features count equally: salience<a class="headerlink" href="#not-all-features-count-equally-salience" title="Link to this heading">#</a></h2>
+<p>Tversky argued feature importance varies by <strong>salience</strong>, of two kinds:</p>
+<ul class="simple">
+<li><p><strong>Intensive</strong> salience: the brightness of a light, the loudness of a tone, the saturation of a color: how strongly a feature registers on its own.</p></li>
+<li><p><strong>Diagnostic</strong> salience:the “classificatory significance” of a feature. Features become
+more salient when they help distinguish objects from one another – when they’re more
+analytically <em>useful</em>, not just more intense.</p></li>
+</ul>
+<p>Tversky’s own experiment makes diagnostic salience concrete. Two sets of four faces:</p>
+<p><img alt="" src="../_images/tversky_faces_quote.png" /></p>
+<p>25 participants grouped each set of four faces into two pairs. In Set 1, people grouped the two
+<em>smiling</em> faces together, and the two non-smiling faces together. In Set 2 – where the <em>frowning</em>
+faces were the ones that visually stood out – people grouped the frowning faces together
+instead. As Tversky put it: <em>“smiling has a greater diagnostic value in Set 1 than in Set 2,
+whereas frowning has a greater diagnostic value in Set 2 than in Set 1.”</em></p>
+<p>Pushed further: <em>“the similarity of a (which has a neutral expression) to b (which is frowning)
+should be greater in Set 1, where they are grouped together, than in Set 2, where they are
+grouped separately. Likewise, the similarity of a to c (which is smiling) should be greater in
+Set 2, where they are grouped together, than in Set 1, where they are not.”</em> (Tversky, p. 342)</p>
+<p>The faces didn’t change. Only which OTHER faces they were shown alongside changed – and that
+alone flipped which features counted as diagnostic.</p>
+<p>The same effect shows up with countries. Participants grouped Austria, Sweden, Poland, Hungary,
+and Norway – and substituting Poland for Norway in the set changed whether Sweden grouped with
+Hungary or with something else entirely:</p>
+<p><img alt="" src="../_images/tversky_countries.png" /></p>
+<p>Tversky’s actual equation makes the “shared vs. unique features” trade-off explicit – and adds
+two independent knobs (<code class="docutils literal notranslate"><span class="pre">alpha</span></code>/<code class="docutils literal notranslate"><span class="pre">beta</span></code> below) for how much each <em>direction</em> of unique features
+should count:</p>
+<p><img alt="" src="../_images/tversky_equation.png" /></p>
+<p>Parts 2-3 used measures that treat “A compared to B” the same as “B compared to A” (edit
+distance, Jaccard/n-gram similarity, contour, spatial distance). Tversky’s index is a genuinely
+different idea: it can give a <em>different</em> answer depending on which side you call “A” and which
+you call “B” – which is exactly the asymmetry the faces and countries experiments above are
+demonstrating.</p>
+<section id="tversky-s-index-in-code">
+<h3>Tversky’s index, in code<a class="headerlink" href="#tversky-s-index-in-code" title="Link to this heading">#</a></h3>
+<p>Amos Tversky’s own running example: people rate <em>“North Korea is similar to China”</em> as truer
+than <em>“China is similar to North Korea.”</em> The smaller, less prototypical thing gets compared <em>to</em>
+the bigger one more readily than the reverse.</p>
+<p>$$S(A, B) = \frac{|A \cap B|}{|A \cap B| + \alpha|A - B| + \beta|B - A|}$$</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">beta</span> <span class="pre">=</span> <span class="pre">1</span></code> -&gt; exactly Jaccard (what we just used above).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">beta</span> <span class="pre">=</span> <span class="pre">0.5</span></code> -&gt; Dice’s coefficient (a different but related classic measure).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">!=</span> <span class="pre">beta</span></code> -&gt; <strong>asymmetric</strong>: <code class="docutils literal notranslate"><span class="pre">tversky_index(A,</span> <span class="pre">B)</span></code> can give a different number than
+<code class="docutils literal notranslate"><span class="pre">tversky_index(B,</span> <span class="pre">A)</span></code>.</p></li>
+</ul>
+<p>For melodies, this is useful whenever one set is the “richer” one and the other is sparser or
+more skeletal – e.g. comparing an ornamented performance against a plain version of the same
+tune, where “the ornamented one resembles the plain one” and “the plain one resembles the
+ornamented one” aren’t really the same claim.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">tversky_index</span>
+
+<span class="c1"># Careful: capping BOTH sides to the same top_n (as jaccard()/top_n does) forces</span>
+<span class="c1"># |A| == |B| -- and whenever the two sets are the same size, |A-B| always equals</span>
+<span class="c1"># |B-A| (a fixed bit of set arithmetic), so swapping A and B can never change the</span>
+<span class="c1"># score no matter what alpha/beta you choose. To get a fair test of asymmetry, we</span>
+<span class="c1"># instead keep each musician&#39;s bigrams that show up often enough to be a real</span>
+<span class="c1"># habit (used &gt;= 15 times) -- a natural threshold, not a forced equal cutoff, so</span>
+<span class="c1"># the two sets come out different SIZES on their own.</span>
+<span class="n">THRESHOLD</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">parker_set</span> <span class="o">=</span> <span class="p">{</span><span class="n">bg</span> <span class="k">for</span> <span class="n">bg</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">parker_counter</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">THRESHOLD</span><span class="p">}</span>
+<span class="n">dizzy_set</span>  <span class="o">=</span> <span class="p">{</span><span class="n">bg</span> <span class="k">for</span> <span class="n">bg</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">dizzy_counter</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">THRESHOLD</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Parker: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">parker_set</span><span class="p">)</span><span class="si">}</span><span class="s1"> bigrams used &gt;= </span><span class="si">{</span><span class="n">THRESHOLD</span><span class="si">}</span><span class="s1">x   &#39;</span>
+      <span class="sa">f</span><span class="s1">&#39;Dizzy: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dizzy_set</span><span class="p">)</span><span class="si">}</span><span class="s1"> bigrams used &gt;= </span><span class="si">{</span><span class="n">THRESHOLD</span><span class="si">}</span><span class="s1">x&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alpha=beta=1   (same as Jaccard):  &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tversky_index</span><span class="p">(</span><span class="n">parker_set</span><span class="p">,</span> <span class="n">dizzy_set</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alpha=beta=0.5 (Dice coefficient):  &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tversky_index</span><span class="p">(</span><span class="n">parker_set</span><span class="p">,</span> <span class="n">dizzy_set</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;alpha=0.1, beta=0.9 (asymmetric):&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Parker -&gt; Dizzy:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tversky_index</span><span class="p">(</span><span class="n">parker_set</span><span class="p">,</span> <span class="n">dizzy_set</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  Dizzy -&gt; Parker:&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">tversky_index</span><span class="p">(</span><span class="n">dizzy_set</span><span class="p">,</span> <span class="n">parker_set</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.9</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parker: 137 bigrams used &gt;= 15x   Dizzy: 108 bigrams used &gt;= 15x
+
+alpha=beta=1   (same as Jaccard):   0.775
+alpha=beta=0.5 (Dice coefficient):   0.873
+
+alpha=0.1, beta=0.9 (asymmetric):
+  Parker -&gt; Dizzy: 0.965
+  Dizzy -&gt; Parker: 0.798
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first two lines match – equal weights (<code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">==</span> <span class="pre">beta</span></code>) always give a symmetric score, no
+matter how different the two sets are. Only the last pair differs, on purpose: that asymmetry is
+the whole point of the index, not a bug. Parker’s vocabulary turns out to be much larger than
+Dizzy’s at this threshold (more distinct habitual bigrams), so Dizzy contributes almost nothing
+that Parker is “missing” – but Parker contributes plenty that Dizzy is “missing.” With
+<code class="docutils literal notranslate"><span class="pre">beta=0.9</span></code> punishing exactly that second kind of gap heavily, “Parker resembles Dizzy” scores
+higher than “Dizzy resembles Parker.”</p>
+<p>The same threshold idea scales to a full matrix – just remember it won’t be symmetric whenever
+<code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">!=</span> <span class="pre">beta</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">[[</span><span class="n">tversky_index</span><span class="p">(</span><span class="n">parker_set</span><span class="p">,</span> <span class="n">parker_set</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span> <span class="n">tversky_index</span><span class="p">(</span><span class="n">parker_set</span><span class="p">,</span> <span class="n">dizzy_set</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)],</span>
+     <span class="p">[</span><span class="n">tversky_index</span><span class="p">(</span><span class="n">dizzy_set</span><span class="p">,</span> <span class="n">parker_set</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span> <span class="n">tversky_index</span><span class="p">(</span><span class="n">dizzy_set</span><span class="p">,</span> <span class="n">dizzy_set</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">)]],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Parker&#39;</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Parker&#39;</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">tv</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2f&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Tversky index (alpha=0.2, beta=0.8) -- read row -&gt; column&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/71e7460540fd9124828590836a328091fc6a0fab3e71b5c56eda5884bc5fd2fb.png"><img alt="../_images/71e7460540fd9124828590836a328091fc6a0fab3e71b5c56eda5884bc5fd2fb.png" src="../_images/71e7460540fd9124828590836a328091fc6a0fab3e71b5c56eda5884bc5fd2fb.png" style="width: 779px; height: 379px;" />
+</a>
+</div>
+</div>
+</section>
+</section>
+<section id="reading-the-tversky-matrix">
+<h2>Reading the Tversky matrix<a class="headerlink" href="#reading-the-tversky-matrix" title="Link to this heading">#</a></h2>
+<p>The matrix has four cells. Read it as <strong>“row resembles column”</strong>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Parker</p></th>
+<th class="head"><p>Dizzy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Parker</strong></p></td>
+<td><p>1.00</p></td>
+<td><p>0.94</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Dizzy</strong></p></td>
+<td><p>0.82</p></td>
+<td><p>1.00</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Parker resembles Parker: 1.00</strong> — a corpus is always
+identical to itself. Same for Dizzy.</p>
+<p><strong>Parker resembles Dizzy: 0.94</strong>  Parker’s bigram vocabulary
+is almost entirely contained within Dizzy’s. Almost everything
+Parker plays, Dizzy also plays.</p>
+<p><strong>Dizzy resembles Parker: 0.82</strong> BUT THIS IS NOT SYMMETRICAL! The reverse is weaker. Dizzy plays things that Parker doesn’t. Parker’s vocabulary is <em>larger</em> — he uses more distinct bigrams.</p>
+<p>If Parker’s vocabulary is broader we might ask, “does Dizzy’s vocabulary fit inside Parker’s?”, but it doesn’t seem to be the case. There’s more of Dizzy that Parker is missing.</p>
+<p><strong>Why are these different?</strong></p>
+<p>So “Parker resembles Dizzy” (row=Parker, col=Dizzy) is asking:
+<em>how much of Parker’s vocabulary is missing from Dizzy?</em>
+The answer is: not much — 0.94.</p>
+<p>But “Dizzy resembles Parker” is asking: <em>how much of Dizzy’s
+vocabulary is missing from Parker?</em> The answer is: more —
+Dizzy plays things Parker doesn’t, so the score drops to 0.82.</p>
+<section id="case-study-melodic-plagiarism">
+<h3>Case study: melodic plagiarism<a class="headerlink" href="#case-study-melodic-plagiarism" title="Link to this heading">#</a></h3>
+<p>Müllensiefen and Pendzich (2009) applied a variant of Tversky’s equation to model similarity in
+terms of melodic interval n-grams, measuring each n-gram’s salience as a function of its
+frequency in a corpus of melodies (rarer n-grams counted as more salient). Melodic similarity
+computed this way successfully predicted <strong>over 90%</strong> of real plagiarism court-case outcomes.
+The winning model relied on the asymmetry assumption above: features shared with the
+<em>plaintiff’s</em> song mattered more than features unique to the defendant’s – exactly the kind of
+directional question <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">!=</span> <span class="pre">beta</span></code> lets you ask.</p>
+</section>
+<section id="case-study-context-changes-which-features-matter">
+<h3>Case study: context changes which features matter<a class="headerlink" href="#case-study-context-changes-which-features-matter" title="Link to this heading">#</a></h3>
+<p>Lamont and Dibben (2001) played listeners excerpts from Beethoven and Schoenberg and asked them
+to rate similarity between pairs. For the Beethoven piece, dynamics, texture, and articulation
+mattered most for similarity judgments. For the Schoenberg piece, tempo and dynamics mattered
+most instead. Their conclusion: <em>“the pieces set their own similarity criteria”</em> – direct
+support for Tversky’s claim that feature importance varies with context, the same lesson the
+faces and countries experiments taught above, now shown within a single piece of music rather
+than across an experimental set.</p>
+</section>
+<section id="limitations-of-a-feature-set-approach">
+<h3>Limitations of a feature-set approach<a class="headerlink" href="#limitations-of-a-feature-set-approach" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Feature lists are what psychologists call <strong>unstructured representations</strong> – we’re talking
+about <em>which</em> features two things share, but not the <em>connections between</em> those features.</p></li>
+<li><p>Musical similarity arguably needs more than a bag of features: the temporal order, the way one
+part relates to another. That’s the gap Part 5 tries to fill.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-5-similarity-as-alignment">
+<h2>Part 5: Similarity as Alignment<a class="headerlink" href="#part-5-similarity-as-alignment" title="Link to this heading">#</a></h2>
+<p>Gentner’s (1983) structure-mapping theory: similarity often comes from aligning two things and
+comparing their higher-order <em>relations</em>, not just matching up isolated parts. Two jazz motives, aligned:
+<img alt="" src="../_images/alignment_example.png" /></p>
+<p>Both motives are in two halves. Both halves have an upbeat. One has exact repetition, the other varied repetition. By aligning the two motives this way, you can point at relational similarities (“each half starts the same way”) that a flat feature list never represents – and no a priori knowledge of the tunes is assumed, just the alignment itself.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">structural_alignment()</span></code> function below is a deliberately SIMPLIFIED, illustrative version of this idea – not a full structure-mapping engine. It splits two melodies into equal-length segments, lines them up by position, and compares each aligned pair on three relational properties: whether both segments
+move in the same overall direction, whether both segments repeat their own first pitch internally, and how often their note-to-note contour agrees.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">structural_alignment</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">structural_alignment</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">files</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s1"> vs </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Overall structural alignment: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;overall_score&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>czech01 vs czech02
+   segment  direction_match  repetition_match  contour_agreement
+0        1              0.0               1.0           0.250000
+1        2              1.0               1.0           0.166667
+
+Overall structural alignment: 0.569
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reading-the-structural-alignment-output">
+<h2>Reading the structural alignment output<a class="headerlink" href="#reading-the-structural-alignment-output" title="Link to this heading">#</a></h2>
+<p>The table above splits each tune into 2 segments and compares them
+position by position: first half against first half, second
+half against second half. Three things are measured for each
+aligned pair:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">direction_match</span></code></strong> — does the overall melodic direction agree?
+Does segment 1 of czech01 go up/down/stay in the same overall
+direction as segment 1 of czech02?</p>
+<ul class="simple">
+<li><p>Segment 1: 0.0 — the two first halves move in opposite directions</p></li>
+<li><p>Segment 2: 1.0 — the two second halves move in the same direction</p></li>
+</ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">repetition_match</span></code></strong> — does each segment repeat its opening
+pitch internally? Both segments score 1.0 here, meaning both
+tunes have this same structural habit in both halves — they
+return to their opening note.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">contour_agreement</span></code></strong> — what fraction of note-to-note movements
+agree within each aligned segment pair?</p>
+<ul class="simple">
+<li><p>Segment 1: 0.250 — only 25% of movements match in the first halves</p></li>
+<li><p>Segment 2: 0.167 — even less agreement in the second halves</p></li>
+</ul>
+<p><strong>Overall structural alignment: 0.569</strong></p>
+<p>This is the average across all three measures across both segments.
+A moderate score — these tunes share some structural habits
+(both return to their opening pitch) but their moment-to-moment
+contour is quite different.</p>
+<p><strong>Compare this to the earlier metrics on the same pair:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Score</p></th>
+<th class="head"><p>What it’s asking</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Edit distance</p></td>
+<td><p>0.733</p></td>
+<td><p>How many note changes?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Jaccard</p></td>
+<td><p>1.000</p></td>
+<td><p>Any shared trigrams?</p></td>
+</tr>
+<tr class="row-even"><td><p>Contour</p></td>
+<td><p>0.360</p></td>
+<td><p>Do they move the same way?</p></td>
+</tr>
+<tr class="row-odd"><td><p>Structural alignment</p></td>
+<td><p>0.569</p></td>
+<td><p>Do their halves relate the same way?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>That’s the argument for alignment as a theory of similarity:
+two things can be structurally similar without sharing any
+surface features at all.</p>
+<p>Compare this to Tversky’s index on the same two tunes’ bigrams: feature-set interaction asks “how many bigrams do these share?” with no notion of WHERE in the tune those bigrams occur. Alignment asks a structurally different question – “does the first half of A relate to its second half the way the first half of B relates to its second half?” and can give you a very different verdict on the very same pair of tunes.</p>
+</section>
+<hr class="docutils" />
+<section id="part-6-from-similarity-to-recommendation">
+<h2>Part 6: From similarity to recommendation<a class="headerlink" href="#part-6-from-similarity-to-recommendation" title="Link to this heading">#</a></h2>
+<p>Every metric above answers the same underlying question – “how alike are A and B?” – using a
+different theory of what “alike” means. A recommender system is, underneath, nothing more than
+one of those similarity tables plus a rule: <em>“show me the closest few.”</em> That’s it. The hard part
+was never the recommending – it was picking the similarity metric, which is everything you just
+spent five sections doing.</p>
+<p>Real systems split into two families, depending on WHAT you’re comparing:</p>
+<ul class="simple">
+<li><p><strong>Item-item</strong>: “which other tunes are like this one?” – compare items by their own features
+(exactly Parts 2-5 above).</p></li>
+<li><p><strong>User-user</strong>: “which other listener has similar taste to this one?” – compare listeners
+(or, here, composers standing in for listeners) to each other, then borrow from whoever’s
+closest.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">recommend_similar</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="item-item-more-like-this">
+<h3>Item-item: “more like this”<a class="headerlink" href="#item-item-more-like-this" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">recommend_similar()</span></code> takes one of the distance matrices you already built (edit, Jaccard,
+contour) and a query tune, and returns the closest few – exactly what a “people who streamed X
+also streamed Y” feature does, minus the streaming logs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="n">tids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">matrix</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">&#39;Edit distance&#39;</span><span class="p">,</span> <span class="n">edit_mat</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Jaccard&#39;</span><span class="p">,</span> <span class="n">jac_mat</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Contour&#39;</span><span class="p">,</span> <span class="n">con_mat</span><span class="p">)]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;--- </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> ---&#39;</span><span class="p">)</span>
+    <span class="n">recommend_similar</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">tids</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Edit distance ---
+Top 5 matches for &#39;czech01&#39; (lower distance = more similar):
+tune_id  distance
+czech03  0.666667
+czech02  0.733333
+czech04  0.833333
+czech05  0.833333
+czech01       inf
+
+--- Jaccard ---
+Top 5 matches for &#39;czech01&#39; (lower distance = more similar):
+tune_id  distance
+czech02  0.928571
+czech03  0.944444
+czech04  0.976744
+czech05  1.000000
+czech01       inf
+
+--- Contour ---
+Top 5 matches for &#39;czech01&#39; (lower distance = more similar):
+tune_id  distance
+czech04  0.440000
+czech02  0.640000
+czech03  0.764706
+czech05  0.909091
+czech01       inf
+</pre></div>
+</div>
+</div>
+</div>
+<p>Same query tune, three different “top 5” lists.</p>
+</section>
+<section id="user-user-people-with-similar-taste">
+<h3>User-user: “people with similar taste”<a class="headerlink" href="#user-user-people-with-similar-taste" title="Link to this heading">#</a></h3>
+<p>Not sure how to implement this quickly without us taking ratings, so bear with me! Maybe we’ll use composer STYLE as a stand-in.
+If Bach’s and Composer X’s music share a style profile, a Bach fan plausibly enjoys Composer X
+too?  (a stretch but again, please bear with me…)</p>
+<p>ONLY PITCH-CLASS USAGE!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_composer_profiles</span>
+
+<span class="n">profiles</span> <span class="o">=</span> <span class="n">build_composer_profiles</span><span class="p">({</span>
+    <span class="s1">&#39;Bach&#39;</span><span class="p">:</span>      <span class="s1">&#39;../data/humdrum_scores/Bach/Inventio&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Beethoven&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/humdrum_scores/Beethoven/Quartets.Str&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Chopin&#39;</span><span class="p">:</span>    <span class="s1">&#39;../data/humdrum_scores/Chopin/Mazurkas&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Mozart&#39;</span><span class="p">:</span>    <span class="s1">&#39;../data/humdrum_scores/Mozart/Quartets.Str&#39;</span><span class="p">,</span>
+<span class="p">},</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">profiles</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Bach: 1/15...
+Bach: 15 file(s) used, 8462 notes.
+  Beethoven: 1/58...
+  Beethoven: 26/58...
+  Beethoven: 51/58...
+Beethoven: 58 file(s) used, 195417 notes.
+  Chopin: 1/49...
+  Chopin: 26/49...
+Chopin: skipped 1 unreadable file(s).
+Chopin: 48 file(s) used, 50376 notes.
+  Mozart: 1/64...
+  Mozart: 26/64...
+  Mozart: 51/64...
+Mozart: 64 file(s) used, 89085 notes.
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/a3c9577cc3a9af181c14851a2dd03584b49f34c9d17b4979dbad56ed70f2a0cb.png"><img alt="../_images/a3c9577cc3a9af181c14851a2dd03584b49f34c9d17b4979dbad56ed70f2a0cb.png" src="../_images/a3c9577cc3a9af181c14851a2dd03584b49f34c9d17b4979dbad56ed70f2a0cb.png" style="width: 981px; height: 380px;" />
+</a>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pc_C</th>
+      <th>pc_C#</th>
+      <th>pc_D</th>
+      <th>pc_Eb</th>
+      <th>pc_E</th>
+      <th>pc_F</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Bach</th>
+      <td>0.097495</td>
+      <td>0.050106</td>
+      <td>0.123966</td>
+      <td>0.062633</td>
+      <td>0.097377</td>
+      <td>0.080005</td>
+    </tr>
+    <tr>
+      <th>Beethoven</th>
+      <td>0.114591</td>
+      <td>0.053092</td>
+      <td>0.102831</td>
+      <td>0.065905</td>
+      <td>0.098763</td>
+      <td>0.092612</td>
+    </tr>
+    <tr>
+      <th>Chopin</th>
+      <td>0.091492</td>
+      <td>0.086251</td>
+      <td>0.079165</td>
+      <td>0.088435</td>
+      <td>0.095482</td>
+      <td>0.077815</td>
+    </tr>
+    <tr>
+      <th>Mozart</th>
+      <td>0.114082</td>
+      <td>0.038907</td>
+      <td>0.127698</td>
+      <td>0.062435</td>
+      <td>0.085671</td>
+      <td>0.097749</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">composer_similarity_matrix()</span></code> turns those style profiles into a SIMILARITY matrix (higher =
+more alike), unlike the DISTANCE matrices from Parts 2-3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">composer_similarity_matrix</span>
+
+<span class="n">sim</span> <span class="o">=</span> <span class="n">composer_similarity_matrix</span><span class="p">(</span><span class="n">profiles</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/1e642d8ff8cd2be09aba22d6c4b6e58cdef6f08e4e9817f92597d9e36d780cdc.png"><img alt="../_images/1e642d8ff8cd2be09aba22d6c4b6e58cdef6f08e4e9817f92597d9e36d780cdc.png" src="../_images/1e642d8ff8cd2be09aba22d6c4b6e58cdef6f08e4e9817f92597d9e36d780cdc.png" style="width: 567px; height: 480px;" />
+</a>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bach</th>
+      <th>Beethoven</th>
+      <th>Chopin</th>
+      <th>Mozart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Bach</th>
+      <td>1.000000</td>
+      <td>0.873392</td>
+      <td>0.869189</td>
+      <td>0.909116</td>
+    </tr>
+    <tr>
+      <th>Beethoven</th>
+      <td>0.873392</td>
+      <td>1.000000</td>
+      <td>0.962989</td>
+      <td>0.990021</td>
+    </tr>
+    <tr>
+      <th>Chopin</th>
+      <td>0.869189</td>
+      <td>0.962989</td>
+      <td>1.000000</td>
+      <td>0.942416</td>
+    </tr>
+    <tr>
+      <th>Mozart</th>
+      <td>0.909116</td>
+      <td>0.990021</td>
+      <td>0.942416</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now the user-user payoff: pick a “listener” (here, a composer) and ask who else has the most
+similar overall taste/style.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">user_user_recommend</span>
+
+<span class="n">user_user_recommend</span><span class="p">(</span><span class="s1">&#39;Beethoven&#39;</span><span class="p">,</span> <span class="n">sim</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If &#39;Beethoven&#39; were a listener, based on overall style, they&#39;d most likely enjoy:
+  Mozart: similarity = 0.990
+  Chopin: similarity = 0.963
+  Bach: similarity = 0.873
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mozart    0.990021
+Chopin    0.962989
+Bach      0.873392
+Name: Beethoven, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If ‘Bach’ were a listener, this is the “you might also like” list – built from style similarity
+rather than play-count co-occurrence, but structurally the exact same move: a similarity matrix,
+plus “show me the closest few.”</p>
+</section>
+</section>
+<section id="in-class-exercise-discussing-disagreement">
+<h2>In-class exercise: Discussing disagreement<a class="headerlink" href="#in-class-exercise-discussing-disagreement" title="Link to this heading">#</a></h2>
+<p>Pick a tune ID from <code class="docutils literal notranslate"><span class="pre">tids</span></code> you haven’t looked at yet. Using <code class="docutils literal notranslate"><span class="pre">edit_mat</span></code>, <code class="docutils literal notranslate"><span class="pre">jac_mat</span></code>, and <code class="docutils literal notranslate"><span class="pre">con_mat</span></code>,
+find its single closest match under each of the three metrics.</p>
+<ul class="simple">
+<li><p>Do all three metrics agree on the closest match?</p></li>
+<li><p>If not, look at the two tunes by hand (try <code class="docutils literal notranslate"><span class="pre">note_sequence()</span></code> or <code class="docutils literal notranslate"><span class="pre">pitch_class_sequence()</span></code> on
+each) – can you tell <em>why</em> the metrics disagree, in terms of which theory of similarity each
+one is built on?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="n">tids</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Edit:   &#39;</span><span class="p">,</span> <span class="n">recommend_similar</span><span class="p">(</span><span class="n">edit_mat</span><span class="p">,</span> <span class="n">tids</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jaccard:&#39;</span><span class="p">,</span> <span class="n">recommend_similar</span><span class="p">(</span><span class="n">jac_mat</span><span class="p">,</span> <span class="n">tids</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Contour:&#39;</span><span class="p">,</span> <span class="n">recommend_similar</span><span class="p">(</span><span class="n">con_mat</span><span class="p">,</span> <span class="n">tids</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Edit:       tune_id  distance
+0  czech02  0.653846
+Jaccard:    tune_id  distance
+0  czech01  0.944444
+Contour:    tune_id  distance
+0  czech02  0.529412
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="project-log-entry-4">
+<h2>Project Log — Entry 4<a class="headerlink" href="#project-log-entry-4" title="Link to this heading">#</a></h2>
+<p>Add an entry to your project log reflecting on today’s material as it relates to your own
+project corpus:</p>
+<ol class="arabic simple">
+<li><p>Which measurement of similarity are you most drawn to?</p></li>
+<li><p>Are there any theoretical improvements you might make?</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day3_pitch_mode.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 3: Pitch Distributions and Mode</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="day5_information.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 5: Information, Surprise, and What Music Tells Us</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 4: Melodic Similarity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-think-about-musical-similarity">How do we think about musical similarity?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-setting-up">Part 1: Setting Up</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-similarity-as-transformation">Part 2: Similarity as Transformation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-ways-to-represent-a-note-before-comparing-it">Three ways to represent a note, before comparing it</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jaccard-similarity">Jaccard Similarity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-these-numbers-telling-us">What are these numbers telling us?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-distance-by-hand">Edit Distance By Hand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scaling-up-a-pairwise-similarity-matrix">Scaling up: a pairwise similarity matrix</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-the-disagreement-matter">Why does the disagreement matter?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-a-disagreement">Exercise: A Disagreement!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jaccard-at-the-corpus-level">Jaccard, at the corpus level</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Jaccard at the corpus level</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-similarity-as-spatial-distance">Part 3: Similarity as Spatial Distance</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-the-features-which-are-quite-arbitrary-and-just-for-demonstration">Explaining the features (which are quite arbitrary, and just for demonstration!!!)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-the-spatial-similarity-matrix-get-its-numbers">How does the spatial similarity matrix get its numbers?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-spatial-distance-ever-break-down">Why would spatial distance ever break down?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-a-spatial-distance-approach">Limitations of a spatial-distance approach</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-discuss-transitivity-violations">Let’s discuss transitivity violations!</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-similarity-as-feature-set-interaction">Part 4: Similarity as Feature-Set Interaction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-all-features-count-equally-salience">Not all features count equally: salience</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tversky-s-index-in-code">Tversky’s index, in code</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-tversky-matrix">Reading the Tversky matrix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-melodic-plagiarism">Case study: melodic plagiarism</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-context-changes-which-features-matter">Case study: context changes which features matter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-a-feature-set-approach">Limitations of a feature-set approach</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-similarity-as-alignment">Part 5: Similarity as Alignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-structural-alignment-output">Reading the structural alignment output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-6-from-similarity-to-recommendation">Part 6: From similarity to recommendation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#item-item-more-like-this">Item-item: “more like this”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#user-user-people-with-similar-taste">User-user: “people with similar taste”</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-class-exercise-discussing-disagreement">In-class exercise: Discussing disagreement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-log-entry-4">Project Log — Entry 4</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daniel Shanahan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

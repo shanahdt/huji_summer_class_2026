@@ -1,0 +1,1085 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>utils — Function Reference &#8212; Corpus Studies in Music</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'utils_reference';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Corpus Studies in Music</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Quantitative Methods in Musicology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sessions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/day1_encoding.html">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="notebooks/day2_ngrams.html">Day 2: N-grams and Melodic Tendency</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="notebooks/day3_pitch_mode.html">Day 3: Pitch Distributions and Mode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="notebooks/day4_similarity.html">Day 4: Melodic Similarity</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="notebooks/day5_information.html">Day 5 · Information and Distinctiveness (25 Jun)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quizzes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quizpages/day1_quiz.html">Day 1 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quizpages/day2_quiz.html">Day 2 Quiz</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tools/hairpins.html">Asymmetrical Dynamics — Sampling Tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026/issues/new?title=Issue%20on%20page%20%2Futils_reference.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/utils_reference.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>utils — Function Reference</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-1-utils-corpus-py-importing-pieces-and-corpora">Day 1 — <code class="docutils literal notranslate"><span class="pre">utils/corpus.py</span></code>: importing pieces and corpora</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2-utils-ngrams-py-n-grams-and-transition-matrices">Day 2 — <code class="docutils literal notranslate"><span class="pre">utils/ngrams.py</span></code>: n-grams and transition matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-3-utils-keyfinding-py-key-finding-algorithms">Day 3 — <code class="docutils literal notranslate"><span class="pre">utils/keyfinding.py</span></code>: key-finding algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-algorithms">Comparing algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-truth-key-labels">Ground-truth key labels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-your-own-algorithm">Build your own algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-on-one-corpus-test-on-another">Train on one corpus, test on another</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyscapes-visualizing-key-over-time-and-window-size">Keyscapes (visualizing key over time and window size)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-truth-from-kern-files-no-separate-csv-needed">Ground truth from kern files (no separate CSV needed)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-hypotheses-about-algorithm-performance">Testing hypotheses about algorithm performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-information-theory-py-entropy-predictability-shared-information">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/information_theory.py</span></code>: entropy, predictability, shared information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corpus-scale-and-historical-entropy-questions">Corpus-scale and historical entropy questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-tfidf-py-distinctiveness-for-n-grams-and-chord-progressions">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/tfidf.py</span></code>: distinctiveness for n-grams and chord progressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-similarity-py-comparing-melodies-and-corpora">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/similarity.py</span></code>: comparing melodies and corpora</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-overlap">Set overlap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-distance-cares-about-order-not-just-overlap">Edit distance (cares about order, not just overlap)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-two-individual-pieces-instead-of-two-whole-corpora">Comparing two individual pieces (instead of two whole corpora)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tversky-index-a-generalized-possibly-asymmetric-similarity">Tversky index (a generalized, possibly asymmetric similarity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-distance-similarity-as-closeness-in-feature-space">Spatial distance (similarity as closeness in feature-space)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-similarity-as-shared-higher-order-structure">Alignment (similarity as shared higher-order structure)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-recommender-py-recommenders-built-on-the-similarity-work">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/recommender.py</span></code>: recommenders built on the similarity work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-5-utils-idyom-py-predicting-the-next-note-ltm-stm">Day 5 — <code class="docutils literal notranslate"><span class="pre">utils/idyom.py</span></code>: predicting the next note (LTM + STM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="utils-function-reference">
+<h1>utils — Function Reference<a class="headerlink" href="#utils-function-reference" title="Link to this heading">#</a></h1>
+<p>Corpus Studies in Music, Summer Institute 2026 · Hebrew University of Jerusalem</p>
+<p>Import any of these at the top of a notebook with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">utils</span> <span class="pre">import</span> <span class="pre">&lt;name&gt;</span></code>.</p>
+<section id="day-1-utils-corpus-py-importing-pieces-and-corpora">
+<h2>Day 1 — <code class="docutils literal notranslate"><span class="pre">utils/corpus.py</span></code>: importing pieces and corpora<a class="headerlink" href="#day-1-utils-corpus-py-importing-pieces-and-corpora" title="Link to this heading">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">load_piece(file_path)</span></code></strong> — Parse one file (kern, MusicXML, MIDI, …) into a music21 Score. Most other functions call this for you.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="n">load_piece</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">note_table(file_path_or_score)</span></code></strong> — Build a table with one row per note: position, offset in beats, pitch name, pitch class, octave, MIDI number, duration. Chords are expanded so each pitch gets its own row.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">note_table</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pitch_histogram(file_path_or_score,</span> <span class="pre">by='pitch_class',</span> <span class="pre">plot=True)</span></code></strong> — Count how often each pitch (or pitch class) appears, and plot a bar chart.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">pitch_histogram</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">describe_piece(file_path,</span> <span class="pre">by='pitch_class',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: import a piece, build its note table, and plot a pitch histogram in a single call.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">notes_df</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">describe_piece</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">import_corpus(folder_path,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">verbose=True)</span></code></strong> — Parse every matching file in a folder into music21 Scores.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">streams</span><span class="p">,</span> <span class="n">skipped</span> <span class="o">=</span> <span class="n">import_corpus</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">describe_corpus(folder_path,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">by='pitch_class',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: import every file in a folder, build a per-tune summary table, and plot a pitch histogram aggregated over the whole corpus.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tunes_df</span><span class="p">,</span> <span class="n">streams</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">describe_corpus</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">)</span>
+<span class="n">tunes_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;n_notes&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">load_corpus(kern_dir='../data/beregovski_corpus/kern')</span></code></strong> — Legacy loader for the Beregovski klezmer corpus (kept for backward compatibility with older notebooks). For any other folder, use <code class="docutils literal notranslate"><span class="pre">describe_corpus()</span></code> or <code class="docutils literal notranslate"><span class="pre">import_corpus()</span></code> instead.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">,</span> <span class="n">streams</span> <span class="o">=</span> <span class="n">load_corpus</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">download_corpus(repo_url,</span> <span class="pre">subdir='kern',</span> <span class="pre">target_dir=None,</span> <span class="pre">pattern='*.krn')</span></code></strong> — Download one folder out of a GitHub repo that lives outside the course repo (e.g. a corpus a guest dataset is hosted in its own repo). Tries both <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">master</span></code> branches, skips the download if the files are already there, and raises a clear error if the expected subfolder isn’t found. (For the course repo itself, use <code class="docutils literal notranslate"><span class="pre">setup_colab()</span></code> instead.)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kern_dir</span> <span class="o">=</span> <span class="n">download_corpus</span><span class="p">(</span><span class="s1">&#39;https://github.com/shanahdt/mode_in_klezmer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="day-2-utils-ngrams-py-n-grams-and-transition-matrices">
+<h2>Day 2 — <code class="docutils literal notranslate"><span class="pre">utils/ngrams.py</span></code>: n-grams and transition matrices<a class="headerlink" href="#day-2-utils-ngrams-py-n-grams-and-transition-matrices" title="Link to this heading">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">get_ngrams(sequence,</span> <span class="pre">n)</span></code></strong> — Return all n-grams of a sequence as a list of tuples.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">get_ngrams</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># -&gt; [(1, 2), (2, 3), (3, 4)]</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">note_sequence(file_path_or_score)</span></code></strong> — Return the list of note names (e.g. ‘C4’, ‘D4’) in a piece, in order. Chords are expanded.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pitch_class_sequence(file_path_or_score)</span></code></strong> — Like <code class="docutils literal notranslate"><span class="pre">note_sequence()</span></code>, but octave-folded pitch class names (e.g. ‘C’, ‘C#’). Used internally by Day 4’s entropy and edit-distance functions.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">most_common_ngrams(kern_file_path,</span> <span class="pre">n=2)</span></code></strong> — Most common n-grams of note names in a single file.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">most_common_ngrams</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">create_transition_matrix(weighted_ngrams)</span></code></strong> — Build a nested-dict transition matrix from <code class="docutils literal notranslate"><span class="pre">most_common_ngrams()</span></code> output (bigrams only).</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">plot_transition_matrix(transition_matrix,</span> <span class="pre">as_percentages=False)</span></code></strong> — Plot a transition matrix as a heatmap.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">most_common_ngrams</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">create_transition_matrix</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plot_transition_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">as_percentages</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">ngram_table(source,</span> <span class="pre">n=2,</span> <span class="pre">top_n=15,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: import a file or a whole folder, count n-grams of note names, return a table + plot (heatmap for bigrams, bar chart otherwise).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span><span class="p">,</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">ngram_table</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>        <span class="c1"># bigrams</span>
+<span class="n">table</span><span class="p">,</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">ngram_table</span><span class="p">(</span><span class="s1">&#39;../data/charlie_parker&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>  <span class="c1"># trigrams, whole folder</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">scale_degree_sequence(file_path_or_score)</span></code></strong> — Scale-degree label (e.g. ‘1’, ‘b3’, ‘5’) for every note, relative to the piece’s own detected tonic — key-independent.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">extract_scale_degree_bigrams(file_list,</span> <span class="pre">corpus_name='Corpus')</span></code></strong> — Scale-degree bigrams across a list of files.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/charlie_parker/*.krn&#39;</span><span class="p">))</span>
+<span class="n">counter</span><span class="p">,</span> <span class="n">skipped</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s1">&#39;Parker&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">scale_degree_ngram_table(source,</span> <span class="pre">n=2,</span> <span class="pre">top_n=15,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP, key-relative counterpart to <code class="docutils literal notranslate"><span class="pre">ngram_table()</span></code>: notes become scale degrees first, so pieces in different keys compare directly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span><span class="p">,</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">scale_degree_ngram_table</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">bigram_table(counter,</span> <span class="pre">corpus_name,</span> <span class="pre">top_n=15)</span></code></strong> — Convert a bigram Counter into a readable DataFrame (Corpus, Bigram, Count, Percent).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tbl</span> <span class="o">=</span> <span class="n">bigram_table</span><span class="p">(</span><span class="n">parker_counter</span><span class="p">,</span> <span class="s1">&#39;Parker&#39;</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_two_corpora_bigrams(left_files,</span> <span class="pre">right_files,</span> <span class="pre">left_name='Corpus</span> <span class="pre">A',</span> <span class="pre">right_name='Corpus</span> <span class="pre">B')</span></code></strong> — Scale-degree bigram heatmaps for two corpora, side by side.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">compare_two_corpora_bigrams</span><span class="p">(</span>
+    <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/charlie_parker/*.krn&#39;</span><span class="p">)),</span>
+    <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/dizzy_gillespie/*.krn&#39;</span><span class="p">)),</span>
+    <span class="n">left_name</span><span class="o">=</span><span class="s1">&#39;Parker&#39;</span><span class="p">,</span> <span class="n">right_name</span><span class="o">=</span><span class="s1">&#39;Dizzy&#39;</span><span class="p">,</span> <span class="n">value_type</span><span class="o">=</span><span class="s1">&#39;percentages&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">interval_label(semitones)</span></code></strong> — Human-readable label for a signed semitone interval.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interval_label</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>    <span class="c1"># -&gt; &#39;up P5 (+7)&#39;</span>
+<span class="n">interval_label</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># -&gt; &#39;down M2 (-2)&#39;</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">load_interval_corpus(patterns)</span></code></strong> — Load multiple kern corpora and extract melodic interval sequences into one table.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">load_interval_corpus</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/Essen/England/*.krn&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Czech&#39;</span><span class="p">,</span>   <span class="s1">&#39;../data/Essen/Czech/*.krn&#39;</span><span class="p">),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="day-3-utils-keyfinding-py-key-finding-algorithms">
+<h2>Day 3 — <code class="docutils literal notranslate"><span class="pre">utils/keyfinding.py</span></code>: key-finding algorithms<a class="headerlink" href="#day-3-utils-keyfinding-py-key-finding-algorithms" title="Link to this heading">#</a></h2>
+<section id="comparing-algorithms">
+<h3>Comparing algorithms<a class="headerlink" href="#comparing-algorithms" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_keyfinding_algorithms(file_path_or_score,</span> <span class="pre">algorithms=None,</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: run several key-finding algorithms on one piece, table + bar chart of what each decided.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">compare_keyfinding_algorithms</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_keyfinding_corpus(source,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">ground_truth=None,</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: run several algorithms over every piece in a folder, optionally score against ground-truth keys (or, with none given, against majority vote), table + bar chart.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_essen_keys</span><span class="p">(</span><span class="s1">&#39;../data/essen_keys.csv&#39;</span><span class="p">)</span>
+<span class="n">results</span><span class="p">,</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">compare_keyfinding_corpus</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">,</span> <span class="n">ground_truth</span><span class="o">=</span><span class="n">ground_truth</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">bach_chorale_key_table(chorale_dir=...,</span> <span class="pre">ground_truth_csv=...,</span> <span class="pre">algorithms=None)</span></code></strong> — ONE-STOP: every algorithm on every Bach chorale, one wide table (annotated key + each algorithm’s guess).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">bach_chorale_key_table</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="ground-truth-key-labels">
+<h3>Ground-truth key labels<a class="headerlink" href="#ground-truth-key-labels" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">parse_kern_key_token(token)</span></code></strong> — Parse a humdrum/kern key token into (tonic, mode), e.g. <code class="docutils literal notranslate"><span class="pre">'g'</span></code> → <code class="docutils literal notranslate"><span class="pre">('G',</span> <span class="pre">'minor')</span></code>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">load_essen_keys(csv_path)</span></code></strong> — Ground-truth keys for the Essen folksong collection.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_essen_keys</span><span class="p">(</span><span class="s1">&#39;../data/essen_keys.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">load_chorale_keys(csv_path)</span></code></strong> — Ground-truth keys for the Bach chorales.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_chorale_keys</span><span class="p">(</span><span class="s1">&#39;../data/chorale_keys.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="build-your-own-algorithm">
+<h3>Build your own algorithm<a class="headerlink" href="#build-your-own-algorithm" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">get_key_profile(algorithm)</span></code></strong> — Extract a built-in algorithm’s 12+12 major/minor weights as plain lists, so you can inspect or edit them.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span> <span class="o">=</span> <span class="n">get_key_profile</span><span class="p">(</span><span class="s1">&#39;Krumhansl-Schmuckler&#39;</span><span class="p">)</span>
+<span class="n">my_major</span> <span class="o">=</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;major&#39;</span><span class="p">][:]</span>
+<span class="n">my_major</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.5</span>   <span class="c1"># exaggerate the fifth</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">make_key_algorithm(major_weights,</span> <span class="pre">minor_weights,</span> <span class="pre">name='Custom')</span></code></strong> — Build a usable key-finding algorithm from your own 12+12 hard-coded weights.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">major</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.35</span><span class="p">,</span> <span class="mf">2.23</span><span class="p">,</span> <span class="mf">3.48</span><span class="p">,</span> <span class="mf">2.33</span><span class="p">,</span> <span class="mf">4.38</span><span class="p">,</span> <span class="mf">4.09</span><span class="p">,</span> <span class="mf">2.52</span><span class="p">,</span> <span class="mf">5.19</span><span class="p">,</span> <span class="mf">2.39</span><span class="p">,</span> <span class="mf">3.66</span><span class="p">,</span> <span class="mf">2.29</span><span class="p">,</span> <span class="mf">2.88</span><span class="p">]</span>
+<span class="n">minor</span> <span class="o">=</span> <span class="p">[</span><span class="mf">6.33</span><span class="p">,</span> <span class="mf">2.68</span><span class="p">,</span> <span class="mf">3.52</span><span class="p">,</span> <span class="mf">5.38</span><span class="p">,</span> <span class="mf">2.60</span><span class="p">,</span> <span class="mf">3.53</span><span class="p">,</span> <span class="mf">2.54</span><span class="p">,</span> <span class="mf">4.75</span><span class="p">,</span> <span class="mf">3.98</span><span class="p">,</span> <span class="mf">2.69</span><span class="p">,</span> <span class="mf">3.34</span><span class="p">,</span> <span class="mf">3.17</span><span class="p">]</span>
+<span class="n">MyAlgorithm</span> <span class="o">=</span> <span class="n">make_key_algorithm</span><span class="p">(</span><span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;My Profile&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">test_custom_key_algorithm(major_weights,</span> <span class="pre">minor_weights,</span> <span class="pre">source,</span> <span class="pre">ground_truth=None,</span> <span class="pre">compare_to_defaults=True)</span></code></strong> — ONE-STOP: build a custom algorithm from weights and test it on a corpus, optionally against the built-ins and/or ground truth.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span> <span class="o">=</span> <span class="n">get_key_profile</span><span class="p">(</span><span class="s1">&#39;Aarden-Essen&#39;</span><span class="p">)</span>
+<span class="n">my_major</span> <span class="o">=</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;major&#39;</span><span class="p">][:]</span>
+<span class="n">my_major</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.5</span>
+<span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_essen_keys</span><span class="p">(</span><span class="s1">&#39;../data/essen_keys.csv&#39;</span><span class="p">)</span>
+<span class="n">results</span><span class="p">,</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">test_custom_key_algorithm</span><span class="p">(</span>
+    <span class="n">my_major</span><span class="p">,</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;minor&#39;</span><span class="p">],</span> <span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Boosted Dominant&#39;</span><span class="p">,</span> <span class="n">ground_truth</span><span class="o">=</span><span class="n">ground_truth</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="train-on-one-corpus-test-on-another">
+<h3>Train on one corpus, test on another<a class="headerlink" href="#train-on-one-corpus-test-on-another" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">train_key_profile(source,</span> <span class="pre">ground_truth,</span> <span class="pre">pattern='*.krn')</span></code></strong> — Count how scale degrees actually appear across a corpus (or combination of corpora) of pieces with known keys, normalized into 12+12 major/minor weights.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_essen_keys</span><span class="p">(</span><span class="s1">&#39;../data/essen_keys.csv&#39;</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">train_key_profile</span><span class="p">([</span><span class="s1">&#39;../data/Essen/Italia&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/Essen/Deutschl&#39;</span><span class="p">],</span> <span class="n">ground_truth</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">train_and_test_key_algorithm(train_source,</span> <span class="pre">test_source,</span> <span class="pre">ground_truth,</span> <span class="pre">name='Trained',</span> <span class="pre">compare_to_defaults=True)</span></code></strong> — ONE-STOP: train weights on one corpus (or several combined), then test how well they generalize to a <em>different</em> corpus.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_essen_keys</span><span class="p">(</span><span class="s1">&#39;../data/essen_keys.csv&#39;</span><span class="p">)</span>
+<span class="n">profile</span><span class="p">,</span> <span class="n">results</span><span class="p">,</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">train_and_test_key_algorithm</span><span class="p">(</span>
+    <span class="n">train_source</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;../data/Essen/Italia&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/Essen/Deutschl&#39;</span><span class="p">],</span>
+    <span class="n">test_source</span><span class="o">=</span><span class="s1">&#39;../data/Essen/Czech&#39;</span><span class="p">,</span>
+    <span class="n">ground_truth</span><span class="o">=</span><span class="n">ground_truth</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Italian+German&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="keyscapes-visualizing-key-over-time-and-window-size">
+<h3>Keyscapes (visualizing key over time and window size)<a class="headerlink" href="#keyscapes-visualizing-key-over-time-and-window-size" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">keyscape(file_path_or_score,</span> <span class="pre">algorithm='Krumhansl-Schmuckler',</span> <span class="pre">window_size=None)</span></code></strong> — ONE-STOP: triangular diagram of the detected key in every window, at every window size — bottom row = smallest/most local windows, top = whole piece. Pass <code class="docutils literal notranslate"><span class="pre">window_size</span></code> to lock to one span (in quarter notes/beats) and get a single strip instead of a triangle.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">keyscape</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">colors</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">keyscape</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s1">&#39;Albrecht-Shanahan&#39;</span><span class="p">)</span>
+<span class="n">colors</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">keyscape</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>   <span class="c1"># single strip</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_keyscapes(file_path_or_score,</span> <span class="pre">algorithms=None,</span> <span class="pre">window_size=None)</span></code></strong> — ONE-STOP: keyscapes for several algorithms side by side, with one shared legend, so agreement/disagreement is easy to spot.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">compare_keyscapes</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>                  <span class="c1"># all 6 built-ins</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_ALGORITHMS</span>
+<span class="n">compare_keyscapes</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;Krumhansl-Schmuckler&#39;</span><span class="p">:</span> <span class="n">DEFAULT_ALGORITHMS</span><span class="p">[</span><span class="s1">&#39;Krumhansl-Schmuckler&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Albrecht-Shanahan&#39;</span><span class="p">:</span> <span class="n">DEFAULT_ALGORITHMS</span><span class="p">[</span><span class="s1">&#39;Albrecht-Shanahan&#39;</span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="n">compare_keyscapes</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>   <span class="c1"># fixed 8-beat window</span>
+</pre></div>
+</div>
+</section>
+<section id="ground-truth-from-kern-files-no-separate-csv-needed">
+<h3>Ground truth from kern files (no separate CSV needed)<a class="headerlink" href="#ground-truth-from-kern-files-no-separate-csv-needed" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">load_keys_from_kern(source,</span> <span class="pre">pattern='*.krn')</span></code></strong> — Ground-truth keys mined straight from the embedded <code class="docutils literal notranslate"><span class="pre">*G:</span></code>/<code class="docutils literal notranslate"><span class="pre">*a:</span></code> key token in kern files. Works well for Essen-style or chorale-style corpora that actually encode a key token.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_keys_from_kern</span><span class="p">(</span><span class="s1">&#39;../data/my_corpus&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">load_keys_from_title(source,</span> <span class="pre">pattern='*.krn')</span></code></strong> — Fallback ground-truth source: pulls the key out of the <code class="docutils literal notranslate"><span class="pre">!!!OTL:</span></code> title (e.g. “String Quartet … in F Major” → F major). Use this when <code class="docutils literal notranslate"><span class="pre">load_keys_from_kern()</span></code> finds almost nothing — some corpora (e.g. the Beethoven quartets) carry only a key SIGNATURE, never a key token. Gives the work’s <em>overall</em> announced key, not necessarily every movement’s key.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_keys_from_title</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Beethoven&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-hypotheses-about-algorithm-performance">
+<h3>Testing hypotheses about algorithm performance<a class="headerlink" href="#testing-hypotheses-about-algorithm-performance" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">chi_square_accuracy(results,</span> <span class="pre">correct_col='both_correct')</span></code></strong> — HYPOTHESIS TEST: does accuracy (hits vs. misses) depend on which algorithm you use? Chi-square test of independence on a hits/misses contingency table, plus a stacked bar chart.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ground_truth</span> <span class="o">=</span> <span class="n">load_essen_keys</span><span class="p">(</span><span class="s1">&#39;../data/essen_keys.csv&#39;</span><span class="p">)</span>
+<span class="n">results</span><span class="p">,</span> <span class="n">summary</span> <span class="o">=</span> <span class="n">compare_keyfinding_corpus</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Italia&#39;</span><span class="p">,</span> <span class="n">ground_truth</span><span class="o">=</span><span class="n">ground_truth</span><span class="p">)</span>
+<span class="n">table</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span> <span class="o">=</span> <span class="n">chi_square_accuracy</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">ttest_algorithm_correlations(results,</span> <span class="pre">algorithm_a,</span> <span class="pre">algorithm_b,</span> <span class="pre">paired=True)</span></code></strong> — HYPOTHESIS TEST: does algorithm A get higher correlation coefficients than algorithm B? Paired t-test (same pieces, both algorithms) by default, plus a bar chart of the two means.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">mean_a</span><span class="p">,</span> <span class="n">mean_b</span> <span class="o">=</span> <span class="n">ttest_algorithm_correlations</span><span class="p">(</span>
+    <span class="n">results</span><span class="p">,</span> <span class="s1">&#39;Krumhansl-Schmuckler&#39;</span><span class="p">,</span> <span class="s1">&#39;Albrecht-Shanahan&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_algorithms_anova(results,</span> <span class="pre">value='correlation',</span> <span class="pre">method='anova')</span></code></strong> — HYPOTHESIS TEST + PLOT: do algorithms differ overall (not just pairwise)? One-way ANOVA (or <code class="docutils literal notranslate"><span class="pre">method='kruskal'</span></code> for non-parametric data) across every algorithm in <code class="docutils literal notranslate"><span class="pre">results</span></code>, plus a box-and-whiskers plot of the full distributions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">compare_algorithms_anova</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">compare_algorithms_anova</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;kruskal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="other">
+<h3>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">DEFAULT_ALGORITHMS</span></code></strong> — dict of the 6 built-in algorithms (<code class="docutils literal notranslate"><span class="pre">{label:</span> <span class="pre">class}</span></code>): Krumhansl-Schmuckler, Aarden-Essen, Simple Weights, Bellman-Budge, Temperley-Kostka-Payne, Albrecht-Shanahan.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">AlbrechtShanahan</span></code></strong> — a <code class="docutils literal notranslate"><span class="pre">KeyWeightKeyAnalysis</span></code> subclass with corpus-trained (rather than listener-judgment) weights.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="day-4-utils-information-theory-py-entropy-predictability-shared-information">
+<h2>Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/information_theory.py</span></code>: entropy, predictability, shared information<a class="headerlink" href="#day-4-utils-information-theory-py-entropy-predictability-shared-information" title="Link to this heading">#</a></h2>
+<p>Smallest question to largest:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">shannon_entropy(data,</span> <span class="pre">base=2)</span></code></strong> — CORE MEASURE: H = -Σ p_i log_b(p_i), in bits by default. 0 = totally predictable; higher = more uncertainty. Takes either raw observations or a ready-made distribution (counts/probabilities).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">shannon_entropy</span><span class="p">([</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">])</span>
+<span class="n">shannon_entropy</span><span class="p">({</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pitch_entropy(file_path_or_score,</span> <span class="pre">by='pitch_class',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP, Q1: how much pitch variety is in this piece? Builds the pitch histogram and reports its entropy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">entropy</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">pitch_entropy</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">conditional_entropy(file_path_or_score,</span> <span class="pre">n=2,</span> <span class="pre">by='pitch_class')</span></code></strong> — ONE-STOP, Q2: once you know the previous note(s), how much LESS uncertain is the next one? Reports H(note), H(note | context), and the information gain (bits the context removes) — a measure of melodic structure/predictability.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">conditional_entropy</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;information_gain&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">kl_divergence(p,</span> <span class="pre">q,</span> <span class="pre">base=2)</span></code></strong> — CORE MEASURE: D_KL(P‖Q), the extra bits needed to encode P using a code built for Q. 0 = identical distributions. NOT symmetric — D_KL(P‖Q) ≠ D_KL(Q‖P).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">kl_divergence</span><span class="p">(</span><span class="n">counts_a</span><span class="p">,</span> <span class="n">counts_b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_corpus_entropy(corpus_a,</span> <span class="pre">corpus_b,</span> <span class="pre">by='pitch_class',</span> <span class="pre">names=(...))</span></code></strong> — ONE-STOP, Q3: how differently do two corpora use pitch? Entropy of each corpus plus KL divergence in both directions, with a side-by-side bar chart.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">compare_corpus_entropy</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/Essen/Italia&#39;</span><span class="p">,</span>
+                                 <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;Italian&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">mutual_information(seq_x,</span> <span class="pre">seq_y,</span> <span class="pre">base=2)</span></code></strong> — CORE MEASURE: I(X;Y) = H(X) + H(Y) - H(X,Y) — how much knowing X reduces uncertainty about Y. Symmetric (unlike conditional entropy/KL divergence). 0 = independent.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">mutual_information</span><span class="p">(</span><span class="n">pitch_classes</span><span class="p">,</span> <span class="n">duration_bins</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pitch_duration_mutual_information(file_path_or_score,</span> <span class="pre">duration_bins=None,</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP, Q4 (the biggest question here): within one piece, how much does pitch tell you about rhythm (and vice versa)? Heatmap of the joint pitch-class × duration-bin distribution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span><span class="p">,</span> <span class="n">joint</span> <span class="o">=</span> <span class="n">pitch_duration_mutual_information</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="corpus-scale-and-historical-entropy-questions">
+<h3>Corpus-scale and historical entropy questions<a class="headerlink" href="#corpus-scale-and-historical-entropy-questions" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">hartley_information(n_symbols,</span> <span class="pre">n_possible)</span></code></strong> — BUILDING BLOCK: Hartley’s 1928 pre-Shannon information measure, H = n·log2(s), assuming every symbol is equally likely. Shannon entropy is always ≤ this — the gap is a measure of how much structure/redundancy a melody has.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hartley_information</span><span class="p">(</span><span class="mi">85</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>    <span class="c1"># UConn fight song</span>
+<span class="n">hartley_information</span><span class="p">(</span><span class="mi">142</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>   <span class="c1"># Northwestern fight song</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_entropy_representations(file_path_or_score,</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: how much does a piece’s entropy depend on HOW you describe it? Computes Shannon entropy across six representations of the same piece (raw pitch, pitch class, diatonic scale degree 1–7, melodic interval, contour, binned duration) and plots them side by side.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">compare_entropy_representations</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">corpus_entropy_profile(kern_dir,</span> <span class="pre">representation='scale_degree',</span> <span class="pre">verbose=True,</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: what does the entropy DISTRIBUTION look like across a whole corpus? Entropy per piece, plus mean/median/min/max and a histogram with the mean marked.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span> <span class="o">=</span> <span class="n">corpus_entropy_profile</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_corpus_conditional_entropy(kern_dir_a,</span> <span class="pre">kern_dir_b,</span> <span class="pre">names=(...),</span> <span class="pre">n=2,</span> <span class="pre">representation='scale_degree',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: the corpus-scale counterpart to <code class="docutils literal notranslate"><span class="pre">conditional_entropy()</span></code> — pools every piece’s n-grams within each corpus first, then compares how PREDICTABLE (not just how pitch-distributed) two corpora’s melodies are.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">compare_corpus_conditional_entropy</span><span class="p">(</span>
+    <span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/Essen/Italia&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;Italian&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">date_from_kern_headers(file_path)</span></code></strong> — Extracts a composition year from a kern file’s reference records: tries <code class="docutils literal notranslate"><span class="pre">!!!CDT</span></code> first, but since that field is usually the COMPOSER’s own birth–death lifespan in real kern files (not the piece’s date), a CDT with two years more than 15 years apart is treated as a lifespan and skipped in favor of <code class="docutils literal notranslate"><span class="pre">!!!PDT</span></code> (publication date), then <code class="docutils literal notranslate"><span class="pre">!!!CBY</span></code> (birth year + 25) as a last resort. Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if nothing usable is found.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">date_from_kern_headers</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Mozart/Sonatas/sonata01-1.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">entropy_over_time(kern_dirs,</span> <span class="pre">representation='scale_degree',</span> <span class="pre">min_year=1600,</span> <span class="pre">max_year=1950,</span> <span class="pre">smooth=True,</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: has melodic entropy changed over music history? Scans one or more composer/corpus folders (recursively — these are usually organized into genre subfolders), extracts dates via <code class="docutils literal notranslate"><span class="pre">date_from_kern_headers()</span></code>, and scatter-plots entropy against year (colored by composer, with a LOWESS trend line). Always reports how many files had a recoverable, in-range date vs. how many were skipped.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">entropy_over_time</span><span class="p">([</span><span class="s1">&#39;../data/humdrum_scores/Beethoven&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/humdrum_scores/Chopin&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="day-4-utils-tfidf-py-distinctiveness-for-n-grams-and-chord-progressions">
+<h2>Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/tfidf.py</span></code>: distinctiveness for n-grams and chord progressions<a class="headerlink" href="#day-4-utils-tfidf-py-distinctiveness-for-n-grams-and-chord-progressions" title="Link to this heading">#</a></h2>
+<p>Raw frequency doesn’t tell you what’s DISTINCTIVE about a corpus — a common n-gram might just be common everywhere. These borrow TF-IDF from text mining to find n-grams/progressions that are characteristic of one corpus but not generically frequent.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">distinctive_ngrams(counter_a,</span> <span class="pre">counter_b,</span> <span class="pre">name_a='A',</span> <span class="pre">name_b='B',</span> <span class="pre">top_n=10)</span></code></strong> — BUILDING BLOCK: lightweight two-corpus comparison (no IDF) — for each n-gram, <code class="docutils literal notranslate"><span class="pre">distinctiveness</span> <span class="pre">=</span> <span class="pre">freq_in_this_corpus</span> <span class="pre">/</span> <span class="pre">(freq_a</span> <span class="pre">+</span> <span class="pre">freq_b</span> <span class="pre">+</span> <span class="pre">ε)</span></code>. Good for a quick two-way comparison; use <code class="docutils literal notranslate"><span class="pre">tf_idf_ngrams()</span></code> for 3+ corpora.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counter_a</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">parker_files</span><span class="p">,</span> <span class="s1">&#39;Parker&#39;</span><span class="p">)</span>
+<span class="n">counter_b</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">dizzy_files</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">)</span>
+<span class="n">dist_a</span><span class="p">,</span> <span class="n">dist_b</span> <span class="o">=</span> <span class="n">distinctive_ngrams</span><span class="p">(</span><span class="n">counter_a</span><span class="p">,</span> <span class="n">counter_b</span><span class="p">,</span> <span class="s1">&#39;Parker&#39;</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">tf_idf_ngrams(corpus_dict,</span> <span class="pre">n=2,</span> <span class="pre">top_n=20,</span> <span class="pre">representation='scale_degree',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: full multi-corpus TF-IDF over melodic n-grams (<code class="docutils literal notranslate"><span class="pre">representation</span></code> can be <code class="docutils literal notranslate"><span class="pre">'scale_degree'</span></code>, <code class="docutils literal notranslate"><span class="pre">'pitch_class'</span></code>, <code class="docutils literal notranslate"><span class="pre">'interval'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'contour'</span></code>). Smoothed IDF = log((n_corpora+1)/(DF+1)) + 1, so a term that appears in every corpus scores low even if it’s frequent. One bar-chart subplot per corpus.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">tf_idf_ngrams</span><span class="p">({</span><span class="s1">&#39;Parker&#39;</span><span class="p">:</span> <span class="n">parker_files</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">:</span> <span class="n">dizzy_files</span><span class="p">})</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">tf_idf_chord_progressions(corpus_dict,</span> <span class="pre">n=2,</span> <span class="pre">top_n=20,</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP: the harmonic counterpart — TF-IDF over Roman-numeral n-grams. Auto-detects file type: <code class="docutils literal notranslate"><span class="pre">.krn</span></code> files are chordified and Roman-numeralized against the piece’s own detected key; <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files are treated as Billboard-style chord sheets (expects a <code class="docutils literal notranslate"><span class="pre">'chord'</span></code> column).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">tf_idf_chord_progressions</span><span class="p">({</span><span class="s1">&#39;Bach&#39;</span><span class="p">:</span> <span class="n">bach_kern_files</span><span class="p">,</span> <span class="s1">&#39;Beatles&#39;</span><span class="p">:</span> <span class="n">beatles_chord_csvs</span><span class="p">})</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">plot_tfidf_heatmap(tfidf_df,</span> <span class="pre">top_n=20,</span> <span class="pre">figsize=(12,</span> <span class="pre">8))</span></code></strong> — Alternative visualization for the output of either TF-IDF function above: rows = top_n most-distinctive terms (by max TF-IDF across any corpus), columns = corpora, color = TF-IDF (blue scale).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_tfidf_heatmap</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="day-4-utils-similarity-py-comparing-melodies-and-corpora">
+<h2>Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/similarity.py</span></code>: comparing melodies and corpora<a class="headerlink" href="#day-4-utils-similarity-py-comparing-melodies-and-corpora" title="Link to this heading">#</a></h2>
+<section id="set-overlap">
+<h3>Set overlap<a class="headerlink" href="#set-overlap" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">jaccard(counter1,</span> <span class="pre">counter2,</span> <span class="pre">top_n=50)</span></code></strong> — Jaccard similarity (|intersection| / |union|) between the top-N bigrams of two Counters. 1.0 = identical top-N sets, 0.0 = no overlap. A special case of <code class="docutils literal notranslate"><span class="pre">tversky_index()</span></code> below (alpha=beta=1).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="n">jaccard</span><span class="p">(</span><span class="n">parker_counter</span><span class="p">,</span> <span class="n">dizzy_counter</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Parker vs Dizzy: </span><span class="si">{</span><span class="n">j</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">jaccard_matrix(counters,</span> <span class="pre">top_n=50)</span></code></strong> — Pairwise Jaccard similarity matrix from a dict of Counters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">counters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Parker&#39;</span><span class="p">:</span> <span class="n">parker_counter</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">:</span> <span class="n">dizzy_counter</span><span class="p">,</span> <span class="s1">&#39;Freygish&#39;</span><span class="p">:</span> <span class="n">freygish_counter</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">jaccard_matrix</span><span class="p">(</span><span class="n">counters</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2f&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="edit-distance-cares-about-order-not-just-overlap">
+<h3>Edit distance (cares about order, not just overlap)<a class="headerlink" href="#edit-distance-cares-about-order-not-just-overlap" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">edit_distance(seq_a,</span> <span class="pre">seq_b,</span> <span class="pre">substitution_cost=None)</span></code></strong> — Levenshtein distance between any two sequences (characters, note names, pitch classes, MIDI numbers…). Unlike Jaccard, this is sensitive to ORDER — <code class="docutils literal notranslate"><span class="pre">'CDE'</span></code> and <code class="docutils literal notranslate"><span class="pre">'EDC'</span></code> share every pitch but have a large edit distance. Pass your own <code class="docutils literal notranslate"><span class="pre">substitution_cost(a,</span> <span class="pre">b)</span></code> for a musically weighted version (e.g. cost ∝ semitone distance).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">edit_distance</span><span class="p">([</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">])</span>   <span class="c1"># -&gt; 1.0</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">normalized_edit_distance(seq_a,</span> <span class="pre">seq_b,</span> <span class="pre">substitution_cost=None)</span></code></strong> — <code class="docutils literal notranslate"><span class="pre">edit_distance()</span></code> scaled to [0, 1] by the longer sequence’s length, so melodies of different lengths are comparable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">normalized_edit_distance</span><span class="p">(</span><span class="n">seq_a</span><span class="p">,</span> <span class="n">seq_b</span><span class="p">)</span>
+<span class="n">similarity</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">d</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">melodic_edit_distance(file_a,</span> <span class="pre">file_b,</span> <span class="pre">by='pitch_class',</span> <span class="pre">weighted=False,</span> <span class="pre">normalize=True)</span></code></strong> — ONE-STOP: edit distance between two PIECES. <code class="docutils literal notranslate"><span class="pre">by='scale_degree'</span></code> is key-independent. <code class="docutils literal notranslate"><span class="pre">weighted=True</span></code> charges less for substituting a nearby pitch than a distant one (max cost 1.0 for a tritone), instead of treating every mismatch the same.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">melodic_edit_distance</span><span class="p">(</span><span class="s1">&#39;../data/tune1.krn&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/tune2.krn&#39;</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">melodic_edit_distance</span><span class="p">(</span><span class="s1">&#39;../data/tune1.krn&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/tune2.krn&#39;</span><span class="p">,</span>
+                           <span class="n">by</span><span class="o">=</span><span class="s1">&#39;scale_degree&#39;</span><span class="p">,</span> <span class="n">weighted</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="comparing-two-individual-pieces-instead-of-two-whole-corpora">
+<h3>Comparing two individual pieces (instead of two whole corpora)<a class="headerlink" href="#comparing-two-individual-pieces-instead-of-two-whole-corpora" title="Link to this heading">#</a></h3>
+<p>The functions above compare two CORPORA via bigram Counters. These compare two PIECES directly from file paths — the building blocks behind the pairwise matrices you build with <code class="docutils literal notranslate"><span class="pre">similarity_matrices()</span></code>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">contour_similarity(file_a,</span> <span class="pre">file_b)</span></code></strong> — fraction of note-to-note moves (up/down/same) that agree between two melodies. Always uses absolute pitch height, so it’s about real melodic shape, not key.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contour_similarity</span><span class="p">(</span><span class="s1">&#39;../data/tune1.krn&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/tune2.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">ngram_similarity(file_a,</span> <span class="pre">file_b,</span> <span class="pre">n=3,</span> <span class="pre">by='scale_degree')</span></code></strong> — per-piece sibling of <code class="docutils literal notranslate"><span class="pre">jaccard()</span></code>: Jaccard similarity of n-gram sets between two individual pieces (built from <code class="docutils literal notranslate"><span class="pre">tversky_index(...,</span> <span class="pre">alpha=1,</span> <span class="pre">beta=1)</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ngram_similarity</span><span class="p">(</span><span class="s1">&#39;../data/tune1.krn&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/tune2.krn&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">similarity_matrices(files,</span> <span class="pre">metrics=('edit',</span> <span class="pre">'jaccard',</span> <span class="pre">'contour'),</span> <span class="pre">by='scale_degree',</span> <span class="pre">n=3,</span> <span class="pre">weighted=False,</span> <span class="pre">tune_ids=None,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">verbose=False,</span> <span class="pre">plot=False)</span></code></strong> — ONE-STOP: build N x N DISTANCE matrices for a list of tunes, one or more metrics at once, parsing each file only once no matter how many metrics you ask for. <code class="docutils literal notranslate"><span class="pre">verbose=True</span></code> prints progress every 25 files; <code class="docutils literal notranslate"><span class="pre">plot=True</span></code> shows a heatmap per metric.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrices</span><span class="p">,</span> <span class="n">tids</span> <span class="o">=</span> <span class="n">similarity_matrices</span><span class="p">(</span><span class="n">files_subset</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">edit_mat</span><span class="p">,</span> <span class="n">jac_mat</span><span class="p">,</span> <span class="n">con_mat</span> <span class="o">=</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;edit&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;jaccard&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;contour&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">compare_tunes(tids,</span> <span class="pre">corpus_df,</span> <span class="pre">edit_mat,</span> <span class="pre">jac_mat,</span> <span class="pre">con_mat,</span> <span class="pre">a=0,</span> <span class="pre">b=1,</span> <span class="pre">show='scale_degrees')</span></code></strong> — Quick look at a single pair out of a <code class="docutils literal notranslate"><span class="pre">similarity_matrices()</span></code> result: prints each tune’s opening sequence side by side, plus their edit/Jaccard/contour scores — handy for sanity-checking a heatmap cell or following up on a <code class="docutils literal notranslate"><span class="pre">disagreements</span></code>-style table. <code class="docutils literal notranslate"><span class="pre">a</span></code>/<code class="docutils literal notranslate"><span class="pre">b</span></code> can each be an index into <code class="docutils literal notranslate"><span class="pre">tids</span></code> (int) or a tune_id (str). <code class="docutils literal notranslate"><span class="pre">show</span></code> picks what to print per tune — <code class="docutils literal notranslate"><span class="pre">'scale_degrees'</span></code> (default), <code class="docutils literal notranslate"><span class="pre">'pitches'</span></code> (note names with octave), <code class="docutils literal notranslate"><span class="pre">'intervals'</span></code> (semitones), or <code class="docutils literal notranslate"><span class="pre">'all'</span></code> for all three; <code class="docutils literal notranslate"><span class="pre">corpus_df</span></code> needs a <code class="docutils literal notranslate"><span class="pre">tune_id</span></code> column plus whichever of those <code class="docutils literal notranslate"><span class="pre">show</span></code> asks for (e.g. from <code class="docutils literal notranslate"><span class="pre">load_corpus()</span></code>, which provides all three).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrices</span><span class="p">,</span> <span class="n">tids</span> <span class="o">=</span> <span class="n">similarity_matrices</span><span class="p">(</span><span class="n">files_subset</span><span class="p">)</span>
+<span class="n">compare_tunes</span><span class="p">(</span><span class="n">tids</span><span class="p">,</span> <span class="n">corpus_df</span><span class="p">,</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;edit&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;jaccard&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;contour&#39;</span><span class="p">])</span>
+<span class="n">compare_tunes</span><span class="p">(</span><span class="n">tids</span><span class="p">,</span> <span class="n">corpus_df</span><span class="p">,</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;edit&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;jaccard&#39;</span><span class="p">],</span> <span class="n">matrices</span><span class="p">[</span><span class="s1">&#39;contour&#39;</span><span class="p">],</span>
+              <span class="n">a</span><span class="o">=</span><span class="s1">&#39;czech01&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;czech03&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="s1">&#39;pitches&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="tversky-index-a-generalized-possibly-asymmetric-similarity">
+<h3>Tversky index (a generalized, possibly asymmetric similarity)<a class="headerlink" href="#tversky-index-a-generalized-possibly-asymmetric-similarity" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">tversky_index(set_a,</span> <span class="pre">set_b,</span> <span class="pre">alpha=0.5,</span> <span class="pre">beta=0.5)</span></code></strong> — Tversky’s (1977) similarity index: <code class="docutils literal notranslate"><span class="pre">S(A,B)</span> <span class="pre">=</span> <span class="pre">|A∩B|</span> <span class="pre">/</span> <span class="pre">(|A∩B|</span> <span class="pre">+</span> <span class="pre">α|A−B|</span> <span class="pre">+</span> <span class="pre">β|B−A|)</span></code>. Generalizes Jaccard (α=β=1) and Dice’s coefficient (α=β=0.5). With α≠β, similarity is ASYMMETRIC — <code class="docutils literal notranslate"><span class="pre">tversky_index(A,B)</span> <span class="pre">≠</span> <span class="pre">tversky_index(B,A)</span></code> — modeling Tversky’s finding that human similarity judgment isn’t symmetric (a sparse/skeletal set vs. a rich/prototypical one don’t “resemble” each other equally in both directions).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">parker_counter</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="nb">set</span><span class="p">(</span><span class="n">dizzy_counter</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">tversky_index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>                       <span class="c1"># Dice-like, symmetric</span>
+<span class="n">tversky_index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>  <span class="c1"># asymmetric: penalize b&#39;s</span>
+                                           <span class="c1"># distinctive features much more</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">tversky_matrix(counters,</span> <span class="pre">alpha=0.5,</span> <span class="pre">beta=0.5,</span> <span class="pre">top_n=50)</span></code></strong> — Pairwise Tversky matrix from a dict of Counters. Unless alpha == beta, this matrix is NOT symmetric — read each row as “how similar is the ROW corpus to the COLUMN corpus.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">tversky_matrix</span><span class="p">({</span><span class="s1">&#39;Parker&#39;</span><span class="p">:</span> <span class="n">parker_counter</span><span class="p">,</span> <span class="s1">&#39;Dizzy&#39;</span><span class="p">:</span> <span class="n">dizzy_counter</span><span class="p">},</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2f&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Gotcha:</strong> <code class="docutils literal notranslate"><span class="pre">top_n</span></code> truncates BOTH corpora’s Counters to the same size N. Whenever both sets end up the same size, <code class="docutils literal notranslate"><span class="pre">|A−B|</span></code> always equals <code class="docutils literal notranslate"><span class="pre">|B−A|</span></code> (basic set arithmetic), so the matrix comes out symmetric no matter what alpha/beta you pick — silently defeating the point of using Tversky over Jaccard. If you actually need to see asymmetry, build the sets yourself with a frequency THRESHOLD instead (<code class="docutils literal notranslate"><span class="pre">{bigram</span> <span class="pre">for</span> <span class="pre">bigram,</span> <span class="pre">n</span> <span class="pre">in</span> <span class="pre">counter.items()</span> <span class="pre">if</span> <span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">k}</span></code>) so the two sets can come out different sizes, then call <code class="docutils literal notranslate"><span class="pre">tversky_index()</span></code> directly. <code class="docutils literal notranslate"><span class="pre">day4_similarity.ipynb</span></code>’s Tversky section does exactly this.</p>
+</section>
+<section id="spatial-distance-similarity-as-closeness-in-feature-space">
+<h3>Spatial distance (similarity as closeness in feature-space)<a class="headerlink" href="#spatial-distance-similarity-as-closeness-in-feature-space" title="Link to this heading">#</a></h3>
+<p>A fourth, geometric way to compare melodies: instead of comparing sequences or sets, reduce each piece to a handful of numbers (a point in space), then measure how close two points are.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">melodic_feature_vector(file_path_or_score,</span> <span class="pre">features=('note_density',</span> <span class="pre">'tonic_prevalence',</span> <span class="pre">'pitch_range',</span> <span class="pre">'mean_interval'))</span></code></strong> — one piece’s “point in space”: notes per quarter-note, fraction of notes on the tonic (scale-degree 1, relative to the piece’s own detected key), pitch range in semitones, and mean melodic-leap size. Returns a <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">melodic_feature_vector</span><span class="p">(</span><span class="s1">&#39;../data/tune1.krn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">feature_matrix(files,</span> <span class="pre">features=(...),</span> <span class="pre">tune_ids=None,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">verbose=False)</span></code></strong> — ONE-STOP: <code class="docutils literal notranslate"><span class="pre">melodic_feature_vector()</span></code> for every file in a folder/list, returned as a tune x feature <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>, ready for <code class="docutils literal notranslate"><span class="pre">spatial_similarity_matrix()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">feats</span> <span class="o">=</span> <span class="n">feature_matrix</span><span class="p">(</span><span class="n">files_subset</span><span class="p">,</span> <span class="n">tune_ids</span><span class="o">=</span><span class="n">tids</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">spatial_similarity(vec_a,</span> <span class="pre">vec_b)</span></code></strong> — <code class="docutils literal notranslate"><span class="pre">sim(A,B)</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">/</span> <span class="pre">(1</span> <span class="pre">+</span> <span class="pre">Euclidean</span> <span class="pre">distance(A,B))</span></code>. Identical points score 1.0; similarity falls off as points get farther apart.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">spatial_similarity_matrix(feature_df,</span> <span class="pre">standardize=True,</span> <span class="pre">plot=False)</span></code></strong> — pairwise <code class="docutils literal notranslate"><span class="pre">spatial_similarity()</span></code> for every row of a feature table. <code class="docutils literal notranslate"><span class="pre">standardize=True</span></code> (default) z-scores each column first, so no single feature’s scale (e.g. pitch range in semitones vs. a 0-1 proportion) dominates the distance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sim</span> <span class="o">=</span> <span class="n">spatial_similarity_matrix</span><span class="p">(</span><span class="n">feats</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Limitations to know about</strong> (covered in the Day 4 notebook): spatial accounts assume reflexivity, symmetry, and transitivity, all of which real similarity judgments routinely violate (Krumhansl 1979; Bartlett &amp; Dowling 1988; the classic Jamaica-Cuba-Russia transitivity counterexample).</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">find_transitivity_violation(corpus_path,</span> <span class="pre">n_tunes=20,</span> <span class="pre">sim_threshold=0.7,</span> <span class="pre">diff_threshold=0.4)</span></code></strong> — turns the transitivity limitation above into a live demo: samples <code class="docutils literal notranslate"><span class="pre">n_tunes</span></code> random pieces from a kern folder, builds their spatial similarity matrix, and searches every (A, B, C) triple for the worst case of “A~B and B~C both above <code class="docutils literal notranslate"><span class="pre">sim_threshold</span></code>, but A~C below <code class="docutils literal notranslate"><span class="pre">diff_threshold</span></code>” — i.e. a real violation of “if A resembles B and B resembles C, then A should resemble C.” Prints the worst triple it finds (or says none was found at the current thresholds) and returns <code class="docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">sim_ab,</span> <span class="pre">sim_bc,</span> <span class="pre">sim_ac)</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">find_transitivity_violation</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Czech&#39;</span><span class="p">)</span>
+<span class="n">find_transitivity_violation</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Polska&#39;</span><span class="p">,</span> <span class="n">n_tunes</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="alignment-similarity-as-shared-higher-order-structure">
+<h3>Alignment (similarity as shared higher-order structure)<a class="headerlink" href="#alignment-similarity-as-shared-higher-order-structure" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">structural_alignment(file_path_or_score_a,</span> <span class="pre">file_path_or_score_b,</span> <span class="pre">n_segments=2)</span></code></strong> — a deliberately SIMPLIFIED, illustrative take on Gentner’s (1983) structure-mapping theory: splits both melodies into <code class="docutils literal notranslate"><span class="pre">n_segments</span></code> equal-length chunks, aligns them by position, and scores each aligned pair on three RELATIONAL properties (does the segment move in the same overall direction? does it repeat its own first pitch internally? how much does its note-to-note contour agree with the other segment’s?). Not a full structure-mapping engine — real alignment work involves much richer relational structure.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">structural_alignment</span><span class="p">(</span><span class="s1">&#39;../data/tune1.krn&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/tune2.krn&#39;</span><span class="p">,</span> <span class="n">n_segments</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;overall_score&#39;</span><span class="p">]</span>   <span class="c1"># single 0-1 number, mean across segments/columns</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="day-4-utils-recommender-py-recommenders-built-on-the-similarity-work">
+<h2>Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/recommender.py</span></code>: recommenders built on the similarity work<a class="headerlink" href="#day-4-utils-recommender-py-recommenders-built-on-the-similarity-work" title="Link to this heading">#</a></h2>
+<p>A similarity (or distance) matrix plus “show me the closest ones” <em>is</em> a recommender system. This module makes that explicit, then scales it to the classic item-item vs. user-user distinction: item-item compares tunes by their own musical features (the matrices you already built); user-user compares “listeners” — here, composers stand in for listeners, since composer style is a proxy for shared audience.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">recommend_similar(matrix,</span> <span class="pre">tune_ids,</span> <span class="pre">query,</span> <span class="pre">top_n=5,</span> <span class="pre">verbose=False)</span></code></strong> — ITEM-ITEM: given a precomputed pairwise DISTANCE matrix (0 = identical) aligned with <code class="docutils literal notranslate"><span class="pre">tune_ids</span></code>, return the <code class="docutils literal notranslate"><span class="pre">top_n</span></code> tunes closest to <code class="docutils literal notranslate"><span class="pre">query</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">recommend_similar</span><span class="p">(</span><span class="n">edit_mat</span><span class="p">,</span> <span class="n">tids</span><span class="p">,</span> <span class="n">tids</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">build_composer_profiles(composer_sources,</span> <span class="pre">pattern='*.krn',</span> <span class="pre">max_interval=12,</span> <span class="pre">verbose=True,</span> <span class="pre">plot=False)</span></code></strong> — ONE-STOP: build a per-composer “style fingerprint” (normalized pitch-class histogram + normalized melodic-interval histogram, averaged across every piece in that composer’s corpus). <code class="docutils literal notranslate"><span class="pre">composer_sources</span></code> is a dict <code class="docutils literal notranslate"><span class="pre">{composer_name:</span> <span class="pre">folder_or_file_list}</span></code>. Prints progress every 25 files per composer when <code class="docutils literal notranslate"><span class="pre">verbose=True</span></code>; unreadable files are skipped with a warning rather than raising.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">profiles</span> <span class="o">=</span> <span class="n">build_composer_profiles</span><span class="p">({</span>
+    <span class="s1">&#39;Bach&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/humdrum_scores/Bach/Inventio&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Beethoven&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/humdrum_scores/Beethoven/Quartets.Str&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Chopin&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/humdrum_scores/Chopin/Mazurkas&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Mozart&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/humdrum_scores/Mozart/Quartets.Str&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">composer_similarity_matrix(profiles,</span> <span class="pre">metric='cosine',</span> <span class="pre">plot=False)</span></code></strong> — Compare composer profiles to each other. Returns a SIMILARITY matrix (higher = more alike — the opposite convention from <code class="docutils literal notranslate"><span class="pre">recommend_similar()</span></code>’s distance matrices). <code class="docutils literal notranslate"><span class="pre">metric='cosine'</span></code> or <code class="docutils literal notranslate"><span class="pre">'correlation'</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sim</span> <span class="o">=</span> <span class="n">composer_similarity_matrix</span><span class="p">(</span><span class="n">profiles</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">user_user_recommend(target,</span> <span class="pre">similarity_matrix,</span> <span class="pre">top_n=3,</span> <span class="pre">verbose=False)</span></code></strong> — USER-USER: given a target composer, return the <code class="docutils literal notranslate"><span class="pre">top_n</span></code> other composers with the most similar overall style, per <code class="docutils literal notranslate"><span class="pre">composer_similarity_matrix()</span></code> — “what would Bach listen to?”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_user_recommend</span><span class="p">(</span><span class="s1">&#39;Bach&#39;</span><span class="p">,</span> <span class="n">sim</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">recommender_widget(matrices,</span> <span class="pre">tune_ids,</span> <span class="pre">top_n=5)</span></code></strong> — Interactive ipywidgets explorer: dropdowns for tune and metric, recommendations update live. <code class="docutils literal notranslate"><span class="pre">matrices</span></code> is a dict <code class="docutils literal notranslate"><span class="pre">{metric_name:</span> <span class="pre">distance_matrix}</span></code>. Jupyter-only (raises a clear <code class="docutils literal notranslate"><span class="pre">ImportError</span></code> if <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> isn’t available).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">recommender_widget</span><span class="p">({</span><span class="s1">&#39;Edit distance&#39;</span><span class="p">:</span> <span class="n">edit_mat</span><span class="p">,</span> <span class="s1">&#39;Jaccard&#39;</span><span class="p">:</span> <span class="n">jac_mat</span><span class="p">,</span> <span class="s1">&#39;Contour&#39;</span><span class="p">:</span> <span class="n">con_mat</span><span class="p">},</span> <span class="n">tids</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="day-5-utils-idyom-py-predicting-the-next-note-ltm-stm">
+<h2>Day 5 — <code class="docutils literal notranslate"><span class="pre">utils/idyom.py</span></code>: predicting the next note (LTM + STM)<a class="headerlink" href="#day-5-utils-idyom-py-predicting-the-next-note-ltm-stm" title="Link to this heading">#</a></h2>
+<p>IDyOM-style predictive models: a <strong>long-term model (LTM)</strong>, trained ahead of time on a corpus of <em>other</em> pieces (style knowledge), and a <strong>short-term model (STM)</strong>, trained online from scratch on the piece currently playing (what’s been learned so far, this piece only). Combining the two — weighted by which one is more confident at each moment — produces a per-note “surprise” score (information content). Only <code class="docutils literal notranslate"><span class="pre">by='pitch_class'</span></code> and <code class="docutils literal notranslate"><span class="pre">by='scale_degree'</span></code> are supported (both have a fixed, known alphabet needed for smoothing).</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">NGramModel(n=3,</span> <span class="pre">by='pitch_class',</span> <span class="pre">alpha=0.5)</span></code></strong> — the shared model class behind both LTM and STM. <code class="docutils literal notranslate"><span class="pre">.train(sequence)</span></code> batch-trains on a full sequence; <code class="docutils literal notranslate"><span class="pre">.update(context,</span> <span class="pre">symbol)</span></code> records one online observation; <code class="docutils literal notranslate"><span class="pre">.predict_proba(context)</span></code> returns a smoothed probability distribution over the alphabet; <code class="docutils literal notranslate"><span class="pre">.entropy(context)</span></code> is that distribution’s Shannon entropy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">NGramModel</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;pitch_class&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">([</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">((</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">information_content(symbol,</span> <span class="pre">probs,</span> <span class="pre">base=2)</span></code></strong> — CORE MEASURE: IC = -log_b(P(symbol)) under a predicted distribution. 0 = the model was certain and right; bigger = the model was caught off guard.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ic</span> <span class="o">=</span> <span class="n">information_content</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">((</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">stm_information_content(file_path_or_score,</span> <span class="pre">n=3,</span> <span class="pre">by='pitch_class',</span> <span class="pre">alpha=0.5)</span></code></strong> — ONE-STOP: how surprising is each note, based only on what’s been heard so far IN this piece? Builds an STM from scratch and predicts online, note by note (no outside training needed).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">stm_information_content</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">train_ltm_model(source,</span> <span class="pre">n=3,</span> <span class="pre">by='pitch_class',</span> <span class="pre">pattern='*.krn',</span> <span class="pre">alpha=0.5)</span></code></strong> — ONE-STOP: train a long-term model on a corpus of other pieces.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ltm</span> <span class="o">=</span> <span class="n">train_ltm_model</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Deutschl/test&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">ltm_information_content(file_path_or_score,</span> <span class="pre">ltm_model,</span> <span class="pre">n=None)</span></code></strong> — ONE-STOP: how surprising is each note according to the frozen LTM (no online learning at test time)?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">,</span> <span class="n">probs</span> <span class="o">=</span> <span class="n">ltm_information_content</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England/england1.krn&#39;</span><span class="p">,</span> <span class="n">ltm</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">combine_ltm_stm(stm_df,</span> <span class="pre">stm_probs,</span> <span class="pre">ltm_df,</span> <span class="pre">ltm_probs,</span> <span class="pre">bias=1.0)</span></code></strong> — fuse STM and LTM predictions, weighted by inverse entropy (whichever model is more confident at that moment contributes more) — IDyOM’s actual combination rule.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">combined</span> <span class="o">=</span> <span class="n">combine_ltm_stm</span><span class="p">(</span><span class="n">stm_df</span><span class="p">,</span> <span class="n">stm_probs</span><span class="p">,</span> <span class="n">ltm_df</span><span class="p">,</span> <span class="n">ltm_probs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">surprise_contour(file_path_or_score,</span> <span class="pre">ltm_model=None,</span> <span class="pre">n=3,</span> <span class="pre">by='pitch_class',</span> <span class="pre">plot=True)</span></code></strong> — ONE-STOP, the headline plot: surprise (information content) over the whole piece. Pass <code class="docutils literal notranslate"><span class="pre">ltm_model</span></code> for STM+LTM combined; omit it for STM-only (works on a single piece, no setup). Peaks mark the most surprising notes — often phrase boundaries or unexpected leaps.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surprise_contour</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>                     <span class="c1"># STM only</span>
+<span class="n">ltm</span> <span class="o">=</span> <span class="n">train_ltm_model</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Deutschl/test&#39;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">surprise_contour</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England/england1.krn&#39;</span><span class="p">,</span> <span class="n">ltm_model</span><span class="o">=</span><span class="n">ltm</span><span class="p">)</span>   <span class="c1"># STM + LTM</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">corpus_information_content(source,</span> <span class="pre">ltm_model=None,</span> <span class="pre">n=3,</span> <span class="pre">by='pitch_class',</span> <span class="pre">pattern='*.krn')</span></code></strong> — ONE-STOP, the biggest question: mean information content per piece, across a whole corpus, plus a histogram. Same shape as <code class="docutils literal notranslate"><span class="pre">compare_keyfinding_corpus()</span></code>’s <code class="docutils literal notranslate"><span class="pre">results</span></code> table — feed it into <code class="docutils literal notranslate"><span class="pre">ttest_algorithm_correlations()</span></code> / <code class="docutils literal notranslate"><span class="pre">compare_algorithms_anova()</span></code> (from <code class="docutils literal notranslate"><span class="pre">keyfinding.py</span></code>) the same column-relabeling way, to test hypotheses about which corpus/model/n produces more or less surprising melodies.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">corpus_information_content</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">,</span> <span class="n">ltm_model</span><span class="o">=</span><span class="n">ltm</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">table</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;mean_ic&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>   <span class="c1"># most surprising tunes</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
+<p><strong><code class="docutils literal notranslate"><span class="pre">setup_colab(repo_url=...)</span></code></strong> — Clone the course repo and set the working directory when running in Colab; does nothing if already running locally with <code class="docutils literal notranslate"><span class="pre">../data</span></code> present. First cell of every notebook.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup_colab</span>
+<span class="n">setup_colab</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-1-utils-corpus-py-importing-pieces-and-corpora">Day 1 — <code class="docutils literal notranslate"><span class="pre">utils/corpus.py</span></code>: importing pieces and corpora</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2-utils-ngrams-py-n-grams-and-transition-matrices">Day 2 — <code class="docutils literal notranslate"><span class="pre">utils/ngrams.py</span></code>: n-grams and transition matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-3-utils-keyfinding-py-key-finding-algorithms">Day 3 — <code class="docutils literal notranslate"><span class="pre">utils/keyfinding.py</span></code>: key-finding algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-algorithms">Comparing algorithms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-truth-key-labels">Ground-truth key labels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#build-your-own-algorithm">Build your own algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-on-one-corpus-test-on-another">Train on one corpus, test on another</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyscapes-visualizing-key-over-time-and-window-size">Keyscapes (visualizing key over time and window size)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ground-truth-from-kern-files-no-separate-csv-needed">Ground truth from kern files (no separate CSV needed)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-hypotheses-about-algorithm-performance">Testing hypotheses about algorithm performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-information-theory-py-entropy-predictability-shared-information">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/information_theory.py</span></code>: entropy, predictability, shared information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corpus-scale-and-historical-entropy-questions">Corpus-scale and historical entropy questions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-tfidf-py-distinctiveness-for-n-grams-and-chord-progressions">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/tfidf.py</span></code>: distinctiveness for n-grams and chord progressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-similarity-py-comparing-melodies-and-corpora">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/similarity.py</span></code>: comparing melodies and corpora</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-overlap">Set overlap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-distance-cares-about-order-not-just-overlap">Edit distance (cares about order, not just overlap)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-two-individual-pieces-instead-of-two-whole-corpora">Comparing two individual pieces (instead of two whole corpora)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tversky-index-a-generalized-possibly-asymmetric-similarity">Tversky index (a generalized, possibly asymmetric similarity)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-distance-similarity-as-closeness-in-feature-space">Spatial distance (similarity as closeness in feature-space)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alignment-similarity-as-shared-higher-order-structure">Alignment (similarity as shared higher-order structure)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4-utils-recommender-py-recommenders-built-on-the-similarity-work">Day 4 — <code class="docutils literal notranslate"><span class="pre">utils/recommender.py</span></code>: recommenders built on the similarity work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-5-utils-idyom-py-predicting-the-next-note-ltm-stm">Day 5 — <code class="docutils literal notranslate"><span class="pre">utils/idyom.py</span></code>: predicting the next note (LTM + STM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daniel Shanahan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1793 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Day 1: Encoding as Interpretation; Counting Things! &#8212; Corpus Studies in Music</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/day1_encoding';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 2: N-grams and Melodic Tendency" href="day2_ngrams.html" />
+    <link rel="prev" title="Quantitative Methods in Musicology" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Corpus Studies in Music</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Quantitative Methods in Musicology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sessions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day2_ngrams.html">Day 2: N-grams and Melodic Tendency</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day3_pitch_mode.html">Day 3: Pitch Distributions and Mode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day4_similarity.html">Day 4: Melodic Similarity</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day5_information.html">Day 5 · Information and Distinctiveness (25 Jun)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quizzes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day1_quiz.html">Day 1 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day2_quiz.html">Day 2 Quiz</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/hairpins.html">Asymmetrical Dynamics — Sampling Tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanahdt/corpus-studies-israel-2026/blob/main/./notebooks/day1_encoding.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026/issues/new?title=Issue%20on%20page%20%2Fnotebooks/day1_encoding.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/day1_encoding.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Day 1: Encoding as Interpretation; Counting Things!</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-musical-information">Representing Musical Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-darms-19661980ish">With DARMS (1966–1980ish)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-mustran-19671980ish">With MUSTRAN (1967–1980ish)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humdrum-1985present-ish">Humdrum (1985–present-ish)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-kern-reference">Quick kern reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-encoding-audit">Exercise: Encoding Audit</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-things-part-1-a-single-piece">Counting Things Part 1: A Single Piece</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-with-a-kern-file-as-plain-text">Metadata with a Kern File as Plain Text</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-code-is-doing">What this code is doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-with-music21">Metadata with music21</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-music21-code-is-doing-step-by-step">What this music21 code is doing (step by step)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-pitches-with-music21">Counting Pitches (with music21)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">What this code is doing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-count-czech-folksong-pitches-with-music21">Exercise: Count Czech folksong pitches with music21</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-scale-degrees-with-music21">Counting Scale Degrees with music21</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">What this code is doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complicated-example-chopin">A More Complicated Example (Chopin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">What this code is doing…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-a-quick-one">Exercise (A Quick one!)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-things-part-2-lots-of-pieces">Counting Things Part 2: Lots of Pieces!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">What this code is doing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">What this code is doing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-chromatic-scale-degree-code-is-doing">What this chromatic scale-degree code is doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-comparing-pitch-class-distributions">Exercise: Comparing Pitch-Class Distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-counting-to-testing">From Counting to Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chi-squared-test-dun-dun-dun">The Chi-Squared Test!!!! (dun, Dun, DUN!!!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-contingency-table">What is a contingency table?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-result-carefully">Interpreting the result carefully</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-residuals-are">What residuals are</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-test-your-own-comparison">Exercise: Test your own comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-log-entry-1">Project Log — Entry 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tomorrow-day-2-monday-22-jun">Tomorrow: Day 2 (Monday 22 Jun)</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a class="reference external" href="https://colab.research.google.com/github/shanahdt/huji_summer_class_2026/blob/main/notebooks/day1_encoding.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section id="day-1-encoding-as-interpretation-counting-things">
+<h1>Day 1: Encoding as Interpretation; Counting Things!<a class="headerlink" href="#day-1-encoding-as-interpretation-counting-things" title="Link to this heading">#</a></h1>
+<p><strong>Date:</strong> Sunday 21 June 2026</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ignore this code!! just me trying to get colab to work...</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<span class="c1"># Clone repo and set working directory</span>
+<span class="c1"># Safe to run in both Colab and local Jupyter</span>
+<span class="n">repo_url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/shanahdt/huji_summer_class_2026.git&#39;</span>
+<span class="n">repo_name</span> <span class="o">=</span> <span class="s1">&#39;huji_summer_class_2026&#39;</span>
+
+<span class="c1"># Check if we&#39;re already inside the repo (local), or need to clone (Colab)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/content/</span><span class="si">{</span><span class="n">repo_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">):</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;git&#39;</span><span class="p">,</span> <span class="s1">&#39;clone&#39;</span><span class="p">,</span> <span class="n">repo_url</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/content/</span><span class="si">{</span><span class="n">repo_name</span><span class="si">}</span><span class="s1">/notebooks&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cloned and changed directory.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data directory found — running locally, no clone needed.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data directory found — running locally, no clone needed.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="representing-musical-information">
+<h1>Representing Musical Information<a class="headerlink" href="#representing-musical-information" title="Link to this heading">#</a></h1>
+<p>Music is a fairly difficult thing to represent. We can represent soundwaves, pitch, loudness, timbre, <em>etc.</em>, but those are just components of this thing that we call “music”. We have to consider the sonic, the notated, and also broader aspects of structure (and logic).</p>
+<p>In this class, we will be primarily looking at notated scores, which themselves are an abstraction of “the musical object.” Even if we decide to begin with musical notation, however, we face some issues.</p>
+<p>Let’s take the “Happy Birthday” for example:</p>
+<p><img alt="Happy Birthday" src="../_images/happy-birthday.png" /></p>
+<section id="with-darms-19661980ish">
+<h2>With DARMS (1966–1980ish)<a class="headerlink" href="#with-darms-19661980ish" title="Link to this heading">#</a></h2>
+<p>DARMs was a project in in the 1960s and 1970s, spearheaded by Stefan Bauer-Mengelberg. It was also called the Ford-Columbia encoding language, and was intended to make it affordable and manageable for anyone to have their own scores, and to be able to print them cheaply. It was also the hope that non-musicians would be able to encode scores, which would make the process more affordable to all.</p>
+<p>As such, notes were just encoded by a spatial point.</p>
+<p><img alt="The DARMS Grid" src="../_images/darms_grid.png" />{width=50%}</p>
+<p>So to encode something like “Happy Birthday” in DARMS, we might approach it something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!G
+!M3:4
+20E.U 20SU / 21QU 20QU 23QU / 22QU 20E.U 20SU / 
+21QU 20QU 24QU / 23HU 20E.U 20SU /
+27QD 25QD 23QU / 22LQU 21LQU 19E.U 19SU /
+25QD 23QU 24QU 23H.U //
+
+</pre></div>
+</div>
+<p>There are a number of different codes and tags that can be included, ranging from key signatures to instruments to articulations. Rhythms are encoded as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">W</span> <span class="n">whole</span> 
+<span class="n">H</span> <span class="n">half</span> 
+<span class="n">Q</span> <span class="n">quarter</span>
+<span class="n">E</span> <span class="n">eighth</span> 
+<span class="n">S</span> <span class="n">sixteenth</span> 
+<span class="n">T</span> <span class="n">thirty</span><span class="o">-</span><span class="n">second</span> 
+<span class="n">X</span> <span class="n">sixty</span><span class="o">-</span><span class="n">fourth</span> 
+<span class="n">Y</span> <span class="mi">128</span><span class="n">th</span>
+<span class="n">Z</span> <span class="mi">256</span><span class="n">th</span>
+</pre></div>
+</div>
+<p>As you can imagine, this can get a little cumbersome. Here’s an example by Stephen Dydo using DARMS, with the input code below. Try to parse it as best you can:</p>
+<p><img alt="Dydo's DARMS Example" src="../_images/dydo_darms_example.png" /></p>
+</section>
+<section id="with-mustran-19671980ish">
+<h2>With MUSTRAN (1967–1980ish)<a class="headerlink" href="#with-mustran-19671980ish" title="Link to this heading">#</a></h2>
+<p>Here is what “Happy Birthday” would look like as encoded with MUSTRAN:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GS</span><span class="p">,</span><span class="n">K</span><span class="o">*</span><span class="n">F</span><span class="o">+</span><span class="p">,</span><span class="mi">3</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="n">D</span><span class="o">.</span><span class="p">,</span><span class="mi">16</span><span class="n">D</span><span class="p">,</span><span class="o">/</span><span class="p">,</span><span class="mi">4</span><span class="n">E</span><span class="p">,</span><span class="mi">4</span><span class="n">D</span><span class="p">,</span><span class="mi">4</span><span class="n">G</span><span class="p">,</span><span class="o">/</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">F</span><span class="p">,</span><span class="mi">8</span><span class="n">D</span><span class="o">.</span><span class="p">,</span><span class="mi">16</span><span class="n">D</span><span class="p">,</span><span class="o">/</span><span class="p">,</span>
+<span class="mi">4</span><span class="n">E</span><span class="p">,</span><span class="mi">4</span><span class="n">D</span><span class="p">,</span><span class="mi">4</span><span class="n">A</span><span class="p">,</span><span class="o">/</span><span class="p">,</span><span class="mi">2</span><span class="n">G</span><span class="p">,,</span><span class="mi">8</span><span class="n">D</span><span class="o">.</span><span class="p">,</span><span class="mi">16</span><span class="n">D</span><span class="p">,</span><span class="o">/</span><span class="p">,</span><span class="mi">4</span><span class="n">D</span><span class="o">+</span><span class="p">,</span><span class="mi">4</span><span class="n">B</span><span class="p">,</span><span class="mi">4</span><span class="n">G</span><span class="p">,</span><span class="o">/</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">F</span><span class="p">,</span><span class="mi">4</span><span class="n">E</span><span class="p">,</span><span class="mi">8</span><span class="n">D</span><span class="o">.</span><span class="p">,</span><span class="mi">16</span><span class="n">D</span><span class="p">,</span><span class="o">/</span><span class="p">,</span>
+<span class="mi">4</span><span class="n">B</span><span class="p">,</span><span class="mi">4</span><span class="n">G</span><span class="p">,</span><span class="mi">4</span><span class="n">A</span><span class="p">,</span><span class="o">/</span><span class="p">,</span><span class="mi">2</span><span class="n">H</span><span class="o">.</span><span class="n">G</span><span class="o">//</span><span class="p">,</span><span class="n">END</span>
+
+</pre></div>
+</div>
+<p>MUSTRAN was created with the goal of encoding non-Western musics, and was inherently extensible. Notice here how one can encode indeterminate pitches, breath marks, and microtones.</p>
+<p><img alt="MUSTRAN Example" src="../_images/wenker_p497.png" /></p>
+</section>
+<section id="humdrum-1985present-ish">
+<h2>Humdrum (1985–present-ish)<a class="headerlink" href="#humdrum-1985present-ish" title="Link to this heading">#</a></h2>
+<p>Here is how we might encode it in the commonly used kern format, for use with the <a class="reference external" href="https://www.humdrum.org/">Humdrum Toolkit:</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!!!OTL: Happy Birthday
+**kern
+*M3/4
+*G:
+*k[f#]
+L8.d
+16dJ
+=
+4e
+4d
+4g
+=
+2f#
+L8.d
+16dJ
+=
+4e
+4d
+4a
+=
+2g
+L8.d
+16dJ
+=
+4dd
+4b
+4g
+=
+(4f#
+4e)
+L8.c
+16cJ
+=
+4b
+4g
+4a
+=
+2g.
+==
+*-
+</pre></div>
+</div>
+<p>Some points worth mentioning:</p>
+<ul class="simple">
+<li><p>There is a distinction between metadata and musical data (the exclamation marks serve as comments of sorts).</p></li>
+<li><p>Notice how pitches are given specific octaves: <code class="docutils literal notranslate"><span class="pre">d</span></code> is seperate from <code class="docutils literal notranslate"><span class="pre">dd</span></code> which is separate from <code class="docutils literal notranslate"><span class="pre">D</span></code>.</p></li>
+<li><p>Pitches are grouped with <code class="docutils literal notranslate"><span class="pre">L</span></code> and <code class="docutils literal notranslate"><span class="pre">J</span></code> to indicate beaming, and slurs are indicated with parentheses.</p></li>
+<li><p>There are score-wide elements, such as the meter (<code class="docutils literal notranslate"><span class="pre">*M3/4</span></code>), and a key signature (<code class="docutils literal notranslate"><span class="pre">*k[f#]</span></code>).</p></li>
+<li><p>There is also a syntax for providing musical data that might not actually exist in the score. For example, with a key signature of one sharp, it could be G major, but it could also be in E minor. So an explicit mentioning of the key is helpful.</p></li>
+<li><p>Perhaps more abstractly, notice that this is a two dimensional score of sorts: every moment of time is a new line, meaning one can search by line to find specific instances. This is particularly useful with <em>polyphonic</em> music.</p></li>
+</ul>
+<p>You can try this out at the <a class="reference external" href="https://verovio.humdrum.org/">Verovio Humdrum Viewer Website</a></p>
+</section>
+<section id="quick-kern-reference">
+<h2>Quick kern reference<a class="headerlink" href="#quick-kern-reference" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">!!!</span></code></p></td>
+<td><p>Global metadata record</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">**kern</span></code></p></td>
+<td><p>Spine type</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*M6/8</span></code></p></td>
+<td><p>Meter</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*G:</span></code></p></td>
+<td><p>Key of G</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">4g</span></code></p></td>
+<td><p>Quarter note G4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gg</span></code></p></td>
+<td><p>G5 (repeated letter = octave up)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">=1</span></code></p></td>
+<td><p>Barline</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*-</span></code></p></td>
+<td><p>End of spine</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="exercise-encoding-audit">
+<h2>Exercise: Encoding Audit<a class="headerlink" href="#exercise-encoding-audit" title="Link to this heading">#</a></h2>
+<p>Pick one tune (this can be on the Verovio website if you’d like!). Read its kern file as plain text.</p>
+<p>Identify <strong>at least three encoding decisions</strong> the kern file makes when translating from notation into kern.</p>
+<p>It might be helpful to think of: (1) what musical information is <em>fixed</em>, and (2) what is <em>left out</em>?</p>
+</section>
+</section>
+<section id="counting-things-part-1-a-single-piece">
+<h1>Counting Things Part 1: A Single Piece<a class="headerlink" href="#counting-things-part-1-a-single-piece" title="Link to this heading">#</a></h1>
+<section id="metadata-with-a-kern-file-as-plain-text">
+<h2>Metadata with a Kern File as Plain Text<a class="headerlink" href="#metadata-with-a-kern-file-as-plain-text" title="Link to this heading">#</a></h2>
+<p>Now that we’ve covered some of the ways music has been encoded, let’s get some musical information.</p>
+<p>We can start by looking at metadata. In kern files, these are represented with a <code class="docutils literal notranslate"><span class="pre">!!!</span></code> tag for “global” comments (such as composer, year of composition, <em>etc.</em>), but other things like meter and time signature are indicated with an asterisk.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### let&#39;s get the time signature in a kern file without music21. We can just look at the actual text files. </span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;*M&#39;</span><span class="p">):</span>
+            <span class="n">time_signature</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time Signature: </span><span class="si">{</span><span class="n">time_signature</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time Signature: *M3/4
+</pre></div>
+</div>
+</div>
+</div>
+<section id="what-this-code-is-doing">
+<h3>What this code is doing<a class="headerlink" href="#what-this-code-is-doing" title="Link to this heading">#</a></h3>
+<p>This cell reads a kern file as plain text and extracts the time signature line. It doesn’t use music21 or any heavy libraries, but it’s a bit limited.</p>
+<p>Line by line:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open('../data/happy_birthday.krn',</span> <span class="pre">'r')</span> <span class="pre">as</span> <span class="pre">f:</span></code>
+Opens the file in read mode and stores it in <code class="docutils literal notranslate"><span class="pre">f</span></code>.
+Using <code class="docutils literal notranslate"><span class="pre">with</span></code> automatically closes the file afterward.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">line</span> <span class="pre">in</span> <span class="pre">f:</span></code>
+Loops through the file one line at a time.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">line.startswith('*M'):</span></code>
+Checks whether the current line begins with <code class="docutils literal notranslate"><span class="pre">*M</span></code>.
+In kern notation, lines starting with <code class="docutils literal notranslate"><span class="pre">*M</span></code> store the meter/time-signature token.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_signature</span> <span class="pre">=</span> <span class="pre">line.strip()</span></code>
+Saves that line (after removing trailing whitespace/newlines) to a variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code>
+Stops the loop immediately after finding the first matching time-signature line.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(f&quot;Time</span> <span class="pre">Signature:</span> <span class="pre">{time_signature}&quot;)</span></code>
+Prints the result in a readable format.</p></li>
+</ol>
+<p>Why this works:</p>
+<ul class="simple">
+<li><p>Kern files are text files, so metadata can be found by scanning line prefixes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*M3/4</span></code>, <code class="docutils literal notranslate"><span class="pre">*M2/2</span></code>, etc. encode meter.</p></li>
+<li><p>If the file has multiple spines, you may see the same meter token repeated on the same line (for example, one token per spine).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Exercise. Modify the code above to get the key signature in a kern file without music21. We can just look at the actual text files.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key Signature: *k[f#]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="metadata-with-music21">
+<h2>Metadata with music21<a class="headerlink" href="#metadata-with-music21" title="Link to this heading">#</a></h2>
+<p>We can find the key signature and the time signature using the same file but with music21.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">key_signature</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">getElementsByClass</span><span class="p">(</span><span class="s1">&#39;KeySignature&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">time_signature</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">getElementsByClass</span><span class="p">(</span><span class="s1">&#39;TimeSignature&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Key Signature: </span><span class="si">{</span><span class="n">key_signature</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time Signature: </span><span class="si">{</span><span class="n">time_signature</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Key Signature: G major
+Time Signature: &lt;music21.meter.TimeSignature 3/4&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="what-this-music21-code-is-doing-step-by-step">
+<h3>What this music21 code is doing (step by step)<a class="headerlink" href="#what-this-music21-code-is-doing-step-by-step" title="Link to this heading">#</a></h3>
+<p>The version above uses the <code class="docutils literal notranslate"><span class="pre">music21</span></code> library to parse the score structure for us, instead of scanning raw text lines manually like we did before.</p>
+<p>Here are the steps:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">music21</span> <span class="pre">import</span> <span class="pre">converter</span></code>
+Imports the parser utility from music21.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">=</span> <span class="pre">converter.parse('../data/happy_birthday.krn')</span></code>
+Reads the kern file and converts it into a structured score object.
+This is the key difference: we now have musical objects (notes, key, meter), not just strings.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key_signature</span> <span class="pre">=</span> <span class="pre">score.recurse().getElementsByClass('KeySignature')[0]</span></code>
+Grabs the key signature from the text file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_signature</span> <span class="pre">=</span> <span class="pre">score.recurse().getElementsByClass('TimeSignature')[0]</span></code>
+Walks through the score hierarchy, finds time-signature objects, and takes the first one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(f&quot;Key</span> <span class="pre">Signature:</span> <span class="pre">{key_signature}&quot;)</span></code>
+Prints the detected key in readable form.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(f&quot;Time</span> <span class="pre">Signature:</span> <span class="pre">{time_signature}&quot;)</span></code>
+Prints the time signature found in the parsed score.</p></li>
+</ol>
+<p>This seems a little more complicated, but it has its benefits!!!</p>
+<p>Why this is often better than the plain-text version above:</p>
+<ul class="simple">
+<li><p>It is notation-aware: music21 understands score structure and musical classes. Without music21, Python is just treating it as a plain text file and has no music-specific knowledge or vocabulary.</p></li>
+<li><p>It is more flexible: you can immediately keep analyzing notes, chords, intervals, and parts from the same <code class="docutils literal notranslate"><span class="pre">score</span></code> object.</p></li>
+<li><p>It is less brittle: you do not depend on specific line prefixes like <code class="docutils literal notranslate"><span class="pre">*M</span></code> being found first in raw text.</p></li>
+</ul>
+<p>Trade-off:</p>
+<ul class="simple">
+<li><p>It is heavier than text scanning (slower startup, extra dependency), so plain text can still be useful for quick metadata checks.</p></li>
+</ul>
+</section>
+</section>
+<section id="counting-pitches-with-music21">
+<h2>Counting Pitches (with music21)<a class="headerlink" href="#counting-pitches-with-music21" title="Link to this heading">#</a></h2>
+<p>Now that we’ve explored the metadata, let’s count some pitches!!</p>
+<p>The code below counts the pitches in Happy Birthday.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get unique pitches</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span><span class="p">,</span> <span class="n">pitch</span><span class="p">,</span> <span class="n">analysis</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># Parse the kern file and extract all the pitches</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+<span class="n">all_pitches</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">pitches</span>
+
+<span class="c1"># Count occurrences of each pitch</span>
+<span class="n">pitch_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">all_pitches</span><span class="p">)</span>
+
+<span class="c1"># Print results and sort!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pitch counts:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">pitch_name</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">pitch_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pitch_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pitch counts:
+D4: 8
+G4: 5
+E4: 3
+F#4: 2
+A4: 2
+B4: 2
+C4: 2
+D5: 1
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h3>What this code is doing<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Step by step:</p>
+<p>Import the libraries! (This is a big thing in Python…)</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">music21</span> <span class="pre">import</span> <span class="pre">converter,</span> <span class="pre">pitch,</span> <span class="pre">analysis</span></code> imports tools from <code class="docutils literal notranslate"><span class="pre">music21</span></code>, a library for working with musical scores in Python.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">collections</span> <span class="pre">import</span> <span class="pre">Counter</span></code> imports a helper that counts repeated items automatically.</p></li>
+</ol>
+<p>Turn the happy birthday file that we have into something that can be read by music21.
+3. <code class="docutils literal notranslate"><span class="pre">converter.parse('../data/happy_birthday.krn')</span></code> opens the kern file and turns it into a musical score object that Python can inspect.
+4. <code class="docutils literal notranslate"><span class="pre">score.pitches</span></code> collects all pitches found in that score.
+5. <code class="docutils literal notranslate"><span class="pre">Counter(str(p)</span> <span class="pre">for</span> <span class="pre">p</span> <span class="pre">in</span> <span class="pre">all_pitches)</span></code> converts each pitch to text such as <code class="docutils literal notranslate"><span class="pre">G4</span></code> or <code class="docutils literal notranslate"><span class="pre">F#4</span></code>, then counts how many times each one appears.
+6. <code class="docutils literal notranslate"><span class="pre">pitch_counter.most_common()</span></code> sorts the results from most frequent to least frequent.</p>
+<p>The for loop!
+7. The <code class="docutils literal notranslate"><span class="pre">for</span></code> loop prints each pitch and its count in a readable way.</p>
+<p>In plain language, this cell answers the question:</p>
+<blockquote>
+<div><p>Which notes happen most often in this melody?</p>
+</div></blockquote>
+<p>Example output might look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Pitch</span> <span class="n">counts</span><span class="p">:</span>
+<span class="n">G4</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">D4</span><span class="p">:</span> <span class="mi">4</span>
+<span class="n">A4</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+<section id="exercise-count-czech-folksong-pitches-with-music21">
+<h3>Exercise: Count Czech folksong pitches with music21<a class="headerlink" href="#exercise-count-czech-folksong-pitches-with-music21" title="Link to this heading">#</a></h3>
+<p>You can find a Czech folksong here: <code class="docutils literal notranslate"><span class="pre">../data/Essen/Czech/czech01.krn</span></code> (you can even find others with 02, 03, <em>etc.</em>). Can you count the pitches in one of these folksongs?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### your code here...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pitch counts:
+G4: 8
+C5: 7
+A4: 4
+D5: 4
+F4: 3
+B4: 2
+E5: 2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="counting-scale-degrees-with-music21">
+<h2>Counting Scale Degrees with music21<a class="headerlink" href="#counting-scale-degrees-with-music21" title="Link to this heading">#</a></h2>
+<p>This is a useful first analytical step, because it turns a symbolic score into something measurable and comparable!!</p>
+<p>At the end of the day, however, this is only so helpful. It might be better if we could normalize by scale degree.</p>
+<p>Here’s how we’d do that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale_degree_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+
+<span class="c1"># parse the kern file</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+
+<span class="c1"># figure out the key</span>
+<span class="n">pitch_count</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">KrumhanslKessler</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">pitch_count</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+<span class="c1"># count scale degrees for each note</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+    <span class="n">scale_degree</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">getScaleDegreeFromPitch</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">pitch</span><span class="p">)</span>
+    <span class="n">scale_degree_counter</span><span class="p">[</span><span class="n">scale_degree</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># print results</span>
+<span class="k">for</span> <span class="n">scale_degree</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">scale_degree_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scale Degree </span><span class="si">{</span><span class="n">scale_degree</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scale Degree 5: 9
+Scale Degree 1: 5
+Scale Degree 6: 3
+Scale Degree 7: 2
+Scale Degree 2: 2
+Scale Degree 3: 2
+Scale Degree 4: 2
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h3>What this code is doing<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>This cell counts <strong>scale degrees</strong> instead of exact pitches.</p>
+<p>Step by step:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scale_degree_counter</span> <span class="pre">=</span> <span class="pre">Counter()</span></code> creates an empty counter that will store how many times each scale degree appears. The capital letters and the parentheses are instantiating a “class”. We will come back to that later.</p></li>
+</ol>
+<p>We are setting up a few music21 things here, importing the file but also setting up it’s key-finding algorithm:</p>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">converter.parse('../data/happy_birthday.krn')</span></code> reads the kern file and turns it into a score object again.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">analysis.discrete.KrumhanslKessler()</span></code> creates a tool that tries to identify the key of the piece (<strong>NB:</strong> Using this is an analytical decision that shouldn’t be taken lightly!)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">pitch_count.getSolution(score)</span></code> uses that tool to guess the key from the notes in the score.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">score.flatten().notes</span></code> gives a simple stream of the notes so we can loop through them one by one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key.getScaleDegreeFromPitch(n.pitch)</span></code> asks: in this key, what scale degree is this note? For example, if the key is G major, then <code class="docutils literal notranslate"><span class="pre">G</span></code> is scale degree 1 and <code class="docutils literal notranslate"><span class="pre">D</span></code> is scale degree.</p></li>
+</ol>
+<p>Here we have counters and tallies!</p>
+<ol class="arabic simple" start="7">
+<li><p><code class="docutils literal notranslate"><span class="pre">scale_degree_counter[scale_degree]</span> <span class="pre">+=</span> <span class="pre">1</span></code> adds one to the count for that scale degree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale_degree_counter.most_common()</span></code> sorts the results from most frequent to least frequent.</p></li>
+<li><p>The final <code class="docutils literal notranslate"><span class="pre">for</span></code> loop prints the results in a readable format.</p></li>
+</ol>
+<p>This cell simply answers the question:</p>
+<blockquote>
+<div><p>Which scale steps are used most often in this melody?</p>
+</div></blockquote>
+<p>Example output might look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Scale</span> <span class="n">Degree</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">Scale</span> <span class="n">Degree</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">Scale</span> <span class="n">Degree</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="a-more-complicated-example-chopin">
+<h2>A More Complicated Example (Chopin)<a class="headerlink" href="#a-more-complicated-example-chopin" title="Link to this heading">#</a></h2>
+<p>Let’s look at all of the pitches in Chopin’s E Minor <em>Prelude</em> (op. 28, no. 4). You’ll see that life get’s a little more difficult once we have multiple parts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale_degree_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+
+<span class="c1"># Let&#39;s get the E minor prelude. </span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/humdrum_scores/Chopin/Preludes/prelude28-04.krn&#39;</span><span class="p">)</span>
+
+<span class="c1"># extract the left hand part (usually the second part in a piano score)</span>
+<span class="n">left_hand</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># figure out the key</span>
+<span class="n">pitch_count</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">KrumhanslKessler</span><span class="p">()</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">pitch_count</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">left_hand</span><span class="p">)</span>
+
+<span class="c1"># count scale degrees for each pitch in the left hand</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">left_hand</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+    <span class="n">pitches</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">pitches</span> <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">isChord</span> <span class="k">else</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">pitch</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">:</span>
+        <span class="n">scale_degree</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">getScaleDegreeFromPitch</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scale_degree</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">scale_degree_counter</span><span class="p">[</span><span class="n">scale_degree</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># print results</span>
+<span class="k">for</span> <span class="n">scale_degree</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">scale_degree_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scale Degree </span><span class="si">{</span><span class="n">scale_degree</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scale Degree 1: 22
+Scale Degree 4: 14
+Scale Degree 5: 13
+Scale Degree 3: 6
+Scale Degree 6: 2
+Scale Degree 7: 2
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3>What this code is doing…<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>This cell counts scale degrees in the left-hand part of Chopin’s E minor Prelude.</p>
+<p>The counter class and the conversion again…</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scale_degree_counter</span> <span class="pre">=</span> <span class="pre">Counter()</span></code> creates an empty counter that will store how many times each scale degree appears.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">=</span> <span class="pre">converter.parse('../data/humdrum_scores/Chopin/Preludes/prelude28-04.krn')</span></code> opens the kern file and turns it into a music21 score object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">left_hand</span> <span class="pre">=</span> <span class="pre">score.parts[0]</span></code> selects the left most column part in the score. In this file, that part is being treated as the left-hand staff. If it were <code class="docutils literal notranslate"><span class="pre">score.parts[1]</span></code> it would be the right hand in this instance.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_count</span> <span class="pre">=</span> <span class="pre">analysis.discrete.KrumhanslKessler()</span></code> creates a key-finding tool based on pitch frequency.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">pitch_count.getSolution(left_hand)</span></code> asks music21 to guess the most likely key for the left-hand part.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">element</span> <span class="pre">in</span> <span class="pre">left_hand.flatten().notes:</span></code> loops through every note or chord in the left-hand part.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitches</span> <span class="pre">=</span> <span class="pre">element.pitches</span> <span class="pre">if</span> <span class="pre">element.isChord</span> <span class="pre">else</span> <span class="pre">[element.pitch]</span></code> checks whether the current item is a chord. If it is, the code gets every pitch inside it; otherwise it makes a one-item list containing the single pitch.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">p</span> <span class="pre">in</span> <span class="pre">pitches:</span></code> loops through each pitch found in that note or chord.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale_degree</span> <span class="pre">=</span> <span class="pre">key.getScaleDegreeFromPitch(p)</span></code> converts that pitch into a scale degree in the guessed key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">scale_degree</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">None:</span></code> skips pitches that do not fit cleanly into the key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale_degree_counter[scale_degree]</span> <span class="pre">+=</span> <span class="pre">1</span></code> adds one to the count for that scale degree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">scale_degree,</span> <span class="pre">count</span> <span class="pre">in</span> <span class="pre">scale_degree_counter.most_common():</span></code> loops through the counts from most common to least common.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(f&quot;Scale</span> <span class="pre">Degree</span> <span class="pre">{scale_degree}:</span> <span class="pre">{count}&quot;)</span></code> prints the final results in a readable format.</p></li>
+</ol>
+<p>In short, the code is asking: which scale steps appear most often in this part, instead of which exact note names appear most often?</p>
+</section>
+<section id="exercise-a-quick-one">
+<h3>Exercise (A Quick one!)<a class="headerlink" href="#exercise-a-quick-one" title="Link to this heading">#</a></h3>
+<p>In the cell below, figure out the pitch count in the <strong>right</strong> hand!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Your code here...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="counting-things-part-2-lots-of-pieces">
+<h1>Counting Things Part 2: Lots of Pieces!<a class="headerlink" href="#counting-things-part-2-lots-of-pieces" title="Link to this heading">#</a></h1>
+<p>It’s not that interesting to count things in a single piece. We use computers to count lots and lots of things in lots and lots of pieces.</p>
+<p>Let’s start by taking the same Czech folksong corpus, and counting all of the scale degrees.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
+
+<span class="n">czech_folksongs</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Czech/*.krn&#39;</span><span class="p">)</span>
+<span class="n">pitch_class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;C#&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;Eb&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;F#&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;Ab&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;Bb&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="n">pitch_class_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="n">name</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">pitch_class_names</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">czech_folksongs</span><span class="p">:</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+        <span class="n">pitches</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">pitches</span> <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">isChord</span> <span class="k">else</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">pitch</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">:</span>
+            <span class="n">pitch_class_name</span> <span class="o">=</span> <span class="n">pitch_class_names</span><span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">pitchClass</span><span class="p">]</span>
+            <span class="n">pitch_class_counter</span><span class="p">[</span><span class="n">pitch_class_name</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">pitch_class_table</span> <span class="o">=</span> <span class="p">[(</span><span class="n">name</span><span class="p">,</span> <span class="n">pitch_class_counter</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">pitch_class_names</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">pitch_name</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">pitch_class_table</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pitch_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C: 122
+C#: 14
+D: 246
+Eb: 17
+E: 126
+F: 69
+F#: 70
+G: 232
+Ab: 11
+A: 222
+Bb: 70
+B: 147
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h2>What this code is doing<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>This cell counts <strong>pitch classes</strong> across many Czech folksongs and prints all 12 pitch classes, even if some of them never appear.</p>
+<p>The main idea is: load every <code class="docutils literal notranslate"><span class="pre">.krn</span></code> file in the folder, turn every note into one of the 12 pitch classes, count them across the whole corpus, and then print the full list in chromatic order.</p>
+<p>Step by step:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">glob</span> <span class="pre">import</span> <span class="pre">glob</span></code>
+Imports the <code class="docutils literal notranslate"><span class="pre">glob</span></code> tool so Python can find lots of files at once.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">czech_folksongs</span> <span class="pre">=</span> <span class="pre">glob('../data/Essen/Czech/*.krn')</span></code>
+Finds every kern file in the Czech corpus folder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_class_names</span> <span class="pre">=</span> <span class="pre">['C',</span> <span class="pre">'C#',</span> <span class="pre">'D',</span> <span class="pre">'Eb',</span> <span class="pre">'E',</span> <span class="pre">'F',</span> <span class="pre">'F#',</span> <span class="pre">'G',</span> <span class="pre">'Ab',</span> <span class="pre">'A',</span> <span class="pre">'Bb',</span> <span class="pre">'B']</span></code>
+Creates a fixed list of the 12 pitch classes we want to report.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_class_counter</span> <span class="pre">=</span> <span class="pre">Counter({name:</span> <span class="pre">0</span> <span class="pre">for</span> <span class="pre">name</span> <span class="pre">in</span> <span class="pre">pitch_class_names})</span></code>
+Starts the counter with all 12 pitch classes already present.
+This is why even missing pitch classes will still print as <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">piece</span> <span class="pre">in</span> <span class="pre">czech_folksongs:</span></code>
+Loops through the folksongs one by one.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">=</span> <span class="pre">converter.parse(piece)</span></code>
+Reads one kern file into a music21 score object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">element</span> <span class="pre">in</span> <span class="pre">score.recurse().notes:</span></code>
+Loops through the notes in that score.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitches</span> <span class="pre">=</span> <span class="pre">element.pitches</span> <span class="pre">if</span> <span class="pre">element.isChord</span> <span class="pre">else</span> <span class="pre">[element.pitch]</span></code>
+Handles both single notes and chords.
+If the element is a chord, the code counts every pitch inside it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_class_name</span> <span class="pre">=</span> <span class="pre">pitch_class_names[p.pitchClass]</span></code>
+Converts a pitch into a pitch-class label such as <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">F#</span></code>, or <code class="docutils literal notranslate"><span class="pre">Bb</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_class_counter[pitch_class_name]</span> <span class="pre">+=</span> <span class="pre">1</span></code>
+Adds one to that pitch class’s total count.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_class_table</span> <span class="pre">=</span> <span class="pre">[(name,</span> <span class="pre">pitch_class_counter[name])</span> <span class="pre">for</span> <span class="pre">name</span> <span class="pre">in</span> <span class="pre">pitch_class_names]</span></code>
+Builds the final table in a fixed order from <code class="docutils literal notranslate"><span class="pre">C</span></code> through <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">pitch_name,</span> <span class="pre">count</span> <span class="pre">in</span> <span class="pre">pitch_class_table:</span></code>
+Loops through the final table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print(f&quot;{pitch_name}:</span> <span class="pre">{count}&quot;)</span></code>
+Prints every pitch class and its total, including zeros.</p></li>
+</ol>
+<p>In plain language, this code answers the question:</p>
+<blockquote>
+<div><p>Across all of these Czech folksongs, how often does each of the 12 pitch classes appear?</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## We can use another library like matplotlib to visualize the pitch-class distribution</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">pitch_names</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">pitch_class_table</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">pitch_names</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Pitch Class&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pitch-Class Distribution in Czech Folksongs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/d62725d99d39c4c50a8e0a6076eadc592f38dec9f74bf57011195acf192d44eb.png"><img alt="../_images/d62725d99d39c4c50a8e0a6076eadc592f38dec9f74bf57011195acf192d44eb.png" src="../_images/d62725d99d39c4c50a8e0a6076eadc592f38dec9f74bf57011195acf192d44eb.png" style="width: 572px; height: 453px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="id5">
+<h2>What this code is doing<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>This cell takes the pitch-class counts we already calculated and turns them into a bar chart.</p>
+<p>Step by step:</p>
+<ol class="arabic">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">matplotlib.pyplot</span> <span class="pre">as</span> <span class="pre">plt</span></code>
+Imports the plotting library and gives it the short name <code class="docutils literal notranslate"><span class="pre">plt</span></code>.
+<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is one of the most common Python libraries for making graphs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_names,</span> <span class="pre">counts</span> <span class="pre">=</span> <span class="pre">zip(*pitch_class_table)</span></code>
+This line splits the table into two separate pieces.
+<code class="docutils literal notranslate"><span class="pre">pitch_class_table</span></code> looks like a list of pairs such as <code class="docutils literal notranslate"><span class="pre">('C',</span> <span class="pre">122)</span></code> or <code class="docutils literal notranslate"><span class="pre">('D',</span> <span class="pre">246)</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">*</span></code> unpacks that list so <code class="docutils literal notranslate"><span class="pre">zip</span></code> can look at all the pairs one column at a time.
+Then <code class="docutils literal notranslate"><span class="pre">zip(...)</span></code> groups together:</p>
+<ul class="simple">
+<li><p>all the pitch names in one tuple</p></li>
+<li><p>all the counts in another tuple</p></li>
+</ul>
+<p>So after this line:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pitch_names</span></code> is something like <code class="docutils literal notranslate"><span class="pre">('C',</span> <span class="pre">'C#',</span> <span class="pre">'D',</span> <span class="pre">...)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">counts</span></code> is something like <code class="docutils literal notranslate"><span class="pre">(122,</span> <span class="pre">14,</span> <span class="pre">246,</span> <span class="pre">...)</span></code></p></li>
+</ul>
+<p>This is useful because plotting functions usually want one list for the x-axis labels and one list for the y-axis values.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.bar(pitch_names,</span> <span class="pre">counts)</span></code>
+Creates a bar chart.
+The first argument gives the labels along the horizontal axis, and the second argument gives the bar heights.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel('Pitch</span> <span class="pre">Class')</span></code>
+Labels the x-axis.
+<code class="docutils literal notranslate"><span class="pre">xlabel</span></code> means “x-axis label.”
+Here it tells the reader that the horizontal axis shows pitch-class names.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel('Count')</span></code>
+Labels the y-axis.
+<code class="docutils literal notranslate"><span class="pre">ylabel</span></code> means “y-axis label.”
+Here it tells the reader that the vertical axis shows how many times each pitch class appeared.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.title('Pitch-Class</span> <span class="pre">Distribution</span> <span class="pre">in</span> <span class="pre">Czech</span> <span class="pre">Folksongs')</span></code>
+Adds a title at the top of the graph so the reader knows what the chart shows.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>
+Displays the finished graph in the notebook output.
+Without this line, the plot might not appear clearly in some notebook environments.</p></li>
+</ol>
+<p>In plain language, this code says: take the pitch-class totals, put the names along the bottom, put the counts on the side, and draw bars so we can compare them visually.</p>
+</section>
+<section id="exercise">
+<h2>Exercise:<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chromatic_degree_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;b2&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;#2/b3&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;#4/b5&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;#5/b6&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;b7&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">]</span>
+<span class="n">chromatic_degree_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="n">label</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">chromatic_degree_labels</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">czech_folksongs</span><span class="p">:</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span>
+    <span class="n">pitch_count</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">KrumhanslKessler</span><span class="p">()</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">pitch_count</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+        <span class="n">pitches</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">pitches</span> <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">isChord</span> <span class="k">else</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">pitch</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">:</span>
+            <span class="n">semitone_distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">pitchClass</span> <span class="o">-</span> <span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">pitchClass</span><span class="p">)</span> <span class="o">%</span> <span class="mi">12</span>
+            <span class="n">degree_label</span> <span class="o">=</span> <span class="n">chromatic_degree_labels</span><span class="p">[</span><span class="n">semitone_distance</span><span class="p">]</span>
+            <span class="n">chromatic_degree_counter</span><span class="p">[</span><span class="n">degree_label</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">chromatic_degree_table</span> <span class="o">=</span> <span class="p">[(</span><span class="n">label</span><span class="p">,</span> <span class="n">chromatic_degree_counter</span><span class="p">[</span><span class="n">label</span><span class="p">])</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">chromatic_degree_labels</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">degree_label</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">chromatic_degree_table</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scale Degree </span><span class="si">{</span><span class="n">degree_label</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scale Degree 1: 312
+Scale Degree b2: 23
+Scale Degree 2: 162
+Scale Degree #2/b3: 85
+Scale Degree 3: 124
+Scale Degree 4: 158
+Scale Degree #4/b5: 0
+Scale Degree 5: 247
+Scale Degree #5/b6: 26
+Scale Degree 6: 106
+Scale Degree b7: 50
+Scale Degree 7: 53
+</pre></div>
+</div>
+</div>
+</div>
+<section id="what-this-chromatic-scale-degree-code-is-doing">
+<h3>What this chromatic scale-degree code is doing<a class="headerlink" href="#what-this-chromatic-scale-degree-code-is-doing" title="Link to this heading">#</a></h3>
+<p>This version goes beyond the seven diatonic scale degrees.
+Instead of only counting <code class="docutils literal notranslate"><span class="pre">1</span></code> through <code class="docutils literal notranslate"><span class="pre">7</span></code>, it counts all 12 pitch positions relative to each piece’s tonic.</p>
+<p>That means it can also capture altered or non-diatonic notes such as <code class="docutils literal notranslate"><span class="pre">b2</span></code>, <code class="docutils literal notranslate"><span class="pre">b3</span></code>, <code class="docutils literal notranslate"><span class="pre">#4</span></code>, <code class="docutils literal notranslate"><span class="pre">b6</span></code>, and <code class="docutils literal notranslate"><span class="pre">b7</span></code>.</p>
+<p>Step by step:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">chromatic_degree_labels</span> <span class="pre">=</span> <span class="pre">['1',</span> <span class="pre">'b2',</span> <span class="pre">'2',</span> <span class="pre">'b3',</span> <span class="pre">'3',</span> <span class="pre">'4',</span> <span class="pre">'#4',</span> <span class="pre">'5',</span> <span class="pre">'b6',</span> <span class="pre">'6',</span> <span class="pre">'b7',</span> <span class="pre">'7']</span></code>
+Creates labels for the 12 semitone positions above the tonic.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chromatic_degree_counter</span> <span class="pre">=</span> <span class="pre">Counter({label:</span> <span class="pre">0</span> <span class="pre">for</span> <span class="pre">label</span> <span class="pre">in</span> <span class="pre">chromatic_degree_labels})</span></code>
+Starts the counter with all 12 categories already present, so every label will print even if its count is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">=</span> <span class="pre">pitch_count.getSolution(score)</span></code>
+Estimates the key of each folksong so the tonic can be used as the reference point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">semitone_distance</span> <span class="pre">=</span> <span class="pre">(p.pitchClass</span> <span class="pre">-</span> <span class="pre">key.tonic.pitchClass)</span> <span class="pre">%</span> <span class="pre">12</span></code>
+Measures how far a note is from the tonic in semitones.
+For example, if the tonic is <code class="docutils literal notranslate"><span class="pre">G</span></code>, then <code class="docutils literal notranslate"><span class="pre">G</span></code> is distance <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">Ab</span></code> is distance <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code> is distance <code class="docutils literal notranslate"><span class="pre">2</span></code>, and so on.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">degree_label</span> <span class="pre">=</span> <span class="pre">chromatic_degree_labels[semitone_distance]</span></code>
+Converts that semitone distance into a scale-degree label like <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">b3</span></code>, or <code class="docutils literal notranslate"><span class="pre">#4</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chromatic_degree_counter[degree_label]</span> <span class="pre">+=</span> <span class="pre">1</span></code>
+Adds one to that category’s total count.</p></li>
+</ol>
+<p>In plain language, this code asks: relative to each song’s tonic, how often does each of the 12 chromatic pitch positions occur across the whole corpus?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## We can use another library like matplotlib to visualize the pitch-class distribution</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">degree_label</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">chromatic_degree_table</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">degree_label</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;SD&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scale DegreeDistribution in Czech Folksongs&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/5fc3a76dbecb8c0ddc5c76810ddf122f07cdc58aee38c313fb9fa0a2cdc95e3e.png"><img alt="../_images/5fc3a76dbecb8c0ddc5c76810ddf122f07cdc58aee38c313fb9fa0a2cdc95e3e.png" src="../_images/5fc3a76dbecb8c0ddc5c76810ddf122f07cdc58aee38c313fb9fa0a2cdc95e3e.png" style="width: 572px; height: 453px;" />
+</a>
+</div>
+</div>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<p>This is a lot of verbose code! We don’t need to always be saying the same thing over and over again, and in fact, it’s better code to try to repeat things as rarely as possible. We can come up with a <code class="docutils literal notranslate"><span class="pre">function</span></code> to help with this.</p>
+<p>In Python a function is <code class="docutils literal notranslate"><span class="pre">defined</span></code> with <code class="docutils literal notranslate"><span class="pre">def</span></code> followed by the name we want to use, and then an <code class="docutils literal notranslate"><span class="pre">argument</span></code> name. So for my purposes, I want to count and plot scale degrees (<code class="docutils literal notranslate"><span class="pre">count_and_plot_scale_degrees</span></code>) of different folders (so I have a <code class="docutils literal notranslate"><span class="pre">folder_path</span></code> argument.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### I&#39;m defining my function with an argument!</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">count_and_plot_scale_degrees</span><span class="p">(</span><span class="n">folder_path</span><span class="p">):</span>
+    <span class="c1"># this is all the code from before, and now it&#39;s wrapped into a function that takes a folder path as an argument.</span>
+    <span class="n">chromatic_degree_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;b2&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;#2/b3&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;#4/b5&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;#5/b6&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;b7&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">]</span>
+    <span class="n">chromatic_degree_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="n">label</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">chromatic_degree_labels</span><span class="p">})</span>
+
+    <span class="c1"># Get all kern files in the selected Essen subfolder</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}</span><span class="s2">/*.krn&quot;</span><span class="p">)</span>
+    <span class="c1">## this is just to keep the code from breaking if there are no kern files...</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">files</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No .krn files found in: </span><span class="si">{</span><span class="n">folder_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1">## here&#39;s my for loop!!!! It&#39;s going over each piece, converting it, </span>
+    <span class="c1">## running the key-finding algorithm, and then counting the scale degrees.</span>
+    <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span>
+        <span class="n">pitch_count</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">KrumhanslKessler</span><span class="p">()</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">pitch_count</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+
+        <span class="c1">## now I&#39;m going to go through each note in the score and count its scale degree relative to the key.</span>
+        <span class="c1">## this is messy code; just bear with me.</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+            <span class="n">pitches</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">pitches</span> <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">isChord</span> <span class="k">else</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">pitch</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">:</span>
+                <span class="n">semitone_distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">pitchClass</span> <span class="o">-</span> <span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">pitchClass</span><span class="p">)</span> <span class="o">%</span> <span class="mi">12</span>
+                <span class="n">degree_label</span> <span class="o">=</span> <span class="n">chromatic_degree_labels</span><span class="p">[</span><span class="n">semitone_distance</span><span class="p">]</span>
+                <span class="n">chromatic_degree_counter</span><span class="p">[</span><span class="n">degree_label</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">chromatic_degree_table</span> <span class="o">=</span> <span class="p">[(</span><span class="n">label</span><span class="p">,</span> <span class="n">chromatic_degree_counter</span><span class="p">[</span><span class="n">label</span><span class="p">])</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">chromatic_degree_labels</span><span class="p">]</span>
+
+    <span class="c1"># for degree_label, count in chromatic_degree_table:</span>
+    <span class="c1">#     print(f&quot;Scale Degree {degree_label}: {count}&quot;)</span>
+
+
+    <span class="c1">## here are the plotting functions.</span>
+    <span class="n">degree_labels</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">chromatic_degree_table</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">degree_labels</span><span class="p">,</span> <span class="n">counts</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;SD&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+    <span class="c1">## i would probably make this prettier before publication...</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Scale Degree Distribution in </span><span class="si">{</span><span class="n">folder_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_and_plot_scale_degrees</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England/&#39;</span><span class="p">)</span>
+<span class="n">count_and_plot_scale_degrees</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Danmark/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/3446a3f0aa614a96f0f0d929a788d20c2fd26048ed890a346d78709b8a428063.png"><img alt="../_images/3446a3f0aa614a96f0f0d929a788d20c2fd26048ed890a346d78709b8a428063.png" src="../_images/3446a3f0aa614a96f0f0d929a788d20c2fd26048ed890a346d78709b8a428063.png" style="width: 563px; height: 453px;" />
+</a>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>humdrum.spineParser: WARNING: Error in parsing event (&#39;*MX&#39;) at line 13 for spine None: Incorrect meter: *MX found
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/b031eb6102ae0598eafef867cd775f4e95d74637f82da020472e934d2191b2ba.png"><img alt="../_images/b031eb6102ae0598eafef867cd775f4e95d74637f82da020472e934d2191b2ba.png" src="../_images/b031eb6102ae0598eafef867cd775f4e95d74637f82da020472e934d2191b2ba.png" style="width: 563px; height: 453px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="exercise-comparing-pitch-class-distributions">
+<h2>Exercise: Comparing Pitch-Class Distributions<a class="headerlink" href="#exercise-comparing-pitch-class-distributions" title="Link to this heading">#</a></h2>
+<p>Use my function to compare five of the following:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#../data/Essen/Elsass"><span class="xref myst">Elsass</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/England"><span class="xref myst">England</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/France"><span class="xref myst">France</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Italia"><span class="xref myst">Italia</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Jugoslav"><span class="xref myst">Jugoslav</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Luxembrg"><span class="xref myst">Luxembrg</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Magyar"><span class="xref myst">Magyar</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Misc"><span class="xref myst">Misc</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Nederlan"><span class="xref myst">Nederlan</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Oesterrh"><span class="xref myst">Oesterrh</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Polska"><span class="xref myst">Polska</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Romania"><span class="xref myst">Romania</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Rossiya"><span class="xref myst">Rossiya</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Schweiz"><span class="xref myst">Schweiz</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Sverige"><span class="xref myst">Sverige</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Tirol"><span class="xref myst">Tirol</span></a></p></li>
+<li><p><a class="reference internal" href="#../data/Essen/Ukraina"><span class="xref myst">Ukraina</span></a></p></li>
+</ul>
+</section>
+<section id="from-counting-to-testing">
+<h2>From Counting to Testing<a class="headerlink" href="#from-counting-to-testing" title="Link to this heading">#</a></h2>
+<p>So far we’ve been <em>describing</em> distributions — counting scale degrees and
+plotting them. But description raises a question:</p>
+<blockquote>
+<div><p>When two distributions look different, how do we know if the difference
+is meaningful, or just noise from having a limited sample?</p>
+</div></blockquote>
+<p>Compare England vs. Polska. The plots look different. But:</p>
+<ul class="simple">
+<li><p>Maybe England just happens to have fewer pieces in the corpus</p></li>
+<li><p>Maybe the differences are real but small</p></li>
+<li><p>Maybe the differences are large and systematic</p></li>
+</ul>
+<p><strong>Hypothesis testing</strong> gives us a framework for figuring out how might be try to think of more objective ways of testing our theories.
+The key idea: assume the two distributions are <em>the same</em> (the null hypothesis),
+then ask how surprising our observed difference would be under that assumption.
+If it’s very surprising, we reject the null.</p>
+</section>
+<section id="the-chi-squared-test-dun-dun-dun">
+<h2>The Chi-Squared Test!!!! (dun, Dun, DUN!!!)<a class="headerlink" href="#the-chi-squared-test-dun-dun-dun" title="Link to this heading">#</a></h2>
+<p><img alt="Chi-Squared" src="../_images/chi2.png" /></p>
+<p>This seems daunting, but basically, it is saying:</p>
+<ol class="arabic simple">
+<li><p>what are we expecting to see?</p></li>
+<li><p>what do we actually see?</p></li>
+<li><p>Are these two numbers significantly different?</p></li>
+</ol>
+<p>In the olden days, folks would take this number, and then go to a look up table in which they found their degrees of freedom (their n - 2) and then checked to see if that number created a p-value that was less than what they were hoping it would be. Now computers do that for us.</p>
+<p>So basically, we assume that each scale degree would be roughly the same percentage if there was no difference and we create a big table for this, called a contingency table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We need to compare two distributions as a contingency table</span>
+<span class="c1"># Each row = a region, each column = a scale degree</span>
+<span class="c1"># Each cell = how many times that scale degree appeared in that region</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span><span class="p">,</span> <span class="n">analysis</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">chromatic_degree_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;b2&#39;</span><span class="p">,</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;#2/b3&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="s1">&#39;#4/b5&#39;</span><span class="p">,</span><span class="s1">&#39;5&#39;</span><span class="p">,</span><span class="s1">&#39;#5/b6&#39;</span><span class="p">,</span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="s1">&#39;b7&#39;</span><span class="p">,</span><span class="s1">&#39;7&#39;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_degree_counts</span><span class="p">(</span><span class="n">folder_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a Counter of chromatic scale degrees for all kern files in folder.&quot;&quot;&quot;</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="n">label</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">chromatic_degree_labels</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">folder_path</span><span class="si">}</span><span class="s2">/*.krn&quot;</span><span class="p">):</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span>
+        <span class="n">pitch_count</span> <span class="o">=</span> <span class="n">analysis</span><span class="o">.</span><span class="n">discrete</span><span class="o">.</span><span class="n">KrumhanslKessler</span><span class="p">()</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">pitch_count</span><span class="o">.</span><span class="n">getSolution</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+            <span class="n">pitches</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="n">pitches</span> <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">isChord</span> <span class="k">else</span> <span class="p">[</span><span class="n">element</span><span class="o">.</span><span class="n">pitch</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pitches</span><span class="p">:</span>
+                <span class="n">dist</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">pitchClass</span> <span class="o">-</span> <span class="n">key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">pitchClass</span><span class="p">)</span> <span class="o">%</span> <span class="mi">12</span>
+                <span class="n">counter</span><span class="p">[</span><span class="n">chromatic_degree_labels</span><span class="p">[</span><span class="n">dist</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">counter</span>
+
+<span class="c1"># Get counts for two regions</span>
+<span class="n">england_counts</span> <span class="o">=</span> <span class="n">get_degree_counts</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England&#39;</span><span class="p">)</span>
+<span class="n">polska_counts</span>   <span class="o">=</span> <span class="n">get_degree_counts</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Polska&#39;</span><span class="p">)</span>
+
+<span class="c1"># Build a DataFrame — one row per region, one column per scale degree</span>
+<span class="n">contingency</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">england_counts</span><span class="p">,</span> <span class="n">polska_counts</span><span class="p">],</span>
+                            <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;England&#39;</span><span class="p">,</span> <span class="s1">&#39;Polska&#39;</span><span class="p">])[</span><span class="n">chromatic_degree_labels</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">contingency</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           1  b2    2  #2/b3   3    4  #4/b5    5  #5/b6   6  b7   7
+England   55   0   37      4  34   27      3   42      5  10   0  20
+Polska   206   0  130     75  81  112      0  204     24  44  23  18
+</pre></div>
+</div>
+</div>
+</div>
+<section id="what-is-a-contingency-table">
+<h3>What is a contingency table?<a class="headerlink" href="#what-is-a-contingency-table" title="Link to this heading">#</a></h3>
+<p>A contingency table counts how often two categorical variables co-occur.
+Here our two variables are:</p>
+<ul class="simple">
+<li><p><strong>Region</strong> (England or Polska) — the rows</p></li>
+<li><p><strong>Scale degree</strong> (1, b2, 2 … 7) — the columns</p></li>
+</ul>
+<p>Each cell answers: “how many times did scale degree X appear in region Y?”</p>
+<p>The chi-square test asks: <strong>if region had no effect on scale degree distribution,
+what would we expect these counts to look like?</strong> Then it measures how far
+our actual counts deviate from that expectation.</p>
+<p>The expected count for any cell is simply:
+$$E_{ij} = \frac{(\text{row total}_i) \times (\text{column total}_j)}{\text{grand total}}$$</p>
+<p>Large deviations from expected → small p-value → evidence that region
+<em>does</em> affect scale degree distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">chi2_contingency</span>
+
+<span class="c1"># Remove rows/columns with total count = 0 (chi-square cannot use them)</span>
+<span class="n">contingency</span> <span class="o">=</span> <span class="n">contingency</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="n">contingency</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">contingency</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="p">]</span>
+
+<span class="n">chi2</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">contingency</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Chi-square statistic: </span><span class="si">{</span><span class="n">chi2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Degrees of freedom:   </span><span class="si">{</span><span class="n">dof</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value:              </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The distributions are significantly different (p &lt; 0.05).&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The scale degree profiles of England and Polska are unlikely&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;to be this different by chance alone.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No significant difference detected (p &gt;= 0.05).&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is basically at chance levels of differentiation.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-square statistic: 61.43
+Degrees of freedom:   10
+p-value:              0.0000
+
+The distributions are significantly different (p &lt; 0.05).
+The scale degree profiles of England and Polska are unlikely
+to be this different by chance alone.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreting-the-result-carefully">
+<h3>Interpreting the result carefully<a class="headerlink" href="#interpreting-the-result-carefully" title="Link to this heading">#</a></h3>
+<p>A significant chi-square tells you the two distributions are <em>statistically</em>
+different. It does <strong>not</strong> tell you:</p>
+<ul class="simple">
+<li><p><strong>Where</strong> the difference is (which scale degrees drive it)</p></li>
+<li><p><strong>Why</strong> it exists (mode differences? melodic style? corpus size?)</p></li>
+<li><p><strong>Whether</strong> it’s musically meaningful — statistical significance and
+musical significance are not the same thing</p></li>
+</ul>
+<p>A corpus with thousands of notes will produce significant results for
+tiny differences. A corpus with 50 notes might miss large ones.</p>
+<p>To see <em>where</em> the differences are, look at the residuals:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standardized residuals — large values tell you which cells </span>
+<span class="c1"># contribute most to the chi-square statistic</span>
+<span class="n">expected_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> 
+                            <span class="n">index</span><span class="o">=</span><span class="n">contingency</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                            <span class="n">columns</span><span class="o">=</span><span class="n">contingency</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">residuals</span> <span class="o">=</span> <span class="p">(</span><span class="n">contingency</span> <span class="o">-</span> <span class="n">expected_df</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">expected_df</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">residuals</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.1f&#39;</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Standardized residuals: England vs. Polska</span><span class="se">\n</span><span class="s1">&#39;</span>
+             <span class="s1">&#39;(blue = more than expected, red = less than expected)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/feb12d75f0f38c06d708b404388e930a3ed721a484318f46ba645e73584ffcfd.png"><img alt="../_images/feb12d75f0f38c06d708b404388e930a3ed721a484318f46ba645e73584ffcfd.png" src="../_images/feb12d75f0f38c06d708b404388e930a3ed721a484318f46ba645e73584ffcfd.png" style="width: 1058px; height: 288px;" />
+</a>
+</div>
+</div>
+</section>
+<section id="what-residuals-are">
+<h3>What residuals are<a class="headerlink" href="#what-residuals-are" title="Link to this heading">#</a></h3>
+<p>These values show how far each cell is from the value we would expect if the two regions had the same scale-degree distribution.</p>
+<p>Step by step:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">expected_df</span></code> stores the expected counts from the chi-square test.
+These are the counts the table would have if region and scale degree were unrelated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">residuals</span> <span class="pre">=</span> <span class="pre">(contingency</span> <span class="pre">-</span> <span class="pre">expected_df)</span> <span class="pre">/</span> <span class="pre">np.sqrt(expected_df)</span></code>
+This compares the observed counts to the expected counts.</p>
+<ul class="simple">
+<li><p>Positive values mean we observed <strong>more</strong> than expected.</p></li>
+<li><p>Negative values mean we observed <strong>less</strong> than expected.</p></li>
+<li><p>Values near <code class="docutils literal notranslate"><span class="pre">0</span></code> mean observed and expected are very similar.</p></li>
+</ul>
+</li>
+<li><p>The heatmap colors help us read those differences quickly.</p>
+<ul class="simple">
+<li><p>Blue means more than expected.</p></li>
+<li><p>Red means less than expected.</p></li>
+<li><p>White or pale colors mean close to expected.</p></li>
+</ul>
+</li>
+</ol>
+<p>In plain language, residuals tell us <strong>where</strong> the chi-square difference is coming from, not just whether the two regions are different overall.</p>
+</section>
+</section>
+<section id="exercise-test-your-own-comparison">
+<h2>Exercise: Test your own comparison<a class="headerlink" href="#exercise-test-your-own-comparison" title="Link to this heading">#</a></h2>
+<p>Pick two regions from the Essen collection and run a chi-square test.</p>
+<ol class="arabic simple">
+<li><p>Build the contingency table using <code class="docutils literal notranslate"><span class="pre">get_degree_counts()</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">chi2_contingency()</span></code></p></li>
+<li><p>Plot the residuals</p></li>
+<li><p>Write 3–4 sentences: what does the significant (or non-significant)
+result tell you, and what <em>doesn’t</em> it tell you?</p></li>
+</ol>
+<p><strong>Harder version:</strong> Test more than two regions at once by adding more rows
+to the contingency table. What happens to your degrees of freedom?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here!!!!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Concept check!</p>
+<p>The first quizzes for today are simply for self-assessment. It might be good to answer these first before executing any of the code below.</p>
+<p>Questions open in a new tab!</p>
+<p><strong><a class="reference internal" href="../quizpages/day1_quiz.html"><span class="std std-doc">→ Open Day 1 Quiz</span></a></strong></p>
+</div>
+</section>
+<section id="project-log-entry-1">
+<h2>Project Log — Entry 1<a class="headerlink" href="#project-log-entry-1" title="Link to this heading">#</a></h2>
+<p>Please email tonight with the following:</p>
+<ul class="simple">
+<li><p><em>My corpus is [X — it could also be a subset: mode / genre / region / instrument].</em>  (note the datasets above that we have available! Let me know if you’d like to go beyond these).</p></li>
+<li><p><em>My research question is [Y].</em></p></li>
+<li><p><em>I expect to find that [Z] because [musical or theoretical reasoning].</em></p></li>
+</ul>
+<p><em>(Write here — 100–150 words)</em></p>
+</section>
+<section id="tomorrow-day-2-monday-22-jun">
+<h2>Tomorrow: Day 2 (Monday 22 Jun)<a class="headerlink" href="#tomorrow-day-2-monday-22-jun" title="Link to this heading">#</a></h2>
+<p>Tomorrow we will be discussing notes moving to one another (n-grams), and we will build our own tools for this.</p>
+<ul class="simple">
+<li><p>Don’t forget to email me to chat projects!</p></li>
+<li><p>Please take the quiz when you get a chance!</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Quantitative Methods in Musicology</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="day2_ngrams.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 2: N-grams and Melodic Tendency</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#representing-musical-information">Representing Musical Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-darms-19661980ish">With DARMS (1966–1980ish)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-mustran-19671980ish">With MUSTRAN (1967–1980ish)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#humdrum-1985present-ish">Humdrum (1985–present-ish)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-kern-reference">Quick kern reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-encoding-audit">Exercise: Encoding Audit</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-things-part-1-a-single-piece">Counting Things Part 1: A Single Piece</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-with-a-kern-file-as-plain-text">Metadata with a Kern File as Plain Text</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-code-is-doing">What this code is doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-with-music21">Metadata with music21</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-music21-code-is-doing-step-by-step">What this music21 code is doing (step by step)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-pitches-with-music21">Counting Pitches (with music21)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">What this code is doing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-count-czech-folksong-pitches-with-music21">Exercise: Count Czech folksong pitches with music21</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-scale-degrees-with-music21">Counting Scale Degrees with music21</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">What this code is doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-complicated-example-chopin">A More Complicated Example (Chopin)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">What this code is doing…</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-a-quick-one">Exercise (A Quick one!)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-things-part-2-lots-of-pieces">Counting Things Part 2: Lots of Pieces!</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">What this code is doing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">What this code is doing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-chromatic-scale-degree-code-is-doing">What this chromatic scale-degree code is doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-comparing-pitch-class-distributions">Exercise: Comparing Pitch-Class Distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-counting-to-testing">From Counting to Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-chi-squared-test-dun-dun-dun">The Chi-Squared Test!!!! (dun, Dun, DUN!!!)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-contingency-table">What is a contingency table?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-result-carefully">Interpreting the result carefully</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-residuals-are">What residuals are</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-test-your-own-comparison">Exercise: Test your own comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-log-entry-1">Project Log — Entry 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tomorrow-day-2-monday-22-jun">Tomorrow: Day 2 (Monday 22 Jun)</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daniel Shanahan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

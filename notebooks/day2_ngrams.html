@@ -1,0 +1,3563 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Day 2: N-grams and Melodic Tendency &#8212; Corpus Studies in Music</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/day2_ngrams';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 3: Pitch Distributions and Mode" href="day3_pitch_mode.html" />
+    <link rel="prev" title="Day 1: Encoding as Interpretation; Counting Things!" href="day1_encoding.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Corpus Studies in Music</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Quantitative Methods in Musicology
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sessions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="day1_encoding.html">Day 1: Encoding as Interpretation; Counting Things!</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 2: N-grams and Melodic Tendency</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day3_pitch_mode.html">Day 3: Pitch Distributions and Mode</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day4_similarity.html">Day 4: Melodic Similarity</a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="day5_information.html">Day 5 · Information and Distinctiveness (25 Jun)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quizzes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day1_quiz.html">Day 1 Quiz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quizpages/day2_quiz.html">Day 2 Quiz</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tools/hairpins.html">Asymmetrical Dynamics — Sampling Tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanahdt/corpus-studies-israel-2026/blob/main/./notebooks/day2_ngrams.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanahdt/corpus-studies-israel-2026/issues/new?title=Issue%20on%20page%20%2Fnotebooks/day2_ngrams.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/day2_ngrams.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Day 2: N-grams and Melodic Tendency</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 2: N-grams and Melodic Tendency</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-from-composition">Examples from Composition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#as-a-marker-of-expectation-and-statistical-learning">As a Marker of Expectation and Statistical Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-transitions-in-happy-birthday">Part 1: Transitions in Happy Birthday</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-all-of-the-pitch-combinations-as-bigrams">Counting all of the pitch combinations (as bigrams)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-counter">Setting up a counter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-exercise">Plotting exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-raw-counts-vs-percentages">Exercise 1: Raw counts vs percentages</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-probabilities-in-an-entire-corpus">Transition Probabilities in an Entire Corpus</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-a-third-corpus">Exercise 2: A third corpus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams-with-beat-strength">Bigrams with Beat Strength</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-beat-strength-and-melodic-tendency">Exercise 3: Beat strength and melodic tendency</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interval-bigrams">Interval Bigrams</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-scale-degrees-vs-intervals-which-makes-more-sense-for-your-research-question">Exercise 4: Scale degrees vs intervals — which makes more sense for your research question?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#email-to-dan-day-2">Email to Dan, Day 2!</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><a class="reference external" href="https://colab.research.google.com/github/shanahdt/huji_summer_class_2026/blob/main/notebooks/day2_ngrams.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section id="day-2-n-grams-and-melodic-tendency">
+<h1>Day 2: N-grams and Melodic Tendency<a class="headerlink" href="#day-2-n-grams-and-melodic-tendency" title="Link to this heading">#</a></h1>
+<p><strong>Date:</strong> Monday 22nd June 2026</p>
+<p>Today we’re going to look at how pairs of notes transition to one another. This means bigrams, trigrams, and other collections of notes in one voice and multiple voices.</p>
+<p>Why is the study of ngrams important in music?</p>
+<ul class="simple">
+<li><p>Algorithmic composition</p></li>
+<li><p>Modeling expectation</p>
+<ul>
+<li><p>information theory is dependent upon the likelihood of what is next (Q -&gt; U is quite expected, as is ti -&gt; do; these would be relatively low information.)</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### ignore this code!! just me trying to get colab to work...</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<span class="c1"># Clone repo and set working directory</span>
+<span class="c1"># Safe to run in both Colab and local Jupyter</span>
+<span class="n">repo_url</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/shanahdt/huji_summer_class_2026.git&#39;</span>
+<span class="n">repo_name</span> <span class="o">=</span> <span class="s1">&#39;huji_summer_class_2026&#39;</span>
+
+<span class="c1"># Check if we&#39;re already inside the repo (local), or need to clone (Colab)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/content/</span><span class="si">{</span><span class="n">repo_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">):</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;git&#39;</span><span class="p">,</span> <span class="s1">&#39;clone&#39;</span><span class="p">,</span> <span class="n">repo_url</span><span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/content/</span><span class="si">{</span><span class="n">repo_name</span><span class="si">}</span><span class="s1">/notebooks&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cloned and changed directory.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data directory found — running locally, no clone needed.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="examples-from-composition">
+<h1>Examples from Composition<a class="headerlink" href="#examples-from-composition" title="Link to this heading">#</a></h1>
+<p>Pinkerton’s “Banal Tunemaker” from 1956.</p>
+<p><img alt="pinkerton_banal_tunemaker.png" src="../_images/pinkerton_banal_tunemaker.png" /></p>
+<p>The transition probabilities were constructed from a <em>transition matrix</em> like this:</p>
+<p><img alt="pinkerton_1956_transitions.png" src="../_images/pinkerton_1956_transitions.png" /></p>
+<p>This would also be the foundation of the earliest complete computer-generated composition, Lejaren Hiller’s <em>Illiac Suite</em> in 1957.</p>
+<p><img alt="illiac_quartet_transitions.png" src="../_images/illiac_quartet_transitions.png" /></p>
+</section>
+<section id="as-a-marker-of-expectation-and-statistical-learning">
+<h1>As a Marker of Expectation and Statistical Learning<a class="headerlink" href="#as-a-marker-of-expectation-and-statistical-learning" title="Link to this heading">#</a></h1>
+<p>Transition probabilities are also a proxy for syntactical structures–which musical ideas move to which other ones and how often. Huron (2006) and others have discussed how these can demonstrate statistical learning. For example, the expectations generated from 7 -&gt; 1 (in the table below):
+<img alt="huron_sd_transitions.png" src="../_images/huron_sd_transitions.png" /></p>
+<p>Or the likelihood of a V chord being followed by a I chord.</p>
+<p><img alt="huron_rn_transitions.png" src="../_images/huron_rn_transitions.png" /></p>
+<p>Or how this is different in popular music, as demonstrated below:</p>
+<p><img alt="huron_transitions.png" src="../_images/huron_transitions.png" /></p>
+</section>
+<section id="part-1-transitions-in-happy-birthday">
+<h1>Part 1: Transitions in Happy Birthday<a class="headerlink" href="#part-1-transitions-in-happy-birthday" title="Link to this heading">#</a></h1>
+<p>Let’s start with some music21 code that just looks at the most basic note-to-note transitions in “Happy Birthday”.</p>
+<section id="counting-all-of-the-pitch-combinations-as-bigrams">
+<h2>Counting all of the pitch combinations (as bigrams)<a class="headerlink" href="#counting-all-of-the-pitch-combinations-as-bigrams" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##simple music21 bigram of happy birthday kern file, avoiding list comprehensions and done in a straightforward loop for beginners with comments</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span><span class="p">,</span> <span class="n">note</span><span class="p">,</span> <span class="n">stream</span>
+
+<span class="c1"># Load the Happy Birthday kern file</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;../data/happy_birthday.krn&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extract all notes from the score</span>
+
+<span class="c1">### here we are creating an empty list. it&#39;s basically setting up a </span>
+<span class="c1">### container to hold all the notes we will extract from the score!</span>
+<span class="n">notes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">note</span><span class="o">.</span><span class="n">Note</span><span class="p">):</span>
+        <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">nameWithOctave</span><span class="p">)</span>
+
+<span class="c1"># Create bigrams</span>
+<span class="c1">### here we are creating pairs of consecutive notes from our notes list. each pair is called a bigram.</span>
+<span class="n">bigrams</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">bigrams</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">notes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">notes</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># Print bigrams</span>
+<span class="k">for</span> <span class="n">bigram</span> <span class="ow">in</span> <span class="n">bigrams</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">bigram</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;D4&#39;, &#39;D4&#39;)
+(&#39;D4&#39;, &#39;E4&#39;)
+(&#39;E4&#39;, &#39;D4&#39;)
+(&#39;D4&#39;, &#39;G4&#39;)
+(&#39;G4&#39;, &#39;F#4&#39;)
+(&#39;F#4&#39;, &#39;D4&#39;)
+(&#39;D4&#39;, &#39;D4&#39;)
+(&#39;D4&#39;, &#39;E4&#39;)
+(&#39;E4&#39;, &#39;D4&#39;)
+(&#39;D4&#39;, &#39;A4&#39;)
+(&#39;A4&#39;, &#39;G4&#39;)
+(&#39;G4&#39;, &#39;D4&#39;)
+(&#39;D4&#39;, &#39;D4&#39;)
+(&#39;D4&#39;, &#39;D5&#39;)
+(&#39;D5&#39;, &#39;B4&#39;)
+(&#39;B4&#39;, &#39;G4&#39;)
+(&#39;G4&#39;, &#39;F#4&#39;)
+(&#39;F#4&#39;, &#39;E4&#39;)
+(&#39;E4&#39;, &#39;C5&#39;)
+(&#39;C5&#39;, &#39;C5&#39;)
+(&#39;C5&#39;, &#39;B4&#39;)
+(&#39;B4&#39;, &#39;G4&#39;)
+(&#39;G4&#39;, &#39;A4&#39;)
+(&#39;A4&#39;, &#39;G4&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-up-a-counter">
+<h2>Setting up a counter<a class="headerlink" href="#setting-up-a-counter" title="Link to this heading">#</a></h2>
+<p>Now let’s set up a counter, so we can see the most common transitions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">###now that we have bigrams, we can count most common transitions.</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">bigram_counts</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">bigrams</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">bigram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">bigram_counts</span><span class="o">.</span><span class="n">most_common</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bigram</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;D4&#39;, &#39;D4&#39;): 3
+(&#39;D4&#39;, &#39;E4&#39;): 2
+(&#39;E4&#39;, &#39;D4&#39;): 2
+(&#39;G4&#39;, &#39;F#4&#39;): 2
+(&#39;A4&#39;, &#39;G4&#39;): 2
+(&#39;B4&#39;, &#39;G4&#39;): 2
+(&#39;D4&#39;, &#39;G4&#39;): 1
+(&#39;F#4&#39;, &#39;D4&#39;): 1
+(&#39;D4&#39;, &#39;A4&#39;): 1
+(&#39;G4&#39;, &#39;D4&#39;): 1
+(&#39;D4&#39;, &#39;D5&#39;): 1
+(&#39;D5&#39;, &#39;B4&#39;): 1
+(&#39;F#4&#39;, &#39;E4&#39;): 1
+(&#39;E4&#39;, &#39;C5&#39;): 1
+(&#39;C5&#39;, &#39;C5&#39;): 1
+(&#39;C5&#39;, &#39;B4&#39;): 1
+(&#39;G4&#39;, &#39;A4&#39;): 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function below takes kern files, converts them into music21
+scores, and returns the most common n-grams of note names. Note how there is an
+argument that says how many n-grams you’d like to look at (obviosuly it gets more
+difficult to visualize once you go past two dimensions…)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">most_common_ngrams</span><span class="p">(</span><span class="n">kern_file_path</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span>
+
+    <span class="c1"># 1) Read the kern file into a music21 score.</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">kern_file_path</span><span class="p">)</span>
+
+    <span class="c1"># 2) Collect note names in order (for example: C4, D4, E4).</span>
+    <span class="n">note_names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">isNote</span><span class="p">:</span>
+            <span class="n">note_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">nameWithOctave</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">element</span><span class="o">.</span><span class="n">isChord</span><span class="p">:</span>
+            <span class="c1"># If a chord appears, include each pitch name.</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">element</span><span class="o">.</span><span class="n">pitches</span><span class="p">:</span>
+                <span class="n">note_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">nameWithOctave</span><span class="p">)</span>
+
+    <span class="c1"># 3) Check that n is valid.</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;n must be &gt;= 1&#39;</span><span class="p">)</span>
+
+    <span class="c1"># 4) Build n-grams using a sliding window.</span>
+    <span class="n">ngrams</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">note_names</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">ngrams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">note_names</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span><span class="p">]))</span>
+
+    <span class="c1"># 5) Count and return from most common to least common.</span>
+    <span class="k">return</span> <span class="n">Counter</span><span class="p">(</span><span class="n">ngrams</span><span class="p">)</span><span class="o">.</span><span class="n">most_common</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And now we can run our function…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">most_common_ngrams</span><span class="p">(</span><span class="s2">&quot;../data/happy_birthday.krn&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[((&#39;D4&#39;, &#39;D4&#39;, &#39;E4&#39;), 2),
+ ((&#39;D4&#39;, &#39;E4&#39;, &#39;D4&#39;), 2),
+ ((&#39;E4&#39;, &#39;D4&#39;, &#39;G4&#39;), 1),
+ ((&#39;D4&#39;, &#39;G4&#39;, &#39;F#4&#39;), 1),
+ ((&#39;G4&#39;, &#39;F#4&#39;, &#39;D4&#39;), 1),
+ ((&#39;F#4&#39;, &#39;D4&#39;, &#39;D4&#39;), 1),
+ ((&#39;E4&#39;, &#39;D4&#39;, &#39;A4&#39;), 1),
+ ((&#39;D4&#39;, &#39;A4&#39;, &#39;G4&#39;), 1),
+ ((&#39;A4&#39;, &#39;G4&#39;, &#39;D4&#39;), 1),
+ ((&#39;G4&#39;, &#39;D4&#39;, &#39;D4&#39;), 1),
+ ((&#39;D4&#39;, &#39;D4&#39;, &#39;D5&#39;), 1),
+ ((&#39;D4&#39;, &#39;D5&#39;, &#39;B4&#39;), 1),
+ ((&#39;D5&#39;, &#39;B4&#39;, &#39;G4&#39;), 1),
+ ((&#39;B4&#39;, &#39;G4&#39;, &#39;F#4&#39;), 1),
+ ((&#39;G4&#39;, &#39;F#4&#39;, &#39;E4&#39;), 1),
+ ((&#39;F#4&#39;, &#39;E4&#39;, &#39;C5&#39;), 1),
+ ((&#39;E4&#39;, &#39;C5&#39;, &#39;C5&#39;), 1),
+ ((&#39;C5&#39;, &#39;C5&#39;, &#39;B4&#39;), 1),
+ ((&#39;C5&#39;, &#39;B4&#39;, &#39;G4&#39;), 1),
+ ((&#39;B4&#39;, &#39;G4&#39;, &#39;A4&#39;), 1),
+ ((&#39;G4&#39;, &#39;A4&#39;, &#39;G4&#39;), 1)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Play with the function above!! Note that the tail gets longer as the size of the n-grams get bigger.</p>
+</section>
+<section id="plotting">
+<h2>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h2>
+<p>Now we work towards visualizing this in a couple of ways:</p>
+<ol class="arabic simple">
+<li><p>Raw counts. The code below gives a matrix of counts in “Happy Birthday”. Note that there are <em>two</em> functions. One that creates a transition matrix, and one that plots it.</p></li>
+<li><p>As a percentage! This will take the percentage of times a “from note” goes to a certain “to note”.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here we have functions that create a transition matrix from weighted n-grams and plot it as a heatmap.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_transition_matrix</span><span class="p">(</span><span class="n">weighted_ngrams</span><span class="p">):</span>
+    <span class="n">transition_matrix</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># weighted_ngrams looks like: [((&quot;C4&quot;, &quot;D4&quot;), 3), ((&quot;D4&quot;, &quot;E4&quot;), 2), ...]</span>
+    <span class="k">for</span> <span class="n">ngram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">weighted_ngrams</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ngram</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">from_note</span> <span class="o">=</span> <span class="n">ngram</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">to_note</span> <span class="o">=</span> <span class="n">ngram</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># If this source note is new, create its inner dictionary.</span>
+        <span class="k">if</span> <span class="n">from_note</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">transition_matrix</span><span class="p">:</span>
+            <span class="n">transition_matrix</span><span class="p">[</span><span class="n">from_note</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># If this destination note is new for the source note, start at 0.</span>
+        <span class="k">if</span> <span class="n">to_note</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">transition_matrix</span><span class="p">[</span><span class="n">from_note</span><span class="p">]:</span>
+            <span class="n">transition_matrix</span><span class="p">[</span><span class="n">from_note</span><span class="p">][</span><span class="n">to_note</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">transition_matrix</span><span class="p">[</span><span class="n">from_note</span><span class="p">][</span><span class="n">to_note</span><span class="p">]</span> <span class="o">=</span> <span class="n">transition_matrix</span><span class="p">[</span><span class="n">from_note</span><span class="p">][</span><span class="n">to_note</span><span class="p">]</span> <span class="o">+</span> <span class="n">count</span>
+
+    <span class="k">return</span> <span class="n">transition_matrix</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_transition_matrix</span><span class="p">(</span><span class="n">transition_matrix</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+    <span class="c1"># Convert nested dictionary to a table (rows = from_note, columns = to_note).</span>
+    <span class="n">matrix_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">transition_matrix</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">matrix_df</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Transition Matrix (Bigram Counts)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;To note&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;From note&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">most_common_ngrams</span><span class="p">(</span><span class="s2">&quot;../data/happy_birthday.krn&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">create_transition_matrix</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plot_transition_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/1700507b0faf902298addc8ad86bc8087cb3b5a7a1d41b2d5ff2baa4020ecfcc.png"><img alt="../_images/1700507b0faf902298addc8ad86bc8087cb3b5a7a1d41b2d5ff2baa4020ecfcc.png" src="../_images/1700507b0faf902298addc8ad86bc8087cb3b5a7a1d41b2d5ff2baa4020ecfcc.png" style="width: 738px; height: 589px;" />
+</a>
+</div>
+</div>
+<p>Let’s take the functions above, but now add an
+option to display the transition matrix as percentages rather than raw counts.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_transition_matrix</span><span class="p">(</span><span class="n">transition_matrix</span><span class="p">,</span> <span class="n">as_percentages</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+    <span class="n">matrix_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">transition_matrix</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">as_percentages</span><span class="p">:</span>
+        <span class="n">matrix_df</span> <span class="o">=</span> <span class="n">matrix_df</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">matrix_df</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">matrix_df</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2f&#39;</span> <span class="k">if</span> <span class="n">as_percentages</span> <span class="k">else</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Transition Matrix (Bigram Counts)&#39;</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">as_percentages</span> <span class="k">else</span> <span class="s1">&#39;Transition Matrix (Percentages)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;To note&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;From note&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">most_common_ngrams</span><span class="p">(</span><span class="s2">&quot;../data/happy_birthday.krn&quot;</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">create_transition_matrix</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># plot_transition_matrix(matrix, as_percentages=False)</span>
+<span class="n">plot_transition_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">as_percentages</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/a67132ac017eace92f8aaf275014b7fe325410f700fb68acf6619c96e79ce760.png"><img alt="../_images/a67132ac017eace92f8aaf275014b7fe325410f700fb68acf6619c96e79ce760.png" src="../_images/a67132ac017eace92f8aaf275014b7fe325410f700fb68acf6619c96e79ce760.png" style="width: 742px; height: 589px;" />
+</a>
+</div>
+</div>
+<section id="plotting-exercise">
+<h3>Plotting exercise<a class="headerlink" href="#plotting-exercise" title="Link to this heading">#</a></h3>
+<p>In the code below, take a piece, and plot it as raw counts and percentage. Discuss what insights the matrix might give you about the syntax of the piece.</p>
+</section>
+</section>
+<section id="exercise-1-raw-counts-vs-percentages">
+<h2>Exercise 1: Raw counts vs percentages<a class="headerlink" href="#exercise-1-raw-counts-vs-percentages" title="Link to this heading">#</a></h2>
+<p>Run the transition matrix on a Czech folksong (<code class="docutils literal notranslate"><span class="pre">../data/Essen/Czech/czech01.krn</span></code>)
+and plot it both ways — raw counts and row percentages.</p>
+<p>Then answer in a markdown cell below:</p>
+<ol class="arabic simple">
+<li><p>Which cell has the highest raw count? Which row has the most even
+percentage distribution (i.e. the most unpredictable note)?</p></li>
+<li><p>What does a row with one very dominant percentage tell you about
+that note’s melodic behavior in this piece?</p></li>
+<li><p>Would you get a different answer if you used a different folksong
+from the same folder? Run it on <code class="docutils literal notranslate"><span class="pre">czech02.krn</span></code> and check.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### your Exercise 1 code here...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="transition-probabilities-in-an-entire-corpus">
+<h1>Transition Probabilities in an Entire Corpus<a class="headerlink" href="#transition-probabilities-in-an-entire-corpus" title="Link to this heading">#</a></h1>
+<p>Let’s look at two separate corpora now, comparing the transition probabilities in Charlie Parker and Dizzy Gillespie transcriptions.</p>
+<p>Let’s compare Charlie Parker compared to Dizzy Gillespie.
+The code below defines shared helpers so we don’t repeat parsing/mapping logic later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span>
+<span class="c1"># we need glob so we can grab many files from a folder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
+<span class="c1"># Counter will count how often each bigram appears</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="c1"># pandas is a nice library for clean tables!</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># One shared label order we can reuse everywhere.</span>
+<span class="n">DEGREE_LABELS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;b2&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;b3&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;#4&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;b6&#39;</span><span class="p">,</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span> <span class="s1">&#39;b7&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">]</span>
+
+<span class="c1"># Map 1..12 to chromatic scale-degree labels.</span>
+<span class="n">DEGREE_NAMES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;b2&#39;</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+    <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;b3&#39;</span><span class="p">,</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span>
+    <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;#4&#39;</span><span class="p">,</span>
+    <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span>
+    <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;b6&#39;</span><span class="p">,</span>
+    <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;6&#39;</span><span class="p">,</span>
+    <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;b7&#39;</span><span class="p">,</span>
+    <span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;7&#39;</span>
+<span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">corpus_name</span><span class="o">=</span><span class="s1">&#39;Corpus&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a Counter of chromatic scale-degree bigrams found in a list of files.</span>
+<span class="sd">    Labels are: 1, b2, 2, b3, 3, 4, #4, 5, b6, 6, b7, 7.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># this list will hold every bigram from every piece</span>
+    <span class="n">all_bigrams</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># this list keeps track of files that fail to parse</span>
+    <span class="n">skipped_files</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># go piece by piece</span>
+    <span class="k">for</span> <span class="n">file_path</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># parse one file into a music21 score</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="c1"># if a file is malformed, skip it and keep moving</span>
+            <span class="n">skipped_files</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">file_path</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)))</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># estimate key so degrees are relative to tonic</span>
+        <span class="n">estimated_key</span> <span class="o">=</span> <span class="n">score</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">)</span>
+        <span class="n">tonic_pc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">estimated_key</span><span class="o">.</span><span class="n">tonic</span><span class="o">.</span><span class="n">pitchClass</span><span class="p">)</span>
+
+        <span class="c1"># Keep this simple: use score.pitches order to build adjacent-note bigrams.</span>
+        <span class="n">scale_degrees</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">pitches</span><span class="p">:</span>
+            <span class="n">pitch_pc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">pitchClass</span><span class="p">)</span>
+            <span class="n">degree_number</span> <span class="o">=</span> <span class="p">((</span><span class="n">pitch_pc</span> <span class="o">-</span> <span class="n">tonic_pc</span><span class="p">)</span> <span class="o">%</span> <span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">degree_label</span> <span class="o">=</span> <span class="n">DEGREE_NAMES</span><span class="p">[</span><span class="n">degree_number</span><span class="p">]</span>
+            <span class="n">scale_degrees</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">degree_label</span><span class="p">)</span>
+
+        <span class="n">piece_bigrams</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">scale_degrees</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">scale_degrees</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
+        <span class="n">all_bigrams</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">piece_bigrams</span><span class="p">)</span>
+
+    <span class="c1"># quick transparency message if we skipped any files</span>
+    <span class="k">if</span> <span class="n">skipped_files</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">corpus_name</span><span class="si">}</span><span class="s2">: skipped </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">skipped_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> unreadable files.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># return counts + skipped files list</span>
+    <span class="k">return</span> <span class="n">Counter</span><span class="p">(</span><span class="n">all_bigrams</span><span class="p">),</span> <span class="n">skipped_files</span>
+
+
+<span class="c1">#### note that you won&#39;t get anything out of running this cell; it&#39;s just defining functions!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### defining another function!</span>
+<span class="c1">### this function takes a Counter of bigrams and returns </span>
+<span class="c1">### a nicely formatted table showing the top N bigrams.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bigram_table</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">corpus_name</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">15</span><span class="p">):</span>
+    <span class="c1">#Turn a Counter into a readable top-N table.</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">),</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">top_n</span><span class="p">):</span>
+        <span class="n">percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">total</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;Corpus&#39;</span><span class="p">:</span> <span class="n">corpus_name</span><span class="p">,</span>
+            <span class="s1">&#39;Bigram&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d1</span><span class="si">}</span><span class="s2">-&gt;</span><span class="si">{</span><span class="n">d2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;Count&#39;</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span>
+            <span class="s1">&#39;Percent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### here we have a lot of print statements.</span>
+<span class="c1">### specifically, we are printing out the number of files in each </span>
+<span class="c1">### corpus and the top bigrams for each musician.</span>
+
+<span class="c1"># Collect files from each corpus</span>
+<span class="n">parker_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/charlie_parker/*.krn&#39;</span><span class="p">))</span>
+<span class="n">dizzy_files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/dizzy_gillespie/*.krn&#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Charlie Parker files: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">parker_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dizzy Gillespie files: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dizzy_files</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2) Count bigrams in each corpus</span>
+<span class="n">parker_bigrams</span><span class="p">,</span> <span class="n">parker_skipped</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">parker_files</span><span class="p">,</span> <span class="n">corpus_name</span><span class="o">=</span><span class="s1">&#39;Charlie Parker&#39;</span><span class="p">)</span>
+<span class="n">dizzy_bigrams</span><span class="p">,</span> <span class="n">dizzy_skipped</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span><span class="n">dizzy_files</span><span class="p">,</span> <span class="n">corpus_name</span><span class="o">=</span><span class="s1">&#39;Dizzy Gillespie&#39;</span><span class="p">)</span>
+
+<span class="c1"># 3) Show top bigrams in each corpus</span>
+<span class="n">parker_top</span> <span class="o">=</span> <span class="n">bigram_table</span><span class="p">(</span><span class="n">parker_bigrams</span><span class="p">,</span> <span class="s1">&#39;Charlie Parker&#39;</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">dizzy_top</span> <span class="o">=</span> <span class="n">bigram_table</span><span class="p">(</span><span class="n">dizzy_bigrams</span><span class="p">,</span> <span class="s1">&#39;Dizzy Gillespie&#39;</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Top Charlie Parker bigrams:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parker_top</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Top Dizzy Gillespie bigrams:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dizzy_top</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charlie Parker files: 58
+Dizzy Gillespie files: 13
+Charlie Parker: skipped 15 unreadable files.
+Dizzy Gillespie: skipped 12 unreadable files.
+
+Top Charlie Parker bigrams:
+        Corpus Bigram  Count Percent
+Charlie Parker   2-&gt;1    738   3.23%
+Charlie Parker   2-&gt;5    674   2.95%
+Charlie Parker   5-&gt;1    653   2.86%
+Charlie Parker   1-&gt;2    627   2.74%
+Charlie Parker   1-&gt;7    560   2.45%
+Charlie Parker   5-&gt;5    548   2.40%
+Charlie Parker   5-&gt;4    518   2.27%
+Charlie Parker   6-&gt;5    487   2.13%
+Charlie Parker   3-&gt;2    451   1.97%
+Charlie Parker   4-&gt;3    429   1.88%
+Charlie Parker   7-&gt;1    417   1.82%
+Charlie Parker   3-&gt;5    412   1.80%
+Charlie Parker   5-&gt;6    395   1.73%
+Charlie Parker   5-&gt;3    393   1.72%
+Charlie Parker   1-&gt;5    380   1.66%
+
+Top Dizzy Gillespie bigrams:
+         Corpus Bigram  Count Percent
+Dizzy Gillespie   5-&gt;4     20   4.28%
+Dizzy Gillespie   2-&gt;1     18   3.85%
+Dizzy Gillespie  b3-&gt;3     18   3.85%
+Dizzy Gillespie   6-&gt;5     16   3.43%
+Dizzy Gillespie  2-&gt;b2     16   3.43%
+Dizzy Gillespie   7-&gt;1     15   3.21%
+Dizzy Gillespie   1-&gt;1     15   3.21%
+Dizzy Gillespie   3-&gt;5     14   3.00%
+Dizzy Gillespie   1-&gt;2     14   3.00%
+Dizzy Gillespie   6-&gt;1     13   2.78%
+Dizzy Gillespie   4-&gt;3     13   2.78%
+Dizzy Gillespie   3-&gt;2     13   2.78%
+Dizzy Gillespie  b2-&gt;7     11   2.36%
+Dizzy Gillespie  1-&gt;b6     11   2.36%
+Dizzy Gillespie  4-&gt;b3     11   2.36%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### and finally (!), this cell puts everything together and gives us the bigram analysis of common bigrams between the two corpora.</span>
+<span class="c1"># 4) Show bigrams common to both corpora, ranked by combined frequency</span>
+<span class="n">common_bigrams</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">parker_bigrams</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">dizzy_bigrams</span><span class="p">)</span>
+<span class="n">common_rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">bg</span> <span class="ow">in</span> <span class="n">common_bigrams</span><span class="p">:</span>
+    <span class="n">parker_count</span> <span class="o">=</span> <span class="n">parker_bigrams</span><span class="p">[</span><span class="n">bg</span><span class="p">]</span>
+    <span class="n">dizzy_count</span> <span class="o">=</span> <span class="n">dizzy_bigrams</span><span class="p">[</span><span class="n">bg</span><span class="p">]</span>
+    <span class="n">common_rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;Bigram&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-&gt;</span><span class="si">{</span><span class="n">bg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;Parker Count&#39;</span><span class="p">:</span> <span class="n">parker_count</span><span class="p">,</span>
+        <span class="s1">&#39;Dizzy Count&#39;</span><span class="p">:</span> <span class="n">dizzy_count</span><span class="p">,</span>
+        <span class="s1">&#39;Combined Count&#39;</span><span class="p">:</span> <span class="n">parker_count</span> <span class="o">+</span> <span class="n">dizzy_count</span>
+    <span class="p">})</span>
+
+<span class="n">common_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">common_rows</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Combined Count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Most common shared bigrams (top 20 by combined count):&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">common_df</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="c1"># Optional: show skipped files for transparency</span>
+<span class="k">if</span> <span class="n">parker_skipped</span> <span class="ow">or</span> <span class="n">dizzy_skipped</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Skipped files (first 5 shown):&#39;</span><span class="p">)</span>
+    <span class="n">all_skipped</span> <span class="o">=</span> <span class="n">parker_skipped</span> <span class="o">+</span> <span class="n">dizzy_skipped</span>
+    <span class="k">for</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">all_skipped</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Most common shared bigrams (top 20 by combined count):
+Bigram  Parker Count  Dizzy Count  Combined Count
+  2-&gt;1           738           18             756
+  2-&gt;5           674            1             675
+  5-&gt;1           653            8             661
+  1-&gt;2           627           14             641
+  1-&gt;7           560            5             565
+  5-&gt;5           548            7             555
+  5-&gt;4           518           20             538
+  6-&gt;5           487           16             503
+  3-&gt;2           451           13             464
+  4-&gt;3           429           13             442
+  7-&gt;1           417           15             432
+  3-&gt;5           412           14             426
+  5-&gt;6           395            9             404
+  5-&gt;3           393            4             397
+  1-&gt;5           380            6             386
+  1-&gt;1           368           15             383
+  7-&gt;2           365           10             375
+  1-&gt;6           361            8             369
+  1-&gt;3           312            7             319
+  3-&gt;4           313            5             318
+
+Skipped files (first 5 shown):
+- ../data/charlie_parker/An_Oscar_For_Treadwell.krn: Could not determine spineType for spine with id 2
+- ../data/charlie_parker/Au_Private_(No.1).krn: Could not determine spineType for spine with id 2
+- ../data/charlie_parker/Au_Private_(No.2).krn: Could not determine spineType for spine with id 2
+- ../data/charlie_parker/Ballade.krn: Could not determine spineType for spine with id 2
+- ../data/charlie_parker/Barbados.krn: Could not determine spineType for spine with id 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># matrix builder (works for counts or row percentages).</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">counter_to_degree_matrix</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">value_type</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">):</span>
+    <span class="c1"># Step 1: start with a 12x12 table filled with zeros.</span>
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">from_degree</span> <span class="ow">in</span> <span class="n">DEGREE_LABELS</span><span class="p">:</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">from_degree</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">to_degree</span> <span class="ow">in</span> <span class="n">DEGREE_LABELS</span><span class="p">:</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">from_degree</span><span class="p">][</span><span class="n">to_degree</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Step 2: fill raw counts from the Counter.</span>
+    <span class="k">for</span> <span class="n">bigram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">from_degree</span> <span class="o">=</span> <span class="n">bigram</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">to_degree</span> <span class="o">=</span> <span class="n">bigram</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">from_degree</span><span class="p">][</span><span class="n">to_degree</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+
+    <span class="c1"># Step 3: convert rows to percentages if requested.</span>
+    <span class="k">if</span> <span class="n">value_type</span> <span class="o">==</span> <span class="s1">&#39;percentages&#39;</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">from_degree</span> <span class="ow">in</span> <span class="n">DEGREE_LABELS</span><span class="p">:</span>
+            <span class="n">row_total</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">to_degree</span> <span class="ow">in</span> <span class="n">DEGREE_LABELS</span><span class="p">:</span>
+                <span class="n">row_total</span> <span class="o">+=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">from_degree</span><span class="p">][</span><span class="n">to_degree</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">row_total</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">to_degree</span> <span class="ow">in</span> <span class="n">DEGREE_LABELS</span><span class="p">:</span>
+                    <span class="n">matrix</span><span class="p">[</span><span class="n">from_degree</span><span class="p">][</span><span class="n">to_degree</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">from_degree</span><span class="p">][</span><span class="n">to_degree</span><span class="p">]</span> <span class="o">/</span> <span class="n">row_total</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+    <span class="c1"># Step 4: return as DataFrame for easier plotting/printing.</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_two_degree_matrices</span><span class="p">(</span><span class="n">left_matrix</span><span class="p">,</span> <span class="n">right_matrix</span><span class="p">,</span> <span class="n">left_name</span><span class="p">,</span> <span class="n">right_name</span><span class="p">,</span> <span class="n">value_type</span><span class="p">):</span>
+    <span class="c1"># Make two side-by-side heatmaps.</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">22</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="c1"># Plot formatting changes depending on counts vs percentages.</span>
+    <span class="k">if</span> <span class="n">value_type</span> <span class="o">==</span> <span class="s1">&#39;counts&#39;</span><span class="p">:</span>
+        <span class="n">number_format</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span>
+        <span class="n">color_bar_label</span> <span class="o">=</span> <span class="s1">&#39;Count&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">number_format</span> <span class="o">=</span> <span class="s1">&#39;.1f&#39;</span>
+        <span class="n">color_bar_label</span> <span class="o">=</span> <span class="s1">&#39;Percent&#39;</span>
+
+    <span class="c1"># Left corpus heatmap.</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+        <span class="n">left_matrix</span><span class="p">,</span>
+        <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">fmt</span><span class="o">=</span><span class="n">number_format</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">color_bar_label</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">left_name</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="n">value_type</span> <span class="o">+</span> <span class="s1">&#39;, scale degrees)&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;To scale degree&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;From scale degree&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Right corpus heatmap.</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+        <span class="n">right_matrix</span><span class="p">,</span>
+        <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">fmt</span><span class="o">=</span><span class="n">number_format</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">color_bar_label</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">right_name</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="n">value_type</span> <span class="o">+</span> <span class="s1">&#39;, scale degrees)&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;To scale degree&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;From scale degree&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compare_two_corpora_bigrams</span><span class="p">(</span>
+    <span class="n">left_files</span><span class="p">,</span>
+    <span class="n">right_files</span><span class="p">,</span>
+    <span class="n">left_name</span><span class="o">=</span><span class="s1">&#39;Corpus A&#39;</span><span class="p">,</span>
+    <span class="n">right_name</span><span class="o">=</span><span class="s1">&#39;Corpus B&#39;</span><span class="p">,</span>
+    <span class="n">value_type</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Build key-relative chromatic SCALE-DEGREE bigram matrices for two corpora</span>
+<span class="sd">    and show them side by side.</span>
+
+
+<span class="sd">    Degree labels used:</span>
+<span class="sd">    1, b2, 2, b3, 3, 4, #4, 5, b6, 6, b7, 7</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Step 1: make sure the mode is valid.</span>
+    <span class="k">if</span> <span class="n">value_type</span> <span class="o">!=</span> <span class="s1">&#39;counts&#39;</span> <span class="ow">and</span> <span class="n">value_type</span> <span class="o">!=</span> <span class="s1">&#39;percentages&#39;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;value_type must be &#39;counts&#39; or &#39;percentages&#39;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Step 2: get bigram counters for both corpora using the shared extractor above.</span>
+    <span class="n">left_counter</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span>
+        <span class="n">left_files</span><span class="p">,</span>
+        <span class="n">corpus_name</span><span class="o">=</span><span class="n">left_name</span>
+    <span class="p">)</span>
+    <span class="n">right_counter</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams</span><span class="p">(</span>
+        <span class="n">right_files</span><span class="p">,</span>
+        <span class="n">corpus_name</span><span class="o">=</span><span class="n">right_name</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Step 3 (optional): keep only top N bigrams if requested.</span>
+    <span class="k">if</span> <span class="n">top_n</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">left_top_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">bigram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">left_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">top_n</span><span class="p">):</span>
+            <span class="n">left_top_counter</span><span class="p">[</span><span class="n">bigram</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="n">left_counter</span> <span class="o">=</span> <span class="n">left_top_counter</span>
+
+        <span class="n">right_top_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">bigram</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">right_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">top_n</span><span class="p">):</span>
+            <span class="n">right_top_counter</span><span class="p">[</span><span class="n">bigram</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="n">right_counter</span> <span class="o">=</span> <span class="n">right_top_counter</span>
+
+    <span class="c1"># Step 4: turn counters into 12x12 matrices.</span>
+    <span class="n">left_matrix</span> <span class="o">=</span> <span class="n">counter_to_degree_matrix</span><span class="p">(</span><span class="n">left_counter</span><span class="p">,</span> <span class="n">value_type</span><span class="o">=</span><span class="n">value_type</span><span class="p">)</span>
+    <span class="n">right_matrix</span> <span class="o">=</span> <span class="n">counter_to_degree_matrix</span><span class="p">(</span><span class="n">right_counter</span><span class="p">,</span> <span class="n">value_type</span><span class="o">=</span><span class="n">value_type</span><span class="p">)</span>
+
+
+    <span class="c1"># Step 5: plot both matrices side by side.</span>
+    <span class="n">plot_two_degree_matrices</span><span class="p">(</span><span class="n">left_matrix</span><span class="p">,</span> <span class="n">right_matrix</span><span class="p">,</span> <span class="n">left_name</span><span class="p">,</span> <span class="n">right_name</span><span class="p">,</span> <span class="n">value_type</span><span class="p">)</span>
+
+    <span class="c1"># Step 6: return outputs in case we want to reuse them later.</span>
+    <span class="k">return</span> <span class="n">left_matrix</span><span class="p">,</span> <span class="n">right_matrix</span>
+
+
+<span class="c1">### now let&#39;s run it!</span>
+
+<span class="c1"># File lists for each artist corpus</span>
+<span class="n">english</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England/*.krn&#39;</span><span class="p">))</span>
+<span class="n">czech</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Czech/*.krn&#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;English files:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">english</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czech files:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">czech</span><span class="p">))</span>
+
+<span class="c1"># Example call (raw counts, scale-degree representation).</span>
+<span class="n">compare_two_corpora_bigrams</span><span class="p">(</span>
+    <span class="n">english</span><span class="p">,</span>
+    <span class="n">czech</span><span class="p">,</span>
+    <span class="n">left_name</span><span class="o">=</span><span class="s1">&#39;English&#39;</span><span class="p">,</span>
+    <span class="n">right_name</span><span class="o">=</span><span class="s1">&#39;Czech&#39;</span><span class="p">,</span>
+    <span class="n">value_type</span><span class="o">=</span><span class="s1">&#39;counts&#39;</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>English files: 4
+Czech files: 43
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/d1477ca1a4a5a2f5a8ec6a22598880bb6b707f78f0d8f1ec3bbb03ad848a392d.png"><img alt="../_images/d1477ca1a4a5a2f5a8ec6a22598880bb6b707f78f0d8f1ec3bbb03ad848a392d.png" src="../_images/d1477ca1a4a5a2f5a8ec6a22598880bb6b707f78f0d8f1ec3bbb03ad848a392d.png" style="width: 1929px; height: 788px;" />
+</a>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(     1  b2   2  b3   3   4  #4   5  b6  6  b7   7
+ 1   15   0  12   1   7   0   1   6   2  0   0   8
+ b2   0   0   0   0   0   0   0   0   0  0   0   0
+ 2    8   0   4   0  14   0   0   1   0  0   0  10
+ b3   0   0   1   1   0   2   0   0   0  0   0   0
+ 3    1   0  13   0   3  12   1   3   0  0   0   1
+ 4    1   0   6   2   8   5   0   5   0  0   0   0
+ #4   0   0   0   0   0   0   0   3   0  0   0   0
+ 5   11   0   0   0   2   7   1  14   1  5   0   0
+ b6   1   0   0   0   0   0   0   2   2  0   0   0
+ 6    0   0   1   0   0   1   0   6   0  1   0   1
+ b7   0   0   0   0   0   0   0   0   0  0   0   0
+ 7   16   0   0   0   0   0   0   0   0  4   0   0,
+      1  b2   2  b3   3   4  #4   5  b6   6  b7   7
+ 1   53   0  35   7  29  13   0  24   3  13   8  25
+ b2   0   0   0   0   0   0   0   0   0   0   0   0
+ 2   77   0  36  23  27  11   0  12   1   3   1   5
+ b3   4   0  37  17   1   8   0   9   0   1   4   0
+ 3   16   0  56   1  26  25   2  33   0   2   0   2
+ 4    3   0  20  18  49  25   0  27   0   3   2   5
+ #4   0   0   0   0   0   0   0   4   0   1   0   0
+ 5   42   0   7  12  31  63   3  97   5  30   5   2
+ b6   0   0   0   0   0   2   0  11   2   0   2   0
+ 6    2   0   2   0   1   4   0  51   0  21   1  13
+ b7   6   0   1   5   0   0   0   7   6   1   5   0
+ 7   25   0   4   0   0   0   0   3   0  20   0   4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the same comparison, but now as row percentages (chromatic).</span>
+<span class="n">compare_two_corpora_bigrams</span><span class="p">(</span>
+    <span class="n">parker_files</span><span class="p">,</span>
+    <span class="n">dizzy_files</span><span class="p">,</span>
+    <span class="n">left_name</span><span class="o">=</span><span class="s1">&#39;Charlie Parker&#39;</span><span class="p">,</span>
+    <span class="n">right_name</span><span class="o">=</span><span class="s1">&#39;Dizzy Gillespie&#39;</span><span class="p">,</span>
+    <span class="n">value_type</span><span class="o">=</span><span class="s1">&#39;percentages&#39;</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Charlie Parker: skipped 15 unreadable files.
+Dizzy Gillespie: skipped 12 unreadable files.
+
+----- Charlie Parker scale-degree matrix (percentages) -----
+            1        b2          2        b3          3          4        #4  \
+1   10.779145  3.309900  18.365554  3.778559   9.138840   6.033978  1.552431   
+b2  27.900147  4.405286  19.530103  3.817915  10.132159   2.643172  2.055800   
+2   24.141315  7.687275   8.930324  6.902192   9.224730   7.425581  2.224403   
+b3  19.028340  4.655870  22.773279  8.299595  17.004049   6.072874  2.732794   
+3    9.472196  2.403393  21.253534  6.079171   5.702168  14.750236  4.759661   
+4    7.275542  2.734778  13.003096  7.894737  22.136223   9.133127  5.417957   
+#4   5.695509  1.642935   7.557503  5.805038  14.129244  13.691128  4.600219   
+5   17.558483  0.833557   6.453348  2.715784  10.567357  13.928475  7.663350   
+b6   5.869565  2.500000   1.847826  1.304348   5.000000  13.260870  6.847826   
+6   12.729718  0.627521  14.701927  1.568803   3.316898   5.602869  3.047961   
+b7  10.064044  3.110704   8.051235  4.483074   1.372370   2.653248  4.757548   
+7   23.426966  2.022472  20.505618  0.393258   5.056180   0.955056  1.966292   
+
+            5         b6          6        b7          7  
+1   11.130639   2.958407  10.574107  5.975395  16.403046  
+b2   2.496329   0.734214   5.873715  9.838473  10.572687  
+2   22.047759   0.883219   3.042198  1.308472   6.182532  
+b3   6.477733   3.340081   2.024291  3.238866   4.352227  
+3   19.415646   1.036758   9.707823  0.989632   4.429783  
+4   13.673891   5.933953   7.069143  4.179567   1.547988  
+#4  27.929901   2.519168  13.143483  0.766703   2.519168  
+5   14.735144   3.334230  10.621135  4.893789   6.695348  
+b6  30.543478   5.543478  15.108696  6.195652   5.978261  
+6   21.828776  10.891977   7.619901  7.530255  10.533393  
+b7  12.168344  10.978957  23.330284  8.234218  10.795974  
+7   11.235955   3.146067  16.741573  8.089888   6.460674  
+
+----- Dizzy Gillespie scale-degree matrix (percentages) -----
+            1         b2          2         b3          3          4  \
+1   18.292683   6.097561  17.073171   3.658537   8.536585   1.219512   
+b2   3.448276   0.000000  31.034483   0.000000   3.448276  17.241379   
+2   36.000000  32.000000   4.000000   0.000000   6.000000   2.000000   
+b3   0.000000   4.347826   0.000000   8.695652  78.260870   0.000000   
+3   19.230769   0.000000  25.000000   1.923077   3.846154   9.615385   
+4    0.000000   0.000000   0.000000  31.428571  37.142857   5.714286   
+#4  16.666667   0.000000   0.000000   0.000000   0.000000   0.000000   
+5   14.285714   1.785714   1.785714   0.000000   7.142857  35.714286   
+b6   0.000000   0.000000   4.347826   4.347826   0.000000   4.347826   
+6   26.000000  10.000000   0.000000   0.000000   4.000000   0.000000   
+b7   5.000000   0.000000   0.000000   0.000000   5.000000   0.000000   
+7   36.585366   2.439024  24.390244  12.195122   2.439024   0.000000   
+
+          #4          5         b6          6         b7          7  
+1   1.219512   7.317073  13.414634   9.756098   7.317073   6.097561  
+b2  0.000000   0.000000   0.000000   0.000000   6.896552  37.931034  
+2   0.000000   2.000000   0.000000   0.000000  12.000000   6.000000  
+b3  0.000000   0.000000   0.000000   0.000000   0.000000   8.695652  
+3   0.000000  26.923077   1.923077   0.000000   0.000000  11.538462  
+4   5.714286   5.714286   0.000000  14.285714   0.000000   0.000000  
+#4  0.000000  50.000000  16.666667   0.000000  16.666667   0.000000  
+5   0.000000  12.500000   3.571429  16.071429   1.785714   5.357143  
+b6  4.347826  30.434783   8.695652  43.478261   0.000000   0.000000  
+6   2.000000  32.000000   2.000000  20.000000   2.000000   2.000000  
+b7  0.000000   0.000000  15.000000  25.000000  10.000000  40.000000  
+7   2.439024   2.439024   4.878049   7.317073   0.000000   4.878049  
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/1bef4ee09709e9f533f5e84240d80b4b392ada5582d018c42f2d7e2d99ba6f2d.png"><img alt="../_images/1bef4ee09709e9f533f5e84240d80b4b392ada5582d018c42f2d7e2d99ba6f2d.png" src="../_images/1bef4ee09709e9f533f5e84240d80b4b392ada5582d018c42f2d7e2d99ba6f2d.png" style="width: 1550px; height: 588px;" />
+</a>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(            1        b2          2        b3          3          4        #4  \
+ 1   10.779145  3.309900  18.365554  3.778559   9.138840   6.033978  1.552431   
+ b2  27.900147  4.405286  19.530103  3.817915  10.132159   2.643172  2.055800   
+ 2   24.141315  7.687275   8.930324  6.902192   9.224730   7.425581  2.224403   
+ b3  19.028340  4.655870  22.773279  8.299595  17.004049   6.072874  2.732794   
+ 3    9.472196  2.403393  21.253534  6.079171   5.702168  14.750236  4.759661   
+ 4    7.275542  2.734778  13.003096  7.894737  22.136223   9.133127  5.417957   
+ #4   5.695509  1.642935   7.557503  5.805038  14.129244  13.691128  4.600219   
+ 5   17.558483  0.833557   6.453348  2.715784  10.567357  13.928475  7.663350   
+ b6   5.869565  2.500000   1.847826  1.304348   5.000000  13.260870  6.847826   
+ 6   12.729718  0.627521  14.701927  1.568803   3.316898   5.602869  3.047961   
+ b7  10.064044  3.110704   8.051235  4.483074   1.372370   2.653248  4.757548   
+ 7   23.426966  2.022472  20.505618  0.393258   5.056180   0.955056  1.966292   
+ 
+             5         b6          6        b7          7  
+ 1   11.130639   2.958407  10.574107  5.975395  16.403046  
+ b2   2.496329   0.734214   5.873715  9.838473  10.572687  
+ 2   22.047759   0.883219   3.042198  1.308472   6.182532  
+ b3   6.477733   3.340081   2.024291  3.238866   4.352227  
+ 3   19.415646   1.036758   9.707823  0.989632   4.429783  
+ 4   13.673891   5.933953   7.069143  4.179567   1.547988  
+ #4  27.929901   2.519168  13.143483  0.766703   2.519168  
+ 5   14.735144   3.334230  10.621135  4.893789   6.695348  
+ b6  30.543478   5.543478  15.108696  6.195652   5.978261  
+ 6   21.828776  10.891977   7.619901  7.530255  10.533393  
+ b7  12.168344  10.978957  23.330284  8.234218  10.795974  
+ 7   11.235955   3.146067  16.741573  8.089888   6.460674  ,
+             1         b2          2         b3          3          4  \
+ 1   18.292683   6.097561  17.073171   3.658537   8.536585   1.219512   
+ b2   3.448276   0.000000  31.034483   0.000000   3.448276  17.241379   
+ 2   36.000000  32.000000   4.000000   0.000000   6.000000   2.000000   
+ b3   0.000000   4.347826   0.000000   8.695652  78.260870   0.000000   
+ 3   19.230769   0.000000  25.000000   1.923077   3.846154   9.615385   
+ 4    0.000000   0.000000   0.000000  31.428571  37.142857   5.714286   
+ #4  16.666667   0.000000   0.000000   0.000000   0.000000   0.000000   
+ 5   14.285714   1.785714   1.785714   0.000000   7.142857  35.714286   
+ b6   0.000000   0.000000   4.347826   4.347826   0.000000   4.347826   
+ 6   26.000000  10.000000   0.000000   0.000000   4.000000   0.000000   
+ b7   5.000000   0.000000   0.000000   0.000000   5.000000   0.000000   
+ 7   36.585366   2.439024  24.390244  12.195122   2.439024   0.000000   
+ 
+           #4          5         b6          6         b7          7  
+ 1   1.219512   7.317073  13.414634   9.756098   7.317073   6.097561  
+ b2  0.000000   0.000000   0.000000   0.000000   6.896552  37.931034  
+ 2   0.000000   2.000000   0.000000   0.000000  12.000000   6.000000  
+ b3  0.000000   0.000000   0.000000   0.000000   0.000000   8.695652  
+ 3   0.000000  26.923077   1.923077   0.000000   0.000000  11.538462  
+ 4   5.714286   5.714286   0.000000  14.285714   0.000000   0.000000  
+ #4  0.000000  50.000000  16.666667   0.000000  16.666667   0.000000  
+ 5   0.000000  12.500000   3.571429  16.071429   1.785714   5.357143  
+ b6  4.347826  30.434783   8.695652  43.478261   0.000000   0.000000  
+ 6   2.000000  32.000000   2.000000  20.000000   2.000000   2.000000  
+ b7  0.000000   0.000000  15.000000  25.000000  10.000000  40.000000  
+ 7   2.439024   2.439024   4.878049   7.317073   0.000000   4.878049  )
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-2-a-third-corpus">
+<h2>Exercise 2: A third corpus<a class="headerlink" href="#exercise-2-a-third-corpus" title="Link to this heading">#</a></h2>
+<p>The notebook compared Parker and Dizzy. Now add a third corpus of your choice
+from the Essen collection (e.g. England, Polska, Rossiya).</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">compare_two_corpora_bigrams()</span></code> to compare it against one of the jazz corpora.</p>
+<p>Then answer:</p>
+<ol class="arabic simple">
+<li><p>Which bigrams appear in both the jazz corpus and the folk corpus?
+Are they musically surprising or expected?</p></li>
+<li><p>What does the comparison tell you about the limits of scale-degree bigrams
+as a cross-repertoire similarity measure?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># File lists for each artist corpus</span>
+<span class="n">english</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England/*.krn&#39;</span><span class="p">))</span>
+<span class="n">czech</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Czech/*.krn&#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;English files:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">english</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czech files:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">czech</span><span class="p">))</span>
+
+<span class="c1"># Example call (raw counts, scale-degree representation).</span>
+<span class="n">compare_two_corpora_bigrams</span><span class="p">(</span>
+    <span class="n">english</span><span class="p">,</span>
+    <span class="n">czech</span><span class="p">,</span>
+    <span class="n">left_name</span><span class="o">=</span><span class="s1">&#39;English&#39;</span><span class="p">,</span>
+    <span class="n">right_name</span><span class="o">=</span><span class="s1">&#39;Czech&#39;</span><span class="p">,</span>
+    <span class="n">value_type</span><span class="o">=</span><span class="s1">&#39;percentages&#39;</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>English files: 4
+Czech files: 43
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/237bd168a8545439aee7efdbda7eb6aaea96a86df59920c212ad87f2d92227fa.png"><img alt="../_images/237bd168a8545439aee7efdbda7eb6aaea96a86df59920c212ad87f2d92227fa.png" src="../_images/237bd168a8545439aee7efdbda7eb6aaea96a86df59920c212ad87f2d92227fa.png" style="width: 1930px; height: 788px;" />
+</a>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(            1   b2          2         b3          3          4        #4  \
+ 1   28.846154  0.0  23.076923   1.923077  13.461538   0.000000  1.923077   
+ b2   0.000000  0.0   0.000000   0.000000   0.000000   0.000000  0.000000   
+ 2   21.621622  0.0  10.810811   0.000000  37.837838   0.000000  0.000000   
+ b3   0.000000  0.0  25.000000  25.000000   0.000000  50.000000  0.000000   
+ 3    2.941176  0.0  38.235294   0.000000   8.823529  35.294118  2.941176   
+ 4    3.703704  0.0  22.222222   7.407407  29.629630  18.518519  0.000000   
+ #4   0.000000  0.0   0.000000   0.000000   0.000000   0.000000  0.000000   
+ 5   26.829268  0.0   0.000000   0.000000   4.878049  17.073171  2.439024   
+ b6  20.000000  0.0   0.000000   0.000000   0.000000   0.000000  0.000000   
+ 6    0.000000  0.0  10.000000   0.000000   0.000000  10.000000  0.000000   
+ b7   0.000000  0.0   0.000000   0.000000   0.000000   0.000000  0.000000   
+ 7   80.000000  0.0   0.000000   0.000000   0.000000   0.000000  0.000000   
+ 
+              5         b6          6   b7          7  
+ 1    11.538462   3.846154   0.000000  0.0  15.384615  
+ b2    0.000000   0.000000   0.000000  0.0   0.000000  
+ 2     2.702703   0.000000   0.000000  0.0  27.027027  
+ b3    0.000000   0.000000   0.000000  0.0   0.000000  
+ 3     8.823529   0.000000   0.000000  0.0   2.941176  
+ 4    18.518519   0.000000   0.000000  0.0   0.000000  
+ #4  100.000000   0.000000   0.000000  0.0   0.000000  
+ 5    34.146341   2.439024  12.195122  0.0   0.000000  
+ b6   40.000000  40.000000   0.000000  0.0   0.000000  
+ 6    60.000000   0.000000  10.000000  0.0  10.000000  
+ b7    0.000000   0.000000   0.000000  0.0   0.000000  
+ 7     0.000000   0.000000  20.000000  0.0   0.000000  ,
+             1   b2          2         b3          3          4        #4  \
+ 1   25.238095  0.0  16.666667   3.333333  13.809524   6.190476  0.000000   
+ b2   0.000000  0.0   0.000000   0.000000   0.000000   0.000000  0.000000   
+ 2   39.285714  0.0  18.367347  11.734694  13.775510   5.612245  0.000000   
+ b3   4.938272  0.0  45.679012  20.987654   1.234568   9.876543  0.000000   
+ 3    9.815951  0.0  34.355828   0.613497  15.950920  15.337423  1.226994   
+ 4    1.973684  0.0  13.157895  11.842105  32.236842  16.447368  0.000000   
+ #4   0.000000  0.0   0.000000   0.000000   0.000000   0.000000  0.000000   
+ 5   14.141414  0.0   2.356902   4.040404  10.437710  21.212121  1.010101   
+ b6   0.000000  0.0   0.000000   0.000000   0.000000  11.764706  0.000000   
+ 6    2.105263  0.0   2.105263   0.000000   1.052632   4.210526  0.000000   
+ b7  19.354839  0.0   3.225806  16.129032   0.000000   0.000000  0.000000   
+ 7   44.642857  0.0   7.142857   0.000000   0.000000   0.000000  0.000000   
+ 
+             5         b6          6         b7          7  
+ 1   11.428571   1.428571   6.190476   3.809524  11.904762  
+ b2   0.000000   0.000000   0.000000   0.000000   0.000000  
+ 2    6.122449   0.510204   1.530612   0.510204   2.551020  
+ b3  11.111111   0.000000   1.234568   4.938272   0.000000  
+ 3   20.245399   0.000000   1.226994   0.000000   1.226994  
+ 4   17.763158   0.000000   1.973684   1.315789   3.289474  
+ #4  80.000000   0.000000  20.000000   0.000000   0.000000  
+ 5   32.659933   1.683502  10.101010   1.683502   0.673401  
+ b6  64.705882  11.764706   0.000000  11.764706   0.000000  
+ 6   53.684211   0.000000  22.105263   1.052632  13.684211  
+ b7  22.580645  19.354839   3.225806  16.129032   0.000000  
+ 7    5.357143   0.000000  35.714286   0.000000   7.142857  )
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bigrams-with-beat-strength">
+<h2>Bigrams with Beat Strength<a class="headerlink" href="#bigrams-with-beat-strength" title="Link to this heading">#</a></h2>
+<p>So far, we have looked at bigrams as note-to-note pitch patterns.
+Now we will keep that same idea, but focus only on beat strength.</p>
+<p>In this section, we use music21’s <code class="docutils literal notranslate"><span class="pre">beatStrength</span></code> to filter notes before counting bigrams.
+That means we can compare bigrams from:</p>
+<ul class="simple">
+<li><p>all notes</p></li>
+<li><p>strong beats</p></li>
+<li><p>medium-strength beats</p></li>
+<li><p>weak beats</p></li>
+</ul>
+<p>For now, we are staying with beat-strength filtering only, so the workflow stays simple and consistent for everyone.</p>
+<p>music21 has a nice beatStrength tool that can be useful for filtering things out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">top_bigrams_df</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">corpus_name</span><span class="p">,</span> <span class="n">beat_filter</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">top_n</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Turn a Counter into a clean top-N table for display.&quot;&quot;&quot;</span>
+
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counter</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">),</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="n">top_n</span><span class="p">):</span>
+        <span class="n">percent</span> <span class="o">=</span> <span class="p">(</span><span class="n">count</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">total</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s1">&#39;Corpus&#39;</span><span class="p">:</span> <span class="n">corpus_name</span><span class="p">,</span>
+            <span class="s1">&#39;Filter&#39;</span><span class="p">:</span> <span class="n">beat_filter</span><span class="p">,</span>
+            <span class="s1">&#39;Bigram&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d1</span><span class="si">}</span><span class="s2">-&gt;</span><span class="si">{</span><span class="n">d2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;Count&#39;</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span>
+            <span class="s1">&#39;Percent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">percent</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Beginner-friendly beat-strength filters.</span>
+<span class="n">beat_filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;all&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;strong_&gt;=0.75&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;medium_0.5_to_&lt;0.75&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;weak_&lt;0.5&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load .krn files for each corpus (so this section works on its own).</span>
+
+<span class="c1"># Step 1: get all English .krn files from the folder.</span>
+<span class="n">english</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/Essen/England/*.krn&#39;</span><span class="p">))</span>
+
+<span class="c1"># Step 2: get all Czech .krn files from the folder.</span>
+<span class="n">czech</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;../data/Essen/Czech/*.krn&#39;</span><span class="p">))</span>
+
+<span class="c1"># Step 3: print how many files we found.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;English files:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">english</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Czech files:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">czech</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>English files: 4
+Czech files: 43
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># One corpus + one beat-strength filter (beginner version)</span>
+
+<span class="c1"># Step 1: pick one corpus.</span>
+<span class="n">selected_files</span> <span class="o">=</span> <span class="n">english</span>
+<span class="n">selected_corpus_name</span> <span class="o">=</span> <span class="s1">&#39;English&#39;</span>   <span class="c1"># change to &#39;Czech&#39; and czech files if you want</span>
+
+<span class="c1"># Step 2: pick one beat-strength filter.</span>
+<span class="c1"># You can use short names: &#39;strong&#39;, &#39;medium&#39;, &#39;weak&#39;</span>
+<span class="n">selected_filter</span> <span class="o">=</span> <span class="s1">&#39;strong&#39;</span>   <span class="c1"># also works: &#39;all&#39;, &#39;strong_&gt;=0.75&#39;, &#39;medium_0.5_to_&lt;0.75&#39;, &#39;weak_&lt;0.5&#39;</span>
+
+<span class="c1"># Step 3: extract bigrams for this one corpus and this one filter.</span>
+<span class="n">selected_counter</span><span class="p">,</span> <span class="n">skipped_files</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams_by_beatstrength</span><span class="p">(</span>
+    <span class="n">selected_files</span><span class="p">,</span>
+    <span class="n">corpus_name</span><span class="o">=</span><span class="n">selected_corpus_name</span><span class="p">,</span>
+    <span class="n">strength_filter</span><span class="o">=</span><span class="n">selected_filter</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 4: build a top-10 table.</span>
+<span class="n">selected_table</span> <span class="o">=</span> <span class="n">top_bigrams_df</span><span class="p">(</span>
+    <span class="n">selected_counter</span><span class="p">,</span>
+    <span class="n">corpus_name</span><span class="o">=</span><span class="n">selected_corpus_name</span><span class="p">,</span>
+    <span class="n">beat_filter</span><span class="o">=</span><span class="n">selected_filter</span><span class="p">,</span>
+    <span class="n">top_n</span><span class="o">=</span><span class="mi">10</span>
+<span class="p">)</span>
+
+<span class="c1"># Step 5: show simple output.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Corpus:&#39;</span><span class="p">,</span> <span class="n">selected_corpus_name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Filter:&#39;</span><span class="p">,</span> <span class="n">selected_filter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Files skipped:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">skipped_files</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">selected_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Corpus: English
+Filter: strong
+Files skipped: 0
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>1-&gt;1</td>
+      <td>9</td>
+      <td>12.68%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>3-&gt;2</td>
+      <td>6</td>
+      <td>8.45%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>1-&gt;5</td>
+      <td>6</td>
+      <td>8.45%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>5-&gt;1</td>
+      <td>5</td>
+      <td>7.04%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>1-&gt;7</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>2-&gt;1</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>4-&gt;3</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>1-&gt;3</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>2-&gt;2</td>
+      <td>3</td>
+      <td>4.23%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>English</td>
+      <td>strong</td>
+      <td>5-&gt;5</td>
+      <td>3</td>
+      <td>4.23%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We run the SAME workflow once for each beat-strength group.</span>
+<span class="c1"># This is intentionally repetitive so beginners can follow every step.</span>
+<span class="k">for</span> <span class="n">beat_strength_group</span> <span class="ow">in</span> <span class="n">beat_filters</span><span class="p">:</span>
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="c1"># Step 1: print a clear header so we know which filter we are in.</span>
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Beat-strength filter:&quot;</span><span class="p">,</span> <span class="n">beat_strength_group</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
+
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="c1"># Step 2: collect bigrams from the English corpus for this filter.</span>
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="n">english_counter</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams_by_beatstrength</span><span class="p">(</span>
+        <span class="n">english</span><span class="p">,</span>
+        <span class="n">corpus_name</span><span class="o">=</span><span class="s1">&#39;English&#39;</span><span class="p">,</span>
+        <span class="n">strength_filter</span><span class="o">=</span><span class="n">beat_strength_group</span>
+    <span class="p">)</span>
+
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="c1"># Step 3: collect bigrams from the Czech corpus for this filter.</span>
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="n">czech_counter</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">extract_scale_degree_bigrams_by_beatstrength</span><span class="p">(</span>
+        <span class="n">czech</span><span class="p">,</span>
+        <span class="n">corpus_name</span><span class="o">=</span><span class="s1">&#39;Czech&#39;</span><span class="p">,</span>
+        <span class="n">strength_filter</span><span class="o">=</span><span class="n">beat_strength_group</span>
+    <span class="p">)</span>
+
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="c1"># Step 4: turn the counters into clean top-10 tables.</span>
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="n">english_table</span> <span class="o">=</span> <span class="n">top_bigrams_df</span><span class="p">(</span>
+        <span class="n">english_counter</span><span class="p">,</span>
+        <span class="n">corpus_name</span><span class="o">=</span><span class="s1">&#39;English&#39;</span><span class="p">,</span>
+        <span class="n">beat_filter</span><span class="o">=</span><span class="n">beat_strength_group</span><span class="p">,</span>
+        <span class="n">top_n</span><span class="o">=</span><span class="mi">10</span>
+    <span class="p">)</span>
+
+    <span class="n">czech_table</span> <span class="o">=</span> <span class="n">top_bigrams_df</span><span class="p">(</span>
+        <span class="n">czech_counter</span><span class="p">,</span>
+        <span class="n">corpus_name</span><span class="o">=</span><span class="s1">&#39;Czech&#39;</span><span class="p">,</span>
+        <span class="n">beat_filter</span><span class="o">=</span><span class="n">beat_strength_group</span><span class="p">,</span>
+        <span class="n">top_n</span><span class="o">=</span><span class="mi">10</span>
+    <span class="p">)</span>
+
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="c1"># Step 5: show both tables in the notebook output.</span>
+    <span class="c1"># ------------------------------------------------------------</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">english_table</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">czech_table</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+Beat-strength filter: all
+================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>English</td>
+      <td>all</td>
+      <td>7-&gt;1</td>
+      <td>16</td>
+      <td>6.87%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>English</td>
+      <td>all</td>
+      <td>1-&gt;1</td>
+      <td>15</td>
+      <td>6.44%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>English</td>
+      <td>all</td>
+      <td>2-&gt;3</td>
+      <td>14</td>
+      <td>6.01%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>English</td>
+      <td>all</td>
+      <td>5-&gt;5</td>
+      <td>14</td>
+      <td>6.01%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>English</td>
+      <td>all</td>
+      <td>3-&gt;2</td>
+      <td>13</td>
+      <td>5.58%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>English</td>
+      <td>all</td>
+      <td>1-&gt;2</td>
+      <td>12</td>
+      <td>5.15%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>English</td>
+      <td>all</td>
+      <td>3-&gt;4</td>
+      <td>12</td>
+      <td>5.15%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>English</td>
+      <td>all</td>
+      <td>5-&gt;1</td>
+      <td>11</td>
+      <td>4.72%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>English</td>
+      <td>all</td>
+      <td>2-&gt;7</td>
+      <td>10</td>
+      <td>4.29%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>English</td>
+      <td>all</td>
+      <td>1-&gt;7</td>
+      <td>8</td>
+      <td>3.43%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>5-&gt;5</td>
+      <td>97</td>
+      <td>7.44%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>2-&gt;1</td>
+      <td>77</td>
+      <td>5.91%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>5-&gt;4</td>
+      <td>63</td>
+      <td>4.83%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>3-&gt;2</td>
+      <td>56</td>
+      <td>4.30%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>1-&gt;1</td>
+      <td>53</td>
+      <td>4.07%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>6-&gt;5</td>
+      <td>51</td>
+      <td>3.91%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>4-&gt;3</td>
+      <td>49</td>
+      <td>3.76%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>5-&gt;1</td>
+      <td>42</td>
+      <td>3.22%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>b3-&gt;2</td>
+      <td>37</td>
+      <td>2.84%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Czech</td>
+      <td>all</td>
+      <td>2-&gt;2</td>
+      <td>36</td>
+      <td>2.76%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+Beat-strength filter: strong_&gt;=0.75
+================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;1</td>
+      <td>9</td>
+      <td>12.68%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>3-&gt;2</td>
+      <td>6</td>
+      <td>8.45%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;5</td>
+      <td>6</td>
+      <td>8.45%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>5-&gt;1</td>
+      <td>5</td>
+      <td>7.04%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;7</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>2-&gt;1</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>4-&gt;3</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;3</td>
+      <td>4</td>
+      <td>5.63%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>2-&gt;2</td>
+      <td>3</td>
+      <td>4.23%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>English</td>
+      <td>strong_&gt;=0.75</td>
+      <td>5-&gt;5</td>
+      <td>3</td>
+      <td>4.23%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>5-&gt;5</td>
+      <td>24</td>
+      <td>7.69%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>5-&gt;1</td>
+      <td>15</td>
+      <td>4.81%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>3-&gt;1</td>
+      <td>11</td>
+      <td>3.53%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;3</td>
+      <td>11</td>
+      <td>3.53%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>2-&gt;1</td>
+      <td>9</td>
+      <td>2.88%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;1</td>
+      <td>9</td>
+      <td>2.88%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>4-&gt;1</td>
+      <td>9</td>
+      <td>2.88%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;4</td>
+      <td>9</td>
+      <td>2.88%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>1-&gt;b3</td>
+      <td>9</td>
+      <td>2.88%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Czech</td>
+      <td>strong_&gt;=0.75</td>
+      <td>2-&gt;5</td>
+      <td>8</td>
+      <td>2.56%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+Beat-strength filter: medium_0.5_to_&lt;0.75
+================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>2-&gt;3</td>
+      <td>9</td>
+      <td>11.69%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>3-&gt;4</td>
+      <td>7</td>
+      <td>9.09%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>4-&gt;3</td>
+      <td>5</td>
+      <td>6.49%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>3-&gt;7</td>
+      <td>5</td>
+      <td>6.49%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>5-&gt;2</td>
+      <td>5</td>
+      <td>6.49%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>1-&gt;1</td>
+      <td>4</td>
+      <td>5.19%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>1-&gt;2</td>
+      <td>3</td>
+      <td>3.90%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>7-&gt;5</td>
+      <td>3</td>
+      <td>3.90%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>1-&gt;5</td>
+      <td>3</td>
+      <td>3.90%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>English</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>3-&gt;6</td>
+      <td>3</td>
+      <td>3.90%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>5-&gt;2</td>
+      <td>18</td>
+      <td>6.25%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>5-&gt;3</td>
+      <td>17</td>
+      <td>5.90%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>5-&gt;5</td>
+      <td>14</td>
+      <td>4.86%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>2-&gt;5</td>
+      <td>11</td>
+      <td>3.82%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>2-&gt;1</td>
+      <td>11</td>
+      <td>3.82%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>2-&gt;2</td>
+      <td>10</td>
+      <td>3.47%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>3-&gt;3</td>
+      <td>10</td>
+      <td>3.47%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>1-&gt;5</td>
+      <td>10</td>
+      <td>3.47%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>3-&gt;5</td>
+      <td>9</td>
+      <td>3.12%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Czech</td>
+      <td>medium_0.5_to_&lt;0.75</td>
+      <td>4-&gt;5</td>
+      <td>9</td>
+      <td>3.12%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>================================================================================
+Beat-strength filter: weak_&lt;0.5
+================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>5-&gt;5</td>
+      <td>5</td>
+      <td>6.49%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>5-&gt;7</td>
+      <td>5</td>
+      <td>6.49%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>7-&gt;5</td>
+      <td>5</td>
+      <td>6.49%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>2-&gt;1</td>
+      <td>4</td>
+      <td>5.19%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>1-&gt;4</td>
+      <td>4</td>
+      <td>5.19%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>4-&gt;2</td>
+      <td>4</td>
+      <td>5.19%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>1-&gt;2</td>
+      <td>3</td>
+      <td>3.90%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>1-&gt;1</td>
+      <td>3</td>
+      <td>3.90%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>2-&gt;7</td>
+      <td>3</td>
+      <td>3.90%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>English</td>
+      <td>weak_&lt;0.5</td>
+      <td>4-&gt;1</td>
+      <td>2</td>
+      <td>2.60%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corpus</th>
+      <th>Filter</th>
+      <th>Bigram</th>
+      <th>Count</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>5-&gt;5</td>
+      <td>35</td>
+      <td>6.36%</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>3-&gt;1</td>
+      <td>22</td>
+      <td>4.00%</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>2-&gt;2</td>
+      <td>21</td>
+      <td>3.82%</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>5-&gt;3</td>
+      <td>20</td>
+      <td>3.64%</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>6-&gt;5</td>
+      <td>19</td>
+      <td>3.45%</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>5-&gt;1</td>
+      <td>17</td>
+      <td>3.09%</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>1-&gt;6</td>
+      <td>17</td>
+      <td>3.09%</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>1-&gt;3</td>
+      <td>16</td>
+      <td>2.91%</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>3-&gt;5</td>
+      <td>16</td>
+      <td>2.91%</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Czech</td>
+      <td>weak_&lt;0.5</td>
+      <td>1-&gt;1</td>
+      <td>16</td>
+      <td>2.91%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="exercise-3-beat-strength-and-melodic-tendency">
+<h2>Exercise 3: Beat strength and melodic tendency<a class="headerlink" href="#exercise-3-beat-strength-and-melodic-tendency" title="Link to this heading">#</a></h2>
+<p>Before running the code, write a prediction in the cell below:</p>
+<ul class="simple">
+<li><p>Do you expect the most common bigrams on downbeats to be the same as
+the most common bigrams on weak beats, or different? Why?</p></li>
+<li><p>After you’ve made your prediction, run the beat-strength filter on the English Essen folksongs
+with <code class="docutils literal notranslate"><span class="pre">beat_filter='all'</span></code>, <code class="docutils literal notranslate"><span class="pre">'strong'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'downbeat'</span></code>.</p></li>
+<li><p>Compare the top-5 bigrams under each filter. Was your prediction correct?
+If the results surprised you, what does that tell you about where
+melodic structure is “located” in these folksongs?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### your Exercise 3 code here...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">music21</span><span class="w"> </span><span class="kn">import</span> <span class="n">converter</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Build a simple interval dataset from two .krn folders.</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">streams</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">corpora</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/Essen/England/*.krn&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Czech&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/Essen/Czech/*.krn&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">mode_name</span><span class="p">,</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">corpora</span><span class="p">:</span>
+    <span class="n">file_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="n">pattern</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">file_path</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+            <span class="n">streams</span><span class="p">[</span><span class="n">file_path</span><span class="p">]</span> <span class="o">=</span> <span class="n">score</span>
+
+            <span class="c1"># Grab a simple melodic pitch sequence (first pitch if chord).</span>
+            <span class="n">midi_values</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">recurse</span><span class="p">()</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">isChord</span><span class="p">:</span>
+                    <span class="n">midi_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">pitches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">midi</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">midi_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">element</span><span class="o">.</span><span class="n">pitch</span><span class="o">.</span><span class="n">midi</span><span class="p">))</span>
+
+            <span class="c1"># Turn pitch sequence into consecutive melodic intervals.</span>
+            <span class="n">intervals</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">midi_values</span><span class="p">,</span> <span class="n">midi_values</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+                <span class="n">intervals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span>
+
+            <span class="n">tune_id</span> <span class="o">=</span> <span class="n">file_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.krn&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;tune_id&#39;</span><span class="p">:</span> <span class="n">tune_id</span><span class="p">,</span>
+                <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="n">mode_name</span><span class="p">,</span>
+                <span class="s1">&#39;intervals&#39;</span><span class="p">:</span> <span class="n">intervals</span><span class="p">,</span>
+                <span class="s1">&#39;source_file&#39;</span><span class="p">:</span> <span class="n">file_path</span><span class="p">,</span>
+            <span class="p">})</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s1"> tunes loaded with interval lists&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47 tunes loaded with interval lists
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="interval-bigrams">
+<h1>Interval Bigrams<a class="headerlink" href="#interval-bigrams" title="Link to this heading">#</a></h1>
+<p>Scale-degree bigrams describe <em>what</em> follows what. Interval bigrams describe <em>how far</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interval transition matrix: names + direction + plot</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># Tiny helper: turn a signed semitone number into a readable label.</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">interval_label</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">interval_names</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;P1&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;m2&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;M2&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;m3&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;M3&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;P4&#39;</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;TT&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;P5&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;m6&#39;</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;M6&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;m7&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;M7&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;P8&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;stay (P1, 0)&#39;</span>
+
+    <span class="n">direction</span> <span class="o">=</span> <span class="s1">&#39;up&#39;</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;down&#39;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">interval_names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">interval_names</span><span class="p">[</span><span class="n">size</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">+d</span><span class="si">}</span><span class="s2">)&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s2"> semitones (</span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">+d</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+
+<span class="k">if</span> <span class="s1">&#39;df&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Run the data-loading cell first so we have df.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="s1">&#39;intervals&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I can&#39;t find an &#39;intervals&#39; column in df.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Step 1: grab every consecutive interval pair (a -&gt; b).</span>
+    <span class="n">pairs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">interval_list</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;intervals&#39;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">interval_list</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">interval_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">interval_list</span><span class="p">,</span> <span class="n">interval_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+            <span class="n">pairs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No interval pairs found.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Step 2: build a count matrix with raw interval numbers first.</span>
+        <span class="n">all_intervals</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">]))</span>
+        <span class="n">transition_matrix</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">all_intervals</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">all_intervals</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">:</span>
+            <span class="n">transition_matrix</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># Step 3: rename rows/cols so labels are student-friendly.</span>
+        <span class="n">label_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">all_intervals</span><span class="p">:</span>
+            <span class="n">label_map</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">interval_label</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+        <span class="n">transition_matrix_named</span> <span class="o">=</span> <span class="n">transition_matrix</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">label_map</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">label_map</span><span class="p">)</span>
+
+        <span class="c1"># Step 4: show the matrix as a plot.</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">transition_matrix_named</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="s1">&#39;Count&#39;</span><span class="p">})</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Interval Transition Matrix (Counts)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Next interval&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Current interval&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+        <span class="c1"># Also display the DataFrame in case you want to inspect exact numbers.</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">transition_matrix_named</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="../_images/fe7ab0a702376dc0377f97fc89c560e6e4c6209d5a623bb6aee6f40099162246.png"><img alt="../_images/fe7ab0a702376dc0377f97fc89c560e6e4c6209d5a623bb6aee6f40099162246.png" src="../_images/fe7ab0a702376dc0377f97fc89c560e6e4c6209d5a623bb6aee6f40099162246.png" style="width: 1123px; height: 990px;" />
+</a>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>down P8 (-12)</th>
+      <th>down m7 (-10)</th>
+      <th>down M6 (-9)</th>
+      <th>down m6 (-8)</th>
+      <th>down P5 (-7)</th>
+      <th>down TT (-6)</th>
+      <th>down P4 (-5)</th>
+      <th>down M3 (-4)</th>
+      <th>down m3 (-3)</th>
+      <th>down M2 (-2)</th>
+      <th>...</th>
+      <th>up m2 (+1)</th>
+      <th>up M2 (+2)</th>
+      <th>up m3 (+3)</th>
+      <th>up M3 (+4)</th>
+      <th>up P4 (+5)</th>
+      <th>up TT (+6)</th>
+      <th>up P5 (+7)</th>
+      <th>up m6 (+8)</th>
+      <th>up M6 (+9)</th>
+      <th>up m7 (+10)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>down P8 (-12)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>down m7 (-10)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>down M6 (-9)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>down m6 (-8)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>down P5 (-7)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>down TT (-6)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>down P4 (-5)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>...</td>
+      <td>5</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>down M3 (-4)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>down m3 (-3)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>19</td>
+      <td>...</td>
+      <td>16</td>
+      <td>8</td>
+      <td>11</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>down M2 (-2)</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>6</td>
+      <td>1</td>
+      <td>25</td>
+      <td>83</td>
+      <td>...</td>
+      <td>0</td>
+      <td>34</td>
+      <td>4</td>
+      <td>11</td>
+      <td>15</td>
+      <td>0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>down m2 (-1)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>74</td>
+      <td>...</td>
+      <td>34</td>
+      <td>0</td>
+      <td>12</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>stay (P1, 0)</th>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>8</td>
+      <td>1</td>
+      <td>10</td>
+      <td>7</td>
+      <td>14</td>
+      <td>60</td>
+      <td>...</td>
+      <td>5</td>
+      <td>39</td>
+      <td>11</td>
+      <td>15</td>
+      <td>22</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>up m2 (+1)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>5</td>
+      <td>2</td>
+      <td>11</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>31</td>
+      <td>0</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up M2 (+2)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>10</td>
+      <td>16</td>
+      <td>43</td>
+      <td>...</td>
+      <td>40</td>
+      <td>37</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up m3 (+3)</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>9</td>
+      <td>11</td>
+      <td>...</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up M3 (+4)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>19</td>
+      <td>...</td>
+      <td>10</td>
+      <td>0</td>
+      <td>9</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up P4 (+5)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>4</td>
+      <td>8</td>
+      <td>...</td>
+      <td>0</td>
+      <td>11</td>
+      <td>0</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up TT (+6)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up P5 (+7)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up m6 (+8)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up M6 (+9)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>up m7 (+10)</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>22 rows × 22 columns</p>
+</div></div></div>
+</div>
+<section id="exercise-4-scale-degrees-vs-intervals-which-makes-more-sense-for-your-research-question">
+<h2>Exercise 4: Scale degrees vs intervals — which makes more sense for your research question?<a class="headerlink" href="#exercise-4-scale-degrees-vs-intervals-which-makes-more-sense-for-your-research-question" title="Link to this heading">#</a></h2>
+<p>Pick one Essen region you haven’t used yet. Compute both:</p>
+<ul class="simple">
+<li><p>The top-10 scale-degree bigrams</p></li>
+<li><p>The top-10 interval bigrams (in semitones)</p></li>
+</ul>
+<p>For a researcher trying to compare melodic style across different regional folk traditions, which
+representation is more useful — scale degrees or intervals?</p>
+<p>Your argument should engage with at least one specific result from
+your analysis (not just a general claim).</p>
+</section>
+<section id="email-to-dan-day-2">
+<h2>Email to Dan, Day 2!<a class="headerlink" href="#email-to-dan-day-2" title="Link to this heading">#</a></h2>
+<p>Please email me with the following:</p>
+<ol class="arabic simple">
+<li><p>Two melodic corpora compared in terms of transition probabilities (these can be notes, scale degrees, or intervals)</p></li>
+<li><p>You own analytical interpretation of these.</p></li>
+</ol>
+<p>Please make them different corpora than what you already worked with in class!
+<em>(100–150 words)</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day1_encoding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 1: Encoding as Interpretation; Counting Things!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="day3_pitch_mode.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 3: Pitch Distributions and Mode</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Day 2: N-grams and Melodic Tendency</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-from-composition">Examples from Composition</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#as-a-marker-of-expectation-and-statistical-learning">As a Marker of Expectation and Statistical Learning</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-transitions-in-happy-birthday">Part 1: Transitions in Happy Birthday</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-all-of-the-pitch-combinations-as-bigrams">Counting all of the pitch combinations (as bigrams)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-counter">Setting up a counter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-exercise">Plotting exercise</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-raw-counts-vs-percentages">Exercise 1: Raw counts vs percentages</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#transition-probabilities-in-an-entire-corpus">Transition Probabilities in an Entire Corpus</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-a-third-corpus">Exercise 2: A third corpus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bigrams-with-beat-strength">Bigrams with Beat Strength</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-beat-strength-and-melodic-tendency">Exercise 3: Beat strength and melodic tendency</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interval-bigrams">Interval Bigrams</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-scale-degrees-vs-intervals-which-makes-more-sense-for-your-research-question">Exercise 4: Scale degrees vs intervals — which makes more sense for your research question?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#email-to-dan-day-2">Email to Dan, Day 2!</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Daniel Shanahan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
